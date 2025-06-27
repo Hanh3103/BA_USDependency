@@ -1,0 +1,23 @@
+Precedessor:
+	1. Fall
+#G14# As a consumer, I want to view the data package, so that that I can get a sense of whether I want this dataset or not.
+#G14# As a Publisher, I want to publish a data package in the UI, so that that it is available and published.
+
+#G14# As an Admin, I want to have a pricing plan and billing system, so that that I can charge users and make my platform sustainable.
+#G14# As a Publisher, I want to sign up for a given pricing plan, so that that I am entitled to what it allows.
+
+	2. Fall
+#G14# As a Publisher, I want to sign up for an account, so that that I can publish my data package to the registry and to have a publisher account to publish my data package under.
+#G14# As a Publisher, I want to publish a dataset, so that I can view just the dataset with a few people.
+
+#G14# As a Publisher, I want to sign up for an account, so that that I can publish my data package to the registry and to have a publisher account to publish my data package under.
+#G14# As a consumer, I want to view the data package, so that that I can get a sense of whether I want this dataset or not.
+
+
+Parent: 
+#G14# As a Publisher, I want to sign up for an account, so that that I can publish my data package to the registry and to have a publisher account to publish my data package under.
+#G14# As a Visitor, I want to sign up via github or google, so that that I don't have to enter lots of information and remember my password for yet another website.
+
+Alternative:
+#G14# As an Owner, I want to invite an existing user, so that the user can become a member of my publisher.
+#G14# As an owner, I want to invite someone using their email to sign up and become a member of my Publisher, so that that they are authorized to publish data packages under my Publisher.
