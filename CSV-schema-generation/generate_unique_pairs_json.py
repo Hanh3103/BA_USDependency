@@ -52,7 +52,7 @@ def generate_pairs(json_file, csv_file):
     print(len(flat_stories), "stories processed, pairs generated:", len(list(itertools.combinations(flat_stories, 2))))
 
 if __name__ == "__main__":
-    json_file = '_nlp/baseline/g14_baseline.json'  # Path to the JSON file
+    json_file = "_nlp/baseline/g14_baseline.json"  # Path to the JSON file
     csv_file = "output_details/g14-datahub_baseline.csv"  # Output CSV file path
 
      # Ensure the output directory exists if needed
