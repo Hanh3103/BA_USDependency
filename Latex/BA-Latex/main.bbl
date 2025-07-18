@@ -1,0 +1,79 @@
+\begin{thebibliography}{10}
+
+\bibitem{ArulmohanDomainModels}
+Sathurshan Arulmohan, Marie{-}Jean Meurs, and S{\'{e}}bastien Mosser.
+\newblock Extracting domain models from textual requirements in the era of large language models.
+\newblock In {\em {ACM/IEEE} International Conference on Model Driven Engineering Languages and Systems, {MODELS} 2023 Companion, V{\"{a}}ster{\aa}s, Sweden, October 1-6, 2023}, pages 580--587. {IEEE}, 2023.
+
+\bibitem{Femmer2017}
+Henning Femmer, Daniel~Méndez Fernández, Stefan Wagner, and Sebastian Eder.
+\newblock Rapid quality assurance with requirements smells.
+\newblock {\em Journal of Systems and Software}, 123:190--213, 1 2017.
+
+\bibitem{DBLP:journals/ijautcomp/GuanCX24}
+Hui Guan, Guorong Cai, and Hang Xu.
+\newblock Automatic requirement dependency extraction based on integrated active learning strategies.
+\newblock {\em Mach. Intell. Res.}, 21(5):993--1010, 2024.
+
+\bibitem{4}
+Lukas~Sebastian Hofmann, Alexander Lauer, Jens Kosiol, Arno Kesper, Philipp Wieber, Amir Rabieyan, and Gabriele Taentzer.
+\newblock Detecting redundancies between user stories with graphs and large language models.
+
+\bibitem{1}
+Samantha Jim{\'{e}}nez, Arnulfo Alanis, Claudio Beltr{\'{a}}n, Reyes Ju{\'{a}}rez{-}Ram{\'{\i}}rez, Alan Ram{\'{\i}}rez{-}Noriega, and Claudia Tona.
+\newblock {USQA:} {A} user story quality analyzer prototype for supporting software engineering students.
+\newblock {\em Comput. Appl. Eng. Educ.}, 31(4):1014--1024, 2023.
+
+\bibitem{Lai2017}
+Sen-Tarng Lai.
+\newblock A user story quality measurement model for reducing agile software development risk.
+\newblock {\em International Journal of Software Engineering \& Applications (IJSEA)}, 8, 2017.
+
+\bibitem{Leffingwell2009}
+Dean Leffingwell and Pete Behrens.
+\newblock A user story primer.
+\newblock 2009.
+
+\bibitem{DBLP:conf/bpm/LiJFZWZX12}
+Juan Li, D.~Ross Jeffery, Kam~Hay Fung, Liming Zhu, Qing Wang, He~Zhang, and Xiwei Xu.
+\newblock A business process-driven approach for requirements dependency analysis.
+\newblock In Alistair Barros, Avigdor Gal, and Ekkart Kindler, editors, {\em Business Process Management - 10th International Conference, {BPM} 2012, Tallinn, Estonia, September 3-6, 2012. Proceedings}, volume 7481 of {\em Lecture Notes in Computer Science}, pages 200--215. Springer, 2012.
+
+\bibitem{LucassenGrimMethod}
+Garm Lucassen, Fabiano Dalpiaz, Jan Martijn, E~M Van~Der Werf, and Sjaak Brinkkemper.
+\newblock Improving user story practice with the grimm method: A multiple case study in the software industry.
+
+\bibitem{3}
+Garm Lucassen, Fabiano Dalpiaz, Jan Martijn, E~M Van~Der Werf, and Sjaak Brinkkemper.
+\newblock Visualizing user story requirements at multiple granularity levels via semantic relatedness.
+
+\bibitem{LucassenFramework}
+Garm Lucassen, Fabiano Dalpiaz, Jan Martijn E.~M. van~der Werf, and Sjaak Brinkkemper.
+\newblock Improving agile requirements: the quality user story framework and tool.
+\newblock {\em Requir. Eng.}, 21(3):383--403, 2016.
+
+\bibitem{5}
+Garm Lucassen, Marcel Robeer, Fabiano Dalpiaz, Jan Martijn E.~M. van~der Werf, and Sjaak Brinkkemper.
+\newblock Extracting conceptual models from user stories with visual narrator.
+\newblock {\em Requir. Eng.}, 22(3):339--358, 2017.
+
+\bibitem{Motger2024}
+Quim Motger and Xavier Franch.
+\newblock Automated requirements relation extraction.
+\newblock 1 2024.
+
+\bibitem{2}
+Oemer Uludag, Pascal Philipp, Abheeshta Putta, Maria Paasivaara, Casper Lassenius, and Florian Matthes.
+\newblock Revealing the state of the art of large-scale agile development research: A systematic mapping study.
+\newblock {\em Journal of Systems and Software}, 194, 2022.
+
+\bibitem{Xu2023}
+Xiangqian Xu, Yajie Dou, Liwei Qian, Zhiwei Zhang, Yufeng Ma, and Yuejin Tan.
+\newblock A requirement quality assessment method based on user stories.
+\newblock {\em Electronics (Switzerland)}, 12, 5 2023.
+
+\bibitem{ZhangInvestigatingDep}
+He~Zhang, Juan Li, Liming Zhu, Ross Jeffery, Yan Liu, Qing Wang, and Mingshu Li.
+\newblock Investigating dependencies in software requirements for change propagation analysis.
+
+\end{thebibliography}

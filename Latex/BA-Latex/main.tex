@@ -55,7 +55,7 @@
 \date{\today}
 
 \publishers{\textbf{Examiner:} Gabi \\
-\textbf{Advisor:} Lukas}
+    \textbf{Advisor:} Lukas}
 
 \maketitle
 \setcounter{tocdepth}{5}
@@ -75,15 +75,15 @@ Scrum is the widely adopted agile framework\cite{2}. Scrum contains roles, artif
 User stories, which are fundamental for the successful software development, are the starting base of agile frameworks\cite{1}. Shifting-left of the quality check is needed to control software quality in early phases and to increase customer satisfaction.
 
 \section{Quality of User Stories}
-US needs to capture all essential elements of a user requirement. In order to evaluate the quality of USs, many researchers have already defined different quality frameworks to check the quality not only user requirements but also of a US and also a set of USs. 
+US needs to capture all essential elements of a user requirement. In order to evaluate the quality of USs, many researchers have already defined different quality frameworks to check the quality not only user requirements but also of a US and also a set of USs.
 
 Leffingwell et al. defined a set of criteria called INVEST: Independent, Negotiable, Valuable to users or customers, Estimable, Small, and Testable.\cite{Leffingwell2009}
 
 Lai defined three factors for evaluating US quality: Basic Quality (Discussable and Estimable), Management Quality (Controllable and Manageable), and Acceptance Quality (Confirmable). Each factor consists of three metrics, with different weights, and the final quality metric is the weighted sum of all three factors. They also suggested rules for correcting low-quality USs.\cite{Lai2017}
 
-Lucassen et al. presented the Quality User Story (QUS) framework, which is a collection of 14 rules that determine the quality of not only a US but also a set of USs. Using this framework, they developed a tool called AQUSA, which uses NLP techniques to verify some of the QUS criteria automatically \cite{LucassenFramework}. Each quality rule is classified according to three concepts from linguistics: syntactic, semantic, and pragmatic.The QUS framework and the AQUSA tool have been combined into a package called the Grimm Method \cite{LucassenGrimMethod}. 
+Lucassen et al. presented the Quality User Story (QUS) framework, which is a collection of 14 rules that determine the quality of not only a US but also a set of USs. Using this framework, they developed a tool called AQUSA, which uses NLP techniques to verify some of the QUS criteria automatically \cite{LucassenFramework}. Each quality rule is classified according to three concepts from linguistics: syntactic, semantic, and pragmatic.The QUS framework and the AQUSA tool have been combined into a package called the Grimm Method \cite{LucassenGrimMethod}.
 
-Femmer et al. defined low-quality criteria of requirements as "requirement smells" \cite{Femmer2017}, a concept inspired by Code Smells in software engineering. A prototype tool called \textit{Smella} was developed to detect these quality issues automatically. 
+Femmer et al. defined low-quality criteria of requirements as "requirement smells" \cite{Femmer2017}, a concept inspired by Code Smells in software engineering. A prototype tool called \textit{Smella} was developed to detect these quality issues automatically.
 
 Xu et al. \cite{Xu2023} introduced a user requirement quality model, which consists of 6 quality criteria for individual user requirements (Complete, Consistent, Simple, Accurate) and overall user requirements (Robust, Unique, Harmonious). User requirements are represented by USs.
 
@@ -95,7 +95,7 @@ Xu et al. \cite{Xu2023} introduced a user requirement quality model, which consi
 
 2. User Story Quality Assessment Based on Multi-dimensional Perspective: A Preliminary Framework
 
-3. 
+3.
 
 
 \chapter{Fundamentals}
@@ -103,19 +103,19 @@ Xu et al. \cite{Xu2023} introduced a user requirement quality model, which consi
 \subsection{User Story}
 Leffinwell et.al defined in "A User Story Primer" a User Story as "a brief statement of intent that describes something the system needs to do for the user."\cite{Leffingwell2009}
 \begin{defin}
-User story (US) is a user-centric natural language software requirement to describe a software feature. 
-US is semi-structuredly notated when it follows a prescribed format (template). This template helps user stories captures key aspects: \textit{who} wants the functionality, \textit{what} functionality the end-users expect, and optionally why the end-users need this functionality. 
+    User story (US) is a user-centric natural language software requirement to describe a software feature.
+    US is semi-structuredly notated when it follows a prescribed format (template). This template helps user stories captures key aspects: \textit{who} wants the functionality, \textit{what} functionality the end-users expect, and optionally why the end-users need this functionality.
 \end{defin}
-There is no universal template of user stories but the mostly used is the Connextra template \cite{3}: \textit{As a <role>, I want <goal>,[so that <benefit>]"}. Or the other terminology is  This kind of template defines the high-level representation of US. 
+There is no universal template of user stories but the mostly used is the Connextra template \cite{3}: \textit{As a <role>, I want <goal>,[so that <benefit>]"}. Or the other terminology is  This kind of template defines the high-level representation of US.
 For further automatically quality analysis of USs, a more granular blueprint of US's structure is needed.
 \subsection{Conceptual Model}
 Hoffman et.al defined conceptual model like structured representation of user stories (USs) \cite{4}.
 
-This definition is inspired by the informal definitions of Hoffman et.al and Arulmohan et.al. 
+This definition is inspired by the informal definitions of Hoffman et.al and Arulmohan et.al.
 \begin{defin}
-A conceptual model of US captures US in conceptual schema that defines key components of a US and their relationships. The conceptual model can be illustrated by using diagrams such as UML diagrams (e.g. class diagram) in order to describe the relations between entities. 
+    A conceptual model of US captures US in conceptual schema that defines key components of a US and their relationships. The conceptual model can be illustrated by using diagrams such as UML diagrams (e.g. class diagram) in order to describe the relations between entities.
 \end{defin}
-Since the researches of US started, there are some conceptual models derived from the Connextra template. Different level of abstraction can affected the conceptual model of a US.\\   
+Since the researches of US started, there are some conceptual models derived from the Connextra template. Different level of abstraction can affected the conceptual model of a US.\\
 Lucassen et al. had defined a conceptual models with 3 parts of a US, which are ROLE, MEANS, ENDS \cite{5}. Each US has one ROLE, one MEANS, and zero to one ENDS. Each ROLE contains one indicator and one functional role. Each MEANS consists of one subject, one main object, one main verb, and zero to one free form. At last, the ENDS has the similar structure to the MEANS \cite{5}. In other paper of the same authors, they introduced that US contains 4 parts one role, one means, zero or more ends, and one format \cite{LucassenFramework}. The second conceptual model is more detailed. This points out that conceptual model of USs can have different level of abstraction. \\
 Arulmohan et al. also defined a metamodel for backlogs \cite{ArulmohanDomainModels}. A \textit{Backlog} contains one to N \textit{US}, one to N \textit{Persona}, and one to N \textit{Entity}. A \textit{US} consists of one \textit{Persona}, one \textit{Entity}, one \textit{Action} , and zero to one \textit{Benefit}. There are 2 one-side relations: a \texttt{trigger}-relation from \textit{Persona} to \textit{Action} and a \texttt{targets}-relation from \textit{Action} to \textit{Entity}.\\
 Hoffmann et al. adopted introduced metamodel of Arulmohan et al. to define the conceptual model for anotated USs \cite{4}. The conceptual model structures user stories using annotation graphs, defining elements like \textit{Persona, GoalAction, GoalEntity, BenefitAction, and BenefitEntity}. These components are connected by relationships, helping identify strict and semantic redundancies in agile development.\\
@@ -136,11 +136,11 @@ Guan et al. \cite{DBLP:journals/ijautcomp/GuanCX24} proposed an automatic approa
 Some researchers has specifically contributed to this topic but only applied on the USs. \\
 Leffingwell et al. \cite{Leffingwell2009} defined \textit{Independency} in "A User Story Primer" that a US can be developed, tested, and potentially delivered on its own, without being tied to other USs. This allows for more flexibility in prioritization and avoids dependencies that could slow down development. Ideally, each story should bring value on its own and be able to stand alone without requiring the completion of another story beforehand. \\
 Lucassen et al. defined in their framework \textit{Independency} based on the INVEST framework of Leffingwell et al. above. "User Stories should not overlap in concept and should be schedulable and implementable in any order".\cite{LucassenFramework}\\
-So based on the above researches, a definition of independency of a pair of USs is developed. 
+So based on the above researches, a definition of independency of a pair of USs is developed.
 \begin{defin}
     A pair of USs (\begin{math}
         US_{i},US_{j}
-    \end{math}) is called independent if there is no relation in the form of dependent semantic association between them, so that each of them can be implemented, tested for its fulfillment without affecting the other one. 
+    \end{math}) is called independent if there is no relation in the form of dependent semantic association between them, so that each of them can be implemented, tested for its fulfillment without affecting the other one.
 \end{defin}
 For example, \begin{math}
     US_{1} \text{ and } US_{2} \text{ are independent.} \newline
@@ -154,17 +154,17 @@ For example, \begin{math}
 \subsubsection{Requirement dependency types}
 Different papers with different terminology of dependency types in requirements engineering. For example:,
 
-Guan et al. \cite{DBLP:journals/ijautcomp/GuanCX24} developed a terminology that differentiates the six dependency types quote to quote as following: \textit{Notification}, \textit{Arouse}, \textit{Call}, \textit{Conflict},  \textit{Aggregation}, \textit{Similar}. 
+Guan et al. \cite{DBLP:journals/ijautcomp/GuanCX24} developed a terminology that differentiates the six dependency types quote to quote as following: \textit{Notification}, \textit{Arouse}, \textit{Call}, \textit{Conflict},  \textit{Aggregation}, \textit{Similar}.
 
 Motger et.al \cite{Motger2024} introduced 6 relation types, which define how requirements depend on or affect each other. A \textit{Requires} relation means one requirement must be fulfilled before another can proceed, while \textit{Conflicts} shows that one requirement restricts another. If two requirements are mutually exclusive, they \textit{Contradict} each other. \textit{Is\_a\_variant} marks alternative ways to meet the same goal, and \textit{Is\_similar} highlights overlapping content or redundancy. Finally, \textit{Details} means one requirement elaborates on another. These relations help structure requirements clearly, minimizing contradictions and overlaps to apply NLP methods. \\
-Zang et.al \cite{ZhangInvestigatingDep} mentioned that various dependency terminologies has been proposed with different level of abstraction. They points out that there are some problems with existing dependency models that they have overlapping and vague types, some are hard to apply in practice and different users interpret them differently. These issues reduce clarity and usefulness, so the authors proposed a simpler, clearer model with better definitions. Dependencies are classified into 2 broad categories: intrinsic dependencies and additional dependencies. Intrinsic dependencies reflect the essential relationships that exist among requirements and directly impact various software engineering activities and most important they have clear affects at the implementation level, which are \textit{Constrain:} This represents one requirement constraining another, often affecting implementation decisions or crosscutting concerns. \textit{Precede:} This indicates a sequencing relationship where one function must precede another, influencing process flows or control structures in the code. \textit{Be\_similar\_to:} This highlights requirements that share similar data or behavior, often leading to reuse or shared components in implementation. \textit{Refine:} This reflects hierarchical relationships where a higher-level requirement is broken down into more detailed sub-requirements, influencing module or class design. \textit{Be\_exception\_of:} This identifies exception handling scenarios, which are critical for defining error-handling paths in the code. \textit{Conflict:} This shows where the implementation of one requirement may negatively impact another, requiring careful architectural decisions to resolve. 
+Zang et.al \cite{ZhangInvestigatingDep} mentioned that various dependency terminologies has been proposed with different level of abstraction. They points out that there are some problems with existing dependency models that they have overlapping and vague types, some are hard to apply in practice and different users interpret them differently. These issues reduce clarity and usefulness, so the authors proposed a simpler, clearer model with better definitions. Dependencies are classified into 2 broad categories: intrinsic dependencies and additional dependencies. Intrinsic dependencies reflect the essential relationships that exist among requirements and directly impact various software engineering activities and most important they have clear affects at the implementation level, which are \textit{Constrain:} This represents one requirement constraining another, often affecting implementation decisions or crosscutting concerns. \textit{Precede:} This indicates a sequencing relationship where one function must precede another, influencing process flows or control structures in the code. \textit{Be\_similar\_to:} This highlights requirements that share similar data or behavior, often leading to reuse or shared components in implementation. \textit{Refine:} This reflects hierarchical relationships where a higher-level requirement is broken down into more detailed sub-requirements, influencing module or class design. \textit{Be\_exception\_of:} This identifies exception handling scenarios, which are critical for defining error-handling paths in the code. \textit{Conflict:} This shows where the implementation of one requirement may negatively impact another, requiring careful architectural decisions to resolve.
 On the other hand, additional dependencies represent relationships that are introduced by specific software engineering tasks such as product release planning or cost-value trade-off analysis.\\
 Li et.al\cite{DBLP:conf/bpm/LiJFZWZX12} researched and consolidated 23 dependency types into a dependency model, which contains 3 main groups. \texttt{Document-related dependencies} arise from the relationships and structure within requirement documents. \texttt{Value-related dependencies} indicate how the fulfillment of one requirement influences the perceived value or cost of another, helping prioritize requirements in release planning. \texttt{Implementation-related dependencies} focus on how requirements are technically realized and how their implementations depend on each other, particularly relevant for change impact analysis during software design and development phases. The authors decided to narrow the scope to implementation-related dependencies because they wanted to focus on the most impactful and traceable relationships, which are either revealed by BPMN. Five implementation-related dependency types are defined as following: " \begin{itemize}[noitemsep]
-    \item \textit{Constraints:} A requirement can relate to another by being a constraint to the latter. 
+    \item \textit{Constraints:} A requirement can relate to another by being a constraint to the latter.
     \item \textit{Refines:} One requirement can be refinement of another requirement, providing more detailed descriptions for the latter
     \item \textit{Precondition:} Only after one function prescribed by a requirement is finished, or one condition described by the requirement is satisfied, that another function prescribed by a requirement can be performed. Usually precondition reflects the business rules or the sequence relationship between (sub-)processes.
     \item \textit{Satisfies: } This type expresses that if one requirement is implemented in an application, the implementation will also satisfy another requirement.
-    \item \textit{Similar\_to: } The prescription of one requirement is similar to or overlapping with one or more requirements. 
+    \item \textit{Similar\_to: } The prescription of one requirement is similar to or overlapping with one or more requirements.
 \end{itemize} "
 
 \textbf{What we learned to apply to better define user stories dependencies?}
@@ -177,172 +177,174 @@ For dependency management, some common agile project management tools e.g., Jira
 
 % --- Definition:OBD ---
 \begin{defin}[\textbf{Operation-based Dependency (OBD) - Pairwise}]
-Let $U$ be a set of user stories, and let $US_i, US_j \in U$.
+    Let $U$ be a set of user stories, and let $US_i, US_j \in U$.
 
-Let $A(US_i)$ and $A(US_j)$ be the sets of activities associated with $US_i$ and $US_j$, respectively, where each activity $a \in A(US_i)$ (and $b \in A(US_j)$) is defined as a pair:
-\[
-a = (a.\text{Action.name},\ a.\text{Entity.name})
-\qquad
-b = (b.\text{Action.name},\ b.\text{Entity.name})
-\]
-Specifically, \textit{Action} denotes a \emph{GoalAction} and \textit{Entity} denotes a \emph{GoalEntity}.\\
-Define the following:
-\begin{itemize}
-    \item $\operatorname{requires}(a.\text{Action.name}, b.\text{Action.name})$: One operation (e.g., delete, view, share) described in Action.name can only be implemented or executed if other operation (e.g., create, add) has been performed. This expresses a strict dependency where the prerequisite operation provides the necessary existence or state of the entity required for subsequent actions.
-    \item $a.\text{Action.name} \approx b.\text{Action.name}$: Lexical identity or semantic equivalence between \texttt{name}-attributes of Action of $a$ and $b$.
-\end{itemize}
+    Let $A(US_i)$ and $A(US_j)$ be the sets of activities associated with $US_i$ and $US_j$, respectively, where each activity $a \in A(US_i)$ (and $b \in A(US_j)$) is defined as a pair:
+    \[
+        a = (a.\text{Action.name},\ a.\text{Entity.name})
+        \qquad
+        b = (b.\text{Action.name},\ b.\text{Entity.name})
+    \]
+    Specifically, \textit{Action} denotes a \emph{GoalAction} and \textit{Entity} denotes a \emph{GoalEntity}.\\
+    Define the following:
+    \begin{itemize}
+        \item $\operatorname{requires}(a.\text{Action.name}, b.\text{Action.name})$: One operation (e.g., delete, view, share) described in Action.name can only be implemented or executed if other operation (e.g., create, add) has been performed. This expresses a strict dependency where the prerequisite operation provides the necessary existence or state of the entity required for subsequent actions.
+        \item $a.\text{Action.name} \approx b.\text{Action.name}$: Lexical identity or semantic equivalence between \texttt{name}-attributes of Action of $a$ and $b$.
+    \end{itemize}
 
-An \textit{Operation-based Dependency} exists between $US_i$ and $US_j$ \textbf{if and only if}
-\begin{equation*}
-\begin{aligned}
-\exists\, (a, b) \in A(US_i) \times A(US_j):\;\;
-& a.\text{Entity.name} \approx b.\text{Entity.name} \\
-& \land\;\; \operatorname{requires}\big(b.\text{Action.name},\; a.\text{Action.name}\big)
-\end{aligned}
-\end{equation*}
-\textbf{In words: }An \textit{operation-based dependency} between two user stories exists when an operation described in activity (primary action in Goal part only) in one story, such as a CRUD operation (Create, Read, Update, Delete) or another operation like share, view, or export, can only be carried out if the operation described in activity (primary action in Goal part only) in the other story (e.g., create or add) has already been performed on the identical or a semantically equivalent entity. This means the one user story relies on the other one to ensure the necessary existence or state of the entity before its own action can proceed.
+    An \textit{Operation-based Dependency} exists between $US_i$ and $US_j$ \textbf{if and only if}
+    \begin{equation*}
+        \begin{aligned}
+            \exists\, (a, b) \in A(US_i) \times A(US_j):\;\;
+             & a.\text{Entity.name} \approx b.\text{Entity.name}                                       \\
+             & \land\;\; \operatorname{requires}\big(b.\text{Action.name},\; a.\text{Action.name}\big)
+        \end{aligned}
+    \end{equation*}
+    \textbf{In words: }An \textit{operation-based dependency} between two user stories exists when an operation described in activity (primary action in Goal part only) in one story, such as a CRUD operation (Create, Read, Update, Delete) or another operation like share, view, or export, can only be carried out if the operation described in activity (primary action in Goal part only) in the other story (e.g., create or add) has already been performed on the identical or a semantically equivalent entity. This means the one user story relies on the other one to ensure the necessary existence or state of the entity before its own action can proceed.
 \end{defin}
 
 % --- Definition:Sequential Dependency ---
 \begin{defin}[\textbf{Sequential Dependency - Pairwise}]
-Let $U$ be a set of user stories, and let $US_i, US_j \in U$.
+    Let $U$ be a set of user stories, and let $US_i, US_j \in U$.
 
-Let $A(US_i)$ and $A(US_j)$ denote the sets of activities associated with $US_i$ and $US_j$, respectively.  
-Let $R(US_i)$ and $R(US_j)$ denote the sets of reasons associated with $US_i$ and $US_j$, respectively.
+    Let $A(US_i)$ and $A(US_j)$ denote the sets of activities associated with $US_i$ and $US_j$, respectively.
+    Let $R(US_i)$ and $R(US_j)$ denote the sets of reasons associated with $US_i$ and $US_j$, respectively.
 
-Each activity or reason $a \in A(US_i) \cup R(US_i)$ (and $b \in A(US_j) \cup R(US_j)$) is defined as a pair:
-\[
-a = (a.\text{Action.name},\ a.\text{Entity.name})
-\qquad
-b = (b.\text{Action.name},\ b.\text{Entity.name})
-\]
-
-Define the set:
-\[
-S := (A(US_i) \cup R(US_i)) \times (A(US_j) \cup R(US_j))
-\]
-
-
-Define the following predicates:
-\begin{itemize}
-    \item $\operatorname{permits}(a, b)$: One activity or reason establishes a necessary system service, condition, environment, configuration, or infrastructure such that other activity or reason can be meaningfully performed or deployed.
-    \item $\operatorname{OBD}(a, b)$: There exists an Operation-based Dependency between $a$ and $b$ (as previously defined).
-    \item $a \approx b$: $a$ and $b$ are lexically identical or semantically equivalent, i.e., both pairs have \texttt{name}-attributes of both $\text{Action}$ and $\text{Entity}$ that are lexically identical or semantically equivalent; that is, \[
-    a.\text{Action.name} \approx b.\text{Action.name} \;\land\; a.\text{Entity.name} \approx b.\text{Entity.name}
+    Each activity or reason $a \in A(US_i) \cup R(US_i)$ (and $b \in A(US_j) \cup R(US_j)$) is defined as a pair:
+    \[
+        a = (a.\text{Action.name},\ a.\text{Entity.name})
+        \qquad
+        b = (b.\text{Action.name},\ b.\text{Entity.name})
     \]
-\end{itemize}
 
-A \textit{Sequential Dependency} exists between $US_i$ and $US_j$ \textbf{if and only if}
-\[
-\begin{aligned}
-&\exists\, (a, b) \in S:\ \\
-&\quad \big[ (a, b) \in A(US_i) \times A(US_j)\;\; \land\;\; \neg \operatorname{OBD}(a, b)\;\; \land\;\; \operatorname{permits}(a, b) \big] \\
-&\quad \oplus \\
-&\quad \big[ (a, b) \in \big( A(US_i) \times R(US_j) \cup R(US_i) \times A(US_j) \big)\;\; \land\;\; \big( a \approx b\ \lor\ \operatorname{permits}(a, b) \big) \big] \\
-&\quad \oplus \\
-&\quad \big[ (a, b) \in R(US_i) \times R(US_j)\;\; \land\;\; \operatorname{permits}(a, b) \big]
-\end{aligned}
-\]
-\textbf{In words: } A \textit{sequential dependency} between two user stories exists when an activity or reason in one story establishes the system conditions, such as services, configurations, or environments, that are necessary for an activity or reason in the other story to be meaningfully carried out. This relationship can occur whether the connection is based on actions, justifications, or both, and applies only if there is not already a more specific operation-based (entity enabling) dependency between them. In other words, sequential dependency describes cases where one story must be completed first to make it possible or logical to implement or perform the other.
+    Define the set:
+    \[
+        S := (A(US_i) \cup R(US_i)) \times (A(US_j) \cup R(US_j))
+    \]
+
+
+    Define the following predicates:
+    \begin{itemize}
+        \item $\operatorname{permits}(a, b)$: One activity or reason establishes a necessary system service, condition, environment, configuration, or infrastructure such that other activity or reason can be meaningfully performed or deployed.
+        \item $\operatorname{OBD}(a, b)$: There exists an Operation-based Dependency between $a$ and $b$ (as previously defined).
+        \item $a \approx b$: $a$ and $b$ are lexically identical or semantically equivalent, i.e., both pairs have \texttt{name}-attributes of both $\text{Action}$ and $\text{Entity}$ that are lexically identical or semantically equivalent; that is, \[
+                  a.\text{Action.name} \approx b.\text{Action.name} \;\land\; a.\text{Entity.name} \approx b.\text{Entity.name}
+              \]
+    \end{itemize}
+
+    A \textit{Sequential Dependency} exists between $US_i$ and $US_j$ \textbf{if and only if}
+    \[
+        \begin{aligned}
+             & \exists\, (a, b) \in S:\                                                                                                                                              \\
+             & \quad \big[ (a, b) \in A(US_i) \times A(US_j)\;\; \land\;\; \neg \operatorname{OBD}(a, b)\;\; \land\;\; \operatorname{permits}(a, b) \big]                            \\
+             & \quad \oplus                                                                                                                                                          \\
+             & \quad \big[ (a, b) \in \big( A(US_i) \times R(US_j) \cup R(US_i) \times A(US_j) \big)\;\; \land\;\; \big( a \approx b\ \lor\ \operatorname{permits}(a, b) \big) \big] \\
+             & \quad \oplus                                                                                                                                                          \\
+             & \quad \big[ (a, b) \in R(US_i) \times R(US_j)\;\; \land\;\; \operatorname{permits}(a, b) \big]
+        \end{aligned}
+    \]
+    \textbf{In words: } A \textit{sequential dependency} between two user stories exists when an activity or reason in one story establishes the system conditions, such as services, configurations, or environments, that are necessary for an activity or reason in the other story to be meaningfully carried out. This relationship can occur whether the connection is based on actions, justifications, or both, and applies only if there is not already a more specific operation-based (entity enabling) dependency between them. In other words, sequential dependency describes cases where one story must be completed first to make it possible or logical to implement or perform the other.
 \end{defin}
 
 
 % --- Definition: Compositional Dependency ---
 \begin{defin} [\textbf{Compositional Dependency - Pairwise}]
-Let $E(US)$ be a set of entities which are introduced or manipulated by user story $US$. \\
-A \textbf{Compositional Dependency} exists between \( US_i \) and \( US_j \) if and only if there exists a pair of entities \( (e_i, e_j) \) such that:
-\begin{align*}
-e_i &\in E(US_i), \\
-e_j &\in E(US_j), \\
-\text{and} \quad \texttt{has-a}(e_i, e_j).
-\end{align*}
-where \texttt{has-a}$(e_i, e_j)$ denotes denotes Meronymy-Holonymy (whole-part) relation, i.e., one of the entity ($e_i \text{ or } e_j$) is a component, attribute, or substructure of another. 
+    Let $E(US)$ be a set of entities which are introduced or manipulated by user story $US$. \\
+    A \textbf{Compositional Dependency} exists between \( US_i \) and \( US_j \) if and only if there exists a pair of entities \( (e_i, e_j) \) such that:
+    \begin{align*}
+        e_i & \in E(US_i), \\
+        e_j & \in E(US_j), \\
+        \text{and} \quad \texttt{has-a}(e_i, e_j).
+    \end{align*}
+    where \texttt{has-a}$(e_i, e_j)$ denotes denotes Meronymy-Holonymy (whole-part) relation, i.e., one of the entity ($e_i \text{ or } e_j$) is a component, attribute, or substructure of another.
 \end{defin}
 
 % --- Definition: Hierarchical Dependency ---
 \begin{defin} [\textbf{Hierarchical Dependency - Pairwise}]
-Let $E(US)$ be a set of entities which are introduced or manipulated by user story $US$.\\ 
-A \textbf{Hierarchical Dependency} exists between \( US_i \) and \( US_j \) if and only if there exists a pair of entities \( (e_i, e_j) \) such that:
-\begin{align*}
-e_i &\in E(US_i), \\
-e_j &\in E(US_j), \\
-\text{and} \quad \texttt{is-a}(e_i, e_j).
-\end{align*}
-where \texttt{is-a}$(e_i, e_j)$ denotes Hyperonym- Hyponym (type-subtype) relation , i.e. one of the entity ($e_i \text{ or } e_j$) is a subtype or specialization of another.  
+    Let $E(US)$ be a set of entities which are introduced or manipulated by user story $US$.\\
+    A \textbf{Hierarchical Dependency} exists between \( US_i \) and \( US_j \) if and only if there exists a pair of entities \( (e_i, e_j) \) such that:
+    \begin{align*}
+        e_i & \in E(US_i), \\
+        e_j & \in E(US_j), \\
+        \text{and} \quad \texttt{is-a}(e_i, e_j).
+    \end{align*}
+    where \texttt{is-a}$(e_i, e_j)$ denotes Hyperonym- Hyponym (type-subtype) relation , i.e. one of the entity ($e_i \text{ or } e_j$) is a subtype or specialization of another.
 \end{defin}
 
 \begin{comment}
 \begin{defin}[\textbf{Alternative Dependency - Pairwise}]
-Let $U$ be a set of user stories, and let $US_i, US_j \in U$.
+    Let $U$ be a set of user stories, and let $US_i, US_j \in U$.
 
-Let $A(US_i)$ and $A(US_j)$ denote the sets of activities associated with $US_i$ and $US_j$, respectively.  
-Let $R(US_i)$ and $R(US_j)$ denote the sets of reasons associated with $US_i$ and $US_j$, respectively.
+    Let $A(US_i)$ and $A(US_j)$ denote the sets of activities associated with $US_i$ and $US_j$, respectively.
+    Let $R(US_i)$ and $R(US_j)$ denote the sets of reasons associated with $US_i$ and $US_j$, respectively.
 
-Each activity or reason $a \in A(US_i) \cup R(US_i)$ (and $b \in A(US_j) \cup R(US_j)$) is defined as a pair:
-\[
-a = (\text{Action},\ \text{Entity}), \qquad
-b = (\text{Action},\ \text{Entity})
-\]
+    Each activity or reason $a \in A(US_i) \cup R(US_i)$ (and $b \in A(US_j) \cup R(US_j)$) is defined as a pair:
+    \[
+        a = (\text{Action},\ \text{Entity}), \qquad
+        b = (\text{Action},\ \text{Entity})
+    \]
 
-Define the set:
-\[
-S := \big(A(US_i) \cup R(US_i)\big) \times \big(A(US_j) \cup R(US_j)\big)
-\]
+    Define the set:
+    \[
+        S := \big(A(US_i) \cup R(US_i)\big) \times \big(A(US_j) \cup R(US_j)\big)
+    \]
 
-Let $C(US_i)$ and $C(US_j)$ denote the sets of \texttt{contains}-edges for $US_i$ and $US_j$,  
-where each \texttt{contains}-edge is a pair of entities $(c, e)$, with $c$ as a filler for $e$.
+    Let $C(US_i)$ and $C(US_j)$ denote the sets of \texttt{contains}-edges for $US_i$ and $US_j$,
+    where each \texttt{contains}-edge is a pair of entities $(c, e)$, with $c$ as a filler for $e$.
 
-Define the predicates:
-\begin{itemize}
-    \item $\approx$: denotes \emph{lexical identity or semantic equivalence} between entity \texttt{name} - attributes.
-    \item $\operatorname{alternative}(c_i, c_j)$: is true if $c_i \neq c_j$ (i.e., $c_i$ and $c_j$ are different options, which are on the same level).
-\end{itemize}
+    Define the predicates:
+    \begin{itemize}
+        \item $\approx$: denotes \emph{lexical identity or semantic equivalence} between entity \texttt{name} - attributes.
+        \item $\operatorname{alternative}(c_i, c_j)$: is true if $c_i \neq c_j$ (i.e., $c_i$ and $c_j$ are different options, which are on the same level).
+    \end{itemize}
 
-There exists an \textbf{Alternative Dependency} between $US_i$ and $US_j$ if and only if:
-\[
-\begin{aligned}
-&\exists\, (a, b) \in S,\;
-      (c_i, a.\text{Entity}) \in C(US_i),\;
-      (c_j, b.\text{Entity}) \in C(US_j) : \\
-&\hspace{3em}
-a.\text{Action.name} = b.\text{Action.name}
-\;\wedge\;
-a.\text{Entity.name} \approx b.\text{Entity.name}
-\;\wedge\;
-\operatorname{alternative}(c_i, c_j)
-\end{aligned}
-\]
+    There exists an \textbf{Alternative Dependency} between $US_i$ and $US_j$ if and only if:
+    \[
+        \begin{aligned}
+             & \exists\, (a, b) \in S,\;
+            (c_i, a.\text{Entity}) \in C(US_i),\;
+            (c_j, b.\text{Entity}) \in C(US_j) : \\
+             & \hspace{3em}
+            a.\text{Action.name} = b.\text{Action.name}
+            \;\wedge\;
+            a.\text{Entity.name} \approx b.\text{Entity.name}
+            \;\wedge\;
+            \operatorname{alternative}(c_i, c_j)
+        \end{aligned}
+    \]
 
-\textbf{In words:} Two user stories are alternatives if they do the same Action (primary / secondary) on the same Entity (e.g., both “import data”),but each story contains a different filler for that entity (e.g., one imports data in Excel, the other in JSON).
+    \textbf{In words:} Two user stories are alternatives if they do the same Action (primary / secondary) on the same Entity (e.g., both “import data”),but each story contains a different filler for that entity (e.g., one imports data in Excel, the other in JSON).
 \end{defin}
 \end{comment}
 
 \begin{defin}[\textbf{Self Reflect Dependency}]
-Let $U$ be a set of user stories, and let $US \in U$ be a user story.
+    Let $U$ be a set of user stories, and let $US \in U$ be a user story.
 
-Let $A(US)$ be the set of activities associated with $US$, where each activity $a \in A(US)$ is defined as a pair:
-\[
-a = (a.\text{Action.name},\ a.\text{Entity.name})
-\]
-Specifically, \textit{Action} denotes a \emph{GoalAction} and \textit{Entity} denotes a \emph{GoalEntity}.\\
-Define the following:
-\begin{itemize}
-    \item $\operatorname{requires}(a_i.\text{Action.name},\; a_j.\text{Action.name})$: The operation described in the \texttt{name}-attribute of Action of $a_i$ strictly requires prior implementation of the operation described in the \texttt{name}-attribute of Action of $a_j$, \emph{within the same user story}.
-    \item $a_i.\text{Entity.name} \sim a_j.\text{Entity.name}$: There exists a semantic relationship between the \texttt{name}-attributes of Entity of $a_i$ and $a_j$, where $\sim$ indicates any form of semantic relatedness as relevant to the user story context.
-\end{itemize}
+    Let $A(US)$ be the set of activities associated with $US$, where each activity $a \in A(US)$ is defined as a pair:
+    \[
+        a = (a.\text{Action.name},\ a.\text{Entity.name})
+    \]
+    Specifically, \textit{Action} denotes a \emph{GoalAction} and \textit{Entity} denotes a \emph{GoalEntity}.\\
+    Define the following:
+    \begin{itemize}
+        \item $\operatorname{requires}(a_i.\text{Action.name},\; a_j.\text{Action.name})$: The operation described in the \texttt{name}-attribute of Action of $a_i$ strictly requires prior implementation of the operation described in the \texttt{name}-attribute of Action of $a_j$, \emph{within the same user story}.
+        \item $a_i.\text{Entity.name} \sim a_j.\text{Entity.name}$: There exists a semantic relationship between the \texttt{name}-attributes of Entity of $a_i$ and $a_j$, where $\sim$ indicates any form of semantic relatedness as relevant to the user story context.
+    \end{itemize}
 
-A \textbf{Self-Reflect Dependency} exists in $US$ \textbf{if and only if}
-\begin{align*}
-|A(US)| > 1\;\; \land\;\; 
-\exists\, a_i, a_j \in A(US),\; a_i \neq a_j : \quad
-& \big[\, a_i.\text{Entity.name} \sim a_j.\text{Entity.name} \\
-& \quad \land\;\;
-\operatorname{requires}(a_i.\text{Action.name},\; a_j.\text{Action.name})\, \big]
-\end{align*}
+    A \textbf{Self-Reflect Dependency} exists in $US$ \textbf{if and only if}
+
+    \begin{align*}
+        |A(US)| > 1\;\;\land\;\;
+        \exists\, a_i, a_j \in A(US),\; a_i \neq a_j :\quad
+         & \big[\, a_i.\text{Entity.name} \sim a_j.\text{Entity.name} \\
+         & \quad \land\;\;
+            \operatorname{requires}(a_i.\text{Action.name},\; a_j.\text{Action.name})\, \big]
+    \end{align*}
 
 
-\textbf{In words: }A user story exhibits Self-Reflect Dependency if it includes more than one activities (primary actions), and there is at least one pair of activities where one activity is required for the execution or meaning of the other within the same story.
-    
+
+    \textbf{In words: }A user story exhibits Self-Reflect Dependency if it includes more than one activities (primary actions), and there is at least one pair of activities where one activity is required for the execution or meaning of the other within the same story.
+
 \end{defin}
 
 
@@ -361,16 +363,6 @@ A \textbf{Self-Reflect Dependency} exists in $US$ \textbf{if and only if}
 \bibliography{thesis.bib}
 
 
-% Man kann die Bibliographie auch von Hand erstellen......
-% \begin{thebibliography}{1}
-% 
-% \bibitem{Zahlen}
-% H.-D. Ebbinghaus, H.~Hermes, F.~Hirzebruch, M.~Koecher, K.~Mainzer, A.~Prestel,
-%   and R.~Remmert.
-% \newblock {\em Zahlen}, Band 1 von {\em Grundwissen Mathematik}.
-% \newblock Springer-Verlag, Berlin, 1983.
-% 
-% \end{thebibliography}
- 
+
 
 \end{document}

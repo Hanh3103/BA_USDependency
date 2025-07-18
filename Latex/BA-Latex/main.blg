@@ -1,0 +1,57 @@
+This is BibTeX, Version 0.99d (TeX Live 2023/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+The style file: plain.bst
+Database file #1: thesis.bib
+Warning--empty journal in 4
+Warning--empty year in 4
+Warning--empty journal in Leffingwell2009
+Warning--empty journal in LucassenGrimMethod
+Warning--empty year in LucassenGrimMethod
+Warning--empty journal in 3
+Warning--empty year in 3
+Warning--empty journal in Motger2024
+Warning--empty journal in ZhangInvestigatingDep
+Warning--empty year in ZhangInvestigatingDep
+You've used 16 entries,
+            2118 wiz_defined-function locations,
+            587 strings with 7454 characters,
+and the built_in function-call counts, 6132 in all, are:
+= -- 558
+> -- 423
+< -- 3
++ -- 169
+- -- 149
+* -- 502
+:= -- 1070
+add.period$ -- 46
+call.type$ -- 16
+change.case$ -- 121
+chr.to.int$ -- 0
+cite$ -- 26
+duplicate$ -- 192
+empty$ -- 375
+format.name$ -- 149
+if$ -- 1204
+int.to.chr$ -- 0
+int.to.str$ -- 16
+missing$ -- 16
+newline$ -- 79
+num.names$ -- 34
+pop$ -- 128
+preamble$ -- 1
+purify$ -- 105
+quote$ -- 0
+skip$ -- 136
+stack$ -- 0
+substring$ -- 278
+swap$ -- 32
+text.length$ -- 3
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 64
+warning$ -- 10
+while$ -- 48
+width$ -- 18
+write$ -- 161
+(There were 10 warnings)
