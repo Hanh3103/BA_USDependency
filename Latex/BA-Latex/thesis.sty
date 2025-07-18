@@ -1,0 +1,298 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  Paket zur Abschlussarbeiten-Vorlage von  Soenke Rollenske
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{thesis}[2019/01/03 Paket zur Abschlussarbeiten-Vorlage von  Soenke Rollenske]
+
+%Optionen werden ausgef�hrt
+\ProcessOptions
+
+
+% Weitere Pakete werden geladen
+\RequirePackage{amsmath, amssymb, amsthm, amsfonts}
+\RequirePackage[T1]{fontenc}
+\RequirePackage[english]{babel}
+\RequirePackage{booktabs} % zum erstellen angemessener Tabellen.
+\RequirePackage[usenames, dvipsnames]{xcolor} % Farben
+
+\RequirePackage{tikz-cd} % Dies ist fuer ansprechende kommutative Diagramme.
+
+\RequirePackage{tikz}% Bei Bedarf kann man mit tikz gut Grafiken erstellen
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Theoremumgebungen werden definiert
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newtheoremstyle{Lehn-it}% name
+  {}%      Space above
+  {}%      Space below
+  {\itshape}%         Body font
+  {}%         Indent amount (empty = no indent, \parindent = para indent)
+  {\bfseries}% Thm head font
+  {$\;$\textmd{---}}%        Punctuation after thm head
+  { }%     Space after thm head: " " = normal interword space;
+        %       \newline = linebreak
+  {}%         Thm head spec (can be left empty, meaning `normal')
+
+\newtheoremstyle{Lehn-up}% name
+  {}%      Space above
+  {}%      Space below
+  {\upshape}%         Body font
+  {}%         Indent amount (empty = no indent, \parindent = para indent)
+  {\bfseries}% Thm head font
+  {$\;$\textmd{---}}%        Punctuation after thm head
+  { }%     Space after thm head: " " = normal interword space;
+        %       \newline = linebreak
+  {}%         Thm head spec (can be left empty, meaning `normal')
+
+  \newtheoremstyle{up-list}% name
+  {}%      Space above
+  {}%      Space below
+  {\upshape}%         Body font
+  {}%         Indent amount (empty = no indent, \parindent = para indent)
+  {\bfseries}% Thm head font
+  { }%        Punctuation after thm head
+  { }%     Space after thm head: " " = normal interword space;
+        %       \newline = linebreak
+  {}%         Thm head spec (can be left empty, meaning `normal')
+
+
+  
+\newtheoremstyle{Lehn-Bemerkung}% name
+  {}%      Space above
+  {}%      Space below
+  {}%         Body font
+  {}%{\parindent}%         Indent amount (empty = no indent, \parindent = para indent)
+  {\itshape}% Thm head font
+  {$\;$\textmd{---}}%        Punctuation after thm head
+  { }%     Space after thm head: " " = normal interword space;
+        %       \newline = linebreak
+  {}%         Thm head spec (can be left empty, meaning `normal')
+
+
+\newtheoremstyle{citing}% name
+  {}%      Space above, empty = `usual value'
+  {}%      Space below
+  {\itshape}% Body font
+  {}%         Indent amount (empty = no indent, \parindent = para indent)
+  {\bfseries}% Thm head font
+  {$\;$\textmd{---}}%        Punctuation after thm head
+  {.5em}%     Space after thm head: " " = normal interword space;
+        %       \newline = linebreak
+  {\thmnote{#3}}% Thm head spec
+  
+
+  
+  
+% \renewcommand{\thesubsection}{\thesection.\Alph{subsection}} 
+\numberwithin{equation}{chapter}
+
+% Definition von Theoremumgebungen
+% Bei Bedarf eigene hinzufuegen
+
+{\theoremstyle{Lehn-up}
+\newtheorem{thm}{Theorem}[chapter]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{satz}[thm]{Satz}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{kor}[thm]{Korollar}
+\newtheorem{folg}[thm]{Folgerung}
+\newtheorem*{war}{Warnung}
+\newtheorem*{notation}{Notation}
+\newtheorem{defin}[thm]{Definition}}
+
+{\theoremstyle{Lehn-Bemerkung}
+\newtheorem*{bem}{Bemerkung}
+\newtheorem*{bsp}{Beispiel}
+}
+
+{\theoremstyle{up-list}
+\newtheorem{List}[equation]{List}
+}
+
+% Umgebung fuer Zitate (ohne Nummer)
+{\theoremstyle{citing}
+\newtheorem*{custom}{}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Layoutvariablen
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Aufzaehlung mit kleinen roemischen Buchstaben!
+% \renewcommand{\labelenumi}{{\upshape({\itshape\roman{enumi}}\/)}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Abkuerzungen fuer mathematische Symbole und anderes
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Abk�rzungen f�r Umgebungen                  %
+% Pfeile
+\renewcommand{\implies}{\Rightarrow}
+\renewcommand{\iff}{\Leftrightarrow}
+\newcommand{\onto}{\twoheadrightarrow}
+\newcommand{\into}{\hookrightarrow}
+
+%Operatoren und Funktoren
+\DeclareFontFamily{OT1}{rsfs}{}
+\DeclareFontShape{OT1}{rsfs}{n}{it}{<-> rsfs10}{}
+\DeclareMathAlphabet{\curly}{OT1}{rsfs}{n}{it}
+
+\DeclareMathOperator{\Proj}{\mathsf{Proj}}
+\DeclareMathOperator{\Hom}{\mathsf{Hom}}
+\DeclareMathOperator{\Pic}{\mathsf{Pic}}
+\DeclareMathOperator{\Weil}{\mathsf{Weil}}
+\DeclareMathOperator{\CaDiv}{\mathsf{CaDiv}}
+\DeclareMathOperator{\Cl}{\mathsf{Cl}}
+\DeclareMathOperator{\WDivSh}{\mathsf{WDivSh}}
+\DeclareMathOperator{\Alb}{\mathsf{Alb}}
+\DeclareMathOperator{\NS}{\mathsf{NS}}
+
+\DeclareMathOperator{\shom}{\curly{Hom}}
+\DeclareMathOperator{\End}{\mathsf{End}}
+\DeclareMathOperator{\Ext}{\mathsf{Ext}}
+\newcommand{\shext}{\curly{Ext}}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\spec}{\mathsf{Spec}}
+
+\DeclareMathOperator{\rk}{\mathsf{rk}}
+\DeclareMathOperator{\im}{\mathsf{im}}
+\DeclareMathOperator{\coker}{\mathsf{coker}}
+\DeclareMathOperator{\tensor}{\otimes}
+\newcommand{\id}{\mathsf{{id}}}
+
+% Symbole
+% \renewcommand{\bar}[1]{\overline{#1}}
+\newcommand{\isom}{\cong}
+\newcommand{\del}{\partial}
+\newcommand{\delbar}{\overline{\partial}}
+
+\newcommand{\inverse}[1]{{#1}^{-1}}
+
+% greek alphabeth tweaks
+\renewcommand{\epsilon}{\varepsilon}
+\renewcommand{\phi}{\varphi}
+\renewcommand{\theta}{\vartheta}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  Spezielle Namen fuer gewisse Sonderalphabete
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\ka}{{\mathcal A}}
+\newcommand{\kb}{{\mathcal B}}
+\newcommand{\kc}{{\mathcal C}}
+\newcommand{\kd}{{\mathcal D}}
+\newcommand{\ke}{{\mathcal E}}
+\newcommand{\kf}{{\mathcal F}}
+\newcommand{\kg}{{\mathcal G}}
+\newcommand{\kh}{{\mathcal H}}
+\newcommand{\ki}{{\mathcal I}}
+\newcommand{\kj}{{\mathcal J}}
+\newcommand{\kk}{{\mathcal K}}
+\newcommand{\kl}{{\mathcal L}}
+\newcommand{\km}{{\mathcal M}}
+\newcommand{\kn}{{\mathcal N}}
+\newcommand{\ko}{{\mathcal O}}
+\newcommand{\kp}{{\mathcal P}}
+\newcommand{\kq}{{\mathcal Q}}
+\newcommand{\kr}{{\mathcal R}}
+\newcommand{\ks}{{\mathcal S}}
+\newcommand{\kt}{{\mathcal T}}
+\newcommand{\ku}{{\mathcal U}}
+\newcommand{\kv}{{\mathcal V}}
+\newcommand{\kw}{{\mathcal W}}
+\newcommand{\kx}{{\mathcal X}}
+\newcommand{\ky}{{\mathcal Y}}
+\newcommand{\kz}{{\mathcal Z}}
+% Mathbb
+\newcommand{\IA}{{\mathbb A}}
+\newcommand{\IB}{{\mathbb B}}
+\newcommand{\IC}{{\mathbb C}}
+\newcommand{\ID}{{\mathbb D}}
+\newcommand{\IE}{{\mathbb E}}
+\newcommand{\IF}{{\mathbb F}}
+\newcommand{\IG}{{\mathbb G}}
+\newcommand{\IH}{{\mathbb H}}
+\newcommand{\II}{{\mathbb I}}
+%\newcommand{\IJ}{{\mathbb J}}
+\newcommand{\IK}{{\mathbb K}}
+\newcommand{\IL}{{\mathbb L}}
+\newcommand{\IM}{{\mathbb M}}
+\newcommand{\IN}{{\mathbb N}}
+\newcommand{\IO}{{\mathbb O}}
+\newcommand{\IP}{{\mathbb P}}
+\newcommand{\IQ}{{\mathbb Q}}
+\newcommand{\IR}{{\mathbb R}}
+\newcommand{\IS}{{\mathbb S}}
+\newcommand{\IT}{{\mathbb T}}
+\newcommand{\IU}{{\mathbb U}}
+\newcommand{\IV}{{\mathbb V}}
+\newcommand{\IW}{{\mathbb W}}
+\newcommand{\IX}{{\mathbb X}}
+\newcommand{\IY}{{\mathbb Y}}
+\newcommand{\IZ}{{\mathbb Z}}
+% Mathfrak
+\newcommand{\gotha}{{\mathfrak a}}
+\newcommand{\gothb}{{\mathfrak b}}
+\newcommand{\gothc}{{\mathfrak c}}
+\newcommand{\gothd}{{\mathfrak d}}
+\newcommand{\gothe}{{\mathfrak e}}
+\newcommand{\gothf}{{\mathfrak f}}
+\newcommand{\gothg}{{\mathfrak g}}
+\newcommand{\gothh}{{\mathfrak h}}
+\newcommand{\gothi}{{\mathfrak i}}
+\newcommand{\gothj}{{\mathfrak j}}
+\newcommand{\gothk}{{\mathfrak k}}
+\newcommand{\gothl}{{\mathfrak l}}
+\newcommand{\gothm}{{\mathfrak m}}
+\newcommand{\gothn}{{\mathfrak n}}
+\newcommand{\gotho}{{\mathfrak o}}
+\newcommand{\gothp}{{\mathfrak p}}
+\newcommand{\gothq}{{\mathfrak q}}
+\newcommand{\gothr}{{\mathfrak r}}
+\newcommand{\goths}{{\mathfrak s}}
+\newcommand{\gotht}{{\mathfrak t}}
+\newcommand{\gothu}{{\mathfrak u}}
+\newcommand{\gothv}{{\mathfrak v}}
+\newcommand{\gothw}{{\mathfrak w}}
+\newcommand{\gothx}{{\mathfrak x}}
+\newcommand{\gothy}{{\mathfrak y}}
+\newcommand{\gothz}{{\mathfrak z}}
+%
+\newcommand{\gothA}{{\mathfrak A}}
+\newcommand{\gothB}{{\mathfrak B}}
+\newcommand{\gothC}{{\mathfrak C}}
+\newcommand{\gothD}{{\mathfrak D}}
+\newcommand{\gothE}{{\mathfrak E}}
+\newcommand{\gothF}{{\mathfrak F}}
+\newcommand{\gothG}{{\mathfrak G}}
+\newcommand{\gothH}{{\mathfrak H}}
+\newcommand{\gothI}{{\mathfrak I}}
+\newcommand{\gothJ}{{\mathfrak J}}
+\newcommand{\gothK}{{\mathfrak K}}
+\newcommand{\gothL}{{\mathfrak L}}
+\newcommand{\gothM}{{\mathfrak M}}
+\newcommand{\gothN}{{\mathfrak N}}
+\newcommand{\gothO}{{\mathfrak O}}
+\newcommand{\gothP}{{\mathfrak P}}
+\newcommand{\gothQ}{{\mathfrak Q}}
+\newcommand{\gothR}{{\mathfrak R}}
+\newcommand{\gothS}{{\mathfrak S}}
+\newcommand{\gothT}{{\mathfrak T}}
+\newcommand{\gothU}{{\mathfrak U}}
+\newcommand{\gothV}{{\mathfrak V}}
+\newcommand{\gothW}{{\mathfrak W}}
+\newcommand{\gothX}{{\mathfrak X}}
+\newcommand{\gothY}{{\mathfrak Y}}
+\newcommand{\gothZ}{{\mathfrak Z}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\endinput
