@@ -120,11 +120,14 @@ Lucassen et al. had defined a conceptual models with 3 parts of a US, which are 
 Arulmohan et al. also defined a metamodel for backlogs \cite{ArulmohanDomainModels}. A \textit{Backlog} contains one to N \textit{US}, one to N \textit{Persona}, and one to N \textit{Entity}. A \textit{US} consists of one \textit{Persona}, one \textit{Entity}, one \textit{Action} , and zero to one \textit{Benefit}. There are 2 one-side relations: a \texttt{trigger}-relation from \textit{Persona} to \textit{Action} and a \texttt{targets}-relation from \textit{Action} to \textit{Entity}.\\
 Hoffmann et al. adopted introduced metamodel of Arulmohan et al. to define the conceptual model for anotated USs \cite{4}. The conceptual model structures user stories using annotation graphs, defining elements like \textit{Persona, GoalAction, GoalEntity, BenefitAction, and BenefitEntity}. These components are connected by relationships, helping identify strict and semantic redundancies in agile development.\\
 \textbf{What is the advantage of using this conceptual model? Does the conceptual model depend on the dataset?}
-%-----------------------------Inherited notation--------------------------------------------------------
+%-----------------------------Inherited notation--------------------------------------------------------%
 \subsection{Inherited notation and quality definitions of user stories}
 This thesis is an extension of the paper of Hofmann et al. \cite{4}. This bachelor thesis will focus on detecting dependency and independency between USs. These are qualities of a set USs.\\
-\textbf{Define "sematic similarity", "semantic related", "semantic equivalent", "lexical identic"}
 
+\section{Semantic Knowledge}
+
+
+\textbf{Define "sematic similarity", "semantic related", "semantic equivalent", "lexical identic"}
 
 %---------------------------Defintion-------------------------%
 \section{Definition of Dependency and Independency}
@@ -175,7 +178,7 @@ Lucassen et al.\cite{LucassenFramework} emphasized that some dependencies betwee
 For dependency management, some common agile project management tools e.g., Jira, Azure DevOps already integrated some default dependency types (linking). Such as in Jira, there are 4 default types \textit{relates to, duplicates, blocks, clones} \footnote{\emph{Configuring issue linking}, 27.06.2025. \href{https://confluence.atlassian.com/adminjiraserver/configuring-issue-linking-938847862.html?utm_source=chatgpt.com\#Configuringissuelinking-disable}{Jira documentation}}. Azure DevOps also uses 5 common link types: \textit{Affects, Duplicate, Parent/Child, Predecessor/Successor, Related}\footnote{\emph{Reference guide for link types}, 27.06.2025. \href{https://learn.microsoft.com/en-us/azure/devops/boards/queries/link-type-reference?view=azure-devops&utm_source=chatgpt.com}{Azure DevOps Learn}}\\
 \textbf{Only concentrate on functional User Stories, uses notion of Hoffmann to concrete define. Inspiration of xxx}
 
-% --- Definition:OBD ---
+% --- Definition:OBD --------%
 \begin{defin}[\textbf{Operation-based Dependency (OBD) - Pairwise}]
     Let $U$ be a set of user stories, and let $US_i, US_j \in U$.
 
@@ -196,7 +199,7 @@ For dependency management, some common agile project management tools e.g., Jira
     \begin{equation*}
         \begin{aligned}
             \exists\, (a, b) \in A(US_i) \times A(US_j):\;\;
-             & a.\text{Entity.name} \approx b.\text{Entity.name}                                       \\
+             & a.\text{Entity.name} \approx b.\text{Entity.name}\\
              & \land\;\; \operatorname{requires}\big(b.\text{Action.name},\; a.\text{Action.name}\big)
         \end{aligned}
     \end{equation*}
@@ -271,52 +274,7 @@ For dependency management, some common agile project management tools e.g., Jira
     where \texttt{is-a}$(e_i, e_j)$ denotes Hyperonym- Hyponym (type-subtype) relation , i.e. one of the entity ($e_i \text{ or } e_j$) is a subtype or specialization of another.
 \end{defin}
 
-\begin{comment}
-\begin{defin}[\textbf{Alternative Dependency - Pairwise}]
-    Let $U$ be a set of user stories, and let $US_i, US_j \in U$.
-
-    Let $A(US_i)$ and $A(US_j)$ denote the sets of activities associated with $US_i$ and $US_j$, respectively.
-    Let $R(US_i)$ and $R(US_j)$ denote the sets of reasons associated with $US_i$ and $US_j$, respectively.
-
-    Each activity or reason $a \in A(US_i) \cup R(US_i)$ (and $b \in A(US_j) \cup R(US_j)$) is defined as a pair:
-    \[
-        a = (\text{Action},\ \text{Entity}), \qquad
-        b = (\text{Action},\ \text{Entity})
-    \]
-
-    Define the set:
-    \[
-        S := \big(A(US_i) \cup R(US_i)\big) \times \big(A(US_j) \cup R(US_j)\big)
-    \]
-
-    Let $C(US_i)$ and $C(US_j)$ denote the sets of \texttt{contains}-edges for $US_i$ and $US_j$,
-    where each \texttt{contains}-edge is a pair of entities $(c, e)$, with $c$ as a filler for $e$.
-
-    Define the predicates:
-    \begin{itemize}
-        \item $\approx$: denotes \emph{lexical identity or semantic equivalence} between entity \texttt{name} - attributes.
-        \item $\operatorname{alternative}(c_i, c_j)$: is true if $c_i \neq c_j$ (i.e., $c_i$ and $c_j$ are different options, which are on the same level).
-    \end{itemize}
-
-    There exists an \textbf{Alternative Dependency} between $US_i$ and $US_j$ if and only if:
-    \[
-        \begin{aligned}
-             & \exists\, (a, b) \in S,\;
-            (c_i, a.\text{Entity}) \in C(US_i),\;
-            (c_j, b.\text{Entity}) \in C(US_j) : \\
-             & \hspace{3em}
-            a.\text{Action.name} = b.\text{Action.name}
-            \;\wedge\;
-            a.\text{Entity.name} \approx b.\text{Entity.name}
-            \;\wedge\;
-            \operatorname{alternative}(c_i, c_j)
-        \end{aligned}
-    \]
-
-    \textbf{In words:} Two user stories are alternatives if they do the same Action (primary / secondary) on the same Entity (e.g., both “import data”),but each story contains a different filler for that entity (e.g., one imports data in Excel, the other in JSON).
-\end{defin}
-\end{comment}
-
+% --- Definition: Self Reflect Dependency ---
 \begin{defin}[\textbf{Self Reflect Dependency}]
     Let $U$ be a set of user stories, and let $US \in U$ be a user story.
 
