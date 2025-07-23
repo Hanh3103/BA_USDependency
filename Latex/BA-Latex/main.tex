@@ -18,7 +18,9 @@
 \usepackage{enumitem}
 \usepackage{hyperref}
 \usepackage{comment}
-% 
+\usepackage{tikz}
+\usepackage{pgf-umlcd} % Dies ist fuer ansprechende UML-Diagramme.
+%
 
 \usepackage{booktabs} % zum erstellen angemessener Tabellen.
 \usepackage[usenames, dvipsnames]{xcolor} % Farben
@@ -101,7 +103,7 @@ Xu et al. \cite{Xu2023} introduced a user requirement quality model, which consi
 \chapter{Fundamentals}
 \section{User Story and its conceptual model}
 \subsection{User Story}
-Leffinwell et.al defined in "A User Story Primer" a User Story as "a brief statement of intent that describes something the system needs to do for the user."\cite{Leffingwell2009}
+Leffinwell et al. defined in "A User Story Primer" a User Story as "a brief statement of intent that describes something the system needs to do for the user."\cite{Leffingwell2009}
 \begin{defin}
     User story (US) is a user-centric natural language software requirement to describe a software feature.
     US is semi-structuredly notated when it follows a prescribed format (template). This template helps user stories captures key aspects: \textit{who} wants the functionality, \textit{what} functionality the end-users expect, and optionally why the end-users need this functionality.
@@ -109,20 +111,57 @@ Leffinwell et.al defined in "A User Story Primer" a User Story as "a brief state
 There is no universal template of user stories but the mostly used is the Connextra template \cite{3}: \textit{As a <role>, I want <goal>,[so that <benefit>]"}. Or the other terminology is  This kind of template defines the high-level representation of US.
 For further automatically quality analysis of USs, a more granular blueprint of US's structure is needed.
 \subsection{Conceptual Model}
-Hoffman et.al defined conceptual model like structured representation of user stories (USs) \cite{4}.
+Hofmann et al. defined conceptual model like structured representation of user stories (USs) \cite{4}.
 
-This definition is inspired by the informal definitions of Hoffman et.al and Arulmohan et.al.
+This definition is inspired by the informal definitions of Hofmann et al. and Arulmohan et al.
 \begin{defin}
     A conceptual model of US captures US in conceptual schema that defines key components of a US and their relationships. The conceptual model can be illustrated by using diagrams such as UML diagrams (e.g. class diagram) in order to describe the relations between entities.
 \end{defin}
 Since the researches of US started, there are some conceptual models derived from the Connextra template. Different level of abstraction can affected the conceptual model of a US.\\
 Lucassen et al. had defined a conceptual models with 3 parts of a US, which are ROLE, MEANS, ENDS \cite{5}. Each US has one ROLE, one MEANS, and zero to one ENDS. Each ROLE contains one indicator and one functional role. Each MEANS consists of one subject, one main object, one main verb, and zero to one free form. At last, the ENDS has the similar structure to the MEANS \cite{5}. In other paper of the same authors, they introduced that US contains 4 parts one role, one means, zero or more ends, and one format \cite{LucassenFramework}. The second conceptual model is more detailed. This points out that conceptual model of USs can have different level of abstraction. \\
 Arulmohan et al. also defined a metamodel for backlogs \cite{ArulmohanDomainModels}. A \textit{Backlog} contains one to N \textit{US}, one to N \textit{Persona}, and one to N \textit{Entity}. A \textit{US} consists of one \textit{Persona}, one \textit{Entity}, one \textit{Action} , and zero to one \textit{Benefit}. There are 2 one-side relations: a \texttt{trigger}-relation from \textit{Persona} to \textit{Action} and a \texttt{targets}-relation from \textit{Action} to \textit{Entity}.\\
-Hoffmann et al. adopted introduced metamodel of Arulmohan et al. to define the conceptual model for anotated USs \cite{4}. The conceptual model structures user stories using annotation graphs, defining elements like \textit{Persona, GoalAction, GoalEntity, BenefitAction, and BenefitEntity}. These components are connected by relationships, helping identify strict and semantic redundancies in agile development.\\
+Hofmann et al. adopted introduced metamodel of Arulmohan et al. to define the conceptual model for anotated USs \cite{4}. The conceptual model structures user stories using annotation graphs, defining elements like \textit{Persona, GoalAction, GoalEntity, BenefitAction, and BenefitEntity}. These components are connected by relationships, helping identify strict and semantic redundancies in agile development.\\
 \textbf{What is the advantage of using this conceptual model? Does the conceptual model depend on the dataset?}
 %-----------------------------Inherited notation--------------------------------------------------------%
 \subsection{Inherited notation and quality definitions of user stories}
-This thesis is an extension of the paper of Hofmann et. al \cite{4}. This bachelor thesis will focus on detecting dependency and independency between USs. These are qualities of a set USs.\\
+This thesis is an extension of the paper of Hofmann et al.\cite{4}. This bachelor thesis will focus on detecting dependency and independency pairwisely between USs. These are qualities of a set USs. The conceptual model of Hofmann et al. is used to to define the anotated USs, as well as the inherited defintions regarding "Annotated User Story" and "Well-formedness"  of Hofmann et al. is used to define depedency types between USs. The inherited definitions and conceptual model is defined as follows:
+
+\begin{tikzpicture}
+    \begin{class}[text  width=3cm]{NamedElement}{0,-1}
+        \attribute{name: EString}
+    \end{class}
+
+    \begin{class}[text width = 2.5 cm]{Persona}{3.5,-1}
+    \end{class}
+    \begin{class}[text width = 2.5 cm]{GoalAction}{7.5,-1}
+    \end{class}
+    \begin{class}[text width = 2.5 cm]{GoalEntity}{11.5,-1}
+    \end{class}
+    \begin{class}[text width = 2.5 cm]{BenefitGoal}{7.5,-3}
+    \end{class}
+    \begin{class}[text width = 2.5 cm]{BenefitEntity}{11.5,-3}
+    \end{class}
+
+    \draw[->] (Persona) --node[sloped ,black ]{} (NamedElement);
+    \draw[->] (GoalAction) --node[sloped ,black ]{} (NamedElement);
+    \draw[->] (GoalEntity) --node[sloped ,black ]{} (NamedElement);
+    \draw[->] (BenefitGoal) --node[above ,sloped ,black ]{} (NamedElement);
+    \draw[->] (BenefitEntity) --node[above ,sloped ,black ]{} (NamedElement);
+
+\end{tikzpicture}
+
+%-----------------------------Inherited notation--------------------------------------------------------%
+\begin{defin}[Annotated User Story] \cite{4}
+    An annotated user story is a user story (US) together with an instance $c$ of the conceptual model from Fig. 1 such that each \textit{name}-attribute of a node of $c$ contains a part of the US text; the instance $c$ is then called the annotation graph of US.
+
+    We call a \textit{targets}-edge together with incident \textit{GoalAction} and \textit{GoalEntity} an activity of the annotated user story and a \textit{targets}-edge together with incident \textit{BenefitAction} and \textit{BenefitEntity} a reason.
+\end{defin}
+\begin{defin}[Well-formedness] \cite{4}
+    An annotated user story is well-formed if it contains at least one activity and at most one reason
+\end{defin}
+
+
+
 
 \section{Semantic Knowledge}
 
@@ -157,10 +196,10 @@ Different papers with different terminology of dependency types in requirements 
 
 Guan et al. \cite{DBLP:journals/ijautcomp/GuanCX24} developed a terminology that differentiates the six dependency types quote to quote as following: \textit{Notification}, \textit{Arouse}, \textit{Call}, \textit{Conflict},  \textit{Aggregation}, \textit{Similar}.
 
-Motger et.al \cite{Motger2024} introduced 6 relation types, which define how requirements depend on or affect each other. A \textit{Requires} relation means one requirement must be fulfilled before another can proceed, while \textit{Conflicts} shows that one requirement restricts another. If two requirements are mutually exclusive, they \textit{Contradict} each other. \textit{Is\_a\_variant} marks alternative ways to meet the same goal, and \textit{Is\_similar} highlights overlapping content or redundancy. Finally, \textit{Details} means one requirement elaborates on another. These relations help structure requirements clearly, minimizing contradictions and overlaps to apply NLP methods. \\
-Zang et.al \cite{ZhangInvestigatingDep} mentioned that various dependency terminologies has been proposed with different level of abstraction. They points out that there are some problems with existing dependency models that they have overlapping and vague types, some are hard to apply in practice and different users interpret them differently. These issues reduce clarity and usefulness, so the authors proposed a simpler, clearer model with better definitions. Dependencies are classified into 2 broad categories: intrinsic dependencies and additional dependencies. Intrinsic dependencies reflect the essential relationships that exist among requirements and directly impact various software engineering activities and most important they have clear affects at the implementation level, which are \textit{Constrain:} This represents one requirement constraining another, often affecting implementation decisions or crosscutting concerns. \textit{Precede:} This indicates a sequencing relationship where one function must precede another, influencing process flows or control structures in the code. \textit{Be\_similar\_to:} This highlights requirements that share similar data or behavior, often leading to reuse or shared components in implementation. \textit{Refine:} This reflects hierarchical relationships where a higher-level requirement is broken down into more detailed sub-requirements, influencing module or class design. \textit{Be\_exception\_of:} This identifies exception handling scenarios, which are critical for defining error-handling paths in the code. \textit{Conflict:} This shows where the implementation of one requirement may negatively impact another, requiring careful architectural decisions to resolve.
+Motger et al. \cite{Motger2024} introduced 6 relation types, which define how requirements depend on or affect each other. A \textit{Requires} relation means one requirement must be fulfilled before another can proceed, while \textit{Conflicts} shows that one requirement restricts another. If two requirements are mutually exclusive, they \textit{Contradict} each other. \textit{Is\_a\_variant} marks alternative ways to meet the same goal, and \textit{Is\_similar} highlights overlapping content or redundancy. Finally, \textit{Details} means one requirement elaborates on another. These relations help structure requirements clearly, minimizing contradictions and overlaps to apply NLP methods. \\
+Zang et al. \cite{ZhangInvestigatingDep} mentioned that various dependency terminologies has been proposed with different level of abstraction. They points out that there are some problems with existing dependency models that they have overlapping and vague types, some are hard to apply in practice and different users interpret them differently. These issues reduce clarity and usefulness, so the authors proposed a simpler, clearer model with better definitions. Dependencies are classified into 2 broad categories: intrinsic dependencies and additional dependencies. Intrinsic dependencies reflect the essential relationships that exist among requirements and directly impact various software engineering activities and most important they have clear affects at the implementation level, which are \textit{Constrain:} This represents one requirement constraining another, often affecting implementation decisions or crosscutting concerns. \textit{Precede:} This indicates a sequencing relationship where one function must precede another, influencing process flows or control structures in the code. \textit{Be\_similar\_to:} This highlights requirements that share similar data or behavior, often leading to reuse or shared components in implementation. \textit{Refine:} This reflects hierarchical relationships where a higher-level requirement is broken down into more detailed sub-requirements, influencing module or class design. \textit{Be\_exception\_of:} This identifies exception handling scenarios, which are critical for defining error-handling paths in the code. \textit{Conflict:} This shows where the implementation of one requirement may negatively impact another, requiring careful architectural decisions to resolve.
 On the other hand, additional dependencies represent relationships that are introduced by specific software engineering tasks such as product release planning or cost-value trade-off analysis.\\
-Li et.al\cite{DBLP:conf/bpm/LiJFZWZX12} researched and consolidated 23 dependency types into a dependency model, which contains 3 main groups. \texttt{Document-related dependencies} arise from the relationships and structure within requirement documents. \texttt{Value-related dependencies} indicate how the fulfillment of one requirement influences the perceived value or cost of another, helping prioritize requirements in release planning. \texttt{Implementation-related dependencies} focus on how requirements are technically realized and how their implementations depend on each other, particularly relevant for change impact analysis during software design and development phases. The authors decided to narrow the scope to implementation-related dependencies because they wanted to focus on the most impactful and traceable relationships, which are either revealed by BPMN. Five implementation-related dependency types are defined. The first, called \textit{Constraints}, exits when a requirement can limit or restrict another.The second,\textit{Refines}, is when a requirements adds more detail to another.The third type, \textit{Precondition}, means something needs to happen first, such as a task being completed or a condition being met, before something else can proceed. This often relfects the order of steps in a process. The fourth type, \textit{Satisfies}, shows that fulfilling one requirement also meets another. Finally, \textit{Similar\_to} is used when a requirement is very much like, or overlaps with, one or more others.
+Li et al.\cite{DBLP:conf/bpm/LiJFZWZX12} researched and consolidated 23 dependency types into a dependency model, which contains 3 main groups. \texttt{Document-related dependencies} arise from the relationships and structure within requirement documents. \texttt{Value-related dependencies} indicate how the fulfillment of one requirement influences the perceived value or cost of another, helping prioritize requirements in release planning. \texttt{Implementation-related dependencies} focus on how requirements are technically realized and how their implementations depend on each other, particularly relevant for change impact analysis during software design and development phases. The authors decided to narrow the scope to implementation-related dependencies because they wanted to focus on the most impactful and traceable relationships, which are either revealed by BPMN. Five implementation-related dependency types are defined. The first, called \textit{Constraints}, exits when a requirement can limit or restrict another.The second,\textit{Refines}, is when a requirements adds more detail to another.The third type, \textit{Precondition}, means something needs to happen first, such as a task being completed or a condition being met, before something else can proceed. This often relfects the order of steps in a process. The fourth type, \textit{Satisfies}, shows that fulfilling one requirement also meets another. Finally, \textit{Similar\_to} is used when a requirement is very much like, or overlaps with, one or more others.
 
 \textbf{What we learned to apply to better define user stories dependencies?}
 
@@ -168,7 +207,7 @@ Li et.al\cite{DBLP:conf/bpm/LiJFZWZX12} researched and consolidated 23 dependenc
 Leffingwell et al. mentioned that many USs have some "natural, sequential dependencies as the product functionality builds, and yet each piece can deliver value independently." \cite{Leffingwell2009}\\
 Lucassen et al.\cite{LucassenFramework} emphasized that some dependencies between USs are "practically impossible" to resolve because, analogous to the coupled system, some USs are linked to each other. They recommended establishing \textbf{explicit} dependencies, which can be solved by using issue tracker tools such as Jira and Azure DevOps. The dependencies of a US should be included as a link in the issue tracker tool. They also defined 2 types of US dependency relation between the two USs : \textit{Causality} and \textit{Superclasses}. A US$_{a}$ is causally depended on US$_{b}$, if the US$_{a}$ is "necessary" for starting development of the US$_{b}$. And a US$_{c}$ is a \textit{superclasses} of the US$_{d}$, when US$_{c}$ is parent of US$_{d}$, which also means that US$_{c}$ contains US$_{d}$. \\
 For dependency management, some common agile project management tools e.g., Jira, Azure DevOps already integrated some default dependency types (linking). Such as in Jira, there are 4 default types \textit{relates to, duplicates, blocks, clones} \footnote{\emph{Configuring issue linking}, 27.06.2025. \href{https://confluence.atlassian.com/adminjiraserver/configuring-issue-linking-938847862.html?utm_source=chatgpt.com\#Configuringissuelinking-disable}{Jira documentation}}. Azure DevOps also uses 5 common link types: \textit{Affects, Duplicate, Parent/Child, Predecessor/Successor, Related}\footnote{\emph{Reference guide for link types}, 27.06.2025. \href{https://learn.microsoft.com/en-us/azure/devops/boards/queries/link-type-reference?view=azure-devops&utm_source=chatgpt.com}{Azure DevOps Learn}}\\
-\textbf{Only concentrate on functional User Stories, uses notion of Hoffmann to concrete define. Inspiration of xxx}
+\textbf{Only concentrate on functional User Stories, uses notion of Hofmann to concrete define. Inspiration of xxx}
 
 % --- Definition:OBD --------%
 \begin{defin}[\textbf{Operation-based Dependency (OBD) - Pairwise}]
