@@ -122,7 +122,7 @@ Hoffmann et al. adopted introduced metamodel of Arulmohan et al. to define the c
 \textbf{What is the advantage of using this conceptual model? Does the conceptual model depend on the dataset?}
 %-----------------------------Inherited notation--------------------------------------------------------%
 \subsection{Inherited notation and quality definitions of user stories}
-This thesis is an extension of the paper of Hofmann et al. \cite{4}. This bachelor thesis will focus on detecting dependency and independency between USs. These are qualities of a set USs.\\
+This thesis is an extension of the paper of Hofmann et. al \cite{4}. This bachelor thesis will focus on detecting dependency and independency between USs. These are qualities of a set USs.\\
 
 \section{Semantic Knowledge}
 
@@ -139,11 +139,9 @@ Guan et al. \cite{DBLP:journals/ijautcomp/GuanCX24} proposed an automatic approa
 Some researchers has specifically contributed to this topic but only applied on the USs. \\
 Leffingwell et al. \cite{Leffingwell2009} defined \textit{Independency} in "A User Story Primer" that a US can be developed, tested, and potentially delivered on its own, without being tied to other USs. This allows for more flexibility in prioritization and avoids dependencies that could slow down development. Ideally, each story should bring value on its own and be able to stand alone without requiring the completion of another story beforehand. \\
 Lucassen et al. defined in their framework \textit{Independency} based on the INVEST framework of Leffingwell et al. above. "User Stories should not overlap in concept and should be schedulable and implementable in any order".\cite{LucassenFramework}\\
-So based on the above researches, a definition of independency of a pair of USs is developed.
-\begin{defin}
-    A pair of USs (\begin{math}
-        US_{i},US_{j}
-    \end{math}) is called independent if there is no relation in the form of dependent semantic association between them, so that each of them can be implemented, tested for its fulfillment without affecting the other one.
+So based on the above researches, a definition of independency between two USs (pairwise) is developed.
+\begin{defin}[\textbf{Independency - Pairwise}]
+    Let $U$ be a set of user stories, and  a pair of USs $US_{i},US_{j}$ in $U$ is called independent if there exists no type of dependency (operation-based, sequential, hierarchical, compositional dependency) between them, so that each of them can be implemented, tested for its fulfillment without affecting the other one.
 \end{defin}
 For example, \begin{math}
     US_{1} \text{ and } US_{2} \text{ are independent.} \newline
@@ -162,13 +160,7 @@ Guan et al. \cite{DBLP:journals/ijautcomp/GuanCX24} developed a terminology that
 Motger et.al \cite{Motger2024} introduced 6 relation types, which define how requirements depend on or affect each other. A \textit{Requires} relation means one requirement must be fulfilled before another can proceed, while \textit{Conflicts} shows that one requirement restricts another. If two requirements are mutually exclusive, they \textit{Contradict} each other. \textit{Is\_a\_variant} marks alternative ways to meet the same goal, and \textit{Is\_similar} highlights overlapping content or redundancy. Finally, \textit{Details} means one requirement elaborates on another. These relations help structure requirements clearly, minimizing contradictions and overlaps to apply NLP methods. \\
 Zang et.al \cite{ZhangInvestigatingDep} mentioned that various dependency terminologies has been proposed with different level of abstraction. They points out that there are some problems with existing dependency models that they have overlapping and vague types, some are hard to apply in practice and different users interpret them differently. These issues reduce clarity and usefulness, so the authors proposed a simpler, clearer model with better definitions. Dependencies are classified into 2 broad categories: intrinsic dependencies and additional dependencies. Intrinsic dependencies reflect the essential relationships that exist among requirements and directly impact various software engineering activities and most important they have clear affects at the implementation level, which are \textit{Constrain:} This represents one requirement constraining another, often affecting implementation decisions or crosscutting concerns. \textit{Precede:} This indicates a sequencing relationship where one function must precede another, influencing process flows or control structures in the code. \textit{Be\_similar\_to:} This highlights requirements that share similar data or behavior, often leading to reuse or shared components in implementation. \textit{Refine:} This reflects hierarchical relationships where a higher-level requirement is broken down into more detailed sub-requirements, influencing module or class design. \textit{Be\_exception\_of:} This identifies exception handling scenarios, which are critical for defining error-handling paths in the code. \textit{Conflict:} This shows where the implementation of one requirement may negatively impact another, requiring careful architectural decisions to resolve.
 On the other hand, additional dependencies represent relationships that are introduced by specific software engineering tasks such as product release planning or cost-value trade-off analysis.\\
-Li et.al\cite{DBLP:conf/bpm/LiJFZWZX12} researched and consolidated 23 dependency types into a dependency model, which contains 3 main groups. \texttt{Document-related dependencies} arise from the relationships and structure within requirement documents. \texttt{Value-related dependencies} indicate how the fulfillment of one requirement influences the perceived value or cost of another, helping prioritize requirements in release planning. \texttt{Implementation-related dependencies} focus on how requirements are technically realized and how their implementations depend on each other, particularly relevant for change impact analysis during software design and development phases. The authors decided to narrow the scope to implementation-related dependencies because they wanted to focus on the most impactful and traceable relationships, which are either revealed by BPMN. Five implementation-related dependency types are defined as following: " \begin{itemize}[noitemsep]
-    \item \textit{Constraints:} A requirement can relate to another by being a constraint to the latter.
-    \item \textit{Refines:} One requirement can be refinement of another requirement, providing more detailed descriptions for the latter
-    \item \textit{Precondition:} Only after one function prescribed by a requirement is finished, or one condition described by the requirement is satisfied, that another function prescribed by a requirement can be performed. Usually precondition reflects the business rules or the sequence relationship between (sub-)processes.
-    \item \textit{Satisfies: } This type expresses that if one requirement is implemented in an application, the implementation will also satisfy another requirement.
-    \item \textit{Similar\_to: } The prescription of one requirement is similar to or overlapping with one or more requirements.
-\end{itemize} "
+Li et.al\cite{DBLP:conf/bpm/LiJFZWZX12} researched and consolidated 23 dependency types into a dependency model, which contains 3 main groups. \texttt{Document-related dependencies} arise from the relationships and structure within requirement documents. \texttt{Value-related dependencies} indicate how the fulfillment of one requirement influences the perceived value or cost of another, helping prioritize requirements in release planning. \texttt{Implementation-related dependencies} focus on how requirements are technically realized and how their implementations depend on each other, particularly relevant for change impact analysis during software design and development phases. The authors decided to narrow the scope to implementation-related dependencies because they wanted to focus on the most impactful and traceable relationships, which are either revealed by BPMN. Five implementation-related dependency types are defined. The first, called \textit{Constraints}, exits when a requirement can limit or restrict another.The second,\textit{Refines}, is when a requirements adds more detail to another.The third type, \textit{Precondition}, means something needs to happen first, such as a task being completed or a condition being met, before something else can proceed. This often relfects the order of steps in a process. The fourth type, \textit{Satisfies}, shows that fulfilling one requirement also meets another. Finally, \textit{Similar\_to} is used when a requirement is very much like, or overlaps with, one or more others.
 
 \textbf{What we learned to apply to better define user stories dependencies?}
 
@@ -192,7 +184,7 @@ For dependency management, some common agile project management tools e.g., Jira
     Define the following:
     \begin{itemize}
         \item $\operatorname{requires}(a.\text{Action.name}, b.\text{Action.name})$: One operation (e.g., delete, view, share) described in Action.name can only be implemented or executed if other operation (e.g., create, add) has been performed. This expresses a strict dependency where the prerequisite operation provides the necessary existence or state of the entity required for subsequent actions.
-        \item $a.\text{Action.name} \approx b.\text{Action.name}$: Lexical identity or semantic equivalence between \texttt{name}-attributes of Action of $a$ and $b$.
+        \item $a.\text{Entity.name} \approx b.\text{Entity.name}$: Lexical identity or semantic equivalence between \texttt{name}-attributes of Entity of $a$ and $b$.
     \end{itemize}
 
     An \textit{Operation-based Dependency} exists between $US_i$ and $US_j$ \textbf{if and only if}
@@ -200,10 +192,10 @@ For dependency management, some common agile project management tools e.g., Jira
         \begin{aligned}
             \exists\, (a, b) \in A(US_i) \times A(US_j):\;\;
              & a.\text{Entity.name} \approx b.\text{Entity.name}\\
-             & \land\;\; \operatorname{requires}\big(b.\text{Action.name},\; a.\text{Action.name}\big)
+             & \land\;\; \operatorname{requires}\big(a.\text{Action.name},\; b.\text{Action.name}\big)
         \end{aligned}
     \end{equation*}
-    \textbf{In words: }An \textit{operation-based dependency} between two user stories exists when an operation described in activity (primary action in Goal part only) in one story, such as a CRUD operation (Create, Read, Update, Delete) or another operation like share, view, or export, can only be carried out if the operation described in activity (primary action in Goal part only) in the other story (e.g., create or add) has already been performed on the identical or a semantically equivalent entity. This means the one user story relies on the other one to ensure the necessary existence or state of the entity before its own action can proceed.
+    \textbf{In words: }An \textit{operation-based dependency} between two user stories exists when an operation described in activity (GoalAction) in one story, such as a CRUD operation like read, delete, update or another operation like share, view, validate or export, can only be carried out if the operation described in activity (GoalAction) in the other story (e.g., create or add) has already been performed on the identical or a semantically equivalent entity (GoalEntity). This means the one user story relies on the other one to ensure the necessary existence or state of the entity before its own action can proceed.
 \end{defin}
 
 % --- Definition:Sequential Dependency ---
@@ -286,23 +278,27 @@ For dependency management, some common agile project management tools e.g., Jira
     Define the following:
     \begin{itemize}
         \item $\operatorname{requires}(a_i.\text{Action.name},\; a_j.\text{Action.name})$: The operation described in the \texttt{name}-attribute of Action of $a_i$ strictly requires prior implementation of the operation described in the \texttt{name}-attribute of Action of $a_j$, \emph{within the same user story}.
-        \item $a_i.\text{Entity.name} \sim a_j.\text{Entity.name}$: There exists a semantic relationship between the \texttt{name}-attributes of Entity of $a_i$ and $a_j$, where $\sim$ indicates any form of semantic relatedness as relevant to the user story context.
+        \item $a_i.\text{Entity.name} \sim a_j.\text{Entity.name}$: There exists a semantic relationship between the \texttt{name}-attributes of Entity of $a_i$ and $a_j$, where $\sim$ indicates a form of semantic relatedness as relevant to the user story context \textbf{except} lexical identity and semantic equivalence(synonym). 
+        \item $a_i.\text{Entity.name} \approx a_j.\text{Entity.name}$: Lexical identity or semantic equivalence between \texttt{name}-attributes of Entity of $a_i$ and $a_j$.
     \end{itemize}
 
     A \textbf{Self-Reflect Dependency} exists in $US$ \textbf{if and only if}
 
     \begin{align*}
-        |A(US)| > 1\;\;\land\;\;
-        \exists\, a_i, a_j \in A(US),\; a_i \neq a_j :\quad
-         & \big[\, a_i.\text{Entity.name} \sim a_j.\text{Entity.name} \\
+        |A(US)| > 1\;\land\;
+        \exists\, a_i, a_j \in A(US)\;:\quad
+         & \big[\, a_i.\text{Entity.name} \approx a_j.\text{Entity.name} \\
          & \quad \land\;\;
-            \operatorname{requires}(a_i.\text{Action.name},\; a_j.\text{Action.name})\, \big]
+            \operatorname{requires}(a_i.\text{Action.name},\; a_j.\text{Action.name})\, \big] \\
+        \oplus 
+        \\
+            & \big[\, a_i.\text{Entity.name} \sim a_j.\text{Entity.name} \\
+            & \quad \land\;\;
+                a_i.\text{Action.name} \approx a_j.\text{Action.name})\, \big]
     \end{align*}
 
 
-
-    \textbf{In words: }A user story exhibits Self-Reflect Dependency if it includes more than one activities (primary actions), and there is at least one pair of activities where one activity is required for the execution or meaning of the other within the same story.
-
+    \textbf{In words: }Self-Reflect Dependency captures internal depedencies within a single user story, where either the \textbf{actions} depend one each other and involve the \textbf{same entity} or the \textbf{entities} are semantically related but not lexically identical or sematically equivalent, while the \textbf{actions} are lexically identical or semantically equivalent. 
 \end{defin}
 
 
