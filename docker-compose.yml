@@ -1,0 +1,8 @@
+services:
+  app:
+    build: ./app
+    ports:
+      - "8000:8000"
+    network_mode: host
+    stdin_open: true
+    tty: true
