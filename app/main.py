@@ -1,12 +1,27 @@
 from fastapi import FastAPI
-from openai import OpenAI
+from fastapi.responses import JSONResponse
+
+from errors import AppError, LLMConnectionError
+from stages.annotation import run as annotation_run
+from stages.ollama_connection import create_chat_completion
 
 app = FastAPI()
 
-client = OpenAI(
-    base_url="http://ollama:11434/v1",
-    api_key="ollama"
-)
+
+@app.exception_handler(LLMConnectionError)
+def llm_connection_error_handler(_, exc: LLMConnectionError):
+    return JSONResponse(
+        status_code=exc.status_code,
+        content=exc.to_dict(),
+    )
+
+
+@app.exception_handler(AppError)
+def app_error_handler(_, exc: AppError):
+    return JSONResponse(
+        status_code=exc.status_code,
+        content=exc.to_dict(),
+    )
 
 @app.get("/")
 def hello():
@@ -14,8 +29,10 @@ def hello():
 
 @app.post("/ask")
 def ask(question: str):
-    response = client.chat.completions.create(
-        model="qwen2.5:0.5b",
-        messages=[{"role": "user", "content": question}]
-    )
+    response = create_chat_completion(messages=[{"role": "user", "content": question}])
     return {"answer": response.choices[0].message.content}
+
+@app.post("/annotate")
+def annotate(user_story: str):
+    annotation = annotation_run(user_story)
+    return {"annotation": annotation}
