@@ -1,0 +1,83 @@
+prompt,user_story,raw,json_valid,parsed,error_type,error
+annotation_v1.txt,"As a shopper, I want to save items to a wishlist so that I can purchase them later.","```json
+{
+  ""Text"": ""As a shopper, I want to save items to a wishlist so that I can purchase them later."",
+  ""Persona"": [""As a shopper"", ""I want to""],
+  ""GoalAction"": [""save"", ""purchase""],
+  ""GoalEntity"": [""items"", ""wishlist""],
+  ""BenefitAction"": [""access"", ""purchase""],
+  ""BenefitEntity"": [""shopping cart"", ""account""],
+  ""triggers"": [[""returning user"", ""log in""], [""returning user"", ""log out""]],
+  ""targets"": [[""shopping cart"", ""account""], [""shopping cart"", ""account""]],
+  ""contains"": [[""wishlist"", ""shopping cart""]]
+}
+```",False,,PromptSchemaValidationError,"Annotation output did not match schema: 1 validation error for AnnotationSchema
+Persona
+  Input should be a valid string [type=string_type, input_value=['As a shopper', 'I want to'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type"
+annotation_v1.txt,"As an admin, I want to export monthly sales reports to CSV so that I can analyze revenue.","{
+  ""Text"": ""As an admin, I want to export monthly sales reports to CSV so that I can analyze revenue."",
+  ""Persona"": [""admin""],
+  ""GoalAction"": [""export"", ""monthly sales reports""],
+  ""GoalEntity"": [""account""],
+  ""BenefitAction"": [""analyze revenue""],
+  ""BenefitEntity"": [""revenue""],
+  ""triggers"": [[""returning admin"", ""log in""], [""returning admin"", ""log out""]],
+  ""targets"": [[""export monthly sales reports"", ""CSV""], [""access"", ""analysis of revenue""]],
+  ""contains"": []
+}",False,,PromptSchemaValidationError,"Annotation output did not match schema: 1 validation error for AnnotationSchema
+Persona
+  Input should be a valid string [type=string_type, input_value=['admin'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type"
+annotation_v1.txt,"As a user, I want to receive push notifications for mentions so that I stay engaged.","```json
+{
+  ""Text"": ""As a user, I want to receive push notifications for mentions so that I stay engaged."",
+  ""Persona"": [""user""],
+  ""GoalAction"": [""receive"", ""push notifications""],
+  ""GoalEntity"": [""mention""],
+  ""BenefitAction"": [""stay engaged""],
+  ""BenefitEntity"": [""user""],
+  ""triggers"": [[""receive"", ""push notifications""]],
+  ""targets"": [[""mention""], [""user""]],
+  ""contains"": []
+}
+```",False,,PromptSchemaValidationError,"Annotation output did not match schema: 1 validation error for AnnotationSchema
+Persona
+  Input should be a valid string [type=string_type, input_value=['user'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type"
+annotation_v1.txt,"As a customer, I want to pay with multiple payment methods so that checkout is convenient.","```json
+{
+  ""Text"": ""As a customer, I want to pay with multiple payment methods so that checkout is convenient."",
+  ""Persona"": [""customer""],
+  ""GoalAction"": [""pay"", ""use multiple payment methods""],
+  ""GoalEntity"": [""payment method""],
+  ""BenefitAction"": [""checkout is convenient""],
+  ""BenefitEntity"": [""payment method""]
+}
+```",False,,PromptSchemaValidationError,"Annotation output did not match schema: 4 validation errors for AnnotationSchema
+Persona
+  Input should be a valid string [type=string_type, input_value=['customer'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+triggers
+  Field required [type=missing, input_value={'Text': 'As a customer, ...ty': ['payment method']}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+targets
+  Field required [type=missing, input_value={'Text': 'As a customer, ...ty': ['payment method']}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+contains
+  Field required [type=missing, input_value={'Text': 'As a customer, ...ty': ['payment method']}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing"
+annotation_v1.txt,"As a user, I want to enable two-factor authentication so that my account is more secure.","{
+  ""Text"": ""As a user, I want to enable two-factor authentication so that my account is more secure."",
+  ""Persona"": [""user""],
+  ""GoalAction"": [""enable"", ""two-factor authentication""],
+  ""GoalEntity"": [""account""],
+  ""BenefitAction"": [""access"", ""maintain""],
+  ""BenefitEntity"": [""travel data"", ""privacy""],
+  ""triggers"": [[""returning user"", ""log in""], [""returning user"", ""log out""]],
+  ""targets"": [[""account"", ""new device""], [""privacy"", ""shared devices""]],
+  ""contains"": []
+}",False,,PromptSchemaValidationError,"Annotation output did not match schema: 1 validation error for AnnotationSchema
+Persona
+  Input should be a valid string [type=string_type, input_value=['user'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type"

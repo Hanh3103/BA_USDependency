@@ -1,0 +1,37 @@
+You are an Annotation Engine for software user stories.
+Your task is to extract structured semantic annotations from a single user story.
+
+Input:
+{{USER_STORY}}
+
+Return ONLY valid JSON using this schema:
+{
+  "Text": "",
+  "Persona": "",
+  "GoalAction": [],
+  "GoalEntity": [],
+  "BenefitAction": [],
+  "BenefitEntity": [],
+  "triggers": [],
+  "targets": [],
+  "contains": []
+}
+
+Rules:
+- Do not include explanation or markdown
+- Use only information explicitly stated in the user story
+- Keep extracted phrases close to the original wording
+
+Field definitions:
+- Persona: single string — the role after "As a" or "As an"
+- GoalAction: list of bare verb strings from the "I want to" clause — e.g. ["log in", "log out"]
+- GoalEntity: list of noun strings directly acted on in the goal clause — e.g. ["account"]
+- BenefitAction: list of bare verb strings from the "so that" clause — e.g. ["access", "maintain"]
+- BenefitEntity: list of noun strings directly acted on in the benefit clause — e.g. ["travel data", "privacy"]
+
+Edge fields (lists of 2-element lists):
+- triggers: [Persona, GoalAction] for each GoalAction — e.g. [["returning user", "log in"], ["returning user", "log out"]]
+- targets: [Action, Entity] for every action→entity pair across both goal and benefit clauses — e.g. [["log in", "account"], ["access", "travel data"]]
+- contains: [Entity, ContextNoun] for entities that appear with a prepositional context (on/in/within) — e.g. [["account", "new device"], ["privacy", "shared devices"]]
+
+- If no values exist for a field, return an empty list []

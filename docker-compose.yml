@@ -7,6 +7,8 @@ services:
     - ollama
     environment:
       - OLLAMA_HOST=http://ollama:11434
+    volumes:
+      - ./app/tools/results:/app/tools/results
 
   ollama:
     image: ollama/ollama:latest

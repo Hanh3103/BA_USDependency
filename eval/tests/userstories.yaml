@@ -1,0 +1,227 @@
+# eval/tests/user_stories.yaml
+
+- vars:
+    USER_STORY: "As a shopper, I want to save items to a wishlist so that I can purchase them later."
+  description: shopper wishlist
+  assert:
+    - type: javascript
+      description: Persona is correct
+      value: JSON.parse(output).Persona === "shopper"
+
+    - type: javascript
+      description: GoalAction correct
+      value: |
+        const p = JSON.parse(output);
+        return p.GoalAction.includes("save");
+
+    - type: javascript
+      description: GoalEntity correct
+      value: |
+        const p = JSON.parse(output);
+        return p.GoalEntity.includes("items");
+
+    - type: javascript
+      description: BenefitAction correct
+      value: |
+        const p = JSON.parse(output);
+        return p.BenefitAction.includes("purchase");
+
+    - type: javascript
+      description: BenefitEntity correct
+      value: |
+        const p = JSON.parse(output);
+        return p.BenefitEntity.some(e => e.includes("item"));
+
+    - type: javascript
+      description: triggers correct
+      value: |
+        const p = JSON.parse(output);
+        return p.triggers.some(t => t[0] === "shopper" && t[1] === "save");
+
+    - type: javascript
+      description: targets correct
+      value: |
+        const p = JSON.parse(output);
+        return p.targets.some(t => t[0] === "save" && t[1].includes("items")) && p.targets.some(t => t[0] === "purchase" && t[1].includes("items"));
+    
+    - type: javascript
+      description: contains correct
+      value: |
+        const p = JSON.parse(output);
+        return p.contains.some(c => c[0] === "items" && c[1] === "a whishlist"));
+
+- vars:
+    USER_STORY: "As an admin, I want to export monthly sales reports to CSV so that I can analyze revenue."
+  description: admin export
+  assert:
+    - type: javascript
+      description: Persona is correct
+      value: JSON.parse(output).Persona === "admin"
+
+    - type: javascript
+      description: GoalAction correct
+      value: |
+        const p = JSON.parse(output);
+        return p.GoalAction.includes("export");
+
+    - type: javascript
+      description: GoalEntity correct
+      value: |
+        const p = JSON.parse(output);
+        return p.GoalEntity.some(e => e.includes("report") || e.includes("sales")) || e.includes("sales report") || e.includes("monthly sales report");
+
+    - type: javascript
+      description: BenefitAction correct
+      value: |
+        const p = JSON.parse(output);
+        return p.BenefitAction.includes("analyze");
+
+    - type: javascript
+      description: BenefitEntity correct
+      value: |
+        const p = JSON.parse(output);
+        return p.BenefitEntity.includes("revenue");
+
+    - type: javascript
+      description: triggers correct
+      value: |
+        const p = JSON.parse(output);
+        return p.triggers.some(t => t[0] === "admin" && t[1] === "export");
+
+    - type: javascript
+      description: targets correct
+      value: |
+        const p = JSON.parse(output);
+        return (p.targets.some(t => t[0] === "export" && t[1].includes("report")) || p.targets.some(t => t[0] === "export" && t[1].includes("sales report")) || p.targets.some(t => t[0] === "export" && t[1].includes("monthly sales report"))) && p.targets.some(t => t[0] === "analyze" && t[1].includes("revenue"));
+
+    - type: javascript
+      description: No contains when no prepositional context
+      value: |
+        const p = JSON.parse(output);
+        return p.contains.length === 0;
+
+- vars:
+    USER_STORY: "As a user, I want to receive push notifications for mentions so that I stay engaged."
+  description: user notifications
+  assert:
+    - type: javascript
+      description: Persona is correct
+      value: JSON.parse(output).Persona === "user"
+
+    - type: javascript
+      description: GoalAction correct
+      value: |
+        const p = JSON.parse(output);
+        return p.GoalAction.includes("receive");
+
+    - type: javascript
+      description: GoalEntity correct
+      value: |
+        const p = JSON.parse(output);
+        return p.GoalEntity.some(e => e.includes("notifications") || e.includes("push notificatons") || e.includes("notification"));
+
+    - type: javascript
+      description: BenefitAction correct
+      value: |
+        const p = JSON.parse(output);
+        return p.BenefitAction.some(a => a.includes("stay engaged"));
+
+    - type: javascript
+      description: No contains when no prepositional context
+      value: |
+        const p = JSON.parse(output);
+        return p.contains.length === 0;
+
+- vars:
+    USER_STORY: "As a customer, I want to pay with multiple payment methods so that checkout is convenient."
+  description: customer payment
+  assert:
+    - type: javascript
+      description: Persona is correct
+      value: JSON.parse(output).Persona === "customer"
+
+    - type: javascript
+      description: GoalAction correct
+      value: |
+        const p = JSON.parse(output);
+        return p.GoalAction.includes("pay");
+
+    - type: javascript
+      description: GoalEntity correct
+      value: |
+        const p = JSON.parse(output);
+        return p.GoalEntity.some(e => e.includes("methods") || e.includes("payment methods") || e.includes("multiple payment methods"));
+    
+    - type: javascript
+      description: BenefitAction correct
+      value: |
+        const p = JSON.parse(output);
+        return p.BenefitAction.length === 0 
+
+    - type: javascript
+      description: BenefitEntity correct
+      value: |
+        const p = JSON.parse(output);
+        return p.BenefitEntity.some(e => e.includes("checkout"));
+
+    - type: javascript
+      description: triggers correct
+      value: |
+        const p = JSON.parse(output);
+        return p.triggers.some(t => t[0] === "customer" && t[1] === "pay");
+
+    - type: javascript
+      description: targets correct
+      value: |
+        const p = JSON.parse(output);
+        return p.targets.some(t => t[0] === "pay" && t[1].includes("methods"));
+
+    - type: javascript
+      description: No contains when no prepositional context
+      value: |
+        const p = JSON.parse(output);
+        return p.contains.length === 0;
+
+- vars:
+    USER_STORY: "As a user, I want to enable two-factor authentication so that my account is more secure."
+  description: user 2FA
+  assert:
+    - type: javascript
+      description: Persona is correct
+      value: JSON.parse(output).Persona === "user"
+
+    - type: javascript
+      description: GoalAction correct
+      value: |
+        const p = JSON.parse(output);
+        return p.GoalAction.includes("enable");
+
+    - type: javascript
+      description: GoalEntity correct
+      value: |
+        const p = JSON.parse(output);
+        return p.GoalEntity.some(e => e.includes("authentication") || e.includes("two-factor authentication"));
+
+    - type: javascript
+      description: BenefitAction correct
+      value: |
+        const p = JSON.parse(output);
+        return p.BenefitAction.length === 0;
+        
+    - type: javascript
+      description: BenefitEntity correct
+      value: |
+        const p = JSON.parse(output);
+        return p.BenefitEntity.includes("account") || p.BenefitEntity.includes("my account");
+
+    - type: javascript
+      description: triggers correct
+      value: |
+        const p = JSON.parse(output);
+        return p.triggers.some(t => t[0] === "user" && t[1] === "enable");
+
+    - type: javascript
+      description: targets includes account
+      value: |
+        const p = JSON.parse(output);
+        return p.targets.some(t => t[0] === "enable" && t[1].includes("authentication")) || p.targets.some(t => t[0] === "enable" && t[1].includes("two-factor authentication"));
