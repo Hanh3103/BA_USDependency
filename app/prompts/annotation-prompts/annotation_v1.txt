@@ -12,9 +12,9 @@ Return ONLY valid JSON using this schema:
   "GoalEntity": [],
   "BenefitAction": [],
   "BenefitEntity": [],
-  "triggers": [],
-  "targets": [],
-  "contains": []
+  "triggers": [[]],
+  "targets": [[]],
+  "contains": [[]]
 }
 
 Rules:
