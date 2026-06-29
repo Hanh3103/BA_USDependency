@@ -7,7 +7,7 @@ Input:
 Return ONLY valid JSON using this schema:
 {
   "Text": "",
-  "Persona": "",
+  "Persona": [],
   "GoalAction": [],
   "GoalEntity": [],
   "BenefitAction": [],

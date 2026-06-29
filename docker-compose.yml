@@ -9,6 +9,7 @@ services:
       - OLLAMA_HOST=http://ollama:11434
     volumes:
       - ./app/tools/results:/app/tools/results
+      - ./app/test_files:/app/test_files
 
   ollama:
     image: ollama/ollama:latest

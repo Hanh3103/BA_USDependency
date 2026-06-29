@@ -6,7 +6,7 @@ from errors.llm_errors import LLMConnectionError
 
 BASE_URL = "http://ollama:11434/v1"
 API_KEY = "ollama"
-MODEL = ["qwen2.5:0.5b", "llama3:0.5b", "gemini-1.5-pro:0.5b"]
+MODEL = ["qwen2.5:0.5b", "llama3.2:1b"]
 
 
 @lru_cache(maxsize=1)

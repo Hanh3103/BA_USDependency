@@ -10,7 +10,7 @@ from errors.app_error import AppError
 from schemas.annotation_schema import AnnotationSchema
 
 
-_prompt_path = Path(__file__).parent.parent / "prompts" / "annotation-prompts" / "annotation.txt"
+_prompt_path = Path(__file__).parent.parent / "prompts" / "annotation-prompts" / "annotation_v1.txt"
 SYSTEM_PROMPT = _prompt_path.read_text()
 
 
@@ -45,3 +45,39 @@ def run(user_story: str) -> Dict:
         raise AppError(f"Annotation output did not match schema: {exc}") from exc
 
     return validated.dict()
+
+def annotate(user_story: str, story_id: str, max_retries: int = 2) -> Dict | None:
+    for attempt in range(max_retries):
+        try:
+            annotation = run(user_story)
+            annotation["id"] = story_id
+            return annotation
+        except AppError as e:
+            print(f"  ⚠ Attempt {attempt + 1} failed for {story_id}: {e}")
+    print(f"  ✗ Skipping {story_id} after {max_retries} attempts")
+    return None
+
+
+if __name__ == "__main__":
+    from utils.file_parser import load_stories
+    stories = load_stories("test_files/user_stories.txt")
+
+    results = []
+
+    for i, story in enumerate(stories):
+        story_id = f"US-{i+1:02d}"
+        print(f"  Annotating {story_id}...")
+        annotation = annotate(story, story_id)
+        if annotation:
+            results.append(annotation)
+    
+    output_path = "annotated_stories.json"
+    with open(output_path, "w") as f:
+        json.dump(results, f, indent=2)
+
+    print(f"\nDone.")
+    print(f"  Annotated  : {len(results)} stories")
+    print(f"  Saved to   : {output_path}")
+
+
+
