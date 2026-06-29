@@ -4,9 +4,10 @@ from openai import APIConnectionError, APITimeoutError, OpenAI
 
 from errors.llm_errors import LLMConnectionError
 
-BASE_URL = "http://ollama:11434/v1"
+#BASE_URL = "http://ollama:11434/v1"  # this line for docker
+BASE_URL = "https://localhost:11434/v1"
 API_KEY = "ollama"
-MODEL = ["qwen2.5:0.5b", "llama3.2:1b"]
+MODEL = ["qwen2.5:3b", "llama3.2:3b"]
 
 
 @lru_cache(maxsize=1)

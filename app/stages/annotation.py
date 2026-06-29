@@ -60,7 +60,7 @@ def annotate(user_story: str, story_id: str, max_retries: int = 2) -> Dict | Non
 
 if __name__ == "__main__":
     from utils.file_parser import load_stories
-    stories = load_stories("test_files/user_stories.txt")
+    stories = load_stories("app/test_files/user_stories.txt")
 
     results = []
 
@@ -71,7 +71,7 @@ if __name__ == "__main__":
         if annotation:
             results.append(annotation)
     
-    output_path = "annotated_stories.json"
+    output_path = "app/tools/results/annotated_stories.json"
     with open(output_path, "w") as f:
         json.dump(results, f, indent=2)
 
