@@ -1,0 +1,235 @@
+[
+  {
+    "Text": "As a new user, I want to sign up using my email or an existing Google/Apple account, so that my saved spots and trips are securely stored and synced across my devices.",
+    "Persona": [
+      "new user"
+    ],
+    "GoalAction": [
+      "sign up"
+    ],
+    "GoalEntity": [],
+    "BenefitAction": [
+      "store",
+      "sync"
+    ],
+    "BenefitEntity": [
+      "saved spots",
+      "trips",
+      "devices"
+    ],
+    "triggers": [
+      [
+        "new user",
+        "sign up"
+      ]
+    ],
+    "targets": [
+      [
+        "sign up",
+        ""
+      ],
+      [
+        "store",
+        "saved spots"
+      ],
+      [
+        "store",
+        "trips"
+      ],
+      [
+        "sync",
+        "spots and trips"
+      ],
+      [
+        "sync",
+        "devices"
+      ]
+    ],
+    "contains": [
+      [
+        "spots and trips",
+        "my devices"
+      ]
+    ],
+    "id": "US-01"
+  },
+  {
+    "Text": "As a returning user, I want to log in my account on a new device and log out when I'm finished, so that I can access my travel data safely and maintain privacy on shared devices.",
+    "Persona": [
+      "returning user"
+    ],
+    "GoalAction": [
+      "log in",
+      "log out"
+    ],
+    "GoalEntity": [],
+    "BenefitAction": [
+      "access",
+      "maintain"
+    ],
+    "BenefitEntity": [
+      "travel data",
+      "privacy"
+    ],
+    "triggers": [
+      [
+        "returning user",
+        "log in"
+      ],
+      [
+        "returning user",
+        "log out"
+      ]
+    ],
+    "targets": [
+      [
+        "log in",
+        "account"
+      ],
+      [
+        "access",
+        "travel data"
+      ]
+    ],
+    "contains": [
+      [
+        "privacy",
+        "shared devices"
+      ]
+    ],
+    "id": "US-02"
+  },
+  {
+    "Text": "As a user, I want to walk through a short, guided tutorial that demonstrates how to import a spot, create a list, and generate an itinerary, so that I can understand the app's core workflow without reading external documentation.",
+    "Persona": [
+      "user"
+    ],
+    "GoalAction": [
+      "walk through",
+      "demonstrate",
+      "create",
+      "generate"
+    ],
+    "GoalEntity": [
+      "tutorial",
+      "spot",
+      "list",
+      "itinerary"
+    ],
+    "BenefitAction": [
+      "understand"
+    ],
+    "BenefitEntity": [
+      "workflow"
+    ],
+    "triggers": [
+      [
+        "user",
+        "walk through"
+      ]
+    ],
+    "targets": [
+      [
+        "walk through",
+        "tutorial"
+      ],
+      [
+        "demonstrate",
+        "import a spot"
+      ],
+      [
+        "create",
+        "a list"
+      ],
+      [
+        "generate",
+        "an itinerary"
+      ],
+      [
+        "understand",
+        "the app's core workflow"
+      ]
+    ],
+    "contains": [],
+    "id": "US-03"
+  },
+  {
+    "Text": "As a traveler, I want to import a location from a saved TikTok or Instagram video with a single tap, so that I can quickly capture travel inspiration without manually typing details.",
+    "Persona": [
+      "traveler"
+    ],
+    "GoalAction": [
+      "import location"
+    ],
+    "GoalEntity": [
+      "location"
+    ],
+    "BenefitAction": [
+      "capture",
+      "inspiration"
+    ],
+    "BenefitEntity": [
+      "details"
+    ],
+    "triggers": [
+      [
+        "traveler",
+        "import location"
+      ]
+    ],
+    "targets": [
+      [
+        "import",
+        "location"
+      ]
+    ],
+    "contains": [],
+    "id": "US-04"
+  },
+  {
+    "Text": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth.",
+    "Persona": [
+      "traveler"
+    ],
+    "GoalAction": [
+      "add spot"
+    ],
+    "GoalEntity": [],
+    "BenefitAction": [
+      "save",
+      "discover"
+    ],
+    "BenefitEntity": [
+      "places",
+      "blogs",
+      "word-of-mouth"
+    ],
+    "triggers": [
+      [
+        "traveler",
+        "add spot"
+      ]
+    ],
+    "targets": [
+      [
+        "add spot",
+        "spot"
+      ],
+      [
+        "save",
+        "places"
+      ],
+      [
+        "discover",
+        "places"
+      ]
+    ],
+    "contains": [
+      [
+        "places",
+        "social media"
+      ]
+    ],
+    "id": "US-05"
+  }
+]
