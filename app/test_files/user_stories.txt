@@ -2,4 +2,4 @@ As a new user, I want to sign up using my email or an existing Google/Apple acco
 As a returning user, I want to log in my account on a new device and log out when I'm finished, so that I can access my travel data safely and maintain privacy on shared devices.
 As a user, I want to walk through a short, guided tutorial that demonstrates how to import a spot, create a list, and generate an itinerary, so that I can understand the app's core workflow without reading external documentation.
 As a traveler, I want to import a location from a saved TikTok or Instagram video with a single tap, so that I can quickly capture travel inspiration without manually typing details.
-As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word‑of‑mouth.
+As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth.

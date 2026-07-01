@@ -5,7 +5,7 @@ from openai import APIConnectionError, APITimeoutError, OpenAI
 from errors.llm_errors import LLMConnectionError
 
 #BASE_URL = "http://ollama:11434/v1"  # this line for docker
-BASE_URL = "https://localhost:11434/v1"
+BASE_URL = "http://localhost:11434/v1"
 API_KEY = "ollama"
 MODEL = ["qwen2.5:3b", "llama3.2:3b"]
 
@@ -18,7 +18,7 @@ def get_openai_client() -> OpenAI:
     )
 
 
-def create_chat_completion(*, messages, temperature: float = 0.1, model: str = MODEL[0]):
+def create_chat_completion(*, messages, temperature: float = 0.0, model: str = MODEL[0]):
     try:
         return get_openai_client().chat.completions.create(
             model=model,
