@@ -3,7 +3,7 @@ from fastapi.responses import JSONResponse
 
 from errors import AppError, LLMConnectionError
 from stages.annotation import run as annotation_run
-from stages.ollama_connection import create_chat_completion
+from connectionsHandle.ollama_connection import create_chat_completion
 
 app = FastAPI()
 

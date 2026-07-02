@@ -2,12 +2,12 @@ prompts:
   - file://../app/prompts/annotation-prompts/annotation_v2.txt
 
 providers:
-  - id: ollama:chat:qwen3:8b
+  - id: ollama:chat:qwen3:4b
     config:
       temperature: 0
       top_p: 0.1
       num_predict: 2048
-      think: false
+      think: False
       passthrough:
         format: json
         keep_alive: 10m

@@ -5,12 +5,12 @@ from pathlib import Path
 
 from pydantic import ValidationError
 
-from stages.ollama_connection import create_chat_completion
+from connectionsHandle.ollama_connection import create_chat_completion
 from errors.app_error import AppError
 from schemas.annotation_schema import AnnotationSchema
 
 
-_prompt_path = Path(__file__).parent.parent / "prompts" / "annotation-prompts" / "annotation_v1.txt"
+_prompt_path = Path(__file__).parent.parent / "prompts" / "annotation-prompts" / "annotation_v2.txt"
 SYSTEM_PROMPT = _prompt_path.read_text()
 
 
@@ -33,11 +33,11 @@ def run(user_story: str) -> Dict:
         messages=[
             {"role": "system", "content": SYSTEM_PROMPT},
             {"role": "user", "content": user_story},
-        ],
-        temperature=0.0,
+        ]
     )
 
     raw = response.choices[0].message.content
+    print(raw)
     data = _extract_json(raw)
     try:
         validated = AnnotationSchema.model_validate(data)
@@ -68,7 +68,7 @@ if __name__ == "__main__":
     results = []
 
     for i, story in enumerate(stories):
-        story_id = f"US-{i+1:02d}"
+        story_id = f"US-{i+1:03d}"
         print(f"  Annotating {story_id}...")
         ann = annotate(story, story_id)
         print(ann)

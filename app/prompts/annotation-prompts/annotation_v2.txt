@@ -10,8 +10,7 @@ INPUT USER STORY
 
 REQUIRED OUTPUT SCHEMA
 {
-  "ID": "",
-  "Text": "",
+  "Text": [],
   "Persona": [],
   "GoalAction": [],
   "GoalEntity": [],
@@ -42,9 +41,8 @@ As a member, I want to sign up using my email or a Google/Apple account, so that
 
 Example output:
 {
-  "ID": "",
   "Text": "As a member, I want to sign up using my email or a Google/Apple account, so that my bookmarks and plans are securely stored and synced across my devices.",
-  "Persona": "member",
+  "Persona": ["member"],
   "GoalAction": ["sign up"],
   "GoalEntity": ["email", "Google account", "Apple account", "Google/Apple account"],
   "BenefitAction": ["stored", "synced"],

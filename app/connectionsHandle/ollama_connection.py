@@ -3,27 +3,30 @@ from functools import lru_cache
 from openai import APIConnectionError, APITimeoutError, OpenAI
 
 from errors.llm_errors import LLMConnectionError
+from config import settings
 
 #BASE_URL = "http://ollama:11434/v1"  # this line for docker
-BASE_URL = "http://localhost:11434/v1"
-API_KEY = "ollama"
-MODEL = ["qwen2.5:3b", "llama3.2:3b"]
 
 
 @lru_cache(maxsize=1)
 def get_openai_client() -> OpenAI:
     return OpenAI(
-        base_url=BASE_URL,
-        api_key=API_KEY,
+        base_url=settings.ollama_base_url,
+        api_key=settings.ollama_api_key,
     )
 
 
-def create_chat_completion(*, messages, temperature: float = 0.0, model: str = MODEL[0]):
+def create_chat_completion(*, messages, model: str = settings.models[0]):
     try:
         return get_openai_client().chat.completions.create(
             model=model,
             messages=messages,
-            temperature=temperature,
+            temperature=settings.ollama_temperature,
+            top_p=settings.ollama_top_p,
+            extra_body={
+                "keep_alive": settings.ollama_keep_alive,
+                "think": settings.ollama_think,
+            }
         )
     except (APIConnectionError, APITimeoutError) as exc:
         raise LLMConnectionError("Failed to connect to the model service.") from exc

@@ -7,15 +7,17 @@
     "GoalAction": [
       "sign up"
     ],
-    "GoalEntity": [],
+    "GoalEntity": [
+      "email",
+      "Google/Apple account"
+    ],
     "BenefitAction": [
       "store",
       "sync"
     ],
     "BenefitEntity": [
       "saved spots",
-      "trips",
-      "devices"
+      "trips"
     ],
     "triggers": [
       [
@@ -26,29 +28,29 @@
     "targets": [
       [
         "sign up",
-        ""
+        "email"
+      ],
+      [
+        "sign up",
+        "Google/Apple account"
       ],
       [
         "store",
         "saved spots"
       ],
       [
-        "store",
+        "sync",
         "trips"
-      ],
-      [
-        "sync",
-        "spots and trips"
-      ],
-      [
-        "sync",
-        "devices"
       ]
     ],
     "contains": [
       [
-        "spots and trips",
-        "my devices"
+        "saved spots",
+        "devices"
+      ],
+      [
+        "trips",
+        "devices"
       ]
     ],
     "id": "US-01"
@@ -62,7 +64,9 @@
       "log in",
       "log out"
     ],
-    "GoalEntity": [],
+    "GoalEntity": [
+      "new device"
+    ],
     "BenefitAction": [
       "access",
       "maintain"
@@ -84,17 +88,21 @@
     "targets": [
       [
         "log in",
-        "account"
+        "new device"
       ],
       [
-        "access",
-        "travel data"
+        "log out",
+        "finished"
       ]
     ],
     "contains": [
       [
-        "privacy",
-        "shared devices"
+        "account",
+        "on"
+      ],
+      [
+        "shared devices",
+        "on"
       ]
     ],
     "id": "US-02"
@@ -105,10 +113,10 @@
       "user"
     ],
     "GoalAction": [
-      "walk through",
-      "demonstrate",
-      "create",
-      "generate"
+      "walk through a short, guided tutorial",
+      "demonstrate how to import a spot",
+      "create a list",
+      "generate an itinerary"
     ],
     "GoalEntity": [
       "tutorial",
@@ -120,37 +128,50 @@
       "understand"
     ],
     "BenefitEntity": [
-      "workflow"
+      "app's core workflow"
     ],
     "triggers": [
       [
         "user",
-        "walk through"
+        "walk through a short, guided tutorial"
+      ],
+      [
+        "user",
+        "demonstrate how to import a spot"
+      ],
+      [
+        "user",
+        "create a list"
+      ],
+      [
+        "user",
+        "generate an itinerary"
       ]
     ],
     "targets": [
       [
-        "walk through",
+        "walk through a short, guided tutorial",
         "tutorial"
       ],
       [
-        "demonstrate",
-        "import a spot"
+        "demonstrate how to import a spot",
+        "spot"
       ],
       [
-        "create",
-        "a list"
+        "create a list",
+        "list"
       ],
       [
-        "generate",
-        "an itinerary"
-      ],
-      [
-        "understand",
-        "the app's core workflow"
+        "generate an itinerary",
+        "itinerary"
       ]
     ],
-    "contains": [],
+    "contains": [
+      [
+        "tutorial",
+        "app's core workflow"
+      ]
+    ],
     "id": "US-03"
   },
   {
@@ -159,31 +180,39 @@
       "traveler"
     ],
     "GoalAction": [
-      "import location"
+      "import"
     ],
     "GoalEntity": [
       "location"
     ],
     "BenefitAction": [
-      "capture",
-      "inspiration"
+      "capture"
     ],
     "BenefitEntity": [
-      "details"
+      "travel inspiration"
     ],
     "triggers": [
       [
         "traveler",
-        "import location"
+        "import"
       ]
     ],
     "targets": [
       [
         "import",
         "location"
+      ],
+      [
+        "capture",
+        "travel inspiration"
       ]
     ],
-    "contains": [],
+    "contains": [
+      [
+        "location",
+        "saved video"
+      ]
+    ],
     "id": "US-04"
   },
   {
@@ -192,44 +221,34 @@
       "traveler"
     ],
     "GoalAction": [
-      "add spot"
+      "manually add a spot"
     ],
-    "GoalEntity": [],
+    "GoalEntity": [
+      "spot"
+    ],
     "BenefitAction": [
-      "save",
-      "discover"
+      "save"
     ],
     "BenefitEntity": [
-      "places",
-      "blogs",
-      "word-of-mouth"
+      "places"
     ],
     "triggers": [
       [
         "traveler",
-        "add spot"
+        "manually add a spot"
       ]
     ],
     "targets": [
       [
-        "add spot",
+        "manually add a spot",
         "spot"
       ],
       [
         "save",
         "places"
-      ],
-      [
-        "discover",
-        "places"
       ]
     ],
-    "contains": [
-      [
-        "places",
-        "social media"
-      ]
-    ],
+    "contains": [],
     "id": "US-05"
   }
 ]
