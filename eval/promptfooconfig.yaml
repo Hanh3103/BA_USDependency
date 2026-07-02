@@ -26,5 +26,5 @@ evaluateOptions:
 
 tests:
 #  file://tests/20_USs_v2.yaml
-  file://tests/20_USs_goal_focus.yaml
+  file://tests/20USs_goal_focus.yaml
 

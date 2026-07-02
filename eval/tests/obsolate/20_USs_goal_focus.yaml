@@ -4,7 +4,11 @@
   assert:
   - type: javascript
     description: Persona correct
-    value: JSON.parse(output).Persona === "new user"
+    value: |
+      const p = JSON.parse(output);
+      return Array.isArray(p.Persona)
+        ? p.Persona.includes("new user")
+        : p.Persona === "new user";
   - type: javascript
     description: GoalAction is exactly sign up
     value: 'const p = JSON.parse(output);
@@ -21,10 +25,16 @@
   assert:
   - type: javascript
     description: Persona correct
-    value: JSON.parse(output).Persona === "returning user"
+    value: |
+      const p = JSON.parse(output);
+      return Array.isArray(p.Persona)
+        ? p.Persona.includes("returning user")
+        : p.Persona === "returning user";
   - type: javascript
     description: GoalAction includes array [log in, log out]
-    value: "const p = JSON.parse(output);\nconst expected = [\"log in\", \"log out\"];\nreturn Array.isArray(p.GoalAction)\n    && p.GoalAction.length === expected.length\n    && expected.every(action => p.GoalAction.some(a => a === action));\n"
+    value: "const p = JSON.parse(output);\n
+    const expected = [\"log in\", \"log out\"];\n
+    return Array.isArray(p.GoalAction)\n    && p.GoalAction.length === expected.length\n    && expected.every(action => p.GoalAction.some(a => a === action));\n"
   - type: javascript
     description: GoalEntity includes account only
     value: 'const p = JSON.parse(output);
@@ -38,7 +48,11 @@
   assert:
   - type: javascript
     description: Persona correct
-    value: JSON.parse(output).Persona === "user"
+    value: |
+      const p = JSON.parse(output);
+      return Array.isArray(p.Persona)
+        ? p.Persona.includes("user")
+        : p.Persona === "user";
   - type: javascript
     description: GoalAction includes array [walk through]
     value: "const p = JSON.parse(output);\nconst expected = [\"walk through\"];\nreturn Array.isArray(p.GoalAction)\n    && p.GoalAction.length === expected.length\n    && expected.every(action => p.GoalAction.some(a => a === action));\n"
@@ -51,7 +65,11 @@
   assert:
   - type: javascript
     description: Persona correct
-    value: JSON.parse(output).Persona === "traveler"
+    value: |
+      const p = JSON.parse(output);
+      return Array.isArray(p.Persona)
+        ? p.Persona.includes("traveler")
+        : p.Persona === "traveler";
   - type: javascript
     description: GoalAction includes import
     value: 'const p = JSON.parse(output);
@@ -72,7 +90,11 @@
   assert:
   - type: javascript
     description: Persona correct
-    value: JSON.parse(output).Persona === "traveler"
+    value: |
+      const p = JSON.parse(output);
+      return Array.isArray(p.Persona)
+        ? p.Persona.includes("traveler")
+        : p.Persona === "traveler";
   - type: javascript
     description: GoalAction includes [add]
     value: 'const p = JSON.parse(output);
@@ -93,7 +115,11 @@
   assert:
   - type: javascript
     description: Persona correct
-    value: JSON.parse(output).Persona === "traveler"
+    value: |
+      const p = JSON.parse(output);
+      return Array.isArray(p.Persona)
+        ? p.Persona.includes("traveler")
+        : p.Persona === "traveler";
   - type: javascript
     description: GoalAction includes array of [attach]
     value: 'const p = JSON.parse(output);
@@ -114,7 +140,11 @@
   assert:
   - type: javascript
     description: Persona correct
-    value: JSON.parse(output).Persona === "traveler"
+    value: |
+      const p = JSON.parse(output);
+      return Array.isArray(p.Persona)
+        ? p.Persona.includes("traveler")
+        : p.Persona === "traveler";
   - type: javascript
     description: GoalAction includes [open]
     value: 'const p = JSON.parse(output);
@@ -137,7 +167,11 @@
   assert:
   - type: javascript
     description: Persona correct
-    value: JSON.parse(output).Persona === "traveler"
+    value: |
+      const p = JSON.parse(output);
+      return Array.isArray(p.Persona)
+        ? p.Persona.includes("traveler")
+        : p.Persona === "traveler";
   - type: javascript
     description: GoalAction includes [remove]
     value: 'const p = JSON.parse(output);
@@ -158,7 +192,11 @@
   assert:
   - type: javascript
     description: Persona correct
-    value: JSON.parse(output).Persona === "traveler"
+    value: |
+      const p = JSON.parse(output);
+      return Array.isArray(p.Persona)
+        ? p.Persona.includes("traveler")
+        : p.Persona === "traveler";
   - type: javascript
     description: GoalAction includes [create, add]
     value: "const p = JSON.parse(output);\nreturn p.GoalAction.includes(\"create\")\n    && p.GoalAction.includes(\"add\");\n"
@@ -171,7 +209,11 @@
   assert:
   - type: javascript
     description: Persona correct
-    value: JSON.parse(output).Persona === "traveler"
+    value: |
+      const p = JSON.parse(output);
+      return Array.isArray(p.Persona)
+        ? p.Persona.includes("traveler")
+        : p.Persona === "traveler";
   - type: javascript
     description: GoalAction includes [change]
     value: 'const p = JSON.parse(output);
@@ -192,7 +234,11 @@
   assert:
   - type: javascript
     description: Persona correct
-    value: JSON.parse(output).Persona === "traveler"
+    value: |
+      const p = JSON.parse(output);
+      return Array.isArray(p.Persona)
+        ? p.Persona.includes("traveler")
+        : p.Persona === "traveler";
   - type: javascript
     description: GoalAction includes [see]
     value: 'const p = JSON.parse(output);
@@ -213,7 +259,11 @@
   assert:
   - type: javascript
     description: Persona correct
-    value: JSON.parse(output).Persona === "traveler"
+    value: |
+      const p = JSON.parse(output);
+      return Array.isArray(p.Persona)
+        ? p.Persona.includes("traveler")
+        : p.Persona === "traveler";
   - type: javascript
     description: GoalAction includes [filter]
     value: 'const p = JSON.parse(output);
@@ -234,7 +284,11 @@
   assert:
   - type: javascript
     description: Persona correct
-    value: JSON.parse(output).Persona === "traveler"
+    value: |
+      const p = JSON.parse(output);
+      return Array.isArray(p.Persona)
+        ? p.Persona.includes("traveler")
+        : p.Persona === "traveler";
   - type: javascript
     description: GoalAction includes [specify]
     value: 'const p = JSON.parse(output);
@@ -251,7 +305,11 @@
   assert:
   - type: javascript
     description: Persona correct
-    value: JSON.parse(output).Persona === "traveler"
+    value: |
+      const p = JSON.parse(output);
+      return Array.isArray(p.Persona)
+        ? p.Persona.includes("traveler")
+        : p.Persona === "traveler";
   - type: javascript
     description: GoalAction includes [select, generate]
     value: "const p = JSON.parse(output);\nreturn p.GoalAction.includes(\"select\")\n    && p.GoalAction.includes(\"generate\");\n"
@@ -264,7 +322,11 @@
   assert:
   - type: javascript
     description: Persona correct
-    value: JSON.parse(output).Persona === "traveler"
+    value: |
+      const p = JSON.parse(output);
+      return Array.isArray(p.Persona)
+        ? p.Persona.includes("traveler")
+        : p.Persona === "traveler";
   - type: javascript
     description: GoalAction includes [view]
     value: 'const p = JSON.parse(output);
@@ -285,7 +347,11 @@
   assert:
   - type: javascript
     description: Persona correct
-    value: JSON.parse(output).Persona === "traveler"
+    value: |
+      const p = JSON.parse(output);
+      return Array.isArray(p.Persona)
+        ? p.Persona.includes("traveler")
+        : p.Persona === "traveler";
   - type: javascript
     description: GoalAction includes [drag, drop]
     value: "const p = JSON.parse(output);\nreturn p.GoalAction.includes(\"drag\")\n    && p.GoalAction.includes(\"drop\");\n"
@@ -302,7 +368,11 @@
   assert:
   - type: javascript
     description: Persona correct
-    value: JSON.parse(output).Persona === "traveler"
+    value: |
+      const p = JSON.parse(output);
+      return Array.isArray(p.Persona)
+        ? p.Persona.includes("traveler")
+        : p.Persona === "traveler";
   - type: javascript
     description: GoalAction includes [copy, adjust]
     value: "const p = JSON.parse(output);\nreturn p.GoalAction.includes(\"copy\")\n    && p.GoalAction.includes(\"adjust\");\n"
@@ -315,7 +385,11 @@
   assert:
   - type: javascript
     description: Persona correct
-    value: JSON.parse(output).Persona === "traveler"
+    value: |
+      const p = JSON.parse(output);
+      return Array.isArray(p.Persona)
+        ? p.Persona.includes("traveler")
+        : p.Persona === "traveler";
   - type: javascript
     description: GoalAction includes [delete]
     value: 'const p = JSON.parse(output);
@@ -336,7 +410,11 @@
   assert:
   - type: javascript
     description: Persona correct
-    value: JSON.parse(output).Persona === "traveler"
+    value: |
+      const p = JSON.parse(output);
+      return Array.isArray(p.Persona)
+        ? p.Persona.includes("traveler")
+        : p.Persona === "traveler";
   - type: javascript
     description: GoalAction includes [generate]
     value: 'const p = JSON.parse(output);
@@ -357,7 +435,11 @@
   assert:
   - type: javascript
     description: Persona correct
-    value: JSON.parse(output).Persona === "traveler"
+    value: |
+      const p = JSON.parse(output);
+      return Array.isArray(p.Persona)
+        ? p.Persona.includes("traveler")
+        : p.Persona === "traveler";
   - type: javascript
     description: GoalAction includes [download]
     value: 'const p = JSON.parse(output);
