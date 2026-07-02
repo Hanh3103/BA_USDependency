@@ -1,0 +1,89 @@
+- vars:
+    USER_STORY: As a new user, I want to sign up using my email or an existing Google/Apple account, so that my saved spots and trips are securely stored and synced across my devices.
+  description: new user sign up
+  assert:
+  - type: javascript
+    description: Persona correct
+    value: JSON.parse(output).Persona === "new user"
+  - type: javascript
+    description: GoalAction is exactly sign up
+    value: 'const p = JSON.parse(output);
+
+      return p.GoalAction.some(a => a === "sign up");
+
+      '
+  - type: javascript
+    description: GoalEntity includes array of [email, Google account, Apple account, Google/Apple account]
+    value: "const p = JSON.parse(output);\nconst expected = [\n  \"email\",\n  \"Google account\",\n  \"Apple account\",\n  \"Google/Apple account\",\n];\nreturn Array.isArray(p.GoalEntity)\n    && p.GoalEntity.some(entity => expected.includes(entity));\n"
+- vars:
+    USER_STORY: As a returning user, I want to log in my account on a new device and log out when I'm finished, so that I can access my travel data safely and maintain privacy on shared devices.
+  description: returning user login logout
+  assert:
+  - type: javascript
+    description: Persona correct
+    value: JSON.parse(output).Persona === "returning user"
+  - type: javascript
+    description: GoalAction includes array [log in, log out]
+    value: "const p = JSON.parse(output);\nconst expected = [\"log in\", \"log out\"];\nreturn Array.isArray(p.GoalAction)\n    && p.GoalAction.length === expected.length\n    && expected.every(action => p.GoalAction.some(a => a === action));\n"
+  - type: javascript
+    description: GoalEntity includes account only
+    value: 'const p = JSON.parse(output);
+
+      return p.GoalEntity.some(e => e === "account");
+
+      '
+- vars:
+    USER_STORY: As a user, I want to walk through a short, guided tutorial that demonstrates how to import a spot, create a list, and generate an itinerary, so that I can understand the app's core workflow without reading external documentation.
+  description: user tutorial
+  assert:
+  - type: javascript
+    description: Persona correct
+    value: JSON.parse(output).Persona === "user"
+  - type: javascript
+    description: GoalAction includes array [walk through]
+    value: "const p = JSON.parse(output);\nconst expected = [\"walk through\"];\nreturn Array.isArray(p.GoalAction)\n    && p.GoalAction.length === expected.length\n    && expected.every(action => p.GoalAction.some(a => a === action));\n"
+  - type: javascript
+    description: GoalEntity includes array [tutorial, guided tutorial, short guided tutorial]
+    value: "const p = JSON.parse(output);\nconst expected = [\"tutorial\", \"guided tutorial\", \"short guided tutorial\"];\nreturn Array.isArray(p.GoalEntity)\n    && p.GoalEntity.some(entity => expected.includes(entity));\n"
+- vars:
+    USER_STORY: As a traveler, I want to import a location from a saved TikTok or Instagram video with a single tap, so that I can quickly capture travel inspiration without manually typing details.
+  description: traveler import from social media
+  assert:
+  - type: javascript
+    description: Persona correct
+    value: JSON.parse(output).Persona === "traveler"
+  - type: javascript
+    description: GoalAction includes import
+    value: 'const p = JSON.parse(output);
+
+      return p.GoalAction.some(a => a.includes("import"));
+
+      '
+  - type: javascript
+    description: GoalEntity includes array [location]
+    value: 'const p = JSON.parse(output);
+
+      return Array.isArray(p.GoalEntity) && p.GoalEntity.includes("location");
+
+      '
+- vars:
+    USER_STORY: As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth.
+  description: traveler manually add spot
+  assert:
+  - type: javascript
+    description: Persona correct
+    value: JSON.parse(output).Persona === "traveler"
+  - type: javascript
+    description: GoalAction includes [add]
+    value: 'const p = JSON.parse(output);
+
+      return Array.isArray(p.GoalAction) && p.GoalAction.includes("add");
+
+      '
+  - type: javascript
+    description: GoalEntity includes array of [spot]
+    value: 'const p = JSON.parse(output);
+
+      return Array.isArray(p.GoalEntity) && p.GoalEntity.includes("spot");
+
+      '

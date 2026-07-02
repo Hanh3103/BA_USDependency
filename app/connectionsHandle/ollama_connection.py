@@ -7,6 +7,8 @@ from config import settings
 
 #BASE_URL = "http://ollama:11434/v1"  # this line for docker
 
+print(settings.models[0])
+
 
 @lru_cache(maxsize=1)
 def get_openai_client() -> OpenAI:
