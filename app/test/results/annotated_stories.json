@@ -1,254 +1,255 @@
 [
   {
-    "Text": "As a new user, I want to sign up using my email or an existing Google/Apple account, so that my saved spots and trips are securely stored and synced across my devices.",
+    "Text": "As a Public User, I want to Search for Information, so that I can obtain publicly available information concerning properties, County services, processes and other general information.",
     "Persona": [
-      "new user"
+      "Public User"
     ],
     "GoalAction": [
-      "sign up"
+      "Search"
     ],
     "GoalEntity": [
-      "email",
-      "Google/Apple account"
+      "Information"
     ],
     "BenefitAction": [
-      "store",
-      "sync"
+      "obtain"
     ],
     "BenefitEntity": [
-      "saved spots",
-      "trips"
+      "publicly available information"
     ],
     "triggers": [
       [
-        "new user",
-        "sign up"
+        "Public User",
+        "Search"
       ]
     ],
     "targets": [
       [
-        "sign up",
-        "email"
+        "Search",
+        "Information"
       ],
       [
-        "sign up",
-        "Google/Apple account"
-      ],
-      [
-        "store",
-        "saved spots"
-      ],
-      [
-        "sync",
-        "trips"
+        "obtain",
+        "publicly available information"
       ]
     ],
     "contains": [
       [
-        "saved spots",
-        "devices"
+        "publicly available information",
+        "properties"
       ],
       [
-        "trips",
-        "devices"
+        "publicly available information",
+        "County services"
+      ],
+      [
+        "publicly available information",
+        "processes"
+      ],
+      [
+        "publicly available information",
+        "other general information"
       ]
     ],
-    "id": "US-01"
+    "id": "US-001"
   },
   {
-    "Text": "As a returning user, I want to log in my account on a new device and log out when I'm finished, so that I can access my travel data safely and maintain privacy on shared devices.",
+    "Text": "As a ProspectiveApplicant, I want to research requirements and to select a service, so that I can find the relevant service and/or application type to initiate via the online portal.",
     "Persona": [
-      "returning user"
+      "ProspectiveApplicant"
     ],
     "GoalAction": [
-      "log in",
-      "log out"
+      "research",
+      "select"
     ],
     "GoalEntity": [
-      "new device"
+      "requirements",
+      "service"
     ],
     "BenefitAction": [
-      "access",
-      "maintain"
+      "find"
     ],
     "BenefitEntity": [
-      "travel data",
-      "privacy"
+      "relevant service",
+      "application type"
     ],
     "triggers": [
       [
-        "returning user",
-        "log in"
+        "ProspectiveApplicant",
+        "research"
       ],
       [
-        "returning user",
-        "log out"
+        "ProspectiveApplicant",
+        "select"
       ]
     ],
     "targets": [
       [
-        "log in",
-        "new device"
+        "research",
+        "requirements"
       ],
       [
-        "log out",
-        "finished"
+        "select",
+        "service"
+      ],
+      [
+        "find",
+        "relevant service"
+      ],
+      [
+        "find",
+        "application type"
       ]
     ],
     "contains": [
       [
-        "account",
-        "on"
+        "relevant service",
+        "online portal"
       ],
       [
-        "shared devices",
-        "on"
+        "application type",
+        "online portal"
       ]
     ],
-    "id": "US-02"
+    "id": "US-002"
   },
   {
-    "Text": "As a user, I want to walk through a short, guided tutorial that demonstrates how to import a spot, create a list, and generate an itinerary, so that I can understand the app's core workflow without reading external documentation.",
+    "Text": "As an Applicant, I want to Request PreApplication Assistance, so that I can receive a response to a request for a meeting or information that is a result of the preapplication assistance.",
     "Persona": [
-      "user"
+      "Applicant"
     ],
     "GoalAction": [
-      "walk through a short, guided tutorial",
-      "demonstrate how to import a spot",
-      "create a list",
-      "generate an itinerary"
+      "Request"
     ],
     "GoalEntity": [
-      "tutorial",
-      "spot",
-      "list",
-      "itinerary"
+      "PreApplication Assistance"
     ],
     "BenefitAction": [
-      "understand"
+      "receive"
     ],
     "BenefitEntity": [
-      "app's core workflow"
+      "response"
     ],
     "triggers": [
       [
-        "user",
-        "walk through a short, guided tutorial"
-      ],
-      [
-        "user",
-        "demonstrate how to import a spot"
-      ],
-      [
-        "user",
-        "create a list"
-      ],
-      [
-        "user",
-        "generate an itinerary"
+        "Applicant",
+        "Request"
       ]
     ],
     "targets": [
       [
-        "walk through a short, guided tutorial",
-        "tutorial"
+        "Request",
+        "PreApplication Assistance"
       ],
       [
-        "demonstrate how to import a spot",
-        "spot"
-      ],
-      [
-        "create a list",
-        "list"
-      ],
-      [
-        "generate an itinerary",
-        "itinerary"
+        "receive",
+        "response"
       ]
     ],
     "contains": [
       [
-        "tutorial",
-        "app's core workflow"
+        "preapplication assistance",
+        "result"
       ]
     ],
-    "id": "US-03"
+    "id": "US-003"
   },
   {
-    "Text": "As a traveler, I want to import a location from a saved TikTok or Instagram video with a single tap, so that I can quickly capture travel inspiration without manually typing details.",
+    "Text": "As a Customer, I want to Create a Customer Portal User Account, so that I can log on to the Customer Portal and perform transactions that first require user authentication.",
     "Persona": [
-      "traveler"
+      "Customer"
     ],
     "GoalAction": [
-      "import"
+      "Create"
     ],
     "GoalEntity": [
-      "location"
+      "Customer Portal User Account"
     ],
     "BenefitAction": [
-      "capture"
+      "log on",
+      "perform transactions"
     ],
     "BenefitEntity": [
-      "travel inspiration"
+      "Customer Portal",
+      "transactions"
     ],
     "triggers": [
       [
-        "traveler",
-        "import"
+        "Customer",
+        "Create"
       ]
     ],
     "targets": [
       [
-        "import",
-        "location"
+        "Create",
+        "Customer Portal User Account"
       ],
       [
-        "capture",
-        "travel inspiration"
-      ]
-    ],
-    "contains": [
-      [
-        "location",
-        "saved video"
-      ]
-    ],
-    "id": "US-04"
-  },
-  {
-    "Text": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth.",
-    "Persona": [
-      "traveler"
-    ],
-    "GoalAction": [
-      "manually add a spot"
-    ],
-    "GoalEntity": [
-      "spot"
-    ],
-    "BenefitAction": [
-      "save"
-    ],
-    "BenefitEntity": [
-      "places"
-    ],
-    "triggers": [
-      [
-        "traveler",
-        "manually add a spot"
-      ]
-    ],
-    "targets": [
-      [
-        "manually add a spot",
-        "spot"
+        "log on",
+        "Customer Portal"
       ],
       [
-        "save",
-        "places"
+        "perform transactions",
+        "transactions"
       ]
     ],
     "contains": [],
-    "id": "US-05"
+    "id": "US-004"
+  },
+  {
+    "Text": "As an Applicant, I want to Submit Application, so that I can provide my information, plans and/or documents to initiate a transaction with the County.",
+    "Persona": [
+      "Applicant"
+    ],
+    "GoalAction": [
+      "Submit"
+    ],
+    "GoalEntity": [
+      "Application"
+    ],
+    "BenefitAction": [
+      "provide",
+      "initiate"
+    ],
+    "BenefitEntity": [
+      "information",
+      "plans",
+      "documents",
+      "transaction"
+    ],
+    "triggers": [
+      [
+        "Applicant",
+        "Submit"
+      ]
+    ],
+    "targets": [
+      [
+        "Submit",
+        "Application"
+      ],
+      [
+        "provide",
+        "information"
+      ],
+      [
+        "provide",
+        "plans"
+      ],
+      [
+        "provide",
+        "documents"
+      ],
+      [
+        "initiate",
+        "transaction"
+      ]
+    ],
+    "contains": [
+      [
+        "transaction",
+        "County"
+      ]
+    ],
+    "id": "US-005"
   }
 ]
