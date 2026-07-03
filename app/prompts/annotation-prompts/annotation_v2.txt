@@ -10,7 +10,7 @@ INPUT USER STORY
 
 REQUIRED OUTPUT SCHEMA
 {
-  "Text": [],
+  "Text": "",
   "Persona": [],
   "GoalAction": [],
   "GoalEntity": [],

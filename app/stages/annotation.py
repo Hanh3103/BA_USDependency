@@ -62,7 +62,7 @@ if __name__ == "__main__":
     stories = load_stories("test/test_raw_input/user_stories.txt")
 
     for story in stories:
-        print(story + "\n")
+        print(story + "\n") 
 
     results = []
 
