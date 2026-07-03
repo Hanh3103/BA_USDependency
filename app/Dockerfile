@@ -7,7 +7,8 @@ COPY stages ./stages
 COPY errors ./errors
 COPY schemas ./schemas
 COPY prompts ./prompts
-COPY tools ./tools
+COPY 00_obsolate_dont_touch/tools ./tools
 COPY utils ./utils
+COPY connectionsHandle ./connectionsHandle
 EXPOSE 8000
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]

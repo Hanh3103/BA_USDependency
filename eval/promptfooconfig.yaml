@@ -2,7 +2,7 @@ prompts:
   - file://../app/prompts/annotation-prompts/annotation_v2.txt
 
 providers:
-  - id: ollama:chat:qwen3:4b
+  - id: ollama:chat:qwen3:8b
     config:
       temperature: 0.0
       top_p: 0.1

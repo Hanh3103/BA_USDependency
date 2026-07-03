@@ -55,12 +55,11 @@ Example output:
 GENERAL EXTRACTION RULES
 1. Return exactly the ten required top-level keys and no extra keys.
 2. "Text" must copy the original input story character-for-character.
-3. "ID" is always an empty string unless an ID is explicitly included in the input.
-4. "Persona" is the phrase after "As a" or "As an", without the article.
-5. Use only facts stated explicitly in the user story. Do not invent actions, entities, attributes, or relations.
-6. Every item in triggers, targets, and contains must be an array of exactly two strings.
-7. Preserve exact wording where required, but remove only articles and possessive determiners when they do not change the entity meaning.
-8. Never insert punctuation inside words. For example, write "trips", never "tr,ips".
+3. "Persona" is the phrase after "As a" or "As an", without the article.
+4. Use only facts stated explicitly in the user story. Do not invent actions, entities, attributes, or relations.
+5. Every item in triggers, targets, and contains must be an array of exactly two strings.
+6. Preserve exact wording where required, but remove only articles and possessive determiners when they do not change the entity meaning.
+7. Never insert punctuation inside words. For example, write "trips", never "tr,ips".
 
 GOAL ACTION EXTRACTION
 1. GoalAction contains the canonical action labels requested by the user in the "I want to" clause.

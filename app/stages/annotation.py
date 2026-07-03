@@ -37,7 +37,6 @@ def run(user_story: str) -> Dict:
     )
 
     raw = response.choices[0].message.content
-    print(raw)
     data = _extract_json(raw)
     try:
         validated = AnnotationSchema.model_validate(data)
@@ -60,7 +59,7 @@ def annotate(user_story: str, story_id: str, max_retries: int = 2) -> Dict | Non
 
 if __name__ == "__main__":
     from utils.file_parser import load_stories
-    stories = load_stories("test_files/user_stories.txt")
+    stories = load_stories("test/test_raw_input/user_stories.txt")
 
     for story in stories:
         print(story + "\n")
@@ -75,7 +74,7 @@ if __name__ == "__main__":
         if ann:
             results.append(ann)
     
-    output_path = "tools/results/annotated_stories.json"
+    output_path = "test/results/annotated_stories.json"
     with open(output_path, "w") as f:
         json.dump(results, f, indent=2)
 
