@@ -1,0 +1,1087 @@
+[
+  {
+    "ID": "US1",
+    "Text": "#G08# As a Developer, I want to get a Data Package into Node, so that I can start using the data for doing analysis and visualizations.",
+    "Persona": [
+      "Developer"
+    ],
+    "GoalAction": [
+      "get"
+    ],
+    "GoalEntity": [
+      "Data Package"
+    ],
+    "BenefitAction": [
+      "start using",
+      "doing"
+    ],
+    "BenefitEntity": [
+      "data",
+      "analysis",
+      "visualizations",
+      "Node"
+    ],
+    "triggers": [
+      [
+        "Developer",
+        "get"
+      ]
+    ],
+    "targets": [
+      [
+        "get",
+        "Data Package"
+      ],
+      [
+        "doing",
+        "analysis"
+      ],
+      [
+        "doing",
+        "visualizations"
+      ],
+      [
+        "start using",
+        "data"
+      ]
+    ],
+    "contains": [
+      [
+        "Node",
+        "Data Package"
+      ],
+      [
+        "Data Package",
+        "data"
+      ]
+    ]
+  },
+  {
+    "ID": "US2",
+    "Text": "#G08# As a Researcher, I want to get a Data Package into Julia in seconds, so that I can start using the data for doing analysis and visualizations.",
+    "Persona": [
+      "Researcher"
+    ],
+    "GoalAction": [
+      "get"
+    ],
+    "GoalEntity": [
+      "Data Package"
+    ],
+    "BenefitAction": [
+      "start using",
+      "doing"
+    ],
+    "BenefitEntity": [
+      "Julia",
+      "analysis",
+      "visualizations",
+      "data"
+    ],
+    "triggers": [
+      [
+        "Researcher",
+        "get"
+      ]
+    ],
+    "targets": [
+      [
+        "get",
+        "Data Package"
+      ],
+      [
+        "start using",
+        "data"
+      ],
+      [
+        "doing",
+        "analysis"
+      ],
+      [
+        "doing",
+        "visualizations"
+      ]
+    ],
+    "contains": [
+      [
+        "Julia",
+        "Data Package"
+      ],
+      [
+        "Data Package",
+        "data"
+      ]
+    ]
+  },
+  {
+    "ID": "US3",
+    "Text": "#G08# As a Publisher, I want to add type information to my data, so that it is more useful to others and can be used better with tools like visualization programs.",
+    "Persona": [
+      "Publisher"
+    ],
+    "GoalAction": [
+      "add"
+    ],
+    "GoalEntity": [
+      "type information"
+    ],
+    "BenefitAction": [
+      "used better"
+    ],
+    "BenefitEntity": [
+      "data",
+      "others",
+      "visualization programs",
+      "tools"
+    ],
+    "triggers": [
+      [
+        "Publisher",
+        "add"
+      ]
+    ],
+    "targets": [
+      [
+        "used better",
+        "tools"
+      ],
+      [
+        "add",
+        "type information"
+      ]
+    ],
+    "contains": [
+      [
+        "tools",
+        "visualization programs"
+      ],
+      [
+        "data",
+        "type information"
+      ]
+    ]
+  },
+  {
+    "ID": "US4",
+    "Text": "#G08# As a Publisher, I want to be able to provide a visualization of data in the Data Package, so that I can provide my analysis and show my work to users of the data.",
+    "Persona": [
+      "Publisher"
+    ],
+    "GoalAction": [
+      "provide"
+    ],
+    "GoalEntity": [
+      "visualization"
+    ],
+    "BenefitAction": [
+      "provide",
+      "show"
+    ],
+    "BenefitEntity": [
+      "users of the data",
+      "Data Package",
+      "data",
+      "analysis",
+      "work"
+    ],
+    "triggers": [
+      [
+        "Publisher",
+        "provide"
+      ]
+    ],
+    "targets": [
+      [
+        "provide",
+        "visualization"
+      ],
+      [
+        "provide",
+        "analysis"
+      ],
+      [
+        "show",
+        "work"
+      ]
+    ],
+    "contains": [
+      [
+        "visualization",
+        "data"
+      ],
+      [
+        "Data Package",
+        "data"
+      ]
+    ]
+  },
+  {
+    "ID": "US5",
+    "Text": "#G08# As a Researcher, I want to be able to save new visualizations, so that I can share them with others or include them in the Data Package.",
+    "Persona": [
+      "Researcher"
+    ],
+    "GoalAction": [
+      "save"
+    ],
+    "GoalEntity": [
+      "new visualizations"
+    ],
+    "BenefitAction": [
+      "share",
+      "include"
+    ],
+    "BenefitEntity": [
+      "others",
+      "Data Package"
+    ],
+    "triggers": [
+      [
+        "Researcher",
+        "save"
+      ]
+    ],
+    "targets": [
+      [
+        "include",
+        "new visualizations"
+      ],
+      [
+        "save",
+        "new visualizations"
+      ],
+      [
+        "share",
+        "new visualizations"
+      ]
+    ],
+    "contains": [
+      [
+        "Data Package",
+        "new visualizations"
+      ],
+      [
+        "others",
+        "new visualizations"
+      ]
+    ]
+  },
+  {
+    "ID": "US6",
+    "Text": "#G08# As a ResearcherPublisher, I want to know that my data conforms to its Data Package profile, so that I can feel trust in the validity and usefulness of the data.",
+    "Persona": [
+      "ResearcherPublisher"
+    ],
+    "GoalAction": [
+      "know"
+    ],
+    "GoalEntity": [
+      "data"
+    ],
+    "BenefitAction": [
+      "feel"
+    ],
+    "BenefitEntity": [
+      "trust",
+      "usefulness",
+      "data.",
+      "Data Package profile",
+      "validity"
+    ],
+    "triggers": [
+      [
+        "ResearcherPublisher",
+        "know"
+      ]
+    ],
+    "targets": [
+      [
+        "feel",
+        "usefulness"
+      ],
+      [
+        "know",
+        "data"
+      ],
+      [
+        "feel",
+        "trust"
+      ]
+    ],
+    "contains": [
+      [
+        "data.",
+        "usefulness"
+      ],
+      [
+        "validity",
+        "trust"
+      ]
+    ]
+  },
+  {
+    "ID": "US7",
+    "Text": "#G08# As a ResearcherPublisher, I want to understand the ways in which my data is invalid, so that I can know how to fix it.",
+    "Persona": [
+      "ResearcherPublisher"
+    ],
+    "GoalAction": [
+      "understand"
+    ],
+    "GoalEntity": [
+      "ways"
+    ],
+    "BenefitAction": [
+      "fix",
+      "know"
+    ],
+    "BenefitEntity": [
+      "how",
+      "data"
+    ],
+    "triggers": [
+      [
+        "ResearcherPublisher",
+        "understand"
+      ]
+    ],
+    "targets": [
+      [
+        "understand",
+        "ways"
+      ],
+      [
+        "know",
+        "how"
+      ],
+      [
+        "fix",
+        "data"
+      ]
+    ],
+    "contains": []
+  },
+  {
+    "ID": "US8",
+    "Text": "#G08# As a Researcher, I want to get a Data Package into R in seconds, so that I can start using the data for doing analysis and visualizations.",
+    "Persona": [
+      "Researcher"
+    ],
+    "GoalAction": [
+      "get"
+    ],
+    "GoalEntity": [
+      "Data Package"
+    ],
+    "BenefitAction": [
+      "doing",
+      "start using"
+    ],
+    "BenefitEntity": [
+      "analysis",
+      "visualizations",
+      "R",
+      "data"
+    ],
+    "triggers": [
+      [
+        "Researcher",
+        "get"
+      ]
+    ],
+    "targets": [
+      [
+        "start using",
+        "data"
+      ],
+      [
+        "get",
+        "Data Package"
+      ],
+      [
+        "doing",
+        "analysis"
+      ],
+      [
+        "doing",
+        "visualizations"
+      ]
+    ],
+    "contains": [
+      [
+        "R",
+        "Data Package"
+      ],
+      [
+        "Data Package",
+        "data"
+      ]
+    ]
+  },
+  {
+    "ID": "US9",
+    "Text": "#G08# As a Researcher, I want to get a Data Package into Excel in seconds, so that I can start using the data for doing analysis and visualizations.",
+    "Persona": [
+      "Researcher"
+    ],
+    "GoalAction": [
+      "get"
+    ],
+    "GoalEntity": [
+      "Data Package"
+    ],
+    "BenefitAction": [
+      "doing",
+      "start using"
+    ],
+    "BenefitEntity": [
+      "Excel",
+      "data",
+      "analysis",
+      "visualizations"
+    ],
+    "triggers": [
+      [
+        "Researcher",
+        "get"
+      ]
+    ],
+    "targets": [
+      [
+        "doing",
+        "analysis"
+      ],
+      [
+        "doing",
+        "visualizations"
+      ],
+      [
+        "get",
+        "Data Package"
+      ],
+      [
+        "start using",
+        "data"
+      ]
+    ],
+    "contains": [
+      [
+        "Excel",
+        "Data Package"
+      ],
+      [
+        "Data Package",
+        "data"
+      ]
+    ]
+  },
+  {
+    "ID": "US10",
+    "Text": "#G08# As a Researcher, I want to get a Data Package into SPSS in seconds, so that I can start using the data for doing analysis and visualizations.",
+    "Persona": [
+      "Researcher"
+    ],
+    "GoalAction": [
+      "get"
+    ],
+    "GoalEntity": [
+      "Data Package"
+    ],
+    "BenefitAction": [
+      "start using",
+      "doing"
+    ],
+    "BenefitEntity": [
+      "SPSS",
+      "data",
+      "visualizations",
+      "analysis"
+    ],
+    "triggers": [
+      [
+        "Researcher",
+        "get"
+      ]
+    ],
+    "targets": [
+      [
+        "get",
+        "Data Package"
+      ],
+      [
+        "start using",
+        "data"
+      ],
+      [
+        "doing",
+        "visualizations"
+      ],
+      [
+        "doing",
+        "analysis"
+      ]
+    ],
+    "contains": [
+      [
+        "Data Package",
+        "data"
+      ],
+      [
+        "SPSS",
+        "Data Package"
+      ]
+    ]
+  },
+  {
+    "ID": "US11",
+    "Text": "#G08# As a Researcher, I want to get a Data Package into STATA in seconds, so that I can start using the data for doing analysis and visualizations.",
+    "Persona": [
+      "Researcher"
+    ],
+    "GoalAction": [
+      "get"
+    ],
+    "GoalEntity": [
+      "Data Package"
+    ],
+    "BenefitAction": [
+      "start using",
+      "doing"
+    ],
+    "BenefitEntity": [
+      "data",
+      "STATA",
+      "analysis",
+      "visualizations"
+    ],
+    "triggers": [
+      [
+        "Researcher",
+        "get"
+      ]
+    ],
+    "targets": [
+      [
+        "start using",
+        "data"
+      ],
+      [
+        "doing",
+        "analysis"
+      ],
+      [
+        "doing",
+        "visualizations"
+      ],
+      [
+        "get",
+        "Data Package"
+      ]
+    ],
+    "contains": [
+      [
+        "Data Package",
+        "data"
+      ],
+      [
+        "STATA",
+        "Data Package"
+      ]
+    ]
+  },
+  {
+    "ID": "US12",
+    "Text": "#G08# As a Researcher, I want to be able to translate my EML dataset to a Data Package, so that I can benefit from the wide array of tools available for Data Packages.",
+    "Persona": [
+      "Researcher"
+    ],
+    "GoalAction": [
+      "translate"
+    ],
+    "GoalEntity": [
+      "EML dataset"
+    ],
+    "BenefitAction": [
+      "benefit"
+    ],
+    "BenefitEntity": [
+      "wide array of tools available",
+      "Data Packages",
+      "Data Package"
+    ],
+    "triggers": [
+      [
+        "Researcher",
+        "translate"
+      ]
+    ],
+    "targets": [
+      [
+        "benefit",
+        "wide array of tools available"
+      ],
+      [
+        "translate",
+        "EML dataset"
+      ]
+    ],
+    "contains": [
+      [
+        "Data Packages",
+        "wide array of tools available"
+      ]
+    ]
+  },
+  {
+    "ID": "US13",
+    "Text": "#G08# As a Researcher, I want to get a Data Package into LibreOffice/OpenOffice in seconds, so that I can start using the data for doing analysis and visualizations.",
+    "Persona": [
+      "Researcher"
+    ],
+    "GoalAction": [
+      "get"
+    ],
+    "GoalEntity": [
+      "Data Package"
+    ],
+    "BenefitAction": [
+      "start using",
+      "doing"
+    ],
+    "BenefitEntity": [
+      "LibreOffice",
+      "OpenOffice",
+      "data",
+      "analysis",
+      "visualizations"
+    ],
+    "triggers": [
+      [
+        "Researcher",
+        "get"
+      ]
+    ],
+    "targets": [
+      [
+        "get",
+        "Data Package"
+      ],
+      [
+        "start using",
+        "data"
+      ],
+      [
+        "doing",
+        "analysis"
+      ],
+      [
+        "doing",
+        "visualizations"
+      ]
+    ],
+    "contains": [
+      [
+        "LibreOffice",
+        "Data Package"
+      ],
+      [
+        "OpenOffice",
+        "Data Package"
+      ],
+      [
+        "Data Package",
+        "data"
+      ]
+    ]
+  },
+  {
+    "ID": "US14",
+    "Text": "#G08# As a Developer, I want to get a Data Package into Python in seconds, so that I can start using the data for doing analysis and visualizations.",
+    "Persona": [
+      "Developer"
+    ],
+    "GoalAction": [
+      "get"
+    ],
+    "GoalEntity": [
+      "Data Package"
+    ],
+    "BenefitAction": [
+      "doing",
+      "start using"
+    ],
+    "BenefitEntity": [
+      "Python",
+      "data",
+      "analysis",
+      "visualizations"
+    ],
+    "triggers": [
+      [
+        "Developer",
+        "get"
+      ]
+    ],
+    "targets": [
+      [
+        "get",
+        "Data Package"
+      ],
+      [
+        "doing",
+        "analysis"
+      ],
+      [
+        "start using",
+        "data"
+      ],
+      [
+        "doing",
+        "visualizations"
+      ]
+    ],
+    "contains": [
+      [
+        "Python",
+        "Data Package"
+      ],
+      [
+        "Data Package",
+        "data"
+      ]
+    ]
+  },
+  {
+    "ID": "US15",
+    "Text": "#G08# As a Developer, I want a jQuery plugin for Core Data Packages, so that I can use it to apply to form control that uses a core dataset for autocompletion.",
+    "Persona": [
+      "Developer"
+    ],
+    "GoalAction": [
+      "want"
+    ],
+    "GoalEntity": [
+      "jQuery plugin"
+    ],
+    "BenefitAction": [
+      "form",
+      "use"
+    ],
+    "BenefitEntity": [
+      "Core Data Packages",
+      "control",
+      "core dataset",
+      "autocompletion"
+    ],
+    "triggers": [
+      [
+        "Developer",
+        "want"
+      ]
+    ],
+    "targets": [
+      [
+        "want",
+        "jQuery plugin"
+      ],
+      [
+        "form",
+        "control"
+      ],
+      [
+        "use",
+        "jQuery plugin"
+      ]
+    ],
+    "contains": [
+      [
+        "Core Data Packages",
+        "jQuery plugin"
+      ],
+      [
+        "autocompletion",
+        "core dataset"
+      ]
+    ]
+  },
+  {
+    "ID": "US16",
+    "Text": "#G08# As a Researcher, I want to get my Excel spreadsheet into a Data Package, so that I can benefit from better tooling and standardization.",
+    "Persona": [
+      "Researcher"
+    ],
+    "GoalAction": [
+      "get"
+    ],
+    "GoalEntity": [
+      "Excel spreadsheet"
+    ],
+    "BenefitAction": [
+      "benefit from"
+    ],
+    "BenefitEntity": [
+      "Data Package",
+      "better tooling",
+      "standardization"
+    ],
+    "triggers": [
+      [
+        "Researcher",
+        "get"
+      ]
+    ],
+    "targets": [
+      [
+        "get",
+        "Excel spreadsheet"
+      ],
+      [
+        "benefit from",
+        "better tooling"
+      ],
+      [
+        "benefit from",
+        "standardization"
+      ]
+    ],
+    "contains": [
+      [
+        "Data Package",
+        "Excel spreadsheet"
+      ]
+    ]
+  },
+  {
+    "ID": "US17",
+    "Text": "#G08# As a Developer, I want to do exploratory data analysis in R and operationalize that analysis in Python, so that I can use the best tool for the job.",
+    "Persona": [
+      "Developer"
+    ],
+    "GoalAction": [
+      "operationalize",
+      "do"
+    ],
+    "GoalEntity": [
+      "analysis",
+      "exploratory data analysis"
+    ],
+    "BenefitAction": [
+      "use"
+    ],
+    "BenefitEntity": [
+      "Python",
+      "best tool",
+      "R",
+      "job"
+    ],
+    "triggers": [
+      [
+        "Developer",
+        "operationalize"
+      ],
+      [
+        "Developer",
+        "do"
+      ]
+    ],
+    "targets": [
+      [
+        "use",
+        "best tool"
+      ],
+      [
+        "do",
+        "exploratory data analysis"
+      ],
+      [
+        "operationalize",
+        "analysis"
+      ]
+    ],
+    "contains": [
+      [
+        "R",
+        "exploratory data analysis"
+      ],
+      [
+        "Python",
+        "analysis"
+      ],
+      [
+        "job",
+        "best tool"
+      ]
+    ]
+  },
+  {
+    "ID": "US18",
+    "Text": "#G08# As a Developer, I want to get a Data Package into Clojure in seconds, so that I can start using the data in doing analysis and visualizations.",
+    "Persona": [
+      "Developer"
+    ],
+    "GoalAction": [
+      "get"
+    ],
+    "GoalEntity": [
+      "Data Package"
+    ],
+    "BenefitAction": [
+      "start using",
+      "doing"
+    ],
+    "BenefitEntity": [
+      "Clojure",
+      "analysis",
+      "data",
+      "visualizations"
+    ],
+    "triggers": [
+      [
+        "Developer",
+        "get"
+      ]
+    ],
+    "targets": [
+      [
+        "get",
+        "Data Package"
+      ],
+      [
+        "start using",
+        "data"
+      ],
+      [
+        "doing",
+        "visualizations"
+      ],
+      [
+        "doing",
+        "analysis"
+      ]
+    ],
+    "contains": [
+      [
+        "Clojure",
+        "Data Package"
+      ],
+      [
+        "Data Package",
+        "data"
+      ]
+    ]
+  },
+  {
+    "ID": "US19",
+    "Text": "#G08# As a Developer, I want to get a Data Package into Julia in seconds, so that I can start using the data in doing analysis and visualizations.",
+    "Persona": [
+      "Developer"
+    ],
+    "GoalAction": [
+      "get"
+    ],
+    "GoalEntity": [
+      "Data Package"
+    ],
+    "BenefitAction": [
+      "start using",
+      "doing"
+    ],
+    "BenefitEntity": [
+      "analysis",
+      "Julia",
+      "data",
+      "visualizations"
+    ],
+    "triggers": [
+      [
+        "Developer",
+        "get"
+      ]
+    ],
+    "targets": [
+      [
+        "get",
+        "Data Package"
+      ],
+      [
+        "start using",
+        "data"
+      ],
+      [
+        "doing",
+        "analysis"
+      ],
+      [
+        "doing",
+        "visualizations"
+      ]
+    ],
+    "contains": [
+      [
+        "Data Package",
+        "data"
+      ],
+      [
+        "Julia",
+        "Data Package"
+      ]
+    ]
+  },
+  {
+    "ID": "US20",
+    "Text": "#G08# As a Developer, I want to get a Data Package into C++ in seconds, so that I can start using the data in doing analysis and visualizations.",
+    "Persona": [
+      "Developer"
+    ],
+    "GoalAction": [
+      "get"
+    ],
+    "GoalEntity": [
+      "Data Package"
+    ],
+    "BenefitAction": [
+      "start using",
+      "doing"
+    ],
+    "BenefitEntity": [
+      "C++",
+      "data",
+      "analysis",
+      "visualizations"
+    ],
+    "triggers": [
+      [
+        "Developer",
+        "get"
+      ]
+    ],
+    "targets": [
+      [
+        "get",
+        "Data Package"
+      ],
+      [
+        "start using",
+        "data"
+      ],
+      [
+        "doing",
+        "visualizations"
+      ],
+      [
+        "doing",
+        "analysis"
+      ]
+    ],
+    "contains": [
+      [
+        "C++",
+        "Data Package"
+      ],
+      [
+        "Data Package",
+        "data"
+      ]
+    ]
+  }
+]
