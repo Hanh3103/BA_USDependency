@@ -59,7 +59,7 @@ def annotate(user_story: str, story_id: str, max_retries: int = 2) -> Dict | Non
 
 if __name__ == "__main__":
     from utils.file_parser import load_stories
-    stories = load_stories("test/test_raw_input/user_stories.txt")
+    stories = load_stories("test/test_raw_input/test_2.txt")
 
     for story in stories:
         print(story + "\n") 
