@@ -1,0 +1,153 @@
+{
+        "PID": "#G02#",
+        "Text": "#G02# As an agency user, I want the FABS validation rules to accept zero and blank for non-loan records.",
+        "Persona": [
+            "agency user"
+        ],
+        "Action": {
+            "Primary Action": [
+                "want"
+            ],
+            "Secondary Action": [
+                "accept"
+            ]
+        },
+        "Entity": {
+            "Primary Entity": [
+                "FABS validation rules"
+            ],
+            "Secondary Entity": [
+                "zero",
+                "blank",
+                "non-loan records"
+            ]
+        },
+        "Benefit": "",
+        "Triggers": [
+            [
+                "agency user",
+                "want"
+            ]
+        ],
+        "Targets": [
+            [
+                "want",
+                "FABS validation rules"
+            ],
+            [
+                "accept",
+                "zero"
+            ],
+            [
+                "accept",
+                "blank"
+            ]
+        ],
+        "Contains": [
+            [
+                "non-loan records",
+                "blank"
+            ],
+            [
+                "non-loan records",
+                "zero"
+            ]
+        ]
+    }
+
+
+
+     {
+        "PID": "#G02#",
+        "Text": "#G02# As a broker team member, I want to make some updates to the SQL codes for clarity.",
+        "Persona": [
+            "broker team member"
+        ],
+        "Action": {
+            "Primary Action": [
+                "make"
+            ],
+            "Secondary Action": [
+                ""
+            ]
+        },
+        "Entity": {
+            "Primary Entity": [
+                "some updates"
+            ],
+            "Secondary Entity": [
+                "SQL codes"
+            ]
+        },
+        "Benefit": "for clarity",
+        "Triggers": [
+            [
+                "broker team member",
+                "make"
+            ]
+        ],
+        "Targets": [
+            [
+                "make",
+                "some updates"
+            ]
+        ],
+        "Contains": [
+            [
+                "SQL codes",
+                "some updates"
+            ]
+        ]
+    }
+
+    {
+        "PID": "#G02#",
+        "Text": "#G02# As a broker team member, I want to add the 00***** and 00FORGN PPoPCode cases to the derivation logic.",
+        "Persona": [
+            "broker team member"
+        ],
+        "Action": {
+            "Primary Action": [
+                "add"
+            ],
+            "Secondary Action": [
+                ""
+            ]
+        },
+        "Entity": {
+            "Primary Entity": [
+                "00*****",
+                "00FORGN PPoPCode cases"
+            ],
+            "Secondary Entity": [
+                "derivation logic"
+            ]
+        },
+        "Benefit": "",
+        "Triggers": [
+            [
+                "broker team member",
+                "add"
+            ]
+        ],
+        "Targets": [
+            [
+                "add",
+                "00*****"
+            ],
+            [
+                "add",
+                "00FORGN PPoPCode cases"
+            ]
+        ],
+        "Contains": [
+            [
+                "derivation logic",
+                "00FORGN PPoPCode cases"
+            ],
+            [
+                "derivation logic",
+                "00*****"
+            ]
+        ]
+    },

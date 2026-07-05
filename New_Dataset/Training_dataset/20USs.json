@@ -17,7 +17,8 @@
     ],
     "BenefitEntity": [
       "saved spots",
-      "trips"
+      "trips",
+      "devices"
     ],
     "triggers": [
       [
@@ -133,10 +134,19 @@
       "tutorial"
     ],
     "BenefitAction": [
-      "understand"
+      "demonstrates",
+      "import",
+      "create",
+      "generate",
+      "understand",
+      "reading"
     ],
     "BenefitEntity": [
-      "core workflow"
+      "spot",
+      "list",
+      "itinerary",
+      "core workflow",
+      "external documentation"
     ],
     "triggers": [
       [
@@ -150,11 +160,39 @@
         "tutorial"
       ],
       [
+        "import",
+        "spot"
+      ],
+      [
+        "create",
+        "list"
+      ],
+      [
+        "generate",
+        "itinerary"
+      ],
+      [
         "understand",
         "core workflow"
+      ],
+      [
+        "reading",
+        "external documentation"
       ]
     ],
     "contains": [
+      [
+        "tutorial",
+        "spot"
+      ],
+      [
+        "tutorial",
+        "list"
+      ],
+      [
+        "tutorial",
+        "itinerary"
+      ],
       [
         "core workflow",
         "external documentation"
@@ -176,7 +214,8 @@
       "capture"
     ],
     "BenefitEntity": [
-      "travel inspiration"
+      "travel inspiration",
+      "details"
     ],
     "triggers": [
       [
@@ -192,6 +231,10 @@
       [
         "capture",
         "travel inspiration"
+      ],
+      [
+        "typing",
+        "details"
       ]
     ],
     "contains": [
@@ -200,8 +243,12 @@
         "TikTok or Instagram video"
       ],
       [
-        "capture",
-        "typing details"
+        "location",
+        "single tap"
+      ],
+      [
+        "travel inspiration",
+        "details"
       ]
     ]
   },
@@ -217,10 +264,14 @@
       "spot"
     ],
     "BenefitAction": [
-      "save"
+      "save",
+      "discover"
     ],
     "BenefitEntity": [
-      "places"
+      "places",
+      "social media",
+      "blogs",
+      "word-of-mouth"
     ],
     "triggers": [
       [
@@ -236,6 +287,10 @@
       [
         "save",
         "places"
+      ],
+      [
+        "discover",
+        "social media"
       ]
     ],
     "contains": [
@@ -248,8 +303,12 @@
         "location on map"
       ],
       [
-        "save",
-        "blogs or word-of-mouth"
+        "social media",
+        "blogs"
+      ],
+      [
+        "social media",
+        "word-of-mouth"
       ]
     ]
   },
@@ -268,7 +327,8 @@
       "keep"
     ],
     "BenefitEntity": [
-      "critical information"
+      "critical information",
+      "place"
     ],
     "triggers": [
       [
@@ -287,6 +347,14 @@
       ]
     ],
     "contains": [
+      [
+        "private notes",
+        "reservation numbers"
+      ],
+      [
+        "private notes",
+        "tips"
+      ],
       [
         "private notes",
         "saved spot"
@@ -472,8 +540,7 @@
       "name"
     ],
     "BenefitAction": [
-      "keep",
-      "plan"
+      "keep"
     ],
     "BenefitEntity": [
       "organization"
@@ -491,10 +558,6 @@
       ],
       [
         "keep",
-        "organization"
-      ],
-      [
-        "plan",
         "organization"
       ]
     ],
@@ -544,14 +607,6 @@
         "spatial distribution"
       ],
       [
-        "understand",
-        "routes"
-      ],
-      [
-        "plan",
-        "spatial distribution"
-      ],
-      [
         "plan",
         "routes"
       ]
@@ -559,7 +614,11 @@
     "contains": [
       [
         "saved spots",
-        "pins on live map"
+        "pins"
+      ],
+      [
+        "pins",
+        "live map"
       ]
     ]
   },
@@ -597,6 +656,10 @@
       ]
     ],
     "contains": [
+      [
+        "map",
+        "spots"
+      ],
       [
         "map",
         "specific list"
@@ -681,8 +744,7 @@
       "day-by-day itinerary"
     ],
     "BenefitAction": [
-      "transform",
-      "plan"
+      "transform"
     ],
     "BenefitEntity": [
       "scattered ideas"
@@ -716,26 +778,10 @@
       ],
       [
         "generate",
-        "destination"
-      ],
-      [
-        "generate",
-        "travel dates"
-      ],
-      [
-        "generate",
-        "list of saved spots"
-      ],
-      [
-        "generate",
         "day-by-day itinerary"
       ],
       [
         "transform",
-        "scattered ideas"
-      ],
-      [
-        "plan",
         "scattered ideas"
       ]
     ],
@@ -743,10 +789,6 @@
       [
         "scattered ideas",
         "structured plan"
-      ],
-      [
-        "structured plan",
-        "manual scheduling"
       ]
     ]
   },
@@ -816,8 +858,7 @@
       "stops"
     ],
     "BenefitAction": [
-      "adjust",
-      "plan"
+      "adjust"
     ],
     "BenefitEntity": [
       "order"
@@ -843,10 +884,6 @@
       ],
       [
         "adjust",
-        "order"
-      ],
-      [
-        "plan",
         "order"
       ]
     ],
@@ -880,8 +917,7 @@
       "spots"
     ],
     "BenefitAction": [
-      "reuse",
-      "plan"
+      "reuse"
     ],
     "BenefitEntity": [
       "proven plan"
@@ -924,10 +960,6 @@
       [
         "reuse",
         "proven plan"
-      ],
-      [
-        "plan",
-        "proven plan"
       ]
     ],
     "contains": [
@@ -954,8 +986,7 @@
     ],
     "BenefitAction": [
       "shows",
-      "remains",
-      "plan"
+      "remains"
     ],
     "BenefitEntity": [
       "trip list"
@@ -977,10 +1008,6 @@
       ],
       [
         "remains",
-        "trip list"
-      ],
-      [
-        "plan",
         "trip list"
       ]
     ],
@@ -1008,10 +1035,11 @@
     ],
     "BenefitAction": [
       "share",
-      "plan"
+      "giving"
     ],
     "BenefitEntity": [
-      "plans"
+      "plans",
+      "editing rights"
     ],
     "triggers": [
       [
@@ -1029,8 +1057,8 @@
         "plans"
       ],
       [
-        "plan",
-        "plans"
+        "giving",
+        "editing rights"
       ]
     ],
     "contains": [
@@ -1057,12 +1085,11 @@
       "download"
     ],
     "GoalEntity": [
-      "itinerary"
+      "complete itinerary"
     ],
     "BenefitAction": [
       "navigate",
-      "follow",
-      "plan"
+      "follow"
     ],
     "BenefitEntity": [
       "plan"
@@ -1076,7 +1103,7 @@
     "targets": [
       [
         "download",
-        "itinerary"
+        "complete itinerary"
       ],
       [
         "navigate",
@@ -1085,23 +1112,19 @@
       [
         "follow",
         "plan"
-      ],
-      [
-        "plan",
-        "plan"
       ]
     ],
     "contains": [
       [
-        "itinerary",
+        "complete itinerary",
         "maps"
       ],
       [
-        "itinerary",
+        "complete itinerary",
         "spot details"
       ],
       [
-        "itinerary",
+        "complete itinerary",
         "daily plan"
       ],
       [

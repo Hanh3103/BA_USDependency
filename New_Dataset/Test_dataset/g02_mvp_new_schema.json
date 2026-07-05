@@ -1,0 +1,833 @@
+[
+  {
+    "Text": "As a Data user, I want to have the 12-19-2017 deletions processed.",
+    "Persona": [
+      "Data user"
+    ],
+    "GoalAction": [
+      "have"
+    ],
+    "GoalEntity": [
+      "12-19-2017 deletions"
+    ],
+    "BenefitAction": [
+      "processed"
+    ],
+    "BenefitEntity": [
+      ""
+    ],
+    "triggers": [
+      [
+        "Data user",
+        "have"
+      ]
+    ],
+    "targets": [
+      [
+        "processed",
+        "12-19-2017 deletions"
+      ],
+      [
+        "have",
+        "12-19-2017 deletions"
+      ]
+    ],
+    "contains": []
+  },
+  {
+    "Text": "As a UI designer, I want to redesign the Resources page, so that it matches the new Broker design styles.",
+    "Persona": [
+      "UI designer"
+    ],
+    "GoalAction": [
+      "redesign"
+    ],
+    "GoalEntity": [
+      "Resources page"
+    ],
+    "BenefitAction": [
+      "matches"
+    ],
+    "BenefitEntity": [
+      "new Broker design styles"
+    ],
+    "triggers": [
+      [
+        "UI designer",
+        "redesign"
+      ]
+    ],
+    "targets": [
+      [
+        "redesign",
+        "Resources page"
+      ],
+      [
+        "matches",
+        "new Broker design styles"
+      ]
+    ],
+    "contains": [
+      [
+        "Resources page",
+        "new Broker design styles"
+      ]
+    ]
+  },
+  {
+    "Text": "As a UI designer, I want to report to the Agencies about user testing, so that they are aware of their contributions to making Broker a better UX.",
+    "Persona": [
+      "UI designer"
+    ],
+    "GoalAction": [
+      "report"
+    ],
+    "GoalEntity": [
+      "user testing"
+    ],
+    "BenefitAction": [
+      "aware",
+      "making"
+    ],
+    "BenefitEntity": [
+      "Agencies",
+      "contributions",
+      "Broker",
+      "better UX"
+    ],
+    "triggers": [
+      [
+        "UI designer",
+        "report"
+      ]
+    ],
+    "targets": [
+      [
+        "report",
+        "user testing"
+      ],
+      [
+        "aware",
+        "contributions"
+      ],
+      [
+        "making",
+        "Broker"
+      ]
+    ],
+    "contains": []
+  },
+  {
+    "Text": "As a UI designer, I want to move on to round 2 of DABS or FABS landing page edits, so that I can get approvals from leadership.",
+    "Persona": [
+      "UI designer"
+    ],
+    "GoalAction": [
+      "move on"
+    ],
+    "GoalEntity": [
+      "round 2"
+    ],
+    "BenefitAction": [
+      "get"
+    ],
+    "BenefitEntity": [
+      "FABS landing page edits",
+      "DABS",
+      "approvals",
+      "leadership"
+    ],
+    "triggers": [
+      [
+        "UI designer",
+        "move on"
+      ]
+    ],
+    "targets": [
+      [
+        "move on",
+        "round 2"
+      ],
+      [
+        "get",
+        "approvals"
+      ]
+    ],
+    "contains": [
+      [
+        "DABS",
+        "round 2"
+      ],
+      [
+        "FABS landing page edits",
+        "round 2"
+      ]
+    ]
+  },
+  {
+    "Text": "As a UI designer, I want to move on to round 3 of the Help page edits, so that I can get approvals from leadership.",
+    "Persona": [
+      "UI designer"
+    ],
+    "GoalAction": [
+      "move on"
+    ],
+    "GoalEntity": [
+      "round 3"
+    ],
+    "BenefitAction": [
+      "get"
+    ],
+    "BenefitEntity": [
+      "Help page edits",
+      "approvals",
+      "leadership"
+    ],
+    "triggers": [
+      [
+        "UI designer",
+        "move on"
+      ]
+    ],
+    "targets": [
+      [
+        "move on",
+        "round 3"
+      ],
+      [
+        "get",
+        "approvals"
+      ]
+    ],
+    "contains": [
+      [
+        "Help page edits",
+        "round 3"
+      ]
+    ]
+  },
+  {
+    "Text": "As a Developer , I want to be able to log better, so that I can troubleshoot issues with particular submissions and functions.",
+    "Persona": [
+      "Developer"
+    ],
+    "GoalAction": [
+      "log better"
+    ],
+    "GoalEntity": [
+      ""
+    ],
+    "BenefitAction": [
+      "troubleshoot"
+    ],
+    "BenefitEntity": [
+      "particular submissions",
+      "issues",
+      "functions"
+    ],
+    "triggers": [
+      [
+        "Developer",
+        "log better"
+      ]
+    ],
+    "targets": [
+      [
+        "troubleshoot",
+        "issues"
+      ]
+    ],
+    "contains": [
+      [
+        "functions",
+        "issues"
+      ],
+      [
+        "particular submissions",
+        "issues"
+      ]
+    ]
+  },
+  {
+    "Text": "As a Developer, I want to add the updates on a FABS submission to be modified when the publishStatus changes, so that I know when the status of the submission has changed.",
+    "Persona": [
+      "Developer"
+    ],
+    "GoalAction": [
+      "add"
+    ],
+    "GoalEntity": [
+      "updates"
+    ],
+    "BenefitAction": [
+      "know",
+      "be modified",
+      "changes"
+    ],
+    "BenefitEntity": [
+      "FABS submission",
+      "publishStatus",
+      "status",
+      "submission"
+    ],
+    "triggers": [
+      [
+        "Developer",
+        "add"
+      ]
+    ],
+    "targets": [
+      [
+        "add",
+        "updates"
+      ],
+      [
+        "know",
+        "status"
+      ],
+      [
+        "changes",
+        "publishStatus"
+      ]
+    ],
+    "contains": [
+      [
+        "submission",
+        "status"
+      ],
+      [
+        "FABS submission",
+        "updates"
+      ]
+    ]
+  },
+  {
+    "Text": "As a DevOps engineer, I want New Relic to provide useful data across all applications.",
+    "Persona": [
+      "DevOps engineer"
+    ],
+    "GoalAction": [
+      "want"
+    ],
+    "GoalEntity": [
+      "New Relic"
+    ],
+    "BenefitAction": [
+      "provide"
+    ],
+    "BenefitEntity": [
+      "useful data",
+      "all applications"
+    ],
+    "triggers": [
+      [
+        "DevOps engineer",
+        "want"
+      ]
+    ],
+    "targets": [
+      [
+        "provide",
+        "useful data"
+      ],
+      [
+        "want",
+        "New Relic"
+      ]
+    ],
+    "contains": [
+      [
+        "New Relic",
+        "useful data"
+      ],
+      [
+        "all applications",
+        "useful data"
+      ]
+    ]
+  },
+  {
+    "Text": "As a UI designer,  I want to move on to round 2 of the Help page edits, so that I can get approvals from leadership.",
+    "Persona": [
+      "UI designer"
+    ],
+    "GoalAction": [
+      "move on"
+    ],
+    "GoalEntity": [
+      "round 2"
+    ],
+    "BenefitAction": [
+      "get"
+    ],
+    "BenefitEntity": [
+      "approvals",
+      "Help page edits",
+      "leadership"
+    ],
+    "triggers": [
+      [
+        "UI designer",
+        "move on"
+      ]
+    ],
+    "targets": [
+      [
+        "move on",
+        "round 2"
+      ],
+      [
+        "get",
+        "approvals"
+      ]
+    ],
+    "contains": [
+      [
+        "Help page edits",
+        "round 2"
+      ]
+    ]
+  },
+  {
+    "Text": "As a UI designer, I want to move on to round 2 of Homepage edits, so that I can get approvals from leadership.",
+    "Persona": [
+      "UI designer"
+    ],
+    "GoalAction": [
+      "move"
+    ],
+    "GoalEntity": [
+      "round 2"
+    ],
+    "BenefitAction": [
+      "get"
+    ],
+    "BenefitEntity": [
+      "Homepage edits",
+      "approvals",
+      "leadership"
+    ],
+    "triggers": [
+      [
+        "UI designer",
+        "move"
+      ]
+    ],
+    "targets": [
+      [
+        "get",
+        "approvals"
+      ],
+      [
+        "move",
+        "round 2"
+      ]
+    ],
+    "contains": [
+      [
+        "Homepage edits",
+        "round 2"
+      ]
+    ]
+  },
+  {
+    "Text": "As a Broker user, I want to Upload and Validate the error message to have accurate text.",
+    "Persona": [
+      "Broker user"
+    ],
+    "GoalAction": [
+      "Upload",
+      "Validate"
+    ],
+    "GoalEntity": [
+      "error message"
+    ],
+    "BenefitAction": [
+      ""
+    ],
+    "BenefitEntity": [
+      "accurate text"
+    ],
+    "triggers": [
+      [
+        "Broker user",
+        "Upload"
+      ],
+      [
+        "Broker user",
+        "Validate"
+      ]
+    ],
+    "targets": [
+      [
+        "Validate",
+        "error message"
+      ],
+      [
+        "Upload",
+        "error message"
+      ]
+    ],
+    "contains": [
+      [
+        "error message",
+        "accurate text"
+      ]
+    ]
+  },
+  {
+    "Text": "As a Broker user, I want the D1 file generation to be synced with the FPDS data load, so that I don't have to regenerate a file if no data has been updated.",
+    "Persona": [
+      "Broker user"
+    ],
+    "GoalAction": [
+      "want"
+    ],
+    "GoalEntity": [
+      "D1 file generation"
+    ],
+    "BenefitAction": [
+      "synced"
+    ],
+    "BenefitEntity": [
+      "FPDS data load",
+      "file",
+      "data"
+    ],
+    "triggers": [
+      [
+        "Broker user",
+        "want"
+      ]
+    ],
+    "targets": [
+      [
+        "want",
+        "D1 file generation"
+      ],
+      [
+        "synced",
+        "FPDS data load"
+      ],
+      [
+        "synced",
+        "D1 file generation"
+      ]
+    ],
+    "contains": [
+      [
+        "file",
+        "data"
+      ]
+    ]
+  },
+  {
+    "Text": "As a Website user, I want to access published FABS files, so that I can see the new files as they come in.",
+    "Persona": [
+      "Website user"
+    ],
+    "GoalAction": [
+      "access"
+    ],
+    "GoalEntity": [
+      "published FABS files"
+    ],
+    "BenefitAction": [
+      "see"
+    ],
+    "BenefitEntity": [
+      "new files"
+    ],
+    "triggers": [
+      [
+        "Website user",
+        "access"
+      ]
+    ],
+    "targets": [
+      [
+        "access",
+        "published FABS files"
+      ],
+      [
+        "see",
+        "new files"
+      ]
+    ],
+    "contains": []
+  },
+  {
+    "Text": "As an owner, I want to be sure that USAspending only send grant records to my system.",
+    "Persona": [
+      "owner"
+    ],
+    "GoalAction": [
+      "be sure"
+    ],
+    "GoalEntity": [
+      ""
+    ],
+    "BenefitAction": [
+      "only send"
+    ],
+    "BenefitEntity": [
+      "USAspending",
+      "grant records",
+      "system"
+    ],
+    "triggers": [
+      [
+        "owner",
+        "be sure"
+      ]
+    ],
+    "targets": [
+      [
+        "only send",
+        "grant records"
+      ]
+    ],
+    "contains": [
+      [
+        "system",
+        "grant records"
+      ]
+    ]
+  },
+  {
+    "Text": "As a Developer, I want to update the Broker validation rule table to account for the rule updates in DB-2213.",
+    "Persona": [
+      "Developer"
+    ],
+    "GoalAction": [
+      "update"
+    ],
+    "GoalEntity": [
+      "Broker validation rule table"
+    ],
+    "BenefitAction": [
+      "account"
+    ],
+    "BenefitEntity": [
+      "rule updates",
+      "DB-2213"
+    ],
+    "triggers": [
+      [
+        "Developer",
+        "update"
+      ]
+    ],
+    "targets": [
+      [
+        "update",
+        "Broker validation rule table"
+      ],
+      [
+        "account",
+        "rule updates"
+      ]
+    ],
+    "contains": [
+      [
+        "DB-2213",
+        "rule updates"
+      ]
+    ]
+  },
+  {
+    "Text": "As a Developer, I want to add the GTAS window data to the database, so that I can ensure the site is locked down during the GTAS submission period.",
+    "Persona": [
+      "Developer"
+    ],
+    "GoalAction": [
+      "add"
+    ],
+    "GoalEntity": [
+      "GTAS window data"
+    ],
+    "BenefitAction": [
+      "ensure",
+      "locked down"
+    ],
+    "BenefitEntity": [
+      "site",
+      "GTAS submission period",
+      "database"
+    ],
+    "triggers": [
+      [
+        "Developer",
+        "add"
+      ]
+    ],
+    "targets": [
+      [
+        "add",
+        "GTAS window data"
+      ],
+      [
+        "locked down",
+        "site"
+      ]
+    ],
+    "contains": [
+      [
+        "database",
+        "GTAS window data"
+      ]
+    ]
+  },
+  {
+    "Text": "As a Developer, I want D Files generation requests to be managed and cached, so that duplicate requests do not cause performance issues.",
+    "Persona": [
+      "Developer"
+    ],
+    "GoalAction": [
+      "want"
+    ],
+    "GoalEntity": [
+      "D Files generation requests"
+    ],
+    "BenefitAction": [
+      "managed",
+      "cached"
+    ],
+    "BenefitEntity": [
+      "duplicate requests",
+      "performance issues"
+    ],
+    "triggers": [
+      [
+        "Developer",
+        "want"
+      ]
+    ],
+    "targets": [
+      [
+        "managed",
+        "D Files generation requests"
+      ],
+      [
+        "cached",
+        "D Files generation requests"
+      ],
+      [
+        "want",
+        "D Files generation requests"
+      ]
+    ],
+    "contains": []
+  },
+  {
+    "Text": "As an Agency user, I want to be able to include a large number of flexfields without performance impact.",
+    "Persona": [
+      "Agency user"
+    ],
+    "GoalAction": [
+      "include"
+    ],
+    "GoalEntity": [
+      "large number of flexfields"
+    ],
+    "BenefitAction": [
+      ""
+    ],
+    "BenefitEntity": [
+      "performance impact"
+    ],
+    "triggers": [
+      [
+        "Agency user",
+        "include"
+      ]
+    ],
+    "targets": [
+      [
+        "include",
+        "large number of flexfields"
+      ]
+    ],
+    "contains": []
+  },
+  {
+    "Text": "As a Broker user, I want  to help create content mockups, so that I can submit my data efficiently.",
+    "Persona": [
+      "Broker user"
+    ],
+    "GoalAction": [
+      "help create"
+    ],
+    "GoalEntity": [
+      "content mockups"
+    ],
+    "BenefitAction": [
+      "submit"
+    ],
+    "BenefitEntity": [
+      "data"
+    ],
+    "triggers": [
+      [
+        "Broker user",
+        "help create"
+      ]
+    ],
+    "targets": [
+      [
+        "submit",
+        "data"
+      ],
+      [
+        "help create",
+        "content mockups"
+      ]
+    ],
+    "contains": []
+  },
+  {
+    "Text": "As a UI designer, I want to track the issues that come up in Tech Thursday, so that I know what to test and what want s to be fixed.",
+    "Persona": [
+      "UI designer"
+    ],
+    "GoalAction": [
+      "track"
+    ],
+    "GoalEntity": [
+      "issues"
+    ],
+    "BenefitAction": [
+      "know",
+      "test",
+      "fixed"
+    ],
+    "BenefitEntity": [
+      "Tech Thursday"
+    ],
+    "triggers": [
+      [
+        "UI designer",
+        "track"
+      ]
+    ],
+    "targets": [
+      [
+        "fixed",
+        "issues"
+      ],
+      [
+        "track",
+        "issues"
+      ],
+      [
+        "know",
+        "issues"
+      ],
+      [
+        "test",
+        "issues"
+      ]
+    ],
+    "contains": []
+  }
+]

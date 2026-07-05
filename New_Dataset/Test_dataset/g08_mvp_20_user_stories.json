@@ -1,7 +1,6 @@
 [
   {
-    "ID": "US1",
-    "Text": "#G08# As a Developer, I want to get a Data Package into Node, so that I can start using the data for doing analysis and visualizations.",
+    "Text": "As a Developer, I want to get a Data Package into Node, so that I can start using the data for doing analysis and visualizations.",
     "Persona": [
       "Developer"
     ],
@@ -57,8 +56,7 @@
     ]
   },
   {
-    "ID": "US2",
-    "Text": "#G08# As a Researcher, I want to get a Data Package into Julia in seconds, so that I can start using the data for doing analysis and visualizations.",
+    "Text": "As a Researcher, I want to get a Data Package into Julia in seconds, so that I can start using the data for doing analysis and visualizations.",
     "Persona": [
       "Researcher"
     ],
@@ -114,8 +112,7 @@
     ]
   },
   {
-    "ID": "US3",
-    "Text": "#G08# As a Publisher, I want to add type information to my data, so that it is more useful to others and can be used better with tools like visualization programs.",
+    "Text": "As a Publisher, I want to add type information to my data, so that it is more useful to others and can be used better with tools like visualization programs.",
     "Persona": [
       "Publisher"
     ],
@@ -162,8 +159,7 @@
     ]
   },
   {
-    "ID": "US4",
-    "Text": "#G08# As a Publisher, I want to be able to provide a visualization of data in the Data Package, so that I can provide my analysis and show my work to users of the data.",
+    "Text": "As a Publisher, I want to be able to provide a visualization of data in the Data Package, so that I can provide my analysis and show my work to users of the data.",
     "Persona": [
       "Publisher"
     ],
@@ -216,8 +212,7 @@
     ]
   },
   {
-    "ID": "US5",
-    "Text": "#G08# As a Researcher, I want to be able to save new visualizations, so that I can share them with others or include them in the Data Package.",
+    "Text": "As a Researcher, I want to be able to save new visualizations, so that I can share them with others or include them in the Data Package.",
     "Persona": [
       "Researcher"
     ],
@@ -267,8 +262,7 @@
     ]
   },
   {
-    "ID": "US6",
-    "Text": "#G08# As a ResearcherPublisher, I want to know that my data conforms to its Data Package profile, so that I can feel trust in the validity and usefulness of the data.",
+    "Text": "As a ResearcherPublisher, I want to know that my data conforms to its Data Package profile, so that I can feel trust in the validity and usefulness of the data.",
     "Persona": [
       "ResearcherPublisher"
     ],
@@ -320,8 +314,7 @@
     ]
   },
   {
-    "ID": "US7",
-    "Text": "#G08# As a ResearcherPublisher, I want to understand the ways in which my data is invalid, so that I can know how to fix it.",
+    "Text": "As a ResearcherPublisher, I want to understand the ways in which my data is invalid, so that I can know how to fix it.",
     "Persona": [
       "ResearcherPublisher"
     ],
@@ -362,8 +355,7 @@
     "contains": []
   },
   {
-    "ID": "US8",
-    "Text": "#G08# As a Researcher, I want to get a Data Package into R in seconds, so that I can start using the data for doing analysis and visualizations.",
+    "Text": "As a Researcher, I want to get a Data Package into R in seconds, so that I can start using the data for doing analysis and visualizations.",
     "Persona": [
       "Researcher"
     ],
@@ -419,8 +411,7 @@
     ]
   },
   {
-    "ID": "US9",
-    "Text": "#G08# As a Researcher, I want to get a Data Package into Excel in seconds, so that I can start using the data for doing analysis and visualizations.",
+    "Text": "As a Researcher, I want to get a Data Package into Excel in seconds, so that I can start using the data for doing analysis and visualizations.",
     "Persona": [
       "Researcher"
     ],
@@ -476,8 +467,7 @@
     ]
   },
   {
-    "ID": "US10",
-    "Text": "#G08# As a Researcher, I want to get a Data Package into SPSS in seconds, so that I can start using the data for doing analysis and visualizations.",
+    "Text": "As a Researcher, I want to get a Data Package into SPSS in seconds, so that I can start using the data for doing analysis and visualizations.",
     "Persona": [
       "Researcher"
     ],
@@ -533,8 +523,7 @@
     ]
   },
   {
-    "ID": "US11",
-    "Text": "#G08# As a Researcher, I want to get a Data Package into STATA in seconds, so that I can start using the data for doing analysis and visualizations.",
+    "Text": "As a Researcher, I want to get a Data Package into STATA in seconds, so that I can start using the data for doing analysis and visualizations.",
     "Persona": [
       "Researcher"
     ],
@@ -590,8 +579,7 @@
     ]
   },
   {
-    "ID": "US12",
-    "Text": "#G08# As a Researcher, I want to be able to translate my EML dataset to a Data Package, so that I can benefit from the wide array of tools available for Data Packages.",
+    "Text": "As a Researcher, I want to be able to translate my EML dataset to a Data Package, so that I can benefit from the wide array of tools available for Data Packages.",
     "Persona": [
       "Researcher"
     ],
@@ -633,8 +621,7 @@
     ]
   },
   {
-    "ID": "US13",
-    "Text": "#G08# As a Researcher, I want to get a Data Package into LibreOffice/OpenOffice in seconds, so that I can start using the data for doing analysis and visualizations.",
+    "Text": "As a Researcher, I want to get a Data Package into LibreOffice/OpenOffice in seconds, so that I can start using the data for doing analysis and visualizations.",
     "Persona": [
       "Researcher"
     ],
@@ -695,8 +682,7 @@
     ]
   },
   {
-    "ID": "US14",
-    "Text": "#G08# As a Developer, I want to get a Data Package into Python in seconds, so that I can start using the data for doing analysis and visualizations.",
+    "Text": "As a Developer, I want to get a Data Package into Python in seconds, so that I can start using the data for doing analysis and visualizations.",
     "Persona": [
       "Developer"
     ],
@@ -752,8 +738,7 @@
     ]
   },
   {
-    "ID": "US15",
-    "Text": "#G08# As a Developer, I want a jQuery plugin for Core Data Packages, so that I can use it to apply to form control that uses a core dataset for autocompletion.",
+    "Text": "As a Developer, I want a jQuery plugin for Core Data Packages, so that I can use it to apply to form control that uses a core dataset for autocompletion.",
     "Persona": [
       "Developer"
     ],
@@ -805,8 +790,7 @@
     ]
   },
   {
-    "ID": "US16",
-    "Text": "#G08# As a Researcher, I want to get my Excel spreadsheet into a Data Package, so that I can benefit from better tooling and standardization.",
+    "Text": "As a Researcher, I want to get my Excel spreadsheet into a Data Package, so that I can benefit from better tooling and standardization.",
     "Persona": [
       "Researcher"
     ],
@@ -852,8 +836,7 @@
     ]
   },
   {
-    "ID": "US17",
-    "Text": "#G08# As a Developer, I want to do exploratory data analysis in R and operationalize that analysis in Python, so that I can use the best tool for the job.",
+    "Text": "As a Developer, I want to do exploratory data analysis in R and operationalize that analysis in Python, so that I can use the best tool for the job.",
     "Persona": [
       "Developer"
     ],
@@ -914,8 +897,7 @@
     ]
   },
   {
-    "ID": "US18",
-    "Text": "#G08# As a Developer, I want to get a Data Package into Clojure in seconds, so that I can start using the data in doing analysis and visualizations.",
+    "Text": "As a Developer, I want to get a Data Package into Clojure in seconds, so that I can start using the data in doing analysis and visualizations.",
     "Persona": [
       "Developer"
     ],
@@ -971,8 +953,7 @@
     ]
   },
   {
-    "ID": "US19",
-    "Text": "#G08# As a Developer, I want to get a Data Package into Julia in seconds, so that I can start using the data in doing analysis and visualizations.",
+    "Text": "As a Developer, I want to get a Data Package into Julia in seconds, so that I can start using the data in doing analysis and visualizations.",
     "Persona": [
       "Developer"
     ],
@@ -1028,8 +1009,7 @@
     ]
   },
   {
-    "ID": "US20",
-    "Text": "#G08# As a Developer, I want to get a Data Package into C++ in seconds, so that I can start using the data in doing analysis and visualizations.",
+    "Text": "As a Developer, I want to get a Data Package into C++ in seconds, so that I can start using the data in doing analysis and visualizations.",
     "Persona": [
       "Developer"
     ],
