@@ -45,6 +45,52 @@
     ]
   },
   {
+    "Text": "As a Broker user, I want the D1 file generation to be synced with the FPDS data load, so that I don't have to regenerate a file if no data has been updated.",
+    "Persona": [
+      "Broker user"
+    ],
+    "GoalAction": [
+      "want"
+    ],
+    "GoalEntity": [
+      "D1 file generation"
+    ],
+    "BenefitAction": [
+      "synced"
+    ],
+    "BenefitEntity": [
+      "FPDS data load",
+      "file",
+      "data"
+    ],
+    "triggers": [
+      [
+        "Broker user",
+        "want"
+      ]
+    ],
+    "targets": [
+      [
+        "want",
+        "D1 file generation"
+      ],
+      [
+        "synced",
+        "FPDS data load"
+      ],
+      [
+        "synced",
+        "D1 file generation"
+      ]
+    ],
+    "contains": [
+      [
+        "file",
+        "data"
+      ]
+    ]
+  },
+  {
     "Text": "As a Website user, I want to access published FABS files, so that I can see the new files as they come in.",
     "Persona": [
       "Website user"
@@ -75,6 +121,88 @@
       [
         "see",
         "new files"
+      ]
+    ],
+    "contains": []
+  },
+  {
+    "Text": "As a Developer, I want to update the Broker validation rule table to account for the rule updates in DB-2213.",
+    "Persona": [
+      "Developer"
+    ],
+    "GoalAction": [
+      "update"
+    ],
+    "GoalEntity": [
+      "Broker validation rule table"
+    ],
+    "BenefitAction": [
+      "account"
+    ],
+    "BenefitEntity": [
+      "rule updates",
+      "DB-2213"
+    ],
+    "triggers": [
+      [
+        "Developer",
+        "update"
+      ]
+    ],
+    "targets": [
+      [
+        "update",
+        "Broker validation rule table"
+      ],
+      [
+        "account",
+        "rule updates"
+      ]
+    ],
+    "contains": [
+      [
+        "DB-2213",
+        "rule updates"
+      ]
+    ]
+  },
+  {
+    "Text": "As a Developer, I want D Files generation requests to be managed and cached, so that duplicate requests do not cause performance issues.",
+    "Persona": [
+      "Developer"
+    ],
+    "GoalAction": [
+      "want"
+    ],
+    "GoalEntity": [
+      "D Files generation requests"
+    ],
+    "BenefitAction": [
+      "managed",
+      "cached"
+    ],
+    "BenefitEntity": [
+      "duplicate requests",
+      "performance issues"
+    ],
+    "triggers": [
+      [
+        "Developer",
+        "want"
+      ]
+    ],
+    "targets": [
+      [
+        "managed",
+        "D Files generation requests"
+      ],
+      [
+        "cached",
+        "D Files generation requests"
+      ],
+      [
+        "want",
+        "D Files generation requests"
       ]
     ],
     "contains": []
@@ -179,7 +307,96 @@
     "contains": []
   },
   {
-    "Text": "As an agency user, I want the FABS validation rules to correctly validate loan and non-loan records.",
+    "Text": "As a user, I want the publish button in FABS to deactivate after I click it while the derivations are happening, so that I cannot click it multiple times for the same submission.",
+    "Persona": [
+      "user"
+    ],
+    "GoalAction": [
+      "want"
+    ],
+    "GoalEntity": [
+      "publish button"
+    ],
+    "BenefitAction": [
+      "deactivate",
+      "click",
+      "happening"
+    ],
+    "BenefitEntity": [
+      "FABS",
+      "derivations",
+      "same submission"
+    ],
+    "triggers": [
+      [
+        "user",
+        "want"
+      ]
+    ],
+    "targets": [
+      [
+        "deactivate",
+        "publish button"
+      ],
+      [
+        "click",
+        "publish button"
+      ],
+      [
+        "want",
+        "publish button"
+      ]
+    ],
+    "contains": [
+      [
+        "FABS",
+        "publish button"
+      ]
+    ]
+  },
+  {
+    "Text": "As a user, I want to have accurate and complete data related to PPoPCode and PPoPCongressionalDistrict.",
+    "Persona": [
+      "user"
+    ],
+    "GoalAction": [
+      "have"
+    ],
+    "GoalEntity": [
+      "accurate and complete data"
+    ],
+    "BenefitAction": [
+      ""
+    ],
+    "BenefitEntity": [
+      "PPoPCode",
+      "PPoPCongressionalDistrict"
+    ],
+    "triggers": [
+      [
+        "user",
+        "have"
+      ]
+    ],
+    "targets": [
+      [
+        "have",
+        "accurate and complete data"
+      ]
+    ],
+    "contains": [
+      [
+        "PPoPCode",
+        "accurate and complete data"
+      ],
+      [
+        "PPoPCongressionalDistrict",
+        "accurate and complete data"
+      ]
+    ]
+  },
+  {
+    "Text": "As an agency user, I want the FABS validation rules to accept zero and blank for loan records.",
     "Persona": [
       "agency user"
     ],
@@ -229,6 +446,92 @@
     ]
   },
   {
+    "Text": "As an agency user, I want to be confident that the data coming from SAM is complete.",
+    "Persona": [
+      "agency user"
+    ],
+    "GoalAction": [
+      "be confident"
+    ],
+    "GoalEntity": [
+      "data"
+    ],
+    "BenefitAction": [
+      ""
+    ],
+    "BenefitEntity": [
+      "SAM"
+    ],
+    "triggers": [
+      [
+        "agency user",
+        "be confident"
+      ]
+    ],
+    "targets": [
+      [
+        "be confident",
+        "data"
+      ]
+    ],
+    "contains": [
+      [
+        "SAM",
+        "data"
+      ]
+    ]
+  },
+  {
+    "Text": "As an agency user, I want the FABS validation rules to accept zero and blank for non-loan records.",
+    "Persona": [
+      "agency user"
+    ],
+    "GoalAction": [
+      "want"
+    ],
+    "GoalEntity": [
+      "FABS validation rules"
+    ],
+    "BenefitAction": [
+      "accept"
+    ],
+    "BenefitEntity": [
+      "zero",
+      "blank",
+      "non-loan records"
+    ],
+    "triggers": [
+      [
+        "agency user",
+        "want"
+      ]
+    ],
+    "targets": [
+      [
+        "want",
+        "FABS validation rules"
+      ],
+      [
+        "accept",
+        "zero"
+      ],
+      [
+        "accept",
+        "blank"
+      ]
+    ],
+    "contains": [
+      [
+        "non-loan records",
+        "blank"
+      ],
+      [
+        "non-loan records",
+        "zero"
+      ]
+    ]
+  },
+  {
     "Text": "As an agency user, I want to have all derived data elements derived properly.",
     "Persona": [
       "agency user"
@@ -264,76 +567,38 @@
     "contains": []
   },
   {
-    "Text": "As a broker team member, I want to derive FundingAgencyCode, so that the data quality and completeness improves.",
+    "Text": "As a broker user, I want the historical FABS loader to derive fields, so that my agency codes are correct in the PublishedAwardFinancialAssistance table.",
     "Persona": [
-      "broker team member"
-    ],
-    "GoalAction": [
-      "derive"
-    ],
-    "GoalEntity": [
-      "FundingAgencyCode"
-    ],
-    "BenefitAction": [
-      "improves"
-    ],
-    "BenefitEntity": [
-      "completeness",
-      "data quality"
-    ],
-    "triggers": [
-      [
-        "broker team member",
-        "derive"
-      ]
-    ],
-    "targets": [
-      [
-        "derive",
-        "FundingAgencyCode"
-      ],
-      [
-        "improves",
-        "completeness"
-      ],
-      [
-        "improves",
-        "data quality"
-      ]
-    ],
-    "contains": []
-  },
-  {
-    "Text": "As an Agency user, I want FPDS data to be up-to-date daily.",
-    "Persona": [
-      "Agency user"
+      "broker user"
     ],
     "GoalAction": [
       "want"
     ],
     "GoalEntity": [
-      "FPDS data"
+      "historical FABS loader"
     ],
     "BenefitAction": [
-      "be up-to-date daily"
+      "derive"
     ],
     "BenefitEntity": [
-      ""
+      "fields",
+      "agency codes",
+      "PublishedAwardFinancialAssistance table"
     ],
     "triggers": [
       [
-        "Agency user",
+        "broker user",
         "want"
       ]
     ],
     "targets": [
       [
         "want",
-        "FPDS data"
+        "historical FABS loader"
       ],
       [
-        "be up-to-date daily",
-        "FPDS data"
+        "derive",
+        "fields"
       ]
     ],
     "contains": []
@@ -482,94 +747,6 @@
     ]
   },
   {
-    "Text": "As an Agency user, I want the header information box to show updated date AND time, so that I know when it was updated.",
-    "Persona": [
-      "Agency user"
-    ],
-    "GoalAction": [
-      "want"
-    ],
-    "GoalEntity": [
-      "header information box"
-    ],
-    "BenefitAction": [
-      "show",
-      "know",
-      "updated"
-    ],
-    "BenefitEntity": [
-      "updated date AND time",
-      "when"
-    ],
-    "triggers": [
-      [
-        "Agency user",
-        "want"
-      ]
-    ],
-    "targets": [
-      [
-        "show",
-        "updated date AND time"
-      ],
-      [
-        "want",
-        "header information box"
-      ],
-      [
-        "know",
-        "when"
-      ]
-    ],
-    "contains": [
-      [
-        "header information box",
-        "updated date AND time"
-      ]
-    ]
-  },
-  {
-    "Text": "As an Agency user, I want clear and accurate validation and submission errors.",
-    "Persona": [
-      "Agency user"
-    ],
-    "GoalAction": [
-      "receive"
-    ],
-    "GoalEntity": [
-      "helpful file-level error"
-    ],
-    "BenefitAction": [
-      "upload"
-    ],
-    "BenefitEntity": [
-      "file",
-      "wrong extension"
-    ],
-    "triggers": [
-      [
-        "Agency user",
-        "receive"
-      ]
-    ],
-    "targets": [
-      [
-        "receive",
-        "helpful file-level error"
-      ],
-      [
-        "upload",
-        "file"
-      ]
-    ],
-    "contains": [
-      [
-        "file",
-        "wrong extension"
-      ]
-    ]
-  },
-  {
     "Text": "As an Agency user, I want all historical Financial Assistance data loaded for FABS go-live.",
     "Persona": [
       "Agency user"
@@ -640,50 +817,34 @@
     "contains": []
   },
   {
-    "Text": "As an Agency user, I want to accurately see who created a submission, so that I'm not confused about who last updated a submission.",
+    "Text": "As an Agency user, I want to better understand my file-level errors.",
     "Persona": [
       "Agency user"
     ],
     "GoalAction": [
-      "accurately see"
+      "better understand"
     ],
     "GoalEntity": [
-      "who"
+      "file-level errors"
     ],
     "BenefitAction": [
-      "created",
-      "last updated"
+      ""
     ],
     "BenefitEntity": [
-      "submission",
-      "who",
-      "submission"
+      ""
     ],
     "triggers": [
       [
         "Agency user",
-        "accurately see"
+        "better understand"
       ]
     ],
     "targets": [
       [
-        "accurately see",
-        "who"
-      ],
-      [
-        "created",
-        "submission"
-      ],
-      [
-        "last updated",
-        "submission"
+        "better understand",
+        "file-level errors"
       ]
     ],
-    "contains": [
-      [
-        "who",
-        "submission"
-      ]
-    ]
+    "contains": []
   }
 ]
