@@ -15,6 +15,7 @@ def get_openai_client() -> OpenAI:
     return OpenAI(
         base_url=settings.ollama_base_url,
         api_key=settings.ollama_api_key,
+        timeout=60.0,
     )
 
 
