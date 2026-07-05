@@ -52,16 +52,7 @@
         "trips"
       ]
     ],
-    "contains": [
-      [
-        "saved spots",
-        "devices"
-      ],
-      [
-        "trips",
-        "devices"
-      ]
-    ]
+    "contains": []
   },
   {
     "Text": "As a returning user, I want to log in my account on a new device and log out when I'm finished, so that I can access my travel data safely and maintain privacy on shared devices.",
@@ -73,7 +64,8 @@
       "log out"
     ],
     "GoalEntity": [
-      "account"
+      "account",
+      "new device"
     ],
     "BenefitAction": [
       "access",
@@ -81,7 +73,8 @@
     ],
     "BenefitEntity": [
       "travel data",
-      "privacy"
+      "privacy",
+      "shared devices"
     ],
     "triggers": [
       [
@@ -111,16 +104,7 @@
         "privacy"
       ]
     ],
-    "contains": [
-      [
-        "account",
-        "new device"
-      ],
-      [
-        "privacy",
-        "shared devices"
-      ]
-    ]
+    "contains": []
   },
   {
     "Text": "As a user, I want to walk through a short, guided tutorial that demonstrates how to import a spot, create a list, and generate an itinerary, so that I can understand the app's core workflow without reading external documentation.",
@@ -128,23 +112,22 @@
       "user"
     ],
     "GoalAction": [
-      "walk through"
-    ],
-    "GoalEntity": [
-      "tutorial"
-    ],
-    "BenefitAction": [
-      "demonstrates",
+      "walk through",
       "import",
       "create",
-      "generate",
+      "generate"
+    ],
+    "GoalEntity": [
+      "tutorial",
+      "spot",
+      "list",
+      "itinerary"
+    ],
+    "BenefitAction": [
       "understand",
       "reading"
     ],
     "BenefitEntity": [
-      "spot",
-      "list",
-      "itinerary",
       "core workflow",
       "external documentation"
     ],
@@ -152,6 +135,18 @@
       [
         "user",
         "walk through"
+      ],
+      [
+        "user",
+        "import"
+      ],
+      [
+        "user",
+        "create"
+      ],
+      [
+        "user",
+        "generate"
       ]
     ],
     "targets": [
@@ -192,10 +187,6 @@
       [
         "tutorial",
         "itinerary"
-      ],
-      [
-        "core workflow",
-        "external documentation"
       ]
     ]
   },
@@ -208,10 +199,13 @@
       "import"
     ],
     "GoalEntity": [
-      "location"
+      "location",
+      "TikTok or Instagram video",
+      "single tap"
     ],
     "BenefitAction": [
-      "capture"
+      "capture",
+      "typing"
     ],
     "BenefitEntity": [
       "travel inspiration",
@@ -241,14 +235,6 @@
       [
         "location",
         "TikTok or Instagram video"
-      ],
-      [
-        "location",
-        "single tap"
-      ],
-      [
-        "travel inspiration",
-        "details"
       ]
     ]
   },
@@ -258,10 +244,15 @@
       "traveler"
     ],
     "GoalAction": [
-      "add"
+      "add",
+      "entering",
+      "selecting"
     ],
     "GoalEntity": [
-      "spot"
+      "spot",
+      "name",
+      "location",
+      "map"
     ],
     "BenefitAction": [
       "save",
@@ -277,12 +268,28 @@
       [
         "traveler",
         "add"
+      ],
+      [
+        "traveler",
+        "entering"
+      ],
+      [
+        "traveler",
+        "selecting"
       ]
     ],
     "targets": [
       [
         "add",
         "spot"
+      ],
+      [
+        "entering",
+        "name"
+      ],
+      [
+        "selecting",
+        "location"
       ],
       [
         "save",
@@ -300,15 +307,11 @@
       ],
       [
         "spot",
-        "location on map"
+        "location"
       ],
       [
-        "social media",
-        "blogs"
-      ],
-      [
-        "social media",
-        "word-of-mouth"
+        "location",
+        "map"
       ]
     ]
   },
@@ -321,7 +324,10 @@
       "attach"
     ],
     "GoalEntity": [
-      "private notes"
+      "private notes",
+      "saved spot",
+      "reservation numbers",
+      "tips"
     ],
     "BenefitAction": [
       "keep"
@@ -354,14 +360,6 @@
       [
         "private notes",
         "tips"
-      ],
-      [
-        "private notes",
-        "saved spot"
-      ],
-      [
-        "critical information",
-        "place"
       ]
     ]
   },
@@ -374,7 +372,8 @@
       "open"
     ],
     "GoalEntity": [
-      "TikTok or Instagram video"
+      "TikTok or Instagram video",
+      "spot"
     ],
     "BenefitAction": [
       "re-watch"
@@ -403,12 +402,7 @@
         "context"
       ]
     ],
-    "contains": [
-      [
-        "TikTok or Instagram video",
-        "saved spot"
-      ]
-    ]
+    "contains": []
   },
   {
     "Text": "As a traveler, I want to remove a saved spot from my lists, so that my lists and map stay clean and only contain places I still intend to visit.",
@@ -419,13 +413,17 @@
       "remove"
     ],
     "GoalEntity": [
-      "saved spot"
+      "saved spot",
+      "lists"
     ],
     "BenefitAction": [
+      "stay",
       "contain"
     ],
     "BenefitEntity": [
-      "places"
+      "places",
+      "lists",
+      "map"
     ],
     "triggers": [
       [
@@ -469,13 +467,17 @@
     ],
     "GoalEntity": [
       "named lists",
+      "Tokyo food",
+      "Paris museums",
       "saved spots"
     ],
     "BenefitAction": [
       "group"
     ],
     "BenefitEntity": [
-      "travel inspiration"
+      "travel inspiration",
+      "destination",
+      "theme"
     ],
     "triggers": [
       [
@@ -493,14 +495,6 @@
         "named lists"
       ],
       [
-        "create",
-        "saved spots"
-      ],
-      [
-        "add",
-        "named lists"
-      ],
-      [
         "add",
         "saved spots"
       ],
@@ -512,11 +506,7 @@
     "contains": [
       [
         "named lists",
-        "Tokyo food"
-      ],
-      [
-        "named lists",
-        "Paris museums"
+        "saved spots"
       ],
       [
         "travel inspiration",
@@ -537,13 +527,16 @@
       "change"
     ],
     "GoalEntity": [
-      "name"
+      "name",
+      "existing list"
     ],
     "BenefitAction": [
       "keep"
     ],
     "BenefitEntity": [
-      "organization"
+      "organization",
+      "plans",
+      "evolve"
     ],
     "triggers": [
       [
@@ -559,16 +552,16 @@
       [
         "keep",
         "organization"
+      ],
+      [
+        "evolve",
+        "plans"
       ]
     ],
     "contains": [
       [
-        "name",
-        "existing list"
-      ],
-      [
-        "organization",
-        "plans"
+        "existing list",
+        "name"
       ]
     ]
   },
@@ -578,10 +571,13 @@
       "traveler"
     ],
     "GoalAction": [
-      "see"
+      "see",
+      "displayed"
     ],
     "GoalEntity": [
-      "saved spots"
+      "saved spots",
+      "pins",
+      "live map"
     ],
     "BenefitAction": [
       "understand",
@@ -595,12 +591,20 @@
       [
         "traveler",
         "see"
+      ],
+      [
+        "traveler",
+        "displayed"
       ]
     ],
     "targets": [
       [
         "see",
         "saved spots"
+      ],
+      [
+        "displayed",
+        "pins"
       ],
       [
         "understand",
@@ -613,12 +617,8 @@
     ],
     "contains": [
       [
-        "saved spots",
+        "live map",
         "pins"
-      ],
-      [
-        "pins",
-        "live map"
       ]
     ]
   },
@@ -628,21 +628,30 @@
       "traveler"
     ],
     "GoalAction": [
-      "filter"
+      "filter",
+      "show"
     ],
     "GoalEntity": [
-      "map"
+      "map",
+      "spots",
+      "specific list"
     ],
     "BenefitAction": [
       "focus"
     ],
     "BenefitEntity": [
-      "places"
+      "places",
+      "particular trip",
+      "category"
     ],
     "triggers": [
       [
         "traveler",
         "filter"
+      ],
+      [
+        "traveler",
+        "show"
       ]
     ],
     "targets": [
@@ -651,26 +660,18 @@
         "map"
       ],
       [
+        "show",
+        "spots"
+      ],
+      [
         "focus",
         "places"
       ]
     ],
     "contains": [
       [
-        "map",
+        "specific list",
         "spots"
-      ],
-      [
-        "map",
-        "specific list"
-      ],
-      [
-        "places",
-        "particular trip"
-      ],
-      [
-        "places",
-        "category"
       ]
     ]
   },
@@ -685,13 +686,15 @@
     "GoalEntity": [
       "start date",
       "end date",
-      "total number of days"
+      "total number of days",
+      "trip"
     ],
     "BenefitAction": [
       "matches"
     ],
     "BenefitEntity": [
-      "AI itinerary"
+      "AI itinerary",
+      "exact length of my stay"
     ],
     "triggers": [
       [
@@ -714,17 +717,21 @@
       ],
       [
         "matches",
-        "AI itinerary"
+        "exact length of my stay"
       ]
     ],
     "contains": [
       [
-        "total number of days",
-        "trip"
+        "trip",
+        "start date"
       ],
       [
-        "AI itinerary",
-        "length of stay"
+        "trip",
+        "end date"
+      ],
+      [
+        "trip",
+        "total number of days"
       ]
     ]
   },
@@ -740,14 +747,17 @@
     "GoalEntity": [
       "destination",
       "travel dates",
-      "list of saved spots",
+      "list",
+      "saved spots",
       "day-by-day itinerary"
     ],
     "BenefitAction": [
-      "transform"
+      "transform",
+      "scheduling"
     ],
     "BenefitEntity": [
-      "scattered ideas"
+      "scattered ideas",
+      "structured plan"
     ],
     "triggers": [
       [
@@ -770,11 +780,7 @@
       ],
       [
         "select",
-        "list of saved spots"
-      ],
-      [
-        "select",
-        "day-by-day itinerary"
+        "list"
       ],
       [
         "generate",
@@ -787,8 +793,8 @@
     ],
     "contains": [
       [
-        "scattered ideas",
-        "structured plan"
+        "list",
+        "saved spots"
       ]
     ]
   },
@@ -801,14 +807,17 @@
       "view"
     ],
     "GoalEntity": [
-      "generated itinerary"
+      "generated itinerary",
+      "daily route",
+      "map"
     ],
     "BenefitAction": [
       "see"
     ],
     "BenefitEntity": [
       "travel distance",
-      "logical flow"
+      "logical flow",
+      "stops"
     ],
     "triggers": [
       [
@@ -836,12 +845,8 @@
         "daily route"
       ],
       [
-        "daily route",
-        "map"
-      ],
-      [
-        "logical flow",
-        "stops"
+        "map",
+        "daily route"
       ]
     ]
   },
@@ -861,7 +866,10 @@
       "adjust"
     ],
     "BenefitEntity": [
-      "order"
+      "order",
+      "day's plan",
+      "AI-generated schedule",
+      "personal preferences"
     ],
     "triggers": [
       [
@@ -889,16 +897,12 @@
     ],
     "contains": [
       [
-        "order",
+        "AI-generated schedule",
         "day's plan"
       ],
       [
         "day's plan",
-        "AI-generated schedule"
-      ],
-      [
-        "order",
-        "personal preferences"
+        "order"
       ]
     ]
   },
@@ -912,6 +916,7 @@
       "adjust"
     ],
     "GoalEntity": [
+      "past trip",
       "itinerary",
       "dates",
       "spots"
@@ -920,7 +925,8 @@
       "reuse"
     ],
     "BenefitEntity": [
-      "proven plan"
+      "proven plan",
+      "repeat visit"
     ],
     "triggers": [
       [
@@ -935,19 +941,7 @@
     "targets": [
       [
         "copy",
-        "itinerary"
-      ],
-      [
-        "copy",
-        "dates"
-      ],
-      [
-        "copy",
-        "spots"
-      ],
-      [
-        "adjust",
-        "itinerary"
+        "past trip"
       ],
       [
         "adjust",
@@ -964,12 +958,8 @@
     ],
     "contains": [
       [
-        "itinerary",
-        "past trip"
-      ],
-      [
-        "proven plan",
-        "repeat visit"
+        "past trip",
+        "itinerary"
       ]
     ]
   },
@@ -982,14 +972,16 @@
       "delete"
     ],
     "GoalEntity": [
-      "trip"
+      "trip I no longer need"
     ],
     "BenefitAction": [
       "shows",
       "remains"
     ],
     "BenefitEntity": [
-      "trip list"
+      "trip list",
+      "active plans",
+      "relevant plans"
     ],
     "triggers": [
       [
@@ -1000,15 +992,19 @@
     "targets": [
       [
         "delete",
-        "trip"
-      ],
-      [
-        "shows",
-        "trip list"
+        "trip I no longer need"
       ],
       [
         "remains",
         "trip list"
+      ],
+      [
+        "shows",
+        "active plans"
+      ],
+      [
+        "remains",
+        "relevant plans"
       ]
     ],
     "contains": [
@@ -1031,7 +1027,8 @@
       "generate"
     ],
     "GoalEntity": [
-      "read-only web link"
+      "read-only web link",
+      "itinerary"
     ],
     "BenefitAction": [
       "share",
@@ -1039,6 +1036,7 @@
     ],
     "BenefitEntity": [
       "plans",
+      "friends and family",
       "editing rights"
     ],
     "triggers": [
@@ -1063,16 +1061,8 @@
     ],
     "contains": [
       [
-        "read-only web link",
-        "itinerary"
-      ],
-      [
-        "plans",
-        "friends and family"
-      ],
-      [
-        "plans",
-        "editing rights"
+        "itinerary",
+        "read-only web link"
       ]
     ]
   },
@@ -1085,14 +1075,18 @@
       "download"
     ],
     "GoalEntity": [
-      "complete itinerary"
+      "complete itinerary",
+      "maps",
+      "spot details",
+      "daily plan"
     ],
     "BenefitAction": [
       "navigate",
       "follow"
     ],
     "BenefitEntity": [
-      "plan"
+      "plan",
+      "internet connection"
     ],
     "triggers": [
       [
@@ -1126,10 +1120,6 @@
       [
         "complete itinerary",
         "daily plan"
-      ],
-      [
-        "plan",
-        "internet connection"
       ]
     ]
   }
