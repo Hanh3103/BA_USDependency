@@ -1,436 +1,5 @@
 [
   {
-    "Text": "As a Data user, I want to have the 12-19-2017 deletions processed.",
-    "Persona": [
-      "Data user"
-    ],
-    "GoalAction": [
-      "have"
-    ],
-    "GoalEntity": [
-      "12-19-2017 deletions"
-    ],
-    "BenefitAction": [
-      "processed"
-    ],
-    "BenefitEntity": [
-      ""
-    ],
-    "triggers": [
-      [
-        "Data user",
-        "have"
-      ]
-    ],
-    "targets": [
-      [
-        "processed",
-        "12-19-2017 deletions"
-      ],
-      [
-        "have",
-        "12-19-2017 deletions"
-      ]
-    ],
-    "contains": []
-  },
-  {
-    "Text": "As a UI designer, I want to redesign the Resources page, so that it matches the new Broker design styles.",
-    "Persona": [
-      "UI designer"
-    ],
-    "GoalAction": [
-      "redesign"
-    ],
-    "GoalEntity": [
-      "Resources page"
-    ],
-    "BenefitAction": [
-      "matches"
-    ],
-    "BenefitEntity": [
-      "new Broker design styles"
-    ],
-    "triggers": [
-      [
-        "UI designer",
-        "redesign"
-      ]
-    ],
-    "targets": [
-      [
-        "redesign",
-        "Resources page"
-      ],
-      [
-        "matches",
-        "new Broker design styles"
-      ]
-    ],
-    "contains": [
-      [
-        "Resources page",
-        "new Broker design styles"
-      ]
-    ]
-  },
-  {
-    "Text": "As a UI designer, I want to report to the Agencies about user testing, so that they are aware of their contributions to making Broker a better UX.",
-    "Persona": [
-      "UI designer"
-    ],
-    "GoalAction": [
-      "report"
-    ],
-    "GoalEntity": [
-      "user testing"
-    ],
-    "BenefitAction": [
-      "aware",
-      "making"
-    ],
-    "BenefitEntity": [
-      "Agencies",
-      "contributions",
-      "Broker",
-      "better UX"
-    ],
-    "triggers": [
-      [
-        "UI designer",
-        "report"
-      ]
-    ],
-    "targets": [
-      [
-        "report",
-        "user testing"
-      ],
-      [
-        "aware",
-        "contributions"
-      ],
-      [
-        "making",
-        "Broker"
-      ]
-    ],
-    "contains": []
-  },
-  {
-    "Text": "As a UI designer, I want to move on to round 2 of DABS or FABS landing page edits, so that I can get approvals from leadership.",
-    "Persona": [
-      "UI designer"
-    ],
-    "GoalAction": [
-      "move on"
-    ],
-    "GoalEntity": [
-      "round 2"
-    ],
-    "BenefitAction": [
-      "get"
-    ],
-    "BenefitEntity": [
-      "FABS landing page edits",
-      "DABS",
-      "approvals",
-      "leadership"
-    ],
-    "triggers": [
-      [
-        "UI designer",
-        "move on"
-      ]
-    ],
-    "targets": [
-      [
-        "move on",
-        "round 2"
-      ],
-      [
-        "get",
-        "approvals"
-      ]
-    ],
-    "contains": [
-      [
-        "DABS",
-        "round 2"
-      ],
-      [
-        "FABS landing page edits",
-        "round 2"
-      ]
-    ]
-  },
-  {
-    "Text": "As a UI designer, I want to move on to round 3 of the Help page edits, so that I can get approvals from leadership.",
-    "Persona": [
-      "UI designer"
-    ],
-    "GoalAction": [
-      "move on"
-    ],
-    "GoalEntity": [
-      "round 3"
-    ],
-    "BenefitAction": [
-      "get"
-    ],
-    "BenefitEntity": [
-      "Help page edits",
-      "approvals",
-      "leadership"
-    ],
-    "triggers": [
-      [
-        "UI designer",
-        "move on"
-      ]
-    ],
-    "targets": [
-      [
-        "move on",
-        "round 3"
-      ],
-      [
-        "get",
-        "approvals"
-      ]
-    ],
-    "contains": [
-      [
-        "Help page edits",
-        "round 3"
-      ]
-    ]
-  },
-  {
-    "Text": "As a Developer , I want to be able to log better, so that I can troubleshoot issues with particular submissions and functions.",
-    "Persona": [
-      "Developer"
-    ],
-    "GoalAction": [
-      "log better"
-    ],
-    "GoalEntity": [
-      ""
-    ],
-    "BenefitAction": [
-      "troubleshoot"
-    ],
-    "BenefitEntity": [
-      "particular submissions",
-      "issues",
-      "functions"
-    ],
-    "triggers": [
-      [
-        "Developer",
-        "log better"
-      ]
-    ],
-    "targets": [
-      [
-        "troubleshoot",
-        "issues"
-      ]
-    ],
-    "contains": [
-      [
-        "functions",
-        "issues"
-      ],
-      [
-        "particular submissions",
-        "issues"
-      ]
-    ]
-  },
-  {
-    "Text": "As a Developer, I want to add the updates on a FABS submission to be modified when the publishStatus changes, so that I know when the status of the submission has changed.",
-    "Persona": [
-      "Developer"
-    ],
-    "GoalAction": [
-      "add"
-    ],
-    "GoalEntity": [
-      "updates"
-    ],
-    "BenefitAction": [
-      "know",
-      "be modified",
-      "changes"
-    ],
-    "BenefitEntity": [
-      "FABS submission",
-      "publishStatus",
-      "status",
-      "submission"
-    ],
-    "triggers": [
-      [
-        "Developer",
-        "add"
-      ]
-    ],
-    "targets": [
-      [
-        "add",
-        "updates"
-      ],
-      [
-        "know",
-        "status"
-      ],
-      [
-        "changes",
-        "publishStatus"
-      ]
-    ],
-    "contains": [
-      [
-        "submission",
-        "status"
-      ],
-      [
-        "FABS submission",
-        "updates"
-      ]
-    ]
-  },
-  {
-    "Text": "As a DevOps engineer, I want New Relic to provide useful data across all applications.",
-    "Persona": [
-      "DevOps engineer"
-    ],
-    "GoalAction": [
-      "want"
-    ],
-    "GoalEntity": [
-      "New Relic"
-    ],
-    "BenefitAction": [
-      "provide"
-    ],
-    "BenefitEntity": [
-      "useful data",
-      "all applications"
-    ],
-    "triggers": [
-      [
-        "DevOps engineer",
-        "want"
-      ]
-    ],
-    "targets": [
-      [
-        "provide",
-        "useful data"
-      ],
-      [
-        "want",
-        "New Relic"
-      ]
-    ],
-    "contains": [
-      [
-        "New Relic",
-        "useful data"
-      ],
-      [
-        "all applications",
-        "useful data"
-      ]
-    ]
-  },
-  {
-    "Text": "As a UI designer,  I want to move on to round 2 of the Help page edits, so that I can get approvals from leadership.",
-    "Persona": [
-      "UI designer"
-    ],
-    "GoalAction": [
-      "move on"
-    ],
-    "GoalEntity": [
-      "round 2"
-    ],
-    "BenefitAction": [
-      "get"
-    ],
-    "BenefitEntity": [
-      "approvals",
-      "Help page edits",
-      "leadership"
-    ],
-    "triggers": [
-      [
-        "UI designer",
-        "move on"
-      ]
-    ],
-    "targets": [
-      [
-        "move on",
-        "round 2"
-      ],
-      [
-        "get",
-        "approvals"
-      ]
-    ],
-    "contains": [
-      [
-        "Help page edits",
-        "round 2"
-      ]
-    ]
-  },
-  {
-    "Text": "As a UI designer, I want to move on to round 2 of Homepage edits, so that I can get approvals from leadership.",
-    "Persona": [
-      "UI designer"
-    ],
-    "GoalAction": [
-      "move"
-    ],
-    "GoalEntity": [
-      "round 2"
-    ],
-    "BenefitAction": [
-      "get"
-    ],
-    "BenefitEntity": [
-      "Homepage edits",
-      "approvals",
-      "leadership"
-    ],
-    "triggers": [
-      [
-        "UI designer",
-        "move"
-      ]
-    ],
-    "targets": [
-      [
-        "get",
-        "approvals"
-      ],
-      [
-        "move",
-        "round 2"
-      ]
-    ],
-    "contains": [
-      [
-        "Homepage edits",
-        "round 2"
-      ]
-    ]
-  },
-  {
     "Text": "As a Broker user, I want to Upload and Validate the error message to have accurate text.",
     "Persona": [
       "Broker user"
@@ -476,52 +45,6 @@
     ]
   },
   {
-    "Text": "As a Broker user, I want the D1 file generation to be synced with the FPDS data load, so that I don't have to regenerate a file if no data has been updated.",
-    "Persona": [
-      "Broker user"
-    ],
-    "GoalAction": [
-      "want"
-    ],
-    "GoalEntity": [
-      "D1 file generation"
-    ],
-    "BenefitAction": [
-      "synced"
-    ],
-    "BenefitEntity": [
-      "FPDS data load",
-      "file",
-      "data"
-    ],
-    "triggers": [
-      [
-        "Broker user",
-        "want"
-      ]
-    ],
-    "targets": [
-      [
-        "want",
-        "D1 file generation"
-      ],
-      [
-        "synced",
-        "FPDS data load"
-      ],
-      [
-        "synced",
-        "D1 file generation"
-      ]
-    ],
-    "contains": [
-      [
-        "file",
-        "data"
-      ]
-    ]
-  },
-  {
     "Text": "As a Website user, I want to access published FABS files, so that I can see the new files as they come in.",
     "Persona": [
       "Website user"
@@ -557,277 +80,610 @@
     "contains": []
   },
   {
-    "Text": "As an owner, I want to be sure that USAspending only send grant records to my system.",
+    "Text": "As a Developer, I want to prevent users from double publishing FABS submissions after refreshing, so that there are no duplicates.",
     "Persona": [
-      "owner"
+      "Developer"
     ],
     "GoalAction": [
-      "be sure"
+      "prevent"
     ],
     "GoalEntity": [
+      "double publishing FABS submissions"
+    ],
+    "BenefitAction": [
+      "refreshing"
+    ],
+    "BenefitEntity": [
+      "users",
+      "duplicates"
+    ],
+    "triggers": [
+      [
+        "Developer",
+        "prevent"
+      ]
+    ],
+    "targets": [
+      [
+        "prevent",
+        "double publishing FABS submissions"
+      ]
+    ],
+    "contains": []
+  },
+  {
+    "Text": "As an data user, I want to receive updates to FABS records.",
+    "Persona": [
+      "data user"
+    ],
+    "GoalAction": [
+      "receive"
+    ],
+    "GoalEntity": [
+      "updates"
+    ],
+    "BenefitAction": [
       ""
     ],
-    "BenefitAction": [
-      "only send"
-    ],
     "BenefitEntity": [
-      "USAspending",
-      "grant records",
-      "system"
+      "FABS records"
     ],
     "triggers": [
       [
-        "owner",
-        "be sure"
+        "data user",
+        "receive"
       ]
     ],
     "targets": [
       [
-        "only send",
-        "grant records"
+        "receive",
+        "updates"
       ]
     ],
     "contains": [
       [
-        "system",
-        "grant records"
+        "FABS records",
+        "updates"
       ]
     ]
   },
   {
-    "Text": "As a Developer, I want to update the Broker validation rule table to account for the rule updates in DB-2213.",
+    "Text": "As a website user, I want to see updated financial assistance data daily.",
     "Persona": [
-      "Developer"
+      "website user"
     ],
     "GoalAction": [
-      "update"
+      "see"
     ],
     "GoalEntity": [
-      "Broker validation rule table"
+      "updated financial assistance data daily"
     ],
     "BenefitAction": [
-      "account"
+      ""
     ],
     "BenefitEntity": [
-      "rule updates",
-      "DB-2213"
+      ""
     ],
     "triggers": [
       [
-        "Developer",
-        "update"
+        "website user",
+        "see"
       ]
     ],
     "targets": [
       [
-        "update",
-        "Broker validation rule table"
-      ],
-      [
-        "account",
-        "rule updates"
+        "see",
+        "updated financial assistance data daily"
       ]
     ],
-    "contains": [
-      [
-        "DB-2213",
-        "rule updates"
-      ]
-    ]
+    "contains": []
   },
   {
-    "Text": "As a Developer, I want to add the GTAS window data to the database, so that I can ensure the site is locked down during the GTAS submission period.",
+    "Text": "As an agency user, I want the FABS validation rules to correctly validate loan and non-loan records.",
     "Persona": [
-      "Developer"
-    ],
-    "GoalAction": [
-      "add"
-    ],
-    "GoalEntity": [
-      "GTAS window data"
-    ],
-    "BenefitAction": [
-      "ensure",
-      "locked down"
-    ],
-    "BenefitEntity": [
-      "site",
-      "GTAS submission period",
-      "database"
-    ],
-    "triggers": [
-      [
-        "Developer",
-        "add"
-      ]
-    ],
-    "targets": [
-      [
-        "add",
-        "GTAS window data"
-      ],
-      [
-        "locked down",
-        "site"
-      ]
-    ],
-    "contains": [
-      [
-        "database",
-        "GTAS window data"
-      ]
-    ]
-  },
-  {
-    "Text": "As a Developer, I want D Files generation requests to be managed and cached, so that duplicate requests do not cause performance issues.",
-    "Persona": [
-      "Developer"
+      "agency user"
     ],
     "GoalAction": [
       "want"
     ],
     "GoalEntity": [
-      "D Files generation requests"
+      "FABS validation rules"
     ],
     "BenefitAction": [
-      "managed",
-      "cached"
+      "accept"
     ],
     "BenefitEntity": [
-      "duplicate requests",
-      "performance issues"
+      "zero",
+      "blank",
+      "loan records"
     ],
     "triggers": [
       [
-        "Developer",
+        "agency user",
         "want"
       ]
     ],
     "targets": [
       [
-        "managed",
-        "D Files generation requests"
-      ],
-      [
-        "cached",
-        "D Files generation requests"
-      ],
-      [
         "want",
-        "D Files generation requests"
+        "FABS validation rules"
+      ],
+      [
+        "accept",
+        "zero"
+      ],
+      [
+        "accept",
+        "blank"
+      ]
+    ],
+    "contains": [
+      [
+        "loan records",
+        "zero"
+      ],
+      [
+        "loan records",
+        "blank"
+      ]
+    ]
+  },
+  {
+    "Text": "As an agency user, I want to have all derived data elements derived properly.",
+    "Persona": [
+      "agency user"
+    ],
+    "GoalAction": [
+      "have"
+    ],
+    "GoalEntity": [
+      "derived data elements"
+    ],
+    "BenefitAction": [
+      "derived properly"
+    ],
+    "BenefitEntity": [
+      ""
+    ],
+    "triggers": [
+      [
+        "agency user",
+        "have"
+      ]
+    ],
+    "targets": [
+      [
+        "have",
+        "derived data elements"
+      ],
+      [
+        "derived properly",
+        "derived data elements"
       ]
     ],
     "contains": []
   },
   {
-    "Text": "As an Agency user, I want to be able to include a large number of flexfields without performance impact.",
+    "Text": "As a broker team member, I want to derive FundingAgencyCode, so that the data quality and completeness improves.",
+    "Persona": [
+      "broker team member"
+    ],
+    "GoalAction": [
+      "derive"
+    ],
+    "GoalEntity": [
+      "FundingAgencyCode"
+    ],
+    "BenefitAction": [
+      "improves"
+    ],
+    "BenefitEntity": [
+      "completeness",
+      "data quality"
+    ],
+    "triggers": [
+      [
+        "broker team member",
+        "derive"
+      ]
+    ],
+    "targets": [
+      [
+        "derive",
+        "FundingAgencyCode"
+      ],
+      [
+        "improves",
+        "completeness"
+      ],
+      [
+        "improves",
+        "data quality"
+      ]
+    ],
+    "contains": []
+  },
+  {
+    "Text": "As an Agency user, I want FPDS data to be up-to-date daily.",
     "Persona": [
       "Agency user"
     ],
     "GoalAction": [
-      "include"
+      "want"
     ],
     "GoalEntity": [
-      "large number of flexfields"
+      "FPDS data"
+    ],
+    "BenefitAction": [
+      "be up-to-date daily"
+    ],
+    "BenefitEntity": [
+      ""
+    ],
+    "triggers": [
+      [
+        "Agency user",
+        "want"
+      ]
+    ],
+    "targets": [
+      [
+        "want",
+        "FPDS data"
+      ],
+      [
+        "be up-to-date daily",
+        "FPDS data"
+      ]
+    ],
+    "contains": []
+  },
+  {
+    "Text": "As a user, I want to access the raw agency published files from FABS via USAspending.",
+    "Persona": [
+      "user"
+    ],
+    "GoalAction": [
+      "access"
+    ],
+    "GoalEntity": [
+      "raw agency published files"
     ],
     "BenefitAction": [
       ""
     ],
     "BenefitEntity": [
-      "performance impact"
+      "FABS",
+      "USAspending"
+    ],
+    "triggers": [
+      [
+        "user",
+        "access"
+      ]
+    ],
+    "targets": [
+      [
+        "access",
+        "raw agency published files"
+      ]
+    ],
+    "contains": [
+      [
+        "USAspending",
+        "FABS"
+      ],
+      [
+        "FABS",
+        "raw agency published files"
+      ]
+    ]
+  },
+  {
+    "Text": "As a Developer , I want to determine how agencies will generate and validate D Files from FABS and FPDS data.",
+    "Persona": [
+      "Developer"
+    ],
+    "GoalAction": [
+      "determine"
+    ],
+    "GoalEntity": [
+      "how"
+    ],
+    "BenefitAction": [
+      "validate",
+      "generate"
+    ],
+    "BenefitEntity": [
+      "D Files",
+      "FABS",
+      "agencies",
+      "FPDS data"
+    ],
+    "triggers": [
+      [
+        "Developer",
+        "determine"
+      ]
+    ],
+    "targets": [
+      [
+        "generate",
+        "D Files"
+      ],
+      [
+        "validate",
+        "D Files"
+      ],
+      [
+        "determine",
+        "how"
+      ]
+    ],
+    "contains": [
+      [
+        "FABS",
+        "D Files"
+      ],
+      [
+        "FPDS data",
+        "D Files"
+      ]
+    ]
+  },
+  {
+    "Text": "As a user, I want to generate and validate D Files from FABS and FPDS data.",
+    "Persona": [
+      "user"
+    ],
+    "GoalAction": [
+      "generate",
+      "validate"
+    ],
+    "GoalEntity": [
+      "D Files"
+    ],
+    "BenefitAction": [
+      ""
+    ],
+    "BenefitEntity": [
+      "FABS",
+      "FPDS data"
+    ],
+    "triggers": [
+      [
+        "user",
+        "generate"
+      ],
+      [
+        "user",
+        "validate"
+      ]
+    ],
+    "targets": [
+      [
+        "validate",
+        "D Files"
+      ],
+      [
+        "generate",
+        "D Files"
+      ]
+    ],
+    "contains": [
+      [
+        "FABS",
+        "D Files"
+      ],
+      [
+        "FPDS data",
+        "D Files"
+      ]
+    ]
+  },
+  {
+    "Text": "As an Agency user, I want the header information box to show updated date AND time, so that I know when it was updated.",
+    "Persona": [
+      "Agency user"
+    ],
+    "GoalAction": [
+      "want"
+    ],
+    "GoalEntity": [
+      "header information box"
+    ],
+    "BenefitAction": [
+      "show",
+      "know",
+      "updated"
+    ],
+    "BenefitEntity": [
+      "updated date AND time",
+      "when"
     ],
     "triggers": [
       [
         "Agency user",
-        "include"
+        "want"
       ]
     ],
     "targets": [
       [
-        "include",
-        "large number of flexfields"
-      ]
-    ],
-    "contains": []
-  },
-  {
-    "Text": "As a Broker user, I want  to help create content mockups, so that I can submit my data efficiently.",
-    "Persona": [
-      "Broker user"
-    ],
-    "GoalAction": [
-      "help create"
-    ],
-    "GoalEntity": [
-      "content mockups"
-    ],
-    "BenefitAction": [
-      "submit"
-    ],
-    "BenefitEntity": [
-      "data"
-    ],
-    "triggers": [
-      [
-        "Broker user",
-        "help create"
-      ]
-    ],
-    "targets": [
-      [
-        "submit",
-        "data"
+        "show",
+        "updated date AND time"
       ],
       [
-        "help create",
-        "content mockups"
-      ]
-    ],
-    "contains": []
-  },
-  {
-    "Text": "As a UI designer, I want to track the issues that come up in Tech Thursday, so that I know what to test and what want s to be fixed.",
-    "Persona": [
-      "UI designer"
-    ],
-    "GoalAction": [
-      "track"
-    ],
-    "GoalEntity": [
-      "issues"
-    ],
-    "BenefitAction": [
-      "know",
-      "test",
-      "fixed"
-    ],
-    "BenefitEntity": [
-      "Tech Thursday"
-    ],
-    "triggers": [
-      [
-        "UI designer",
-        "track"
-      ]
-    ],
-    "targets": [
-      [
-        "fixed",
-        "issues"
-      ],
-      [
-        "track",
-        "issues"
+        "want",
+        "header information box"
       ],
       [
         "know",
-        "issues"
+        "when"
+      ]
+    ],
+    "contains": [
+      [
+        "header information box",
+        "updated date AND time"
+      ]
+    ]
+  },
+  {
+    "Text": "As an Agency user, I want clear and accurate validation and submission errors.",
+    "Persona": [
+      "Agency user"
+    ],
+    "GoalAction": [
+      "receive"
+    ],
+    "GoalEntity": [
+      "helpful file-level error"
+    ],
+    "BenefitAction": [
+      "upload"
+    ],
+    "BenefitEntity": [
+      "file",
+      "wrong extension"
+    ],
+    "triggers": [
+      [
+        "Agency user",
+        "receive"
+      ]
+    ],
+    "targets": [
+      [
+        "receive",
+        "helpful file-level error"
       ],
       [
-        "test",
-        "issues"
+        "upload",
+        "file"
+      ]
+    ],
+    "contains": [
+      [
+        "file",
+        "wrong extension"
+      ]
+    ]
+  },
+  {
+    "Text": "As an Agency user, I want all historical Financial Assistance data loaded for FABS go-live.",
+    "Persona": [
+      "Agency user"
+    ],
+    "GoalAction": [
+      "want"
+    ],
+    "GoalEntity": [
+      "all historical Financial Assistance data"
+    ],
+    "BenefitAction": [
+      "loaded"
+    ],
+    "BenefitEntity": [
+      "FABS go-live"
+    ],
+    "triggers": [
+      [
+        "Agency user",
+        "want"
+      ]
+    ],
+    "targets": [
+      [
+        "want",
+        "all historical Financial Assistance data"
+      ],
+      [
+        "loaded",
+        "all historical Financial Assistance data"
       ]
     ],
     "contains": []
+  },
+  {
+    "Text": "As an Agency user, I want historical FPDS data loaded.",
+    "Persona": [
+      "Agency user"
+    ],
+    "GoalAction": [
+      "want"
+    ],
+    "GoalEntity": [
+      "historical FPDS data"
+    ],
+    "BenefitAction": [
+      "loaded"
+    ],
+    "BenefitEntity": [
+      ""
+    ],
+    "triggers": [
+      [
+        "Agency user",
+        "want"
+      ]
+    ],
+    "targets": [
+      [
+        "loaded",
+        "historical FPDS data"
+      ],
+      [
+        "want",
+        "historical FPDS data"
+      ]
+    ],
+    "contains": []
+  },
+  {
+    "Text": "As an Agency user, I want to accurately see who created a submission, so that I'm not confused about who last updated a submission.",
+    "Persona": [
+      "Agency user"
+    ],
+    "GoalAction": [
+      "accurately see"
+    ],
+    "GoalEntity": [
+      "who"
+    ],
+    "BenefitAction": [
+      "created",
+      "last updated"
+    ],
+    "BenefitEntity": [
+      "submission",
+      "who",
+      "submission"
+    ],
+    "triggers": [
+      [
+        "Agency user",
+        "accurately see"
+      ]
+    ],
+    "targets": [
+      [
+        "accurately see",
+        "who"
+      ],
+      [
+        "created",
+        "submission"
+      ],
+      [
+        "last updated",
+        "submission"
+      ]
+    ],
+    "contains": [
+      [
+        "who",
+        "submission"
+      ]
+    ]
   }
 ]
