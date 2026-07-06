@@ -121,12 +121,10 @@
       "itinerary"
     ],
     "BenefitAction": [
-      "understand",
-      "reading"
+      "understand"
     ],
     "BenefitEntity": [
-      "core workflow",
-      "external documentation"
+      "core workflow"
     ],
     "triggers": [
       [
@@ -142,10 +140,6 @@
       [
         "understand",
         "core workflow"
-      ],
-      [
-        "reading",
-        "external documentation"
       ]
     ],
     "contains": [
