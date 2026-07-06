@@ -112,10 +112,7 @@
       "user"
     ],
     "GoalAction": [
-      "walk through",
-      "import",
-      "create",
-      "generate"
+      "walk through"
     ],
     "GoalEntity": [
       "tutorial",
@@ -135,36 +132,12 @@
       [
         "user",
         "walk through"
-      ],
-      [
-        "user",
-        "import"
-      ],
-      [
-        "user",
-        "create"
-      ],
-      [
-        "user",
-        "generate"
       ]
     ],
     "targets": [
       [
         "walk through",
         "tutorial"
-      ],
-      [
-        "import",
-        "spot"
-      ],
-      [
-        "create",
-        "list"
-      ],
-      [
-        "generate",
-        "itinerary"
       ],
       [
         "understand",
