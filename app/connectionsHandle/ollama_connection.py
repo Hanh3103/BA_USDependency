@@ -1,6 +1,8 @@
 from functools import lru_cache
+from typing import Optional, Union, Literal
 
-from openai import APIConnectionError, APITimeoutError, OpenAI
+from httpx import RequestError
+from ollama import Client, ResponseError, ChatResponse
 
 from errors.llm_errors import LLMConnectionError
 from config import settings
@@ -11,25 +13,34 @@ print(settings.models[0])
 
 
 @lru_cache(maxsize=1)
-def get_openai_client() -> OpenAI:
-    return OpenAI(
-        base_url=settings.ollama_base_url,
-        api_key=settings.ollama_api_key,
+def get_ollama_client() -> Client:
+    return Client(
+        host=settings.ollama_base_url,
+        headers={"Authorization": f"Bearer {settings.ollama_api_key}"} if settings.ollama_api_key else None,
         timeout=60.0,
     )
 
 
-def create_chat_completion(*, messages, model: str = settings.models[0]):
+def create_chat_completion(
+        *,
+        messages: list[dict],
+        model: str = settings.models[0],
+        format: Optional[Union[Literal['', 'json'], dict]] = None,
+):
     try:
-        return get_openai_client().chat.completions.create(
+        return get_ollama_client().chat(
             model=model,
             messages=messages,
-            temperature=settings.ollama_temperature,
-            top_p=settings.ollama_top_p,
-            extra_body={
-                "keep_alive": settings.ollama_keep_alive,
-                "think": settings.ollama_think,
-            }
+            stream= False,
+            format= format if format is not None else settings.ollama_format,
+            options={
+                "temperature": settings.ollama_temperature,
+                "top_p": settings.ollama_top_p,
+                "num_predict": settings.ollama_num_predict,
+                "num_ctx": settings.ollama_num_ctx,
+            },
+            keep_alive=settings.ollama_keep_alive,
+            think=settings.ollama_think,
         )
-    except (APIConnectionError, APITimeoutError) as exc:
+    except (RequestError, ResponseError) as exc:
         raise LLMConnectionError("Failed to connect to the model service.") from exc

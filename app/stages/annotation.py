@@ -1,5 +1,4 @@
 import json
-import re
 import time
 from typing import Dict, Optional
 from pathlib import Path
@@ -52,12 +51,15 @@ def run(user_story: str, *, temperature_override: Optional[float] = None) -> Dic
             {"role": "system", "content": SYSTEM_PROMPT},
             {"role": "user", "content": user_story},
         ],
+        format=AnnotationSchema.model_json_schema()
     )
 
-    if not response.choices:
-        raise AppError("Model returned no choices")
+    if not response.message:
+        raise AppError("Model returned no message")
 
-    raw = response.choices[0].message.content
+    raw = response.message.content
+    print(raw)
+
     if not raw:
         raise AppError("Model returned empty content")
 

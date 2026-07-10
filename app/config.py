@@ -16,7 +16,8 @@ class Settings(BaseSettings):
     ollama_temperature: float
     ollama_top_p: float
     ollama_num_predict: int
-    ollama_keep_alive: int
+    ollama_num_ctx: int
+    ollama_keep_alive: float | str
     ollama_think: bool
     ollama_format: str
 
