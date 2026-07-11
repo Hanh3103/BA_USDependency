@@ -69,7 +69,8 @@ def run(user_story: str, *, temperature_override: Optional[float] = None) -> Dic
     except ValidationError as exc:
         raise AppError(f"Annotation output did not match schema: {exc}") from exc
 
-    return validated.model_dump()
+    result = {"Text": user_story, **validated.model_dump()}
+    return result
 
 
 def annotate(user_story: str, story_id: str, max_retries: int = 2) -> Optional[Dict]:
@@ -114,7 +115,7 @@ def _save_results(results, output_path: str) -> None:
 if __name__ == "__main__":
     from utils.file_parser import load_stories
 
-    input_path = "test/test_raw_input/test_3.txt"
+    input_path = "test/test_raw_input/test_1.txt"
     output_path = "test/results/annotated_stories.json"
 
     stories = load_stories(input_path)

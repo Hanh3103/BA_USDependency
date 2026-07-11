@@ -43,6 +43,4 @@ Relationships:
 - EXCLUDE: PURPOSE ("for offline"), CONDITION ("without internet"), LOCATION ("on map"), METHOD ("by entering"), TIME ("before").
 - Only explicit relations; never implied.
 
-Text field: copy input character-for-character.
-
 Return ONLY valid JSON object. All array entries are strings or [string, string] pairs.

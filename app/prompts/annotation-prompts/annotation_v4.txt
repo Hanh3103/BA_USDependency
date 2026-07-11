@@ -8,7 +8,6 @@ INPUT USER STORY
 
 OUTPUT SCHEMA
 {
-  "Text": "",
   "Persona": [],
   "GoalAction": [],
   "GoalEntity": [],
@@ -23,12 +22,11 @@ PRIORITY: GoalAction and GoalEntity accuracy is critical.
 
 GENERAL RULES
 1. Exactly ten required top-level keys; no extras.
-2. "Text" copies input character-for-character.
-3. "Persona": phrase after "As a/an" without articles.
-4. Extract only explicit facts; never invent.
-5. All relationship entries are [string, string] pairs.
-6. Remove articles/possessives only ("my email" → "email").
-7. No punctuation inside words.
+2. "Persona": phrase after "As a/an" without articles.
+3. Extract only explicit facts; never invent.
+4. All relationship entries are [string, string] pairs.
+5. Remove articles/possessives only ("my email" → "email").
+6. No punctuation inside words.
 
 GOAL ACTION EXTRACTION
 1. Extract canonical action labels from "I want to" clause.
@@ -74,7 +72,6 @@ ONE EXAMPLE
 Input: As a user, I want to walk through a short, guided tutorial that demonstrates how to import a spot, create a list, and generate an itinerary, so that I can understand the app's core workflow without reading external documentation.
 Output: 
    {
-    "Text": "As a user, I want to walk through a short, guided tutorial that demonstrates how to import a spot, create a list, and generate an itinerary, so that I can understand the app's core workflow without reading external documentation.",
     "Persona": ["user"],
     "GoalAction": ["walk through"],
     "GoalEntity": ["tutorial", "spot", "list", "itinerary"],
@@ -87,7 +84,6 @@ Output:
 
 
 VALIDATION BEFORE OUTPUT
-- Text = input (exact match)
 - All 10 keys present
 - GoalAction, GoalEntity = string arrays
 - All relationships = [string, string]

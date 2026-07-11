@@ -3,7 +3,6 @@ from typing import List, Any
 
 
 class AnnotationSchema(BaseModel):
-    Text: str
     Persona: List[str]
     GoalAction: List[str]
     GoalEntity: List[str]

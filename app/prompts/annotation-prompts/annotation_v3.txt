@@ -10,7 +10,6 @@ INPUT USER STORY
 
 REQUIRED OUTPUT SCHEMA
 {
-  "Text": "",
   "Persona": [],
   "GoalAction": [],
   "GoalEntity": [],
@@ -41,7 +40,6 @@ As a user, I want to walk through a short, guided tutorial that demonstrates how
 
 Example output:
  {
-    "Text": "As a user, I want to walk through a short, guided tutorial that demonstrates how to import a spot, create a list, and generate an itinerary, so that I can understand the app's core workflow without reading external documentation.",
     "Persona": ["user"],
     "GoalAction": ["walk through"],
     "GoalEntity": ["tutorial", "spot", "list", "itinerary"],
@@ -54,12 +52,11 @@ Example output:
 
 GENERAL EXTRACTION RULES
 1. Return exactly the ten required top-level keys and no extra keys.
-2. "Text" must copy the original input story character-for-character.
-3. "Persona" is the phrase after "As a" or "As an", without the article.
-4. Use only facts stated explicitly in the user story. Do not invent actions, entities, attributes, or relations.
-5. Every item in triggers, targets, and contains must be an array of exactly two strings.
-6. Preserve exact wording where required, but remove only articles and possessive determiners when they do not change the entity meaning.
-7. Never insert punctuation inside words. For example, write "trips", never "tr,ips".
+2. "Persona" is the phrase after "As a" or "As an", without the article.
+3. Use only facts stated explicitly in the user story. Do not invent actions, entities, attributes, or relations.
+4. Every item in triggers, targets, and contains must be an array of exactly two strings.
+5. Preserve exact wording where required, but remove only articles and possessive determiners when they do not change the entity meaning.
+6. Never insert punctuation inside words. For example, write "trips", never "tr,ips".
 
 GOAL ACTION EXTRACTION
 1. GoalAction contains the canonical action labels requested by the user in the "I want to" clause.
@@ -160,7 +157,6 @@ RELATIONSHIP RULES
 6. Do not add a relation when it is merely implied rather than stated.
 
 SILENT SELF-CHECK BEFORE OUTPUT
-- Text exactly equals the input.
 - All required keys exist.
 - GoalAction and GoalEntity are arrays of strings.
 - Every relationship entry is exactly [string, string].
