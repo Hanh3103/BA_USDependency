@@ -60,7 +60,7 @@ GENERAL EXTRACTION RULES
 
 GOAL ACTION EXTRACTION
 1. GoalAction contains the canonical action labels requested by the user in the "I want to" clause.
-2. Use the shortest meaningful base verb or phrasal-verb label. Never include an object, article, adjective, adverb, or context phrase in an action label.
+2. Use the shortest meaningful base verb or phrasal-verb label. Never include an object, article, adverb, or context phrase in an action label.
 3. Preserve phrasal verbs exactly:
    - "sign up"
    - "log in"
