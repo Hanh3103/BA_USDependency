@@ -59,9 +59,10 @@ ACTIONS (applies to both GoalAction and BenefitAction)
 4. "have the app [adverb] X" -> extract only the verb X that follows "the app", never "have", "app", or the full construction:
    - "have the app automatically generate" -> GoalAction candidate is "generate"; then apply the ADVERB RULE below to decide whether to fuse "automatically" back on.
    - If "have" appears in an action label, it is wrong - replace it with the verb that follows "the app".
-5. ADVERB RULES:
-   - Preserve all adverbial modifiers that directly modify the predicate verb. Do not remove or infer adverbial modifiers.
-   Examples : "permanently delete", "automatically generate", "securely store", "safely access", "quickly capture", "manually add","manually adjust".
+5. ADVERBIAL PREDICATES:
+   - If a verb is modified by an adverb (typically words ending in "-ly" like "securely", "automatically", or "permanently"), the Action label MUST include both words.
+   - Always use [Adverb] + [Infinitive Verb].
+   - Never strip a word that describes HOW the action is performed.
 6. NOT actions: descriptive past participles used as noun modifiers ("saved spot", "generated itinerary"), relative-clause verbs describing an entity ("trip I no longer need"), auxiliaries (can, will, have, should, able).
 7. Verbs inside a negated/exclusion clause ("without X-ing", "outside of X-ing") are NOT extracted as actions at all. Do not create an action node for them.
    - "without manually typing details" -> no action created for "typing"; "details" may still appear as an entity (see ENTITIES rule 10 on edge-less entities).
@@ -135,7 +136,7 @@ SILENT SELF-CHECK BEFORE OUTPUT
   * VERB FORM: scan every action label and verify it is in base/infinitive form.
     "stored" -> fix to "store". "synced" -> fix to "sync". "shows" -> fix to "show". "remains" -> fix to "remain".
     This check is mandatory for every single action label.
-  * ADVERB CHECK: for each action label, preserve every adverb that directly modifies the predicate verb. Do not remove adverbial modifiers.
+  * ADVERB CHECK: for each action label, preserve every adverb that directly modifies the predicate verb. Ask: "Was there a word in the text describing HOW this was done (e.g., manually, safely, automatically)?" If YES, ensure that word is fused to the verb. Do not allow "Action": "store" if the text said "securely stored".
   * No action label contains: auxiliaries (able to, am able to), a direct object, or a descriptive participle that belongs to an entity instead.
   * If "have" appears in GoalAction, it is wrong. Replace it with the verb following "the app".
   * No action node exists for a verb that only appears inside a negated/exclusion clause (see ACTIONS rule 7).
