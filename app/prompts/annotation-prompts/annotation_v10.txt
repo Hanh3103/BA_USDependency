@@ -78,9 +78,8 @@ ENTITIES (applies to both GoalEntity and BenefitEntity)
    When in doubt, ask: "does this word appear directly in front of the noun as a modifier in the source text?" If yes, it is a core adjective and should be kept, even if it originated from a preceding descriptive clause elsewhere in the sentence.
 3. Strip articles and possessive pronouns: "my email" -> "email", "the map" -> "map".
 4. Strip trailing relative clauses from entity labels: "trip I no longer need" -> "trip", "place it belongs to" -> "place".
-5. Brand/platform names joined by "or" or "/" sharing one head noun:
-   - If they describe ONE specific referent whose exact platform is ambiguous or either/or ("the original TikTok or Instagram video that was used..."), keep as ONE entity: "TikTok or Instagram video".
-   - If the "or" is enumerating two ALTERNATIVE SOURCES an action can draw from ("import a location from a saved TikTok or Instagram video"), split into two separate entities and link both as contains-children of the entity they are sources for: "saved TikTok video", "saved Instagram video".
+5. Brand/nouns joined by "or" or "/" sharing one head noun:
+   - The "or" is enumerating two ALTERNATIVE SOURCES an action can draw from (e.g. "import a location from a saved TikTok or Instagram video"), split into two separate entities and link both as contains-children of the entity they are sources for: "saved TikTok video", "saved Instagram video".
 6. Split independent coordinated nouns: "spots and trips" -> ["spots","trips"], "lists and map" -> ["lists","map"].
 7. Split coordinated adjectives on the same noun: "active or relevant plans" -> ["active plans","relevant plans"].
    - Scan every entity containing "or/and + adjective + noun" and split it.
@@ -117,6 +116,8 @@ RELATIONSHIP RULES
      - Attribute-of-object phrasing ("entering its name and selecting its location" describing a spot): ["spot","name"], ["spot","location"]
      - Alternative sources of an entity (see ENTITIES rule 5): ["location","saved TikTok video"], ["location","saved Instagram video"]
    - NOT contains: purpose ("for offline use"), condition ("without internet"), pure location/method framing when nothing is structurally part of anything ("on a map" as a bare method phrase, "by entering"), time ("before visiting"), implied relationships.
+   - NOT contains: plural and its singular form: "spots" and "spot" are not a contains pair, they are the same entity in different forms.
+   - NOT contains: modified noun and its unmodified form: "saved spots" and "spots" are not a contains pair, they are the same entity in different forms.
 4. Do not add a relation when it is merely implied rather than stated.
 
 SILENT SELF-CHECK BEFORE OUTPUT
@@ -144,7 +145,7 @@ SILENT SELF-CHECK BEFORE OUTPUT
   * Every entity in targets appears in GoalEntity or BenefitEntity.
   * Entities with no targets/contains edge are NOT automatically removed - keep them if they fall into one of the categories in ENTITIES rule 10 (negated/exclusion object, purpose/comparison phrase, bare manner phrase, non-target actor). Only remove an entity if it is not actually present as a noun phrase in the source text.
   * "including" components appear in contains, not targets.
-  * For every contains pair ["A","B"], verify "Is B part of or sourced from A?" YES -> keep. NO -> reverse to ["B","A"].
+  * For every contains pair ["A","B"], verify "Is B part of or sourced from A?" YES -> keep. NO -> reverse to ["B","A"]. Then ask "Did A plural or core-adjective-modify B?" If NO, keep. If YES, remove the pair.
   * If any inconsistency is found, fix the node lists before outputting.
 
 Return ONLY the final JSON object.
