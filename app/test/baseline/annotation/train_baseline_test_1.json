@@ -12,8 +12,8 @@
       "existing Google/Apple account"
     ],
     "BenefitAction": [
-      "stored",
-      "synced"
+      "securely store",
+      "sync"
     ],
     "BenefitEntity": [
       "saved spots",
@@ -36,19 +36,19 @@
         "existing Google/Apple account"
       ],
       [
-        "stored",
+        "securely store",
         "saved spots"
       ],
       [
-        "stored",
+        "securely store",
         "trips"
       ],
       [
-        "synced",
+        "sync",
         "saved spots"
       ],
       [
-        "synced",
+        "sync",
         "trips"
       ]
     ],
@@ -68,7 +68,7 @@
       "new device"
     ],
     "BenefitAction": [
-      "access",
+      "safely access",
       "maintain"
     ],
     "BenefitEntity": [
@@ -96,7 +96,7 @@
         "account"
       ],
       [
-        "access",
+        "safely access",
         "travel data"
       ],
       [
@@ -115,7 +115,7 @@
       "walk through"
     ],
     "GoalEntity": [
-      "tutorial",
+      "guided tutorial",
       "spot",
       "list",
       "itinerary"
@@ -135,7 +135,7 @@
     "targets": [
       [
         "walk through",
-        "tutorial"
+        "guided tutorial"
       ],
       [
         "understand",
@@ -144,15 +144,15 @@
     ],
     "contains": [
       [
-        "tutorial",
+        "guided tutorial",
         "spot"
       ],
       [
-        "tutorial",
+        "guided tutorial",
         "list"
       ],
       [
-        "tutorial",
+        "guided tutorial",
         "itinerary"
       ]
     ]
@@ -167,12 +167,12 @@
     ],
     "GoalEntity": [
       "location",
-      "TikTok or Instagram video",
+      "saved TikTok video",
+      "saved Instagram video",
       "single tap"
     ],
     "BenefitAction": [
-      "capture",
-      "typing"
+      "quickly capture"
     ],
     "BenefitEntity": [
       "travel inspiration",
@@ -190,18 +190,18 @@
         "location"
       ],
       [
-        "capture",
+        "quickly capture",
         "travel inspiration"
-      ],
-      [
-        "typing",
-        "details"
       ]
     ],
     "contains": [
       [
         "location",
-        "TikTok or Instagram video"
+        "saved TikTok video"
+      ],
+      [
+        "location",
+        "saved Instagram video"
       ]
     ]
   },
@@ -212,8 +212,8 @@
     ],
     "GoalAction": [
       "add",
-      "entering",
-      "selecting"
+      "enter",
+      "select"
     ],
     "GoalEntity": [
       "spot",
@@ -238,11 +238,11 @@
       ],
       [
         "traveler",
-        "entering"
+        "enter"
       ],
       [
         "traveler",
-        "selecting"
+        "select"
       ]
     ],
     "targets": [
@@ -251,11 +251,11 @@
         "spot"
       ],
       [
-        "entering",
+        "enter",
         "name"
       ],
       [
-        "selecting",
+        "select",
         "location"
       ],
       [
@@ -339,7 +339,7 @@
       "open"
     ],
     "GoalEntity": [
-      "TikTok or Instagram video",
+      "original TikTok or Instagram video",
       "spot"
     ],
     "BenefitAction": [
@@ -358,7 +358,7 @@
     "targets": [
       [
         "open",
-        "TikTok or Instagram video"
+        "original TikTok or Instagram video"
       ],
       [
         "re-watch",
@@ -498,12 +498,12 @@
       "existing list"
     ],
     "BenefitAction": [
-      "keep"
+      "keep",
+      "evolve"
     ],
     "BenefitEntity": [
       "organization",
-      "plans",
-      "evolve"
+      "plans"
     ],
     "triggers": [
       [
@@ -538,8 +538,7 @@
       "traveler"
     ],
     "GoalAction": [
-      "see",
-      "displayed"
+      "see"
     ],
     "GoalEntity": [
       "saved spots",
@@ -558,20 +557,12 @@
       [
         "traveler",
         "see"
-      ],
-      [
-        "traveler",
-        "displayed"
       ]
     ],
     "targets": [
       [
         "see",
         "saved spots"
-      ],
-      [
-        "displayed",
-        "pins"
       ],
       [
         "understand",
@@ -657,11 +648,12 @@
       "trip"
     ],
     "BenefitAction": [
-      "matches"
+      "match"
     ],
     "BenefitEntity": [
       "AI itinerary",
-      "exact length of my stay"
+      "exact length",
+      "my stay"
     ],
     "triggers": [
       [
@@ -683,8 +675,8 @@
         "total number of days"
       ],
       [
-        "matches",
-        "exact length of my stay"
+        "match",
+        "exact length"
       ]
     ],
     "contains": [
@@ -699,6 +691,10 @@
       [
         "trip",
         "total number of days"
+      ],
+      [
+        "exact length",
+        "my stay"
       ]
     ]
   },
@@ -709,7 +705,7 @@
     ],
     "GoalAction": [
       "select",
-      "generate"
+      "automatically generate"
     ],
     "GoalEntity": [
       "destination",
@@ -719,8 +715,7 @@
       "day-by-day itinerary"
     ],
     "BenefitAction": [
-      "transform",
-      "scheduling"
+      "transform"
     ],
     "BenefitEntity": [
       "scattered ideas",
@@ -733,7 +728,7 @@
       ],
       [
         "traveler",
-        "generate"
+        "automatically generate"
       ]
     ],
     "targets": [
@@ -750,7 +745,7 @@
         "list"
       ],
       [
-        "generate",
+        "automatically generate",
         "day-by-day itinerary"
       ],
       [
@@ -936,14 +931,14 @@
       "traveler"
     ],
     "GoalAction": [
-      "delete"
+      "permanently delete"
     ],
     "GoalEntity": [
       "trip I no longer need"
     ],
     "BenefitAction": [
-      "shows",
-      "remains"
+      "show",
+      "remain"
     ],
     "BenefitEntity": [
       "trip list",
@@ -953,25 +948,21 @@
     "triggers": [
       [
         "traveler",
-        "delete"
+        "permanently delete"
       ]
     ],
     "targets": [
       [
-        "delete",
+        "permanently delete",
         "trip I no longer need"
       ],
       [
-        "remains",
+        "remain",
         "trip list"
       ],
       [
-        "shows",
-        "active plans"
-      ],
-      [
-        "remains",
-        "relevant plans"
+        "show",
+        "trip list"
       ]
     ],
     "contains": [
@@ -998,8 +989,7 @@
       "itinerary"
     ],
     "BenefitAction": [
-      "share",
-      "giving"
+      "share"
     ],
     "BenefitEntity": [
       "plans",
@@ -1020,10 +1010,6 @@
       [
         "share",
         "plans"
-      ],
-      [
-        "giving",
-        "editing rights"
       ]
     ],
     "contains": [

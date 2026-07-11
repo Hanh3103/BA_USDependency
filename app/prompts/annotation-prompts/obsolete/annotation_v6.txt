@@ -65,28 +65,20 @@ ACTION EXTRACTION (applies to both GoalAction and BenefitAction)
    - "without giving" → "giving" (not "give")
    - "only shows" → "shows" (not "show")
    - "remains uncluttered" → "remains" (not "remain")
-3. Strip ALL surrounding adverbs from the action label. Adverbs are NEVER part of the action label:
-   - "securely stored" → "stored"
-   - "quickly capture" → "capture"
-   - "manually adjust" → "adjust"
-   - "manually add" → "add" (not "manually add")
-   - "permanently delete" → "delete" (not "permanently delete")
-   - "automatically generate" → "generate" (not "automatically generate")
-   - "have the app automatically generate" → "generate" (not "have the app automatically generate")
-4. Preserve phrasal verbs exactly:
+3. Preserve phrasal verbs exactly:
    - "sign up", "log in", "log out", "walk through", "re-watch"
-5. A verb used only to describe an entity is NOT an action:
+4. A verb used only to describe an entity is NOT an action:
    - "saved spot" → "saved" is a descriptor, not an action
    - "generated itinerary" → "generated" is a descriptor, not an action
-6. A verb found only inside a relative clause modifying a noun is NOT an action:
+5. A verb found only inside a relative clause modifying a noun is NOT an action:
    - "tutorial that demonstrates how to import" → "demonstrates" is NOT an action
    - "trip I no longer need" → "need" is NOT an action
    - "places I still intend to visit" → "intend" is NOT an action
-7. Negated verbs ("without X", "no X") are still captured as actions:
+6. Negated verbs ("without X", "no X") are still captured as actions:
    - "without manually typing details" → Action: "typing", Entity: "details"
    - "without reading external documentation" → Action: "reading", Entity: "documentation"
    - "without manual scheduling" → Action: "scheduling" (no direct object, intransitive)
-8. Split independent coordinated actions:
+7. Split independent coordinated actions:
    - "stored and synced" → ["stored", "synced"]
    - "create named lists and add saved spots" → ["create", "add"]
    - "drag and drop stops" → ["drag", "drop"]

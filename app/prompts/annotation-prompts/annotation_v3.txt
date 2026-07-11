@@ -60,7 +60,7 @@ GENERAL EXTRACTION RULES
 
 GOAL ACTION EXTRACTION
 1. GoalAction contains the canonical action labels requested by the user in the "I want to" clause.
-2. Use the shortest meaningful base verb or phrasal-verb label. Never include an object, article, adverb, or context phrase in an action label.
+2. Use the shortest meaningful base verb or phrasal-verb label. Never include an object, article or context phrase in an action label.
 3. Preserve phrasal verbs exactly:
    - "sign up"
    - "log in"
@@ -71,9 +71,9 @@ GOAL ACTION EXTRACTION
    - "sign up using my email" -> "sign up"
    - "log in my account" -> "log in"
    - "log out when I am finished" -> "log out"
-   - "manually add a spot" -> "add"
-   - "quickly capture travel inspiration" -> "capture"
-   - "permanently delete a trip" -> "delete"
+   - "manually add a spot" -> "manually add"
+   - "quickly capture travel inspiration" -> "quickly capture"
+   - "permanently delete a trip" -> "permanently delete"
    - "view the generated itinerary" -> "view"
    - "change the name of a list" -> "change"
    - "Submit Application" -> "submit" (never include the object inside the action label)
@@ -81,8 +81,8 @@ GOAL ACTION EXTRACTION
    - "create named lists and add saved spots" -> ["create", "add"]
    - "copy an itinerary and adjust dates" -> ["copy", "adjust"]
    - "drag and drop stops" -> ["drag", "drop"]
-6. Do not extract verbs found only inside a descriptive relative clause.
-   Example: in "walk through a tutorial that demonstrates how to import a spot, create a list, and generate an itinerary", the GoalAction is only ["walk through"].
+6. Extract verbs found only inside a descriptive relative clause.
+   Example: in "walk through a tutorial that demonstrates how to import a spot, create a list, and generate an itinerary", the GoalAction is only ["walk through", "import", "create", "generate"].
 7. When the user explicitly asks the application to perform an action by using a construction such as "have the app generate...", include the app action as a GoalAction.
 
 GOAL ENTITY EXTRACTION
@@ -108,21 +108,17 @@ GOAL ENTITY EXTRACTION
    - "start date, end date, or total number of days" -> ["start date", "end date", "total number of days"]
    - "destination, travel dates, and a list of saved spots" -> ["destination", "travel dates", "list of saved spots"]
 6. Expand explicit alternatives that share one head noun:
-   - "Google/Apple account" -> ["Google/Apple account"]
-   - "TikTok or Instagram video" -> ["TikTok video", "Instagram video"]
+   - "existing Google/Apple account" -> ["existing Google/Apple account"]
+   - "saved TikTok or Instagram video" -> ["saved TikTok video", "saved Instagram video"]
 7. When two goal actions share one explicit object, include the object once in GoalEntity but create one target relation for each action.
 
 BENEFIT ACTION AND BENEFIT ENTITY
 1. BenefitAction contains canonical actions from the "so that" clause.
 2. BenefitEntity contains the direct objects of BenefitAction.
-3. Normalize benefit actions by removing adverbs:
-   - "securely stored" -> "stored"
-   - "quickly capture" -> "capture"
-   - "manually adjust" -> "adjust"
-4. Split coordinated benefit actions and entities when explicit:
+3. Split coordinated benefit actions and entities when explicit:
    - "stored and synced" -> ["stored", "synced"]
    - "understand distribution and plan routes" -> ["understand", "plan"] with ["spatial distribution", "routes"]
-5. Do not put contextual objects such as devices, maps, lists, locations, or timing phrases into BenefitEntity unless they are the direct object of a benefit action.
+4. Do not put contextual objects such as devices, maps, lists, locations, or timing phrases into BenefitEntity unless they are the direct object of a benefit action.
 
 RELATIONSHIP RULES
 1. triggers: create [Persona, GoalAction] for every GoalAction.
@@ -169,7 +165,7 @@ SILENT SELF-CHECK BEFORE OUTPUT
   * Every entity in targets must appear in GoalEntity or BenefitEntity.
     If ["initiate", "transaction"] is in targets → "transaction" MUST be in GoalEntity or BenefitEntity.
   * Every action in triggers must appear in GoalAction.
-  * Child entities in contains do NOT need to appear in GoalEntity or BenefitEntity.
+  * Child entities in contains do need to appear in GoalEntity or BenefitEntity.
   * If any inconsistency is found, fix the node lists before outputting.
 
 Return ONLY the final JSON object.

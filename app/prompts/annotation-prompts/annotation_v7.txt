@@ -40,15 +40,14 @@ CLAUSE BOUNDARIES — split first, extract second
   Never cross clause boundaries.
 
   BOUNDARY EXAMPLE:
-  "As a returning user, I want to log in my account on a new device and log out when I'm finished,
-   so that I can access my travel data safely and maintain privacy on shared devices."
+  "As a returning user, I want to log in my account on a new device and log out when I'm finished, so that I can access my travel data safely and maintain privacy on shared devices."
   GOAL    = "log in my account on a new device and log out when I'm finished"
   BENEFIT = "access my travel data safely and maintain privacy on shared devices"
   GoalEntity:    ["account"] ONLY
   BenefitEntity: ["travel data", "privacy", "shared devices"]
   BAD GoalEntity: ["account", "travel data", "shared devices"] — last two are from BENEFIT clause
 
-ACTIONS (GoalAction + BenefitAction)
+ACTIONS (applies to both GoalAction and BenefitAction)
 1. Extract only explicit verbs. Never infer or paraphrase.
 2. HARD RULE — preserve exact verb form as it appears in the text. Never change tense, aspect, or form:
    - "stored" stays "stored" (not "store")
@@ -57,13 +56,6 @@ ACTIONS (GoalAction + BenefitAction)
    - "remains" stays "remains" (not "remain")
    - "shows" stays "shows" (not "show")
    - Before outputting any action, ask: "Does this verb appear exactly like this in the text?" If NO → revert to the text form.
-3. Strip ALL adverbs and auxiliaries. The label is the bare verb only:
-   - "manually add" → "add"
-   - "permanently delete" → "delete"
-   - "automatically generate" → "generate"
-   - "able to adjust" → "adjust"
-   - "able to manually adjust" → "adjust"
-   - "am able to adjust" → "adjust"
 4. "have the app [adverb] X" → extract only X. Never extract "have", "app", or the full construction:
    - "have the app automatically generate" → "generate" ONLY
    - BAD: "have", "have the app", "have the app generate"
@@ -73,7 +65,7 @@ ACTIONS (GoalAction + BenefitAction)
 7. Negated verbs are still actions: "without typing details" → Action:"typing", Entity:"details". Never replace with inferred verb ("avoid", "skip").
 8. Split coordinated verbs: "stored and synced" → ["stored","synced"], "drag and drop" → ["drag","drop"].
 
-ENTITIES (GoalEntity + BenefitEntity)
+ENTITIES (applies to both GoalEntity and BenefitEntity)
 1. Extract only explicit noun phrases. Never infer.
 2. ADJECTIVE RULE — two types of adjectives, treat differently:
    a. CORE adjectives: part of the original noun phrase in the text → KEEP:

@@ -11,7 +11,7 @@ from errors.llm_errors import LLMConnectionError
 from schemas.annotation_schema import AnnotationSchema
 
 
-_prompt_path = Path(__file__).parent.parent / "prompts" / "annotation-prompts" / "annotation_v4.txt"
+_prompt_path = Path(__file__).parent.parent / "prompts" / "annotation-prompts" / "annotation_v8.txt"
 SYSTEM_PROMPT = _prompt_path.read_text()
 
 
