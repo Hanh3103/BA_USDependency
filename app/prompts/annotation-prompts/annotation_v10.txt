@@ -48,25 +48,18 @@ CLAUSE BOUNDARIES - split first, extract second
   BAD GoalEntity: ["account", "travel data", "shared devices"] - last two are from the BENEFIT clause
 
 ACTIONS (applies to both GoalAction and BenefitAction)
-1. Extract only explicit verbs. Never infer or paraphrase.
-2. NORMALIZE every verb to base/infinitive form (no "to"), regardless of the tense or aspect it appears in in the text:
-   - "stored" becomes "store"
-   - "synced" becomes "sync"
-   - "shows" becomes "show"
-   - "remains" becomes "remain"
+1. Extract the predicate verb phrase. Never infer or paraphrase.
+2. NORMALIZE every verb to base/infinitive form (no "to"), regardless of the tense or aspect it appears in the text:
+   - "securely stored" -> " securely store"
+   - "synced" -> "sync"
+   - "shows" -> "show"
    Before outputting any action, ask: "Is this the base/infinitive form of the verb?" If NO, convert it.
 3. Preserve phrasal verbs in base form: "sign up", "log in", "log out", "walk through", "re-watch".
-4. "have the app [adverb] X" -> extract only the verb X that follows "the app", never "have", "app", or the full construction:
-   - "have the app automatically generate" -> GoalAction candidate is "generate"; then apply the ADVERB RULE below to decide whether to fuse "automatically" back on.
-   - If "have" appears in an action label, it is wrong - replace it with the verb that follows "the app".
-5. MANDATORY ADVERB FUSION: If an adverb (usually ending in "-ly") modifies a verb, you MUST extract them as one unit.
+4. MANDATORY ADVERB FUSION: If an adverb (usually ending in "-ly") modifies a verb, you MUST extract them as one unit.
       - REQUIRED: "securely store", "automatically generate", "permanently delete", "safely access", "quickly capture".
       - FAIL: Extracting "store" when the text says "securely store" is a critical error.
-6. NOT actions: descriptive past participles used as noun modifiers ("saved spot", "generated itinerary"), relative-clause verbs describing an entity ("trip I no longer need"), auxiliaries (can, will, have, should, able).
-7. NEGATION BLOCK (FORBIDDEN ACTIONS): Do NOT extract actions from clauses starting with "without", "outside of", or "instead of".
-      - "without giving rights" -> Action "give" is PROHIBITED.
-      - "without typing details" -> Action "type" is PROHIBITED.
-8. Split coordinated verbs: "stored and synced" -> ["store","sync"], "drag and drop" -> ["drag","drop"].
+5. NOT actions: descriptive past participles used as noun modifiers ("saved spot", "generated itinerary"), relative-clause verbs describing an entity ("trip I no longer need"), auxiliaries (can, will, have, should, able).
+6. Split coordinated verbs: "stored and synced" -> ["store","sync"], "drag and drop" -> ["drag","drop"].
 
 ENTITIES (applies to both GoalEntity and BenefitEntity)
 1. Extract only explicit noun phrases. Never infer.
