@@ -59,10 +59,9 @@ ACTIONS (applies to both GoalAction and BenefitAction)
 4. "have the app [adverb] X" -> extract only the verb X that follows "the app", never "have", "app", or the full construction:
    - "have the app automatically generate" -> GoalAction candidate is "generate"; then apply the ADVERB RULE below to decide whether to fuse "automatically" back on.
    - If "have" appears in an action label, it is wrong - replace it with the verb that follows "the app".
-5. ADVERB RULE (tie-breaker, do not blanket-strip or blanket-keep):
-   - KEEP an adverb fused to the verb when it changes the functional/system meaning of the action - it describes a real property of the behavior, not just how the user physically performs it. Known examples to keep: "permanently delete", "automatically generate", "securely store", "safely access", "quickly capture".
-   - DROP an adverb when it just restates the action's already-implied default manner. Known example to drop: "manually" - e.g. "manually add" becomes "add", "manually adjust" becomes "adjust", because manual/hands-on operation is already the default sense of these UI actions.
-   - If genuinely unsure whether an adverb is functionally meaningful, keep it - do not default to stripping.
+5. ADVERB RULES:
+   - Preserve all adverbial modifiers that directly modify the predicate verb. Do not remove or infer adverbial modifiers.
+   Examples : "permanently delete", "automatically generate", "securely store", "safely access", "quickly capture", "manually add","manually adjust".
 6. NOT actions: descriptive past participles used as noun modifiers ("saved spot", "generated itinerary"), relative-clause verbs describing an entity ("trip I no longer need"), auxiliaries (can, will, have, should, able).
 7. Verbs inside a negated/exclusion clause ("without X-ing", "outside of X-ing") are NOT extracted as actions at all. Do not create an action node for them.
    - "without manually typing details" -> no action created for "typing"; "details" may still appear as an entity (see ENTITIES rule 10 on edge-less entities).
@@ -136,7 +135,7 @@ SILENT SELF-CHECK BEFORE OUTPUT
   * VERB FORM: scan every action label and verify it is in base/infinitive form.
     "stored" -> fix to "store". "synced" -> fix to "sync". "shows" -> fix to "show". "remains" -> fix to "remain".
     This check is mandatory for every single action label.
-  * ADVERB CHECK: for each action label, apply the ADVERB RULE (keep if functionally meaningful, drop if it only restates the default manner - "manually" is the clearest drop case). Do not strip every adverb by default and do not keep every adverb by default.
+  * ADVERB CHECK: for each action label, preserve every adverb that directly modifies the predicate verb. Do not remove adverbial modifiers.
   * No action label contains: auxiliaries (able to, am able to), a direct object, or a descriptive participle that belongs to an entity instead.
   * If "have" appears in GoalAction, it is wrong. Replace it with the verb following "the app".
   * No action node exists for a verb that only appears inside a negated/exclusion clause (see ACTIONS rule 7).

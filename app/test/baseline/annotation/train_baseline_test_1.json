@@ -211,7 +211,7 @@
       "traveler"
     ],
     "GoalAction": [
-      "add",
+      "manually add",
       "enter",
       "select"
     ],
@@ -234,7 +234,7 @@
     "triggers": [
       [
         "traveler",
-        "add"
+        "manually add"
       ],
       [
         "traveler",
@@ -247,7 +247,7 @@
     ],
     "targets": [
       [
-        "add",
+        "manually add",
         "spot"
       ],
       [
@@ -825,7 +825,7 @@
       "stops"
     ],
     "BenefitAction": [
-      "adjust"
+      "manually adjust"
     ],
     "BenefitEntity": [
       "order",
@@ -853,7 +853,7 @@
         "stops"
       ],
       [
-        "adjust",
+        "manually adjust",
         "order"
       ]
     ],
@@ -934,7 +934,7 @@
       "permanently delete"
     ],
     "GoalEntity": [
-      "trip I no longer need"
+      "trip"
     ],
     "BenefitAction": [
       "show",
@@ -954,7 +954,7 @@
     "targets": [
       [
         "permanently delete",
-        "trip I no longer need"
+        "trip"
       ],
       [
         "remain",
