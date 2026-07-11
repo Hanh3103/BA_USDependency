@@ -17,7 +17,7 @@ def get_ollama_client() -> Client:
     return Client(
         host=settings.ollama_base_url,
         headers={"Authorization": f"Bearer {settings.ollama_api_key}"} if settings.ollama_api_key else None,
-        timeout=60.0,
+        timeout=180.0,
     )
 
 
@@ -43,4 +43,4 @@ def create_chat_completion(
             think=settings.ollama_think,
         )
     except (RequestError, ResponseError) as exc:
-        raise LLMConnectionError("Failed to connect to the model service.") from exc
+        raise LLMConnectionError(f"{exc.__class__.__name__}: {exc}") from exc

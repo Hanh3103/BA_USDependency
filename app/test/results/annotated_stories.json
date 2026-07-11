@@ -1,291 +1,230 @@
 [
   {
-    "Text": "As a user, I want to click on the address, so that it takes me to a new tab with Google Maps.",
+    "Text": "As a Public User, I want to Search for Information, so that I can obtain publicly available information concerning properties, County services, processes and other general information.",
     "Persona": [
-      "user"
+      "Public User"
     ],
     "GoalAction": [
-      "click"
+      "Search"
     ],
     "GoalEntity": [
-      "address"
+      "Information"
     ],
     "BenefitAction": [
-      "open"
+      "obtain"
     ],
     "BenefitEntity": [
-      "new tab with Google Maps"
+      "publicly available information"
     ],
-    "triggers": [],
-    "targets": [],
+    "triggers": [
+      [
+        "Public User",
+        "Search"
+      ]
+    ],
+    "targets": [
+      [
+        "Search",
+        "Information"
+      ],
+      [
+        "obtain",
+        "publicly available information"
+      ]
+    ],
     "contains": [],
     "id": "US-001"
   },
   {
-    "Text": "As a user, I want to be able to give my email ID, so that I can receive notifications for new events as they are posted.",
+    "Text": "As a ProspectiveApplicant, I want to research requirements and to select a service, so that I can find the relevant service and/or application type to initiate via the online portal.",
     "Persona": [
-      "user"
+      "ProspectiveApplicant"
     ],
     "GoalAction": [
-      "give",
-      "receive"
+      "research",
+      "select"
     ],
     "GoalEntity": [
-      "email ID",
-      "new events"
+      "requirements",
+      "service",
+      "application type"
     ],
     "BenefitAction": [
-      "receive"
+      "find"
     ],
     "BenefitEntity": [
-      "notifications"
+      "relevant service",
+      "application type"
     ],
-    "triggers": [],
-    "targets": [
+    "triggers": [
       [
-        "email ID",
-        "receive"
+        "ProspectiveApplicant",
+        "research"
       ],
       [
-        "new events",
-        "receive"
+        "ProspectiveApplicant",
+        "select"
+      ]
+    ],
+    "targets": [
+      [
+        "research",
+        "requirements"
+      ],
+      [
+        "select",
+        "service"
+      ],
+      [
+        "find",
+        "relevant service"
+      ],
+      [
+        "find",
+        "application type"
       ]
     ],
     "contains": [],
     "id": "US-002"
   },
   {
-    "Text": "As a user, I want to be able to view a map display of the public recycling bins around my area.",
+    "Text": "As an Applicant, I want to Request PreApplication Assistance, so that I can receive a response to a request for a meeting or information that is a result of the preapplication assistance.",
     "Persona": [
-      "user"
+      "Applicant"
     ],
     "GoalAction": [
-      "view"
+      "Request"
     ],
     "GoalEntity": [
-      "map display",
-      "public recycling bins"
+      "PreApplication Assistance"
     ],
     "BenefitAction": [
-      "view"
+      "receive"
     ],
     "BenefitEntity": [
-      "map display",
-      "public recycling bins"
+      "response",
+      "request for a meeting",
+      "information"
     ],
-    "triggers": [],
+    "triggers": [
+      [
+        "Applicant",
+        "Request"
+      ]
+    ],
     "targets": [
       [
-        "map display",
-        "public recycling bins"
+        "Request",
+        "PreApplication Assistance"
       ],
       [
-        "map display",
-        "area"
-      ]
-    ],
-    "contains": [
-      [
-        "public recycling bins",
-        "area"
+        "receive",
+        "response"
       ],
       [
-        "map display",
-        "area"
+        "receive",
+        "request for a meeting"
+      ],
+      [
+        "receive",
+        "information"
       ]
     ],
+    "contains": [],
     "id": "US-003"
   },
   {
-    "Text": "As a user, I want to be able to view a map display of the special waste drop off sites around my area.",
+    "Text": "As a Customer, I want to Create a Customer Portal User Account, so that I can log on to the Customer Portal and perform transactions that first require user authentication.",
     "Persona": [
-      "user"
+      "Customer"
     ],
     "GoalAction": [
-      "view"
+      "Create"
     ],
     "GoalEntity": [
-      "map display",
-      "special waste drop off sites"
+      "Customer Portal User Account"
     ],
     "BenefitAction": [
-      "view"
+      "log on",
+      "perform"
     ],
     "BenefitEntity": [
-      "map display",
-      "special waste drop off sites"
+      "Customer Portal",
+      "transactions"
     ],
-    "triggers": [],
+    "triggers": [
+      [
+        "Customer",
+        "Create"
+      ]
+    ],
     "targets": [
       [
-        "map display",
-        "special waste drop off sites"
+        "Create",
+        "Customer Portal User Account"
       ],
       [
-        "map display",
-        "area"
-      ]
-    ],
-    "contains": [
-      [
-        "map display",
-        "area"
+        "log on",
+        "Customer Portal"
       ],
       [
-        "special waste drop off sites",
-        "area"
+        "perform",
+        "transactions"
       ]
     ],
+    "contains": [],
     "id": "US-004"
   },
   {
-    "Text": "As a user, I want to be able to view the safe disposal events currently being organised around my area.",
+    "Text": "As an Applicant, I want to Submit Application, so that I can provide my information, plans and/or documents to initiate a transaction with the County.",
     "Persona": [
-      "user"
+      "Applicant"
     ],
     "GoalAction": [
-      "view"
+      "Submit Application"
     ],
     "GoalEntity": [
-      "safe disposal events"
+      "Application"
     ],
     "BenefitAction": [
-      "view"
+      "provide",
+      "initiate"
     ],
     "BenefitEntity": [
-      "safe disposal events"
+      "information",
+      "plans",
+      "documents",
+      "transaction"
     ],
-    "triggers": [],
-    "targets": [],
-    "contains": [],
-    "id": "US-005"
-  },
-  {
-    "Text": "As a user, I want to choose a flexible pick up time, so that I can more conveniently use the website.",
-    "Persona": [
-      "user"
+    "triggers": [
+      [
+        "Applicant",
+        "Submit Application"
+      ]
     ],
-    "GoalAction": [
-      "choose",
-      "use"
-    ],
-    "GoalEntity": [
-      "pick up time",
-      "website"
-    ],
-    "BenefitAction": [
-      "conveniently use"
-    ],
-    "BenefitEntity": [
-      "website"
-    ],
-    "triggers": [],
-    "targets": [],
-    "contains": [],
-    "id": "US-006"
-  },
-  {
-    "Text": "As a DevOps engineer, I want New Relic to provide useful data across all applications.",
-    "Persona": [
-      "DevOps engineer"
-    ],
-    "GoalAction": [
-      "provide"
-    ],
-    "GoalEntity": [
-      "data"
-    ],
-    "BenefitAction": [
-      "securely stored"
-    ],
-    "BenefitEntity": [
-      "data"
-    ],
-    "triggers": [],
     "targets": [
       [
-        "data",
-        "New Relic"
+        "Submit Application",
+        "Application"
       ],
       [
-        "data",
-        "across all applications"
-      ]
-    ],
-    "contains": [],
-    "id": "US-007"
-  },
-  {
-    "Text": "As a Developer, I want D Files generation requests to be managed and cached, so that duplicate requests do not cause performance issues",
-    "Persona": [
-      "Developer"
-    ],
-    "GoalAction": [
-      "manage",
-      "cache"
-    ],
-    "GoalEntity": [
-      "D Files generation requests"
-    ],
-    "BenefitAction": [
-      "so that"
-    ],
-    "BenefitEntity": [
-      "performance issues"
-    ],
-    "triggers": [],
-    "targets": [],
-    "contains": [],
-    "id": "US-008"
-  },
-  {
-    "Text": "As an Agency user, I want FABS deployed into production, so I can submit my Financial Assistance data.",
-    "Persona": [
-      "Agency user"
-    ],
-    "GoalAction": [
-      "deploy"
-    ],
-    "GoalEntity": [
-      "FABS",
-      "production"
-    ],
-    "BenefitAction": [
-      "submit"
-    ],
-    "BenefitEntity": [
-      "Financial Assistance data"
-    ],
-    "triggers": [],
-    "targets": [],
-    "contains": [],
-    "id": "US-009"
-  },
-  {
-    "Text": "As an agency user, I want the FABS validation rules to accept zero and blank for loan records.",
-    "Persona": [
-      "agency user"
-    ],
-    "GoalAction": [
-      "accept"
-    ],
-    "GoalEntity": [
-      "loan records"
-    ],
-    "BenefitAction": [
-      "accept"
-    ],
-    "BenefitEntity": [
-      "loan records"
-    ],
-    "triggers": [],
-    "targets": [
+        "provide",
+        "information"
+      ],
       [
-        "accept",
-        "loan records"
+        "provide",
+        "plans"
+      ],
+      [
+        "provide",
+        "documents"
+      ],
+      [
+        "initiate",
+        "transaction"
       ]
     ],
     "contains": [],
-    "id": "US-010"
+    "id": "US-005"
   }
 ]

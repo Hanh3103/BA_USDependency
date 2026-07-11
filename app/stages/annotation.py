@@ -11,7 +11,7 @@ from errors.llm_errors import LLMConnectionError
 from schemas.annotation_schema import AnnotationSchema
 
 
-_prompt_path = Path(__file__).parent.parent / "prompts" / "annotation-prompts" / "annotation_v2.txt"
+_prompt_path = Path(__file__).parent.parent / "prompts" / "annotation-prompts" / "annotation_v3.txt"
 SYSTEM_PROMPT = _prompt_path.read_text()
 
 
@@ -114,13 +114,23 @@ def _save_results(results, output_path: str) -> None:
 if __name__ == "__main__":
     from utils.file_parser import load_stories
 
-    input_path = "test/test_raw_input/test_2.txt"
+    input_path = "test/test_raw_input/test_3.txt"
     output_path = "test/results/annotated_stories.json"
 
     stories = load_stories(input_path)
 
     for story in stories:
         print(story + "\n")
+
+    print("Warming up model...")
+    warm_start = time.monotonic()
+    try:
+        create_chat_completion(
+            messages=[{"role": "user", "content": "hi"}],
+        )
+        print(f"  ✓ Model warm after {time.monotonic() - warm_start:.1f}s")
+    except LLMConnectionError as e:
+        print(f"  ⚠ Warm-up failed: {e} — proceeding anyway, first story may be slow")
 
     results = []
     failed_ids = []

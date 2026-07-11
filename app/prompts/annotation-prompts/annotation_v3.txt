@@ -37,20 +37,20 @@ ONE-SHOT DEMONSTRATION
 This is an illustrative example of the task. It is not the current input.
 
 Example input:
-As a member, I want to sign up using my email or a Google/Apple account, so that my bookmarks and plans are securely stored and synced across my devices.
+As a user, I want to walk through a short, guided tutorial that demonstrates how to import a spot, create a list, and generate an itinerary, so that I can understand the app's core workflow without reading external documentation.
 
 Example output:
-{
-  "Text": "As a member, I want to sign up using my email or a Google/Apple account, so that my bookmarks and plans are securely stored and synced across my devices.",
-  "Persona": [member],
-  "GoalAction": ["sign up"],
-  "GoalEntity": ["email", "Google/Apple account"],
-  "BenefitAction": ["stored", "synced"],
-  "BenefitEntity": ["bookmarks", "plans"],
-  "triggers": [["member", "sign up"]],
-  "targets": [["sign up", "email"], ["sign up", "Google/Apple account"], ["stored", "bookmarks"], ["stored", "plans"], ["synced", "bookmarks"], ["synced", "plans"]],
-  "contains": [["bookmarks", "devices"], ["plans", "devices"]]
-}
+ {
+    "Text": "As a user, I want to walk through a short, guided tutorial that demonstrates how to import a spot, create a list, and generate an itinerary, so that I can understand the app's core workflow without reading external documentation.",
+    "Persona": ["user"],
+    "GoalAction": ["walk through"],
+    "GoalEntity": ["tutorial", "spot", "list", "itinerary"],
+    "BenefitAction": ["understand"],
+    "BenefitEntity": ["core workflow"],
+    "triggers": [["user", "walk through"]],
+    "targets": [["walk through","tutorial"],["understand", "core workflow"]],
+    "contains": [["tutorial", "spot"],["tutorial","list"],["tutorial", "itinerary"]]
+  }
 
 GENERAL EXTRACTION RULES
 1. Return exactly the ten required top-level keys and no extra keys.
@@ -79,6 +79,7 @@ GOAL ACTION EXTRACTION
    - "permanently delete a trip" -> "delete"
    - "view the generated itinerary" -> "view"
    - "change the name of a list" -> "change"
+   - "Submit Application" -> "submit" (never include the object inside the action label)
 5. Split independent coordinated goal actions:
    - "create named lists and add saved spots" -> ["create", "add"]
    - "copy an itinerary and adjust dates" -> ["copy", "adjust"]
@@ -130,11 +131,10 @@ RELATIONSHIP RULES
 1. triggers: create [Persona, GoalAction] for every GoalAction.
 2. targets: create [Action, Entity] for every explicit action-to-direct-object relation.
 3. For alternatives or coordinated entities, create a separate target pair for each explicit entity.
-4. contains: create [ParentEntity, ChildEntity] pairs only when one entity truly contains another as a PART, COMPONENT, VALUE, or SUB-ELEMENT.
+4. contains: create [ParentEntity, ChildEntity] pairs only when one entity (noun phases) truly contains another as a PART, COMPONENT, VALUE, or SUB-ELEMENT.
    Detect containment from these linguistic patterns:
    a. EXPLICIT INCLUSION ("including", "such as", "e.g.", "like"):
-      "itinerary including maps, spot details"
-      → ["itinerary", "maps"], ["itinerary", "spot details"]
+      "itinerary including maps, spot details" → ["itinerary", "maps"], ["itinerary", "spot details"]
 
    b. SYSTEM/UI HIERARCHY (a system contains its elements):
       "publish button in FABS" → ["FABS", "publish button"]
@@ -167,5 +167,13 @@ SILENT SELF-CHECK BEFORE OUTPUT
 - No action label includes its direct object.
 - No extra explanation, analysis, markdown, or trailing comma appears.
 - The final output can be parsed by JSON.parse.
+- CONSISTENCY CHECK — verify before output:
+  * Every action in targets must appear in GoalAction or BenefitAction.
+    If ["initiate", "transaction"] is in targets → "initiate" MUST be in GoalAction or BenefitAction.
+  * Every entity in targets must appear in GoalEntity or BenefitEntity.
+    If ["initiate", "transaction"] is in targets → "transaction" MUST be in GoalEntity or BenefitEntity.
+  * Every action in triggers must appear in GoalAction.
+  * Child entities in contains do NOT need to appear in GoalEntity or BenefitEntity.
+  * If any inconsistency is found, fix the node lists before outputting.
 
 Return ONLY the final JSON object.
