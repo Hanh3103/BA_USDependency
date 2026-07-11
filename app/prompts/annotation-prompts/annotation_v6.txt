@@ -65,11 +65,14 @@ ACTION EXTRACTION (applies to both GoalAction and BenefitAction)
    - "without giving" → "giving" (not "give")
    - "only shows" → "shows" (not "show")
    - "remains uncluttered" → "remains" (not "remain")
-3. Strip only surrounding adverbs, never the verb itself:
+3. Strip ALL surrounding adverbs from the action label. Adverbs are NEVER part of the action label:
    - "securely stored" → "stored"
    - "quickly capture" → "capture"
    - "manually adjust" → "adjust"
-   - "permanently delete" → "delete"
+   - "manually add" → "add" (not "manually add")
+   - "permanently delete" → "delete" (not "permanently delete")
+   - "automatically generate" → "generate" (not "automatically generate")
+   - "have the app automatically generate" → "generate" (not "have the app automatically generate")
 4. Preserve phrasal verbs exactly:
    - "sign up", "log in", "log out", "walk through", "re-watch"
 5. A verb used only to describe an entity is NOT an action:
@@ -78,6 +81,7 @@ ACTION EXTRACTION (applies to both GoalAction and BenefitAction)
 6. A verb found only inside a relative clause modifying a noun is NOT an action:
    - "tutorial that demonstrates how to import" → "demonstrates" is NOT an action
    - "trip I no longer need" → "need" is NOT an action
+   - "places I still intend to visit" → "intend" is NOT an action
 7. Negated verbs ("without X", "no X") are still captured as actions:
    - "without manually typing details" → Action: "typing", Entity: "details"
    - "without reading external documentation" → Action: "reading", Entity: "documentation"
@@ -96,13 +100,20 @@ ENTITY EXTRACTION (applies to both GoalEntity and BenefitEntity)
 4. Remove only articles and possessive determiners:
    - "my email" → "email"
    - "their account" → "account"
-5. Split explicit coordinated entities:
+5. Never include a relative clause as part of an entity label. Strip down to the core noun phrase:
+   - "trip I no longer need" → "trip" (not "trip I no longer need")
+   - "place it belongs to" → "place" (not "place it belongs to")
+   - "plans I still intend to visit" → "plans"
+6. Split explicit coordinated entities:
    - "spots and trips" → ["spots", "trips"]
    - "start date, end date, or total number of days" → ["start date", "end date", "total number of days"]
-6. A verb used to describe an entity is part of the entity, not a separate action:
+7. When coordinated adjectives modify the same noun, split into separate entities:
+   - "active or relevant plans" → ["active plans", "relevant plans"]
+   - "active and relevant plans" → ["active plans", "relevant plans"]
+8. A verb used to describe an entity is part of the entity, not a separate action:
    - "saved spot" → entity is "saved spot", not action "saved" + entity "spot"
    - "generated itinerary" → entity is "generated itinerary"
-7. Every Entity in GoalEntity or BenefitEntity must be reachable by either:
+9. Every Entity in GoalEntity or BenefitEntity must be reachable by either:
    a. A targets-edge from an Action, OR
    b. A contains-edge from another Entity as a child
    An Entity that appears in neither targets nor contains as a child
@@ -112,18 +123,25 @@ GOAL CLAUSE SPECIFIC RULES
 1. GoalAction contains verbs from the "I want to..." clause only.
 2. GoalEntity contains the direct object noun phrases of GoalAction, plus
    any nouns explicitly listed as components or examples within the goal clause.
-3. Normalize goal actions by stripping adverbs but preserving verb form:
+3. Normalize goal actions by stripping ALL adverbs but preserving verb form:
    - "sign up using my email" → "sign up"
    - "log in my account" → "log in"
    - "manually add a spot" → "add"
    - "permanently delete a trip" → "delete"
    - "Submit Application" → "submit" (never include the object inside the action label)
+   - "have the app automatically generate an itinerary" → "generate"
 4. When the user explicitly asks the application to perform an action
-   ("have the app automatically generate..."), include the app action as a GoalAction.
+   ("have the app automatically generate..."), extract only the core
+   app action verb, stripping the construction entirely:
+   - "have the app automatically generate" → "generate"
 5. Verbs found only in the "so that" benefit clause must NEVER appear in GoalAction:
    - "drag and drop stops, so that I can adjust the order"
      → GoalAction: ["drag", "drop"] ONLY
      → BenefitAction: ["adjust"] ONLY
+6. Do not extract entities from the benefit clause into GoalEntity:
+   - "log in my account..., so that I can access my travel data"
+     → GoalEntity: ["account"] ONLY
+     → "travel data" belongs in BenefitEntity, not GoalEntity
 
 BENEFIT CLAUSE SPECIFIC RULES
 1. BenefitAction contains verbs from the "so that..." clause only.
@@ -132,6 +150,7 @@ BENEFIT CLAUSE SPECIFIC RULES
    - BenefitAction: []
    - BenefitEntity: []
 4. Verbs found only in the "I want to" goal clause must NEVER appear in BenefitAction.
+5. Do not extract entities from the goal clause into BenefitEntity.
 
 RELATIONSHIP RULES
 1. triggers: create [Persona, GoalAction] for every GoalAction.
@@ -147,6 +166,13 @@ RELATIONSHIP RULES
    DIRECTION RULE: always [ParentEntity, ChildEntity].
    The parent is the LARGER or CONTAINING entity.
    The child is the SMALLER or CONTAINED entity.
+   NEVER reverse the direction:
+   - CORRECT: ["location", "TikTok or Instagram video"]
+     (location is sourced FROM the video — video contains the location)
+   - WRONG: ["TikTok video", "location"]
+   - CORRECT: ["itinerary", "read-only web link"]
+     (the link represents the itinerary — itinerary is the parent)
+   - WRONG: ["read-only web link", "itinerary"]
 
    Detect containment from these linguistic patterns:
 
@@ -155,6 +181,8 @@ RELATIONSHIP RULES
       → ["itinerary", "maps"], ["itinerary", "spot details"]
       "private notes (e.g., reservation numbers or tips)"
       → ["private notes", "reservation numbers"], ["private notes", "tips"]
+      "named lists (e.g., Tokyo food or Paris museums)"
+      → ["named lists", "Tokyo food"], ["named lists", "Paris museums"]
 
    b. SYSTEM/UI HIERARCHY (a system contains its elements):
       "publish button in FABS" → ["FABS", "publish button"]
@@ -190,7 +218,7 @@ SILENT SELF-CHECK BEFORE OUTPUT
 - All required keys exist.
 - Every value is an array.
 - Every relationship entry is exactly [string, string].
-- No action label includes its direct object.
+- No action label includes its direct object or any adverb.
 - No extra explanation, analysis, markdown, or trailing comma appears.
 - The final output can be parsed by JSON.parse.
 - CONSISTENCY CHECK — verify before output:
@@ -202,6 +230,8 @@ SILENT SELF-CHECK BEFORE OUTPUT
     If an entity appears in neither, remove it from the node list.
   * Verbs in GoalAction must come from the goal clause only.
   * Verbs in BenefitAction must come from the benefit clause only.
+  * No adverb appears inside any GoalAction or BenefitAction label.
+  * No relative clause appears inside any entity label.
   * If any inconsistency is found, fix the node lists before outputting.
 
 Return ONLY the final JSON object.
