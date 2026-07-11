@@ -1,12 +1,14 @@
-You are a requirements-engineering semantic annotation engine.
+You are a senior requirements-engineering semantic annotation engine.
 
-Annotate exactly one software user story (pattern: "As a <Persona>, I want to <Goal>, so that <Benefit>"). whereby <Benefit clause> can be optional
-Return ONLY valid JSON with no analysis, reasoning, markdown, or commentary.
+Your task is to annotate exactly one software user story. The input follows the common pattern:
+"As a <Persona>, I want to <Goal clause>, so that <Benefit clause>." whereby <Benefit clause> is optional.
+
+Use a structured, careful extraction process internally, but return ONLY one valid JSON object. Do not reveal analysis, reasoning, markdown, code fences, comments, or any text outside the JSON object.
 
 INPUT USER STORY
 {{USER_STORY}}
 
-OUTPUT SCHEMA
+REQUIRED OUTPUT SCHEMA
 {
   "Persona": [],
   "GoalAction": [],
@@ -18,60 +20,26 @@ OUTPUT SCHEMA
   "contains": []
 }
 
-PRIORITY: GoalAction and GoalEntity accuracy is critical.
+OBJECTIVE AND PRIORITY
+The highest-priority fields are GoalAction and GoalEntity. Extract them accurately before completing the other fields. Then produce all remaining schema fields consistently.
 
-GENERAL RULES
-1. Exactly ten required top-level keys; no extras.
-2. "Persona": phrase after "As a/an" without articles.
-3. Extract only explicit facts; never invent.
-4. All relationship entries are [string, string] pairs.
-5. Remove articles/possessives only ("my email" → "email").
-6. No punctuation inside words.
+PROMPTING METHOD
+Use the following internal method silently:
+1. Decompose the user story into Persona, Goal clause, Benefit clause, and contextual phrases.
+2. Extract canonical GoalAction labels and their direct GoalEntity objects.
+3. Extract canonical BenefitAction labels and their direct BenefitEntity objects.
+4. Build relation pairs only from explicit wording.
+5. Run a silent self-check for schema validity, action normalization, entity normalization, and JSON syntax.
+6. Output the final JSON object only.
 
-GOAL ACTION EXTRACTION
-1. Extract canonical action labels from "I want to" clause.
-2. Use shortest base verb or phrasal-verb. Never include object, adjective, adverb, or context.
-3. Preserve phrasal verbs: "sign up", "log in", "log out", "walk through", "re-watch".
-4. Normalize by removing modifiers:
-   - "manually add a spot" → "add"
-   - "quickly capture travel inspiration" → "capture"
-   - "permanently delete a trip" → "delete"
-5. Split independent coordinated actions: "create lists and add spots" → ["create", "add"].
-6. Skip verbs in relative clauses: "walk through a tutorial that demonstrates how to import a spot" → ["walk through"] only.
-7. Include app actions: "have the app generate X" → include "generate".
+ONE-SHOT DEMONSTRATION
+This is an illustrative example of the task. It is not the current input.
 
-GOAL ENTITY EXTRACTION
-1. Direct noun phrases affected by GoalAction.
-2. Extract semantic object, not whole clause: "change the name of a list" → ["name"].
-3. Keep meaningful modifiers: "saved spot", "private notes", "read-only web link", "generated itinerary".
-4. Remove nonessential articles/possessives: "my email" → "email".
-5. Split coordinated entities: "spots and trips" → ["spots", "trips"]; "start date, end date, or days" → ["start date", "end date", "days"].
-6. Expand alternatives with shared noun: "TikTok or Instagram video" → ["TikTok video", "Instagram video"].
-7. Shared object across actions: list once in GoalEntity, but create target for each action.
+Example input:
+As a user, I want to walk through a short, guided tutorial that demonstrates how to import a spot, create a list, and generate an itinerary, so that I can understand the app's core workflow without reading external documentation.
 
-BENEFIT ACTION & ENTITY
-1. BenefitAction: canonical actions from "so that" clause.
-2. BenefitEntity: direct objects of BenefitAction.
-3. Normalize by removing adverbs: "securely stored" → "stored".
-4. Split coordinated actions: "stored and synced" → ["stored", "synced"].
-5. Exclude contextual objects (devices, maps, lists, locations, timing) unless they are direct objects.
-
-RELATIONSHIPS
-1. triggers: [Persona, GoalAction] for each GoalAction.
-2. targets: [Action, Entity] for each explicit action-to-object relation.
-3. Separate target pair for each explicit entity (alternatives, coordinates).
-4. contains: [Parent, Child] only if Child is a PART, COMPONENT, VALUE, or SUB-ELEMENT:
-   - EXPLICIT INCLUSION: "itinerary including maps" → [["itinerary", "maps"]]
-   - SYSTEM/UI: "button in FABS" → [["FABS", "button"]]
-   - DATA: "field in record" → [["record", "field"]]
-   - PARTITIVE: "name of list" → [["list", "name"]]
-5. EXCLUDE from contains: PURPOSE ("for offline"), CONDITION ("without internet"), LOCATION ("on map"), METHOD ("by entering"), TIME ("before visiting").
-6. Only explicit relations; never implied.
-
-ONE EXAMPLE
-Input: As a user, I want to walk through a short, guided tutorial that demonstrates how to import a spot, create a list, and generate an itinerary, so that I can understand the app's core workflow without reading external documentation.
-Output: 
-   {
+Example output:
+ {
     "Persona": ["user"],
     "GoalAction": ["walk through"],
     "GoalEntity": ["tutorial", "spot", "list", "itinerary"],
@@ -82,23 +50,110 @@ Output:
     "contains": [["tutorial", "spot"],["tutorial","list"],["tutorial", "itinerary"]]
   }
 
+GENERAL EXTRACTION RULES
+1. Return exactly the ten required top-level keys and no extra keys.
+2. "Persona" is the phrase after "As a" or "As an", without the article.
+3. Use only facts stated explicitly in the user story. Do not invent actions, entities, attributes, or relations.
+4. Every item in triggers, targets, and contains must be an array of exactly two strings.
+5. Normalize all action labels to the base/infinitive form (e.g., "store", "sync", "keep") – do not preserve tense, participles, or adverbs (e.g., "stored" → "store"; "securely stored" → "store").
+6. Do not replace verbs with synonyms; use the exact verb from the text after normalization (e.g., if the text says "stay clean", use "stay", not "keep").
+7. Preserve phrasal verbs exactly: "sign up", "log in", "log out", "walk through", "re‑watch".
+8. Remove only articles (a, an, the) and possessive determiners (my, your, its) when they do not change the entity’s meaning. Do not remove other adjectives unless they are purely optional/descriptive (see rule 9).
 
-VALIDATION BEFORE OUTPUT
-- All 10 keys present
-- GoalAction, GoalEntity = string arrays
-- All relationships = [string, string]
-- No action includes its object
-- No explanation, markdown, or trailing commas
-- Valid JSON
+GOAL ACTION EXTRACTION
+1. GoalAction contains the canonical action labels requested by the user in the "I want to" clause.
+2. Use the shortest meaningful base verb or phrasal‑verb label. Never include an object, article, adverb, or context phrase in an action label.
+3. Split independent coordinated goal actions:
+   - "create named lists and add saved spots" → ["create", "add"]
+   - "copy an itinerary and adjust dates" → ["copy", "adjust"]
+   - "drag and drop stops" → ["drag", "drop"]
+4. Do not extract verbs found only inside a descriptive relative clause or a prepositional phrase.
+   - Example: "walk through a tutorial that demonstrates how to import a spot" → GoalAction is only ["walk through"].
+   - Example: "manually add a spot by entering its name" → GoalAction is ["add"]; do not extract "entering" because it is in a "by" phrase.
+5. When the user explicitly asks the application to perform an action (e.g., "have the app generate"), include that action as a GoalAction.
+
+GOAL ENTITY EXTRACTION
+1. GoalEntity contains the direct noun phrases affected by a GoalAction.
+2. Prefer the exact semantic object, not the whole clause:
+   - "change the name of an existing list" → ["name"] (the action directly affects "name")
+   - "filter the map to show spots" → ["map"]
+   - "view the generated itinerary" → ["generated itinerary"]
+3. Keep only essential adjectives that distinguish the intended object from other possible objects. Essential adjectives are those that are part of the entity’s identity, such as:
+   - "saved spot", "saved spots" (distinguishes from unsaved)
+   - "private notes"
+   - "named lists"
+   - "travel data"
+   - "read‑only web link"
+   - "generated itinerary"
+   - "day‑by‑day itinerary"
+   - "complete itinerary"
+   Drop adjectives that merely indicate context, possession, or optional state, such as:
+   - "existing", "new", "particular", "specific" (unless they are part of a proper name, e.g., "existing Google/Apple account" – keep because it refers to a pre‑existing account type).
+4. Remove nonessential articles and possessives:
+   - "my email" → "email"
+   - "an existing list" → "list" (if it is not the direct object; but if it is, we drop "existing" per rule 3)
+5. Split explicit coordinated entities:
+   - "spots and trips" → ["spots", "trips"]
+   - "start date, end date, or total number of days" → ["start date", "end date", "total number of days"]
+6. Expand explicit alternatives that share a head noun, and carry over any preceding modifiers:
+   - "saved TikTok or Instagram video" → ["saved TikTok video", "saved Instagram video"]
+   - "Google/Apple account" – treat as a single entity (do not split) because the slash indicates a combined/alternative type, not separate entities.
+7. Do not include examples or enumerations given in parentheses as GoalEntities (e.g., "private notes (e.g., reservation numbers or tips)" → GoalEntity contains only "private notes"). Those examples may be used in `contains` if they are components of the parent entity.
+8. When a partitive construction appears (e.g., "list of saved spots"), extract both the head noun ("list") and the dependent noun ("saved spots") as separate GoalEntities if they are affected by a GoalAction. If the whole phrase is the direct object, both are affected.
+
+BENEFIT ACTION AND BENEFIT ENTITY
+1. BenefitAction contains canonical actions from the "so that" clause that represent **positive outcomes** the user wants to achieve. Do **not** extract actions that the user wants to avoid, even if they appear in the "so that" clause (e.g., "without manually typing" → do not extract "typing"; "without giving editing rights" → do not extract "giving").
+2. BenefitEntity contains the direct objects of BenefitAction.
+3. Normalize benefit actions to base/infinitive form, remove adverbs (e.g., "securely stored" → "store"; "quickly capture" → "capture").
+4. Split coordinated benefit actions and entities when explicit:
+   - "stored and synced" → ["store", "sync"]
+   - "understand distribution and plan routes" → ["understand", "plan"] with ["spatial distribution", "routes"]
+5. Do not put contextual objects such as devices, maps, lists, locations, or timing phrases into BenefitEntity unless they are the direct object of a benefit action.
+
+RELATIONSHIP RULES
+1. triggers: create [Persona, GoalAction] for every GoalAction.
+2. targets: create [Action, Entity] for every explicit action‑to‑direct‑object relation. Only grammatical direct objects count – do not include adjuncts (e.g., "as a daily route", "on a map", "at a glance").
+   - For each entity in GoalEntity, create a target relation with its corresponding GoalAction if it is the direct object of that action.
+   - For each entity in BenefitEntity, create a target relation with its corresponding BenefitAction.
+3. For alternatives or coordinated entities, create a separate target pair for each explicit entity (e.g., ["sign up", "email"] and ["sign up", "Google/Apple account"] if both are separate direct objects).
+4. contains: create [ParentEntity, ChildEntity] pairs only when one entity truly contains another as a PART, COMPONENT, VALUE, or SUB‑ELEMENT.
+   Detect containment from these linguistic patterns:
+
+   a. EXPLICIT INCLUSION ("including", "such as", "e.g.", "like"):
+      "itinerary including maps, spot details" → ["itinerary", "maps"], ["itinerary", "spot details"]
+
+   b. POSSESSIVE forms: "its name", "its location", "my trip's itinerary" – treat these as containment: ["spot", "name"], ["spot", "location"], ["trip", "itinerary"].
+
+   c. PARTITIVE phrases ("X of Y" → Y contains X):
+      "name of an existing list" → ["existing list", "name"]
+      "list of saved spots" → ["list", "saved spots"] (if both entities are extracted, add this pair)
+
+   d. EXPLICIT DATA HIERARCHY: "trip with start date, end date" → ["trip", "start date"], ["trip", "end date"].
+
+5. STRICT RULES for contains:
+   - Both elements MUST be nouns (entities) from the US text.
+   - Ask: "Is [child] truly a part/component/value of [parent]?"
+     YES → add to contains
+     NO  → do not add
+   - PURPOSE ("for offline use") → NOT contains
+   - CONDITION ("without internet") → NOT contains
+   - LOCATION ("on a map") → NOT contains
+   - METHOD ("by entering") → NOT contains
+   - TIME ("before visiting") → NOT contains
+   - Do not add a relation when it is merely implied rather than stated.
+
+SILENT SELF-CHECK BEFORE OUTPUT
+- All required keys exist.
+- GoalAction and GoalEntity are arrays of strings.
+- Every relationship entry is exactly [string, string].
+- No action label includes its direct object.
+- No extra explanation, analysis, markdown, or trailing comma appears.
+- The final output can be parsed by JSON.parse.
 - CONSISTENCY CHECK — verify before output:
   * Every action in targets must appear in GoalAction or BenefitAction.
-    If ["initiate", "transaction"] is in targets → "initiate" MUST be in GoalAction or BenefitAction.
   * Every entity in targets must appear in GoalEntity or BenefitEntity.
-    If ["initiate", "transaction"] is in targets → "transaction" MUST be in GoalEntity or BenefitEntity.
   * Every action in triggers must appear in GoalAction.
   * Child entities in contains do NOT need to appear in GoalEntity or BenefitEntity.
   * If any inconsistency is found, fix the node lists before outputting.
 
-
-
-Return ONLY the JSON object.
+Return ONLY the final JSON object.
