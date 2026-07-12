@@ -103,21 +103,34 @@ RELATIONSHIP RULES
      "download itinerary including maps" -> targets: [["download","itinerary"]], NOT [["download","maps"]].
    - Do not create a targets edge for the "result" complement of an "into ___" phrase: "transform my scattered ideas into a structured plan" -> targets: [["transform","scattered ideas"]] only, not ["transform","structured plan"].
    - An entity CAN simultaneously be the target of its own action AND a contains-child of a broader entity. This dual role is expected and correct, not a duplicate error - e.g. "selecting its location on a map" where "spot" contains "location" AND "select" targets "location".
-3. contains: create [ParentEntity, ChildEntity] for explicit part/component/example/sub-element relationships only.
-   - Direction: Parent = larger/containing, Child = smaller/contained.
-   - DIRECTION TEST: ask "Is [Child] sourced from or part of [Parent]?" YES -> correct. NO -> reverse the pair.
+3. contains: create [ParentEntity, ChildEntity] only when Child is something you would find INSIDE, BELONGING TO, or SOURCED FROM Parent, as stated in the text. Every sub-case below is just a specific flavor of that one test.
+   - MANDATORY INLINE CHECK before adding any pair (do internally, not in output): "Parent = ___, Child = ___, because Child is [inside / part of / sourced from / an example of content within] Parent, as stated in: '___'" - quote the actual phrase from the story that licenses it. If you cannot quote real text to fill that blank, do not create the edge.
+   - DIRECTION TEST: your quoted phrase from the inline check IS the direction check. If the phrase only reads correctly in reverse ("Parent is sourced from Child"), you have Parent and Child backwards - swap them and re-justify before writing the pair.
    - Valid triggers for a contains edge:
-     - Explicit inclusion ("including", "such as", "e.g.", "like"): "itinerary including maps" -> ["itinerary","maps"]. Parenthetical "e.g., ..." examples must ALWAYS be linked via contains to their parent - no exceptions.
+     - Explicit inclusion ("including", "such as", "like"): "itinerary including maps" -> ["itinerary","maps"]
      - System hierarchy ("X in Y"): "button in FABS" -> ["FABS","button"]
      - Data hierarchy ("X for Y"): "zero for loan records" -> ["loan records","zero"]
      - Partitive ("X of Y" means Y contains X): "name of a list" -> ["list","name"]
      - Possessive ("X's Y" means X contains Y): "trip's itinerary" -> ["trip","itinerary"]
      - Relative clause components ("X that covers Y, Z"): "tutorial that covers spot, list" -> ["tutorial","spot"], ["tutorial","list"]
      - Attribute-of-object phrasing ("entering its name and selecting its location" describing a spot): ["spot","name"], ["spot","location"]
-     - Alternative sources of an entity (see ENTITIES rule 5): ["location","saved TikTok video"], ["location","saved Instagram video"]
+     - Alternative sourced entities: "from a saved TikTok or Instagram video" -> ["location","saved TikTok video"], ["location","saved Instagram video"]
+     - "e.g." examples, CONTENT-OF only: link when the example is something that would be found written INSIDE the parent. Do NOT link when the example merely names/labels an instance of the parent category.
+       LINK: "private notes (e.g., reservation numbers or tips)" -> ["private notes","reservation numbers"], ["private notes","tips"]
+       DO NOT LINK: "named lists (e.g., 'Tokyo food' or 'Paris museums')" -> Tokyo food / Paris museums stay as entities, no edge - these are example list NAMES, not content stored inside a list regarding data layer.
+       Test: would this example be found written inside the parent, or is it just an example of what the parent could be called? First -> link. Second -> leave unconnected.
    - NOT contains: purpose ("for offline use"), condition ("without internet"), pure location/method framing when nothing is structurally part of anything ("on a map" as a bare method phrase, "by entering"), time ("before visiting"), implied relationships.
-   - NOT contains: plural and its singular form: "spots" and "spot" are not a contains pair, they are the same entity in different forms.
-   - NOT contains: modified noun and its unmodified form: "saved spots" and "spots" are not a contains pair, they are the same entity in different forms.
+   - NOT contains: two mentions of the SAME referent. This is the most common false positive - watch for it specifically:
+     - Plural vs. singular of the same noun: "spots" and "spot" are one referent mentioned twice, not parent/child.
+     - Modified vs. unmodified form of the same noun: "saved spots" and "spots" are one referent, not parent/child. So are "list of saved spots" and "saved spots" - the modifier changes the description, not the referent.
+     WORKED NEGATIVE EXAMPLE:
+       Text: "...I want to save spots to a list, so that my saved spots stay organized."
+       GoalEntity includes "spot", BenefitEntity includes "saved spots".
+       WRONG: contains: [["saved spots","spots"]]
+       CORRECT: no edge between them - "spot" and "saved spots" co-refer, they are not a container/component pair.
+     Before finalizing any pair, strip modifiers and pluralization from both strings - if they reduce to the same head noun, discard the pair.
+   - NODE-LIST INTEGRITY: every string used as Parent or Child must be copied character-for-character from the GoalEntity/BenefitEntity arrays you already produced. Never introduce a new string only inside an edge - if the entity isn't in your node lists yet, add it there first.
+   - Do not add a relation when it is merely implied rather than stated.
 4. Do not add a relation when it is merely implied rather than stated.
 
 SILENT SELF-CHECK BEFORE OUTPUT
@@ -127,12 +140,10 @@ SILENT SELF-CHECK BEFORE OUTPUT
 - The final output can be parsed by JSON.parse.
 - CONSISTENCY CHECK - verify before output:
   * VERB FORM: scan every action label and verify it is in base/infinitive form.
-    "stored" -> fix to "store". "synced" -> fix to "sync". "shows" -> fix to "show". "remains" -> fix to "remain".
+    "securely stored" -> "securely store". "synced" -> "sync". "shows" -> "show". "remains" -> "remain".
     This check is mandatory for every single action label.
   * ADVERB CHECK: for each action label, preserve every adverb that directly modifies the predicate verb. Ask: "Was there a word in the text describing HOW this was done (e.g., manually, safely, automatically)?" If YES, ensure that word is fused to the verb. Do not allow "Action": "store" if the text said "securely stored".
   * No action label contains: auxiliaries (able to, am able to), a direct object, or a descriptive participle that belongs to an entity instead.
-  * If "have" appears in GoalAction, it is wrong. Replace it with the verb following "the app".
-  * No action node exists for a verb that only appears inside a negated/exclusion clause (see ACTIONS rule 7).
   * Entity labels: no trailing relative clauses (strip if the words after the core noun are "I/it/that/which..."), no articles, not itself a verb.
     BAD: "place it belongs to", "trip I no longer need" -> GOOD: "place", "trip"
   * Core adjectives directly modifying a noun in the text are kept, even if they originated near a relative clause: "original TikTok or Instagram video", "guided tutorial", "saved spot", "named lists", "read-only web link" all keep their adjective.
