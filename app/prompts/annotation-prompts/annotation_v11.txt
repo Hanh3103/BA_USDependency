@@ -55,20 +55,16 @@ CLAUSE BOUNDARIES — split first, extract second
         BenefitAction: action(s), ONLY taken from the BENEFIT clause (i.e., the "so that" part)
     RULES:
     - Extract only explicit verbs. Never infer or paraphrase.
-    - Normalize every verb to base/infinitive from (no "to"), regardless of the tense or aspect in the text:
-        - "securely stored" → "securely store"
+    - Normalize every verb to its canonical form (base/infinitive form):
         - "synced" → "sync"
         - "giving" → "give"
         - "remains" → "remain"
-        - "shows" → "show"
-        - "manually typing" -> "manually type"
     - Preserve phrasal verbs exactly as they appear in the text:
         - "sign up" -> "sign up"
         - "log in" -> "log in"
         - "logging out" -> "log out"
-        - "walk through" -> "walk through"
         - "re-watch" -> "re-watch"
-    - Adverbs or modifiers are part of the verb and should be included in the extraction, but the verb itself must be normalized to its base/infinitive form.
+    - Adverbs are part of the verb and should be included in the extraction, but the verb itself must be normalized to its base/infinitive form.
         - "securely stored" → "securely store"
         - "quickly capture" → "quickly capture"
         - "manually add" → "manually add"
