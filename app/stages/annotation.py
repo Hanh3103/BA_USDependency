@@ -1,91 +1,118 @@
 import json
 import time
-from typing import Dict, Optional
+from typing import Dict, Optional, Literal
 from pathlib import Path
-
-from pydantic import ValidationError
+import argparse
 
 from connectionsHandle.ollama_connection import create_chat_completion
 from errors.app_error import AppError
 from errors.llm_errors import LLMConnectionError
-from schemas.annotation_schema import AnnotationSchema
+from schemas.annotation.annotation_schema import AnnotationSchema, Step1Schema, Step2Schema, Step3Schema
+from config import settings
+from utils.llm_client_helpers import _call_stage, _load_prompt
+
+SINGLE_PROMPT_PATH = settings.prompt_path("annotation")
+STAGE1_PROMPT_PATH = settings.prompt_path("annotation", step=1)
+STAGE2_PROMPT_PATH = settings.prompt_path("annotation", step=2)
+STAGE3_PROMPT_PATH = settings.prompt_path("annotation", step=3)
 
 
-_prompt_path = Path(__file__).parent.parent / "prompts" / "annotation-prompts" / "annotation_v2.txt"
-SYSTEM_PROMPT = _prompt_path.read_text()
+MODE = Literal["single", "sequential"]
 
 
-def _extract_json(text: str) -> Dict:
-    """Extract the first balanced {...} object instead of greedily matching
-    from the first '{' to the LAST '}' in the response (which can swallow
-    trailing commentary or multiple JSON-like fragments)."""
-    text = text.strip()
-    try:
-        return json.loads(text)
-    except json.JSONDecodeError:
-        pass
-
-    start = text.find("{")
-    if start == -1:
-        raise AppError("Model did not return JSON")
-
-    depth = 0
-    for i, ch in enumerate(text[start:], start=start):
-        if ch == "{":
-            depth += 1
-        elif ch == "}":
-            depth -= 1
-            if depth == 0:
-                candidate = text[start:i + 1]
-                try:
-                    return json.loads(candidate)
-                except json.JSONDecodeError as exc:
-                    raise AppError("Model returned malformed JSON") from exc
-
-    raise AppError("Model returned unterminated JSON")
-
-
-def run(user_story: str, *, temperature_override: Optional[float] = None) -> Dict:
-    response = create_chat_completion(
+def _run_single(user_story: str) -> AnnotationSchema:
+    prompt = _load_prompt(SINGLE_PROMPT_PATH)
+    return _call_stage(
         messages=[
-            {"role": "system", "content": SYSTEM_PROMPT},
+            {"role": "system", "content": prompt},
             {"role": "user", "content": user_story},
         ],
-        format=AnnotationSchema.model_json_schema()
+        schema_model= AnnotationSchema
     )
 
-    if not response.message:
-        raise AppError("Model returned no message")
 
-    raw = response.message.content
-    print(raw)
+def _run_3steps(user_story: str) -> AnnotationSchema:
+    # STEP 1: Extract raw components
+    step1_prompt = _load_prompt(STAGE1_PROMPT_PATH)
+    step1_res = _call_stage(
+        messages=[
+            {"role": "system", "content": step1_prompt},
+            {"role": "user", "content": user_story},
+        ],
+        schema_model=Step1Schema,
+    )
 
-    if not raw:
-        raise AppError("Model returned empty content")
+    # STEP 2: Classify into Goal/Benefit concepts
+    step2_prompt = _load_prompt(STAGE2_PROMPT_PATH)
+    step2_res = _call_stage(
+        messages=[
+            {"role": "system", "content": step2_prompt},
+            {"role": "user", "content": user_story},
+            {"role": "assistant", "content": step1_res.model_dump_json(indent=2)},
+            {"role": "user", "content": "Classify the extracted Actions and Entities into Goal and Benefit concepts."},
+        ],
+        schema_model=Step2Schema,
+    )
 
-    data = _extract_json(raw)
-    try:
-        validated = AnnotationSchema.model_validate(data)
-    except ValidationError as exc:
-        raise AppError(f"Annotation output did not match schema: {exc}") from exc
+    # STEP 3: Extract relationships (triggers, targets, contains)
+    step3_prompt = _load_prompt(STAGE3_PROMPT_PATH)
 
-    result = {"Text": user_story, **validated.model_dump()}
+    # Combine nodes to feed into Step 3
+    node_context = {
+        "Persona": step1_res.Persona,
+        "Action": step2_res.Action.model_dump(),
+        "Entity": step2_res.Entity.model_dump(),
+        "benefit": step1_res.benefit
+    }
+
+    step3_res = _call_stage(
+        messages=[
+            {"role": "system", "content": step3_prompt},
+            {"role": "user", "content": user_story},
+            {"role": "assistant", "content": json.dumps(node_context, indent=2)},
+            {"role": "user",
+             "content": "Using only the nodes listed above, extract the triggers, targets, and contains edges."},
+        ],
+        schema_model=Step3Schema,
+    )
+
+    # Combine all steps into the final result
+    return AnnotationSchema(
+        Persona=step1_res.Persona,
+        Action=step2_res.Action,
+        Entity=step2_res.Entity,
+        benefit=step1_res.benefit,
+        triggers=step3_res.triggers,
+        targets=step3_res.targets,
+        contains=step3_res.contains,
+    )
+
+# main run
+
+def run(user_story: str, *, mode: MODE = "sequential", temperature_override: Optional[float] = None) -> Dict:
+    if mode == "single":
+        validated = _run_single(user_story)
+    elif mode == "sequential":
+        validated = _run_3steps(user_story)
+    else:
+        raise ValueError(f"Unknown mode: {mode!r} (expected 'single' or 'sequential')")
+
+    result = {"Text": user_story, "mode": mode, **validated.model_dump()}
     return result
 
 
-def annotate(user_story: str, story_id: str, max_retries: int = 2) -> Optional[Dict]:
+def annotate(user_story: str, story_id: str, max_retries: int = 2, mode: MODE = "sequential") -> Optional[Dict]:
     last_error = None
     for attempt in range(max_retries):
         start = time.monotonic()
         try:
-            annotation = run(user_story)
+            annotation = run(user_story, mode=mode)
             elapsed = time.monotonic() - start
-            print(f"  ✓ {story_id} annotated in {elapsed:.1f}s (attempt {attempt + 1})")
+            print(f"  ✓ {story_id} annotated in {elapsed:.1f}s (attempt {attempt + 1}, mode={mode})")
             annotation["id"] = story_id
             return annotation
 
         except LLMConnectionError as e:
-            # Timeout or connection failure > don't crash the whole batch on this story.
             elapsed = time.monotonic() - start
             last_error = e
             print(f"  ⚠ {story_id} attempt {attempt + 1} timed out/failed after {elapsed:.1f}s: {e}")
@@ -96,8 +123,6 @@ def annotate(user_story: str, story_id: str, max_retries: int = 2) -> Optional[D
             print(f"  ⚠ {story_id} attempt {attempt + 1} failed after {elapsed:.1f}s: {e}")
 
         except Exception as e:
-            # Catch-all so one unexpected exception (e.g. malformed response object)
-            # can't take down the entire batch run.
             elapsed = time.monotonic() - start
             last_error = e
             print(f"  ⚠ {story_id} attempt {attempt + 1} unexpected error after {elapsed:.1f}s: {e!r}")
@@ -113,16 +138,21 @@ def _save_results(results, output_path: str) -> None:
 
 
 if __name__ == "__main__":
-    from utils.file_parser import load_stories
+    from utils.file_parser import load_raw_stories
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--mode", choices=["sequential", "single"], default="sequential")
+    args = parser.parse_args()
+
 
     input_path = "test/test_raw_input/test_1.txt"
-    output_path = "test/results/annotated_stories.json"
-    print(f"Using prompt: {_prompt_path}")
+    output_path = f"test/results/annotated_stories_{args.mode}.json"
+    print(f"Mode: {args.mode}")
 
-    stories = load_stories(input_path)
+    stories = load_raw_stories(input_path)
 
     for story in stories:
-        print(story + "\n")
+        print(story)
 
     print("Warming up model...")
     warm_start = time.monotonic()
@@ -141,7 +171,7 @@ if __name__ == "__main__":
         story_id = f"US-{i+1:03d}"
         print(f"  Annotating {story_id}...")
 
-        ann = annotate(story, story_id)
+        ann = annotate(story, story_id, mode=args.mode)
 
         if ann:
             results.append(ann)

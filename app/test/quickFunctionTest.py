@@ -3,7 +3,7 @@ from stages.annotation import annotate
 
 def test_annotate():
     user_story = (
-        "As a traveler, I want to import a location from a saved TikTok or Instagram video with a single tap, so that I can quickly capture travel inspiration without manually typing details."
+        "As an agency user, I want the FABS validation rules to accept zero and blank for loan records."
     )
     result = annotate(user_story, "US-001")
     print(result)

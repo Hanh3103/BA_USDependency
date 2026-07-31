@@ -55,22 +55,16 @@ CLAUSE BOUNDARIES — split first, extract second
         BenefitAction: action(s), ONLY taken from the BENEFIT clause (i.e., the "so that" part)
     RULES:
     - Extract only explicit verbs. Never infer or paraphrase.
-    - Normalize every verb to its canonical form (base/infinitive form):
-        - "synced" → "sync"
-        - "giving" → "give"
-        - "remains" → "remain"
-    - Preserve phrasal verbs exactly as they appear in the text:
-        - "sign up" -> "sign up"
+    - Extract the full action phrase including the adverb
+        - "automatically generate" -> "automatically generate"
+        - "manually add" -> "manually add"
+    - Normalize ONLY the verb to its base form, but keep the adverb.
+        - "securely stored" → "securely store"
+    - When phrasal verbs are actions, they must be preserved exactly as they appear in the text:
         - "log in" -> "log in"
         - "logging out" -> "log out"
         - "re-watch" -> "re-watch"
-    - Adverbs are part of the verb and should be included in the extraction, but the verb itself must be normalized to its base/infinitive form.
-        - "securely stored" → "securely store"
-        - "quickly capture" → "quickly capture"
-        - "manually add" → "manually add"
-        - "automatically generate" → "automatically generate"
     - Split coordinated actions into separate actions:
-        - "stored and synced" → ["store", "sync"]
         - "drag and drop" → ["drag", "drop"]
         - "create and add" → ["create", "add"]
 
@@ -79,17 +73,32 @@ CLAUSE BOUNDARIES — split first, extract second
     - Do not treat auxiliaries, modals, or causative constructions as actions, keep only the main verb they attach to is the action, in any conjugated or tensed form of the auxiliary. This includes:
         - True modals: can, could, will, would, shall, should, may, might, must
         - Semi-modal constructions (any tense/conjugation): have to/has to/had to, be able to/is able to/was able to, need to, ought to, be going to
+            - "I want to be able to log in..." → "log in" is the action, "be able to" is NOT an action
         - Causative "have" constructions ("have + [noun phrase] + verb", where the persona causes something else to perform the action): drop BOTH the word "have" AND the intervening noun phrase, not just "have" - the noun phrase is not itself an action or an auxiliary, it is simply not part of the action label.
             - "have the app automatically generate an itinerary" -> drop "have" and "the app", leaving "automatically generate" as action
-            - "I want to be able to log in..." → "log in" is the action, "be able to" is NOT an action
 
-    - THE ENTITY DEPENDENCY RULE:
-        Only extract a verb if it explicitly acts upon or directly describes an extracted ENTITY within the exact same clause. If a verb does not have a direct, structural relationship with an extracted ENTITY, ignore it completely, regardless of its grammar or position in the sentence.
-        - "tutorial that demonstrates how to import a spot" → Extract "import" because it acts on the entity "spot". Ignore "demonstrates" because it does not act directly on a listed entity.
-        - "trip I no longer need" → Extract "need" because it acts directly on the entity "trip".
-        - "keep critical information together with the place it belongs to" → Extract "belong to" because it explicitly relates back to the entity "place".
-        - "log out when I'm finished" → Ignore "finished" because it does not act on any entity; it is just a standalone state.
-        - "re-watch the creator's tips and context before visiting" → Ignore "visiting" because it does not act on an explicit entity in the text.
+
+    - Do not extract any verb that immediately follows the words 'without', 'instead of', or 'except':
+        - "without giving them editing rights" → ignore "giving"
+        - "instead of logging in, I want to sign up" → ignore "logging in"
+        - "except for saving the itinerary, I want to share it" → ignore "saving"
+
+    - Do not extract verbs that occur inside clauses starting with 'that', 'which', 'who', or pronoun combinations like 'I', 'he', 'she', or 'they' if they occur in the middle of a sentence:
+        - "tutorial that demonstrates how to import a spot" → ignore "demonstrates"
+        - "trip I no longer need" → ignore "need"
+        - "keep critical information together with the place it belongs to" → ignore "belongs to"
+        - "log out when I'm finished" → ignore "finished"
+        - "re-watch the creator's tips and context before visiting" → ignore "visiting"
+
+    PURPOSE CLAUSE ROUTING RULE:
+       - Identify "to [verb]" or "in order to [verb]" clauses.
+       - If the purpose verb describes an action within the app, move it to BenefitAction.
+       - If the purpose verb describes an external action (outside the app), ignore it completely.
+       - The GOAL clause must contain ONLY primary, executable system interactions.
+
+    THE ENTITY DEPENDENCY RULE:
+        - Only extract a verb if it explicitly acts upon or directly describes an extracted ENTITY within the exact same clause.
+        - If a verb does not have a direct, structural relationship with an extracted ENTITY, ignore it completely, regardless of its grammar or position in the sentence.
 
 
     EXAMPLES:

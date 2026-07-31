@@ -19,7 +19,7 @@ from schemas.annotation_schema import AnnotationSchema
 from stages import ollama_connection
 
 
-PROMPTS_DIR = Path(__file__).parent.parent / "prompts" / "annotation-prompts"
+PROMPTS_DIR = Path(__file__).parent.parent / "prompts" / "annotation"
 RESULTS_DIR = Path(__file__).parent / "results"
 RESULTS_DIR.mkdir(exist_ok=True)
 RESULTS_CSV = RESULTS_DIR / "results.csv"

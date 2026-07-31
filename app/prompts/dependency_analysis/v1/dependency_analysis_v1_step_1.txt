@@ -1,0 +1,64 @@
+You are a requirements-engineering assistant performing STEP 1 of a four-step dependency detection process between user stories.
+
+TASK
+Given a list of distinct action verbs extracted from GoalAction fields of well-formed user stories, classify each verb by its role in an activity (a targets-edge connecting a GoalAction to a GoalEntity).
+
+This step is run ONCE per dataset, not once per story pair. Its output (the taxonomy) is reused as fixed input to Step 2 for every story pair analyzed afterward.
+Do not tailor classifications to any specific story pair.
+
+INPUT
+{{VERB_LIST_JSON}}
+Example: ["add", "create", "view", "attach", "change"]
+
+OUTPUT
+Return ONLY one valid JSON object. No markdown, no reasoning, no text outside JSON.
+
+Required schema:
+{
+  "taxonomy": [
+    {
+      "verb": "",
+      "class": "PROVISIONS|REQUIRES|AMBIGUOUS",
+      "reason": ""
+    }
+  ]
+}
+
+CLASS DEFINITIONS
+
+- PROVISIONS: the action makes an entity available for the first time (the entity did not exist, for this persona, before the action).
+    Examples: create, add, generate, save, register, import, sign up, upload.
+- REQUIRES: the action needs the entity to already exist; the action reads, modifies, removes, or otherwise operates on an existing entity.
+    Examples: view, edit, remove, download, attach, log in.
+- AMBIGUOUS: the verb's class depends on the specific entity or sentence context and cannot be decided from the verb alone
+    (e.g. "add" can mean provisioning a brand-new item, or inserting an existing item into an existing container, depending on what it is paired with).
+    Use this class rather than guessing.
+
+INTERNAL METHOD - PERFORM SILENTLY
+
+1. For each verb, consider its most common usage in software / web / mobile app user stories.
+2. Ask: after this action completes, does a genuinely new entity now exist that did not exist before (PROVISIONS), or does the action operate on an entity that had to already exist (REQUIRES)?
+3. If the answer depends on which entity the verb is paired with in a given story, classify as AMBIGUOUS and explain why in "reason".
+4. Do not default ambiguous verbs to PROVISIONS or REQUIRES. Under-classifying as AMBIGUOUS is preferred over a confident wrong guess, since AMBIGUOUS verbs will be reviewed by a human before use.
+
+FEW-SHOT EXAMPLES
+
+Input: ["create", "view", "add"]
+Output:
+{
+  "verb_taxonomy": [
+    {"verb": "create", "class": "PROVISIONS", "reason": "Produces a new entity, e.g. a new list, that did not exist before."},
+    {"verb": "view", "class": "REQUIRES", "reason": "Reads an entity; the entity must already exist to be viewed."},
+    {"verb": "add", "class": "AMBIGUOUS", "reason": "Can mean creating a new item (PROVISIONS) or inserting an existing item into an existing container (REQUIRES), depending on the entity it is paired with."}
+  ]
+}
+
+FINAL SELF-CHECK - PERFORM SILENTLY
+
+1. Every input verb appears exactly once in the output.
+2. No verb is omitted or duplicated.
+3. Every "class" is exactly one of PROVISIONS, REQUIRES, AMBIGUOUS.
+4. Every entry has a non-empty "reason".
+5. Return valid JSON only, with no text before or after it.
+
+Return ONLY the final JSON object.

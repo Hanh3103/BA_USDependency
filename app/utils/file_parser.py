@@ -1,6 +1,7 @@
 import json
 from pathlib import Path
 import re
+from schemas.dependency.dependency_schema import AnnotatedStory
 
 
 def remove_leading_numbering(line: str) -> str:
@@ -8,7 +9,7 @@ def remove_leading_numbering(line: str) -> str:
     raise ValueError("Line is empty after removing leading numbering") if not cleaned_line else cleaned_line
 
 
-def load_stories(path: str) -> list[str]:
+def load_raw_stories(path: str) -> list[str]:
     p = Path(path) 
 
     if not p.exists():
@@ -52,60 +53,77 @@ def load_stories(path: str) -> list[str]:
 
 
 
-if __name__ == "__main__":
-    import sys
 
-    project_root = Path(__file__).parent.parent
 
-    print("Input options:")
-    print("  1 — Choose from available files")
-    print("  2 — Enter complete path")
+def load_annotated_stories(path:str) -> list[AnnotatedStory]:
+    with open(path) as f:
+        raw_data = json.load(f)
 
-    choice = input("Enter your choice (1 or 2): ").strip()
+    stories = []
+    for idx, item in enumerate(raw_data, start=1):
+        if "id" not in item or not item["id"]:
+            item["id"] = f"US-{idx:03d}"
 
-    if choice == "1":
-        files = (
-            list(project_root.rglob("*.txt")) +
-            list(project_root.rglob("*.json"))
-        )
+        stories.append(AnnotatedStory.model_validate(item))
 
-        # exclude irrelevant json files
-        files = [
-            f for f in files
-            if not any(part in f.parts for part in
-                       {"node_modules", "__pycache__", ".venv", "prompts"})
-        ]
+    return stories
 
-        if not files:
-            print("No .txt or .json files found in project")
-        else:
-            print("\nAvailable files:")
-            for i, f in enumerate(files):
-                print(f"  {i+1} — {f.relative_to(project_root)}")
 
-            pick = input("\nEnter number: ").strip()
-            try:
-                path = files[int(pick) - 1]
-            except (ValueError, IndexError):
-                print("Invalid selection")
-                exit(1)
 
-    # ── option 2: complete path ──
-    elif choice == "2":
-        raw = input("Enter complete path: ").strip()
-        path = Path(raw)
-        if not path.is_absolute():
-            path = project_root / path
-
-    else:
-        print("Invalid choice — enter 1 or 2")
-        exit(1)
-
-    # ── load and display ──
-    try:
-        stories = load_stories(str(path))
-        print(f"\nLoaded {len(stories)} stories from: {path}\n")
-        for i, story in enumerate(stories):
-            print(f"US-{i+1:02d}: {story}\n")
-    except Exception as e:
-        print(f"Error: {e}")
+# if __name__ == "__main__":
+#     import sys
+#
+#     project_root = Path(__file__).parent.parent
+#
+#     print("Input options:")
+#     print("  1 — Choose from available files")
+#     print("  2 — Enter complete path")
+#
+#     choice = input("Enter your choice (1 or 2): ").strip()
+#
+#     if choice == "1":
+#         files = (
+#             list(project_root.rglob("*.txt")) +
+#             list(project_root.rglob("*.json"))
+#         )
+#
+#         # exclude irrelevant json files
+#         files = [
+#             f for f in files
+#             if not any(part in f.parts for part in
+#                        {"node_modules", "__pycache__", ".venv", "prompts"})
+#         ]
+#
+#         if not files:
+#             print("No .txt or .json files found in project")
+#         else:
+#             print("\nAvailable files:")
+#             for i, f in enumerate(files):
+#                 print(f"  {i+1} — {f.relative_to(project_root)}")
+#
+#             pick = input("\nEnter number: ").strip()
+#             try:
+#                 path = files[int(pick) - 1]
+#             except (ValueError, IndexError):
+#                 print("Invalid selection")
+#                 exit(1)
+#
+#     # ── option 2: complete path ──
+#     elif choice == "2":
+#         raw = input("Enter complete path: ").strip()
+#         path = Path(raw)
+#         if not path.is_absolute():
+#             path = project_root / path
+#
+#     else:
+#         print("Invalid choice — enter 1 or 2")
+#         exit(1)
+#
+#     # ── load and display ──
+#     try:
+#         stories = load_raw_stories(str(path))
+#         print(f"\nLoaded {len(stories)} stories from: {path}\n")
+#         for i, story in enumerate(stories):
+#             print(f"US-{i+1:02d}: {story}\n")
+#     except Exception as e:
+#         print(f"Error: {e}")

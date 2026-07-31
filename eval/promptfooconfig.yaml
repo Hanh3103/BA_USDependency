@@ -1,5 +1,5 @@
 prompts:
-  - file://../app/prompts/annotation-prompts/annotation_v2.txt
+  - file://../app/prompts/annotation/annotation_v2.txt
 
 providers:
   - id: ollama:chat:qwen3:8b
