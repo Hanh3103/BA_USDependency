@@ -4,7 +4,6 @@ from typing import Optional
 from itertools import combinations
 
 from stages.well_formulated_extractor import filter_well_formed
-from stages.taxonomy import collect_distinct_verbs, build_verb_taxonomy
 
 from stages.dependency_analysis import detect_dependency
 import json
@@ -21,17 +20,10 @@ def run_dependency_pipeline(data_set_path: str, pairs: Optional[list[tuple[str, 
     for r in dropped:
         print(f"Dropped story {r.Text}: {r.well_formed_reason}")
 
-    #Step 1: Taxonomy
     story_activities = {
         r.id: StoryActivity(id=r.id, activity=r.activity, Text=r.Text)
         for r in kept
     }
-
-    distinct_verbs = collect_distinct_verbs(list(story_activities.values()))
-    print(f"Collected {len(distinct_verbs)} distinct verbs from well-formed stories.")
-
-    print(f"Building verb taxonomy...")
-    taxonomy = build_verb_taxonomy(distinct_verbs)
 
     print(f"Building pairs...")
     if pairs is None:
@@ -43,7 +35,7 @@ def run_dependency_pipeline(data_set_path: str, pairs: Optional[list[tuple[str, 
 
     for pair in pairs:
         print(f"Analyzing pair: {pair[0]} and {pair[1]}")
-        pair_result= detect_dependency(story_a=story_activities[pair[0]],story_b=story_activities[pair[1]], taxonomy=taxonomy)
+        pair_result= detect_dependency(story_a=story_activities[pair[0]],story_b=story_activities[pair[1]])
         results.append(pair_result)
 
     return results

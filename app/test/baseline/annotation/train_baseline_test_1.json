@@ -613,8 +613,7 @@
     ],
     "Action": {
       "GoalAction": [
-        "filter",
-        "show"
+        "filter"
       ],
       "BenefitAction": [
         "focus on"
@@ -647,10 +646,6 @@
       [
         "filter",
         "map"
-      ],
-      [
-        "show",
-        "spots"
       ],
       [
         "focus on",

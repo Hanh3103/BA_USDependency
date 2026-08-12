@@ -33,24 +33,18 @@ A dependency exists when one story's activity is class PROVISIONS for an entity,
 The PROVISIONS story is always the prerequisite. The REQUIRES story is always the dependent.
 
 DECISION RULES
-1. From candidate_matches, keep only matches where one activity's class is PROVISIONS and the other's is REQUIRES.
-    Discard matches where both are PROVISIONS, both are REQUIRES, or either is AMBIGUOUS or UNKNOWN.
-2. If no candidate match survives rule 1, output "dependency": false with all other fields empty.
-3. If exactly one candidate match survives rule 1, that is the dependency.
-    Set prerequisite_id/prerequisite_action from the PROVISIONS activity's story, and dependent_id/dependent_action from the REQUIRES activity's story.
-4. If more than one candidate match survives rule 1, report only the single strongest one: prefer match_type "exact" over "semantic";
-   if still tied, prefer the match with the more specific shared_entity.
+1. From entity_matches, keep only matches where one activity's class is PROVISIONS and the other's is REQUIRES. Discard matches where both are PROVISIONS, both are REQUIRES, or either is AMBIGUOUS or UNKNOWN.
+2. If no entity match survives rule 1, output "dependency": false with all other fields empty.
+3. If exactly ONE entity match survives rule 1, that is the dependency. Set prerequisite_id/prerequisite_action from the PROVISIONS activity's story, and dependent_id/dependent_action from the REQUIRES activity's story.
+4. If more than one entity match survives rule 1, report every dependency candidate. for each candidate, set prerequisite_id/prerequisite_action from the PROVISIONS activity's story, and dependent_id/dependent_action from the REQUIRES activity's story.
 5. Never invent a prerequisite/dependent id, action, or entity that did not appear in the Step 2 input.
 6. Before answering, check your output against rules 1-5. Reason through this internally but do not write out your reasoning.
-
-DECISION OVERRIDES - APPLY BEFORE OUTPUT
-[NONE YET - to be filled in after error analysis against the gold standard. Do not invent overrides; leave this section empty until real false positive/negative patterns are observed.]
 
 EXAMPLE
 
 Input (Step 3 output):
 {
-  "candidate_matches": [
+  "entity_matches": [
     {
       "activity_a": {"action": "add", "entity": "spot", "class": "PROVISIONS"},
       "activity_b": {"action": "attach", "entity": "saved spot", "class": "REQUIRES"},

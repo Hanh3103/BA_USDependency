@@ -18,7 +18,7 @@ Required schema:
   "taxonomy": [
     {
       "verb": "",
-      "class": "PROVISIONS|REQUIRES|AMBIGUOUS",
+      "operation_type": "PROVISIONS|REQUIRES|AMBIGUOUS",
       "reason": ""
     }
   ]

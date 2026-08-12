@@ -2,161 +2,178 @@
     {
         "story_a": "As a returning user, I want to log in my account on a new device and log out when I'm finished, so that I can access my travel data safely and maintain privacy on shared devices.",
         "story_b": "As a user, I want to walk through a short, guided tutorial that demonstrates how to import a spot, create a list, and generate an itinerary, so that I can understand the app's core workflow without reading external documentation.",
+        "step_1_match": {
+            "story_a_id": "US-002",
+            "story_b_id": "US-003",
+            "entity_matches": [
+                {
+                    "activity_a": {
+                        "action": "log in",
+                        "entity": "account"
+                    },
+                    "activity_b": {
+                        "action": "walk through",
+                        "entity": "short, guided tutorial"
+                    },
+                    "match_type": "semantic"
+                }
+            ]
+        },
         "step_2_classify": {
             "story_a_id": "US-002",
             "story_b_id": "US-003",
-            "classification": {
-                "A": [
-                    {
-                        "action": "log in",
-                        "entity": "account",
-                        "class": "REQUIRES"
-                    },
-                    {
-                        "action": "log out",
-                        "entity": "account",
-                        "class": "REQUIRES"
-                    }
-                ],
-                "B": [
-                    {
-                        "action": "walk through",
-                        "entity": "short, guided tutorial",
-                        "class": "AMBIGUOUS"
-                    }
-                ]
-            }
-        },
-        "step_3_match": {
-            "candidate_matches": [
+            "classified_matches": [
                 {
                     "activity_a": {
                         "action": "log in",
                         "entity": "account",
-                        "class": "REQUIRES"
+                        "operation_type": "READ"
                     },
                     "activity_b": {
                         "action": "walk through",
                         "entity": "short, guided tutorial",
-                        "class": "AMBIGUOUS"
+                        "operation_type": "CREATE"
                     },
-                    "shared_entity": "account",
-                    "match_type": "SIMILAR"
+                    "match_type": "semantic"
                 }
             ]
         },
         "final": {
-            "OBD_dependency": false,
-            "prerequisite_id": "",
-            "dependent_id": "",
-            "prerequisite_action": "",
-            "dependent_action": "",
-            "shared_entity": ""
+            "dependencies": [
+                {
+                    "prerequisite_id": "US-002",
+                    "dependent_id": "US-003",
+                    "prerequisite_activity": {
+                        "action": "log in",
+                        "entity": "account",
+                        "operation_type": "READ"
+                    },
+                    "dependent_activity": {
+                        "action": "walk through",
+                        "entity": "short, guided tutorial",
+                        "operation_type": "CREATE"
+                    },
+                    "match_type": "semantic"
+                }
+            ]
         }
     },
     {
         "story_a": "As a returning user, I want to log in my account on a new device and log out when I'm finished, so that I can access my travel data safely and maintain privacy on shared devices.",
         "story_b": "As a traveler, I want to import a location from a saved TikTok or Instagram video with a single tap, so that I can quickly capture travel inspiration without manually typing details.",
+        "step_1_match": {
+            "story_a_id": "US-002",
+            "story_b_id": "US-004",
+            "entity_matches": [
+                {
+                    "activity_a": {
+                        "action": "log in",
+                        "entity": "account"
+                    },
+                    "activity_b": {
+                        "action": "import",
+                        "entity": "location"
+                    },
+                    "match_type": "semantic"
+                }
+            ]
+        },
         "step_2_classify": {
             "story_a_id": "US-002",
             "story_b_id": "US-004",
-            "classification": {
-                "A": [
-                    {
-                        "action": "log in",
-                        "entity": "account",
-                        "class": "REQUIRES"
-                    },
-                    {
-                        "action": "log out",
-                        "entity": "account",
-                        "class": "REQUIRES"
-                    }
-                ],
-                "B": [
-                    {
-                        "action": "import",
-                        "entity": "location",
-                        "class": "PROVISIONS"
-                    }
-                ]
-            }
-        },
-        "step_3_match": {
-            "candidate_matches": [
+            "classified_matches": [
                 {
                     "activity_a": {
                         "action": "log in",
                         "entity": "account",
-                        "class": "REQUIRES"
+                        "operation_type": "READ"
                     },
                     "activity_b": {
                         "action": "import",
                         "entity": "location",
-                        "class": "PROVISIONS"
+                        "operation_type": "CREATE"
                     },
-                    "shared_entity": "account",
-                    "match_type": "SIMILAR"
+                    "match_type": "semantic"
                 }
             ]
         },
         "final": {
-            "OBD_dependency": true,
-            "prerequisite_id": "A",
-            "dependent_id": "B",
-            "prerequisite_action": "log in",
-            "dependent_action": "import",
-            "shared_entity": "account"
+            "dependencies": [
+                {
+                    "prerequisite_id": "US-002",
+                    "dependent_id": "US-004",
+                    "prerequisite_activity": {
+                        "action": "log in",
+                        "entity": "account",
+                        "operation_type": "READ"
+                    },
+                    "dependent_activity": {
+                        "action": "import",
+                        "entity": "location",
+                        "operation_type": "CREATE"
+                    },
+                    "match_type": "semantic"
+                }
+            ]
         }
     },
     {
         "story_a": "As a user, I want to walk through a short, guided tutorial that demonstrates how to import a spot, create a list, and generate an itinerary, so that I can understand the app's core workflow without reading external documentation.",
         "story_b": "As a traveler, I want to import a location from a saved TikTok or Instagram video with a single tap, so that I can quickly capture travel inspiration without manually typing details.",
+        "step_1_match": {
+            "story_a_id": "US-003",
+            "story_b_id": "US-004",
+            "entity_matches": [
+                {
+                    "activity_a": {
+                        "action": "walk through",
+                        "entity": "short, guided tutorial"
+                    },
+                    "activity_b": {
+                        "action": "import",
+                        "entity": "location"
+                    },
+                    "match_type": "semantic"
+                }
+            ]
+        },
         "step_2_classify": {
             "story_a_id": "US-003",
             "story_b_id": "US-004",
-            "classification": {
-                "A": [
-                    {
-                        "action": "walk through",
-                        "entity": "short, guided tutorial",
-                        "class": "AMBIGUOUS"
-                    }
-                ],
-                "B": [
-                    {
-                        "action": "import",
-                        "entity": "location",
-                        "class": "PROVISIONS"
-                    }
-                ]
-            }
-        },
-        "step_3_match": {
-            "candidate_matches": [
+            "classified_matches": [
                 {
                     "activity_a": {
                         "action": "walk through",
                         "entity": "short, guided tutorial",
-                        "class": "AMBIGUOUS"
+                        "operation_type": "READ"
                     },
                     "activity_b": {
                         "action": "import",
                         "entity": "location",
-                        "class": "PROVISIONS"
+                        "operation_type": "CREATE"
                     },
-                    "shared_entity": "location",
-                    "match_type": "SIMILAR"
+                    "match_type": "semantic"
                 }
             ]
         },
         "final": {
-            "OBD_dependency": true,
-            "prerequisite_id": "B",
-            "dependent_id": "A",
-            "prerequisite_action": "import",
-            "dependent_action": "walk through",
-            "shared_entity": "location"
+            "dependencies": [
+                {
+                    "prerequisite_id": "US-003",
+                    "dependent_id": "US-004",
+                    "prerequisite_activity": {
+                        "action": "walk through",
+                        "entity": "short, guided tutorial",
+                        "operation_type": "READ"
+                    },
+                    "dependent_activity": {
+                        "action": "import",
+                        "entity": "location",
+                        "operation_type": "CREATE"
+                    },
+                    "match_type": "semantic"
+                }
+            ]
         }
     }
 ]

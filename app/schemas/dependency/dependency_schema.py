@@ -1,5 +1,5 @@
 from typing import Literal
-from pydantic import BaseModel, Field
+from pydantic import BaseModel
 
 from schemas.annotation.annotation_schema import AnnotationSchema
 
@@ -28,62 +28,55 @@ class IsStoryWellformed(BaseModel):
     reason: list[ActionEntityPair]
 
 
-# Step 1
-VerbClass = Literal["PROVISIONS", "REQUIRES", "AMBIGUOUS"]
-
-class TaxonomyEntry(BaseModel):
-    verb: str
-    class_: VerbClass = Field(..., alias="class")
-    reason: str
-
-class Taxonomy(BaseModel):
-    taxonomy: list[TaxonomyEntry]
-
-# Step 2
-
-ClassifiedVerbClass= Literal["PROVISIONS", "REQUIRES", "AMBIGUOUS", "UNKNOWN"]
-class VerbClassifiedActivity(BaseModel):
-    action: str
-    entity: str
-    class_: ClassifiedVerbClass = Field(..., alias="class")
-
-class VerbClassifyResult(BaseModel):
-    story_a_id: str
-    story_b_id: str
-    verb_classification: dict[str, list[VerbClassifiedActivity]]  # keys are "story_a" and "story_b"
-
-# Step 3
-EntityMatchType = Literal["EQUIVALENT", "SIMILAR"]
+# Step 1 - entity matching
+EntityMatchType = Literal["exact", "semantic"]
 
 class EntityMatch(BaseModel):
-    activity_a: VerbClassifiedActivity
-    activity_b: VerbClassifiedActivity
-    shared_entity: str
+    activity_a: ActionEntityPair
+    activity_b: ActionEntityPair
     match_type: EntityMatchType
 
 class EntityMatchResult(BaseModel):
+    story_a_id: str
+    story_b_id: str
     entity_matches: list[EntityMatch]
 
-# Step 4
-class DependencyResult(BaseModel):
-    OBD_dependency: bool
+
+# Step 2 - CRUD verb classification
+OperationType = Literal["CREATE", "READ", "UPDATE", "DELETE", "NON_CRUD"]
+
+class ClassifiedActivity(BaseModel):
+    action: str
+    entity: str
+    operation_type: OperationType
+
+class ClassifiedMatch(BaseModel):
+    activity_a: ClassifiedActivity
+    activity_b: ClassifiedActivity
+    match_type: EntityMatchType
+
+class ClassifiedMatchResult(BaseModel):
+    story_a_id: str
+    story_b_id: str
+    classified_matches: list[ClassifiedMatch]
+
+
+# Step 3 - final dependency decision
+class Dependency(BaseModel):
     prerequisite_id: str
     dependent_id: str
-    prerequisite_action: str
-    dependent_action: str
-    shared_entity: str
+    prerequisite_activity: ClassifiedActivity
+    dependent_activity: ClassifiedActivity
+    match_type: EntityMatchType
+
+class DependencyResult(BaseModel):
+    dependencies: list[Dependency]
 
 
 # result for each pair
 class PairResult(BaseModel):
-    story_a:str
-    story_b:str
-    step_2_classify: VerbClassifyResult
-    step_3_match: EntityMatchResult
+    story_a: str
+    story_b: str
+    step_1_match: EntityMatchResult
+    step_2_classify: ClassifiedMatchResult
     final: DependencyResult
-
-
-
-
-
-

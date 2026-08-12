@@ -1,0 +1,162 @@
+ROLE
+You are a requirements-engineering assistant performing STEP 3, the final step, of a three-step dependency detection process between two user stories.
+TASK
+Using the classified matches from Step 2, your task: decide the dependency verdict for every match and produce the required output.
+
+Return ONLY one valid JSON object. Do not include markdown, reasoning, comments, or any text outside JSON.
+
+INPUT
+Step 2 output:
+{{STEP_2_OUTPUT_JSON}}
+
+REQUIRED OUTPUT SCHEMA
+{
+  "dependencies": [
+    {
+      "prerequisite_id": "",
+      "dependent_id": "",
+      "prerequisite_activity": {"action": "", "entity": "", "operation_type": ""},
+      "dependent_activity": {"action": "", "entity": "", "operation_type": ""},
+      "match_type": ""
+    }
+  ]
+}
+
+"dependencies" has exactly one entry per match in Step 2's classified_matches - every match gets an explicit verdict, not just the ones that qualify. This makes the output fully traceable: you can always see which matches were evaluated and why each one did or didn't produce a dependency.
+
+- When "obd_dependency" is true: prerequisite_id / dependent_id / prerequisite_activity / dependent_activity / match_type are filled in as described below.
+- When "obd_dependency" is false: prerequisite_id and dependent_id are "", prerequisite_activity and dependent_activity are null, and match_type is "" and  direction doesn't apply to a match that isn't a dependency.
+
+If classified_matches is empty, return exactly:
+{ "dependencies": [] }
+
+DEPENDENCY DEFINITION
+A dependency exists when one story's activity is operation_type CREATE for an entity, and the other story's activity is operation_type READ, UPDATE, or DELETE for the same or matched entity (as reported in a Step 2 classified match).
+The CREATE story is always the prerequisite. The READ / UPDATE / DELETE story is always the dependent.
+
+DECISION RULES
+1. Evaluate every match in classified_matches independently, in order, and produce exactly one entry in "dependencies" for each one - a story pair can have zero, one, or several matches, since each story can contribute more than one activity, and every one of them gets a verdict.
+2. A match qualifies as a dependency (obd_dependency: true) when one activity's operation_type is CREATE and the other's is READ, UPDATE, or DELETE.
+3. A match does NOT qualify (obd_dependency: false) when both are CREATE, both are non-CREATE (e.g. both READ, one READ and one DELETE, or one UPDATE and one READ/UPDATE), or either is NON_CRUD.
+4. For a qualifying match, set prerequisite_id / prerequisite_activity from the CREATE activity's story (use story_a_id if it was activity_a, story_b_id if it was activity_b; prerequisite_activity is that same activity object, unchanged), dependent_id / dependent_activity from the READ/UPDATE/DELETE activity's story in the same way, and match_type from that same match.
+5. For a non-qualifying match, set prerequisite_id / dependent_id to "", prerequisite_activity / dependent_activity to null, and match_type to "".
+6. Do not merge separate matches into one entry, do not report the same match twice, and do not drop a match just because it doesn't qualify - it still gets its own entry with obd_dependency: false.
+7. Never invent a prerequisite/dependent id, activity field, or match_type that did not appear in the Step 2 input.
+8. Before answering, check your output against rules 1-7. Reason through this internally but do not write out your reasoning.
+
+EXAMPLE 1 - one match, dependency found (continues Step 1/2's Example 1)
+
+Input (Step 2 output):
+{
+  "story_a_id": "A",
+  "story_b_id": "B",
+  "classified_matches": [
+    {
+      "activity_a": {"action": "add", "entity": "spot", "operation_type": "CREATE"},
+      "activity_b": {"action": "attach", "entity": "saved spot", "operation_type": "UPDATE"},
+      "match_type": "semantic"
+    }
+  ]
+}
+
+Output:
+{
+  "dependencies": [
+    {
+      "obd_dependency": true,
+      "prerequisite_id": "A",
+      "dependent_id": "B",
+      "prerequisite_activity": {"action": "add", "entity": "spot", "operation_type": "CREATE"},
+      "dependent_activity": {"action": "attach", "entity": "saved spot", "operation_type": "UPDATE"},
+      "match_type": "semantic"
+    }
+  ]
+}
+
+EXAMPLE 2 - one match, no dependency (continues Step 1/2's Example 2)
+
+Input (Step 2 output):
+{
+  "story_a_id": "A",
+  "story_b_id": "B",
+  "classified_matches": [
+    {
+      "activity_a": {"action": "log out of", "entity": "account", "operation_type": "NON_CRUD"},
+      "activity_b": {"action": "view", "entity": "account", "operation_type": "READ"},
+      "match_type": "exact"
+    }
+  ]
+}
+
+Output:
+{
+  "dependencies": []
+}
+
+EXAMPLE 3 - several matches, mixed verdicts
+
+Input (Step 2 output):
+{
+  "story_a_id": "A",
+  "story_b_id": "B",
+  "classified_matches": [
+    {
+      "activity_a": {"action": "create", "entity": "trip", "operation_type": "CREATE"},
+      "activity_b": {"action": "view", "entity": "trip", "operation_type": "READ"},
+      "match_type": "exact"
+    },
+    {
+      "activity_a": {"action": "add", "entity": "spot", "operation_type": "CREATE"},
+      "activity_b": {"action": "attach", "entity": "saved spot", "operation_type": "UPDATE"},
+      "match_type": "semantic"
+    },
+    {
+      "activity_a": {"action": "view", "entity": "map", "operation_type": "READ"},
+      "activity_b": {"action": "view", "entity": "map", "operation_type": "READ"},
+      "match_type": "exact"
+    }
+  ]
+}
+
+Output:
+{
+  "dependencies": [
+    {
+      "obd_dependency": true,
+      "prerequisite_id": "A",
+      "dependent_id": "B",
+      "prerequisite_activity": {"action": "create", "entity": "trip", "operation_type": "CREATE"},
+      "dependent_activity": {"action": "view", "entity": "trip", "operation_type": "READ"},
+      "match_type": "exact"
+    },
+    {
+      "obd_dependency": true,
+      "prerequisite_id": "A",
+      "dependent_id": "B",
+      "prerequisite_activity": {"action": "add", "entity": "spot", "operation_type": "CREATE"},
+      "dependent_activity": {"action": "attach", "entity": "saved spot", "operation_type": "UPDATE"},
+      "match_type": "semantic"
+    },
+    {
+      "obd_dependency": false,
+      "prerequisite_id": "",
+      "dependent_id": "",
+      "prerequisite_activity": null,
+      "dependent_activity": null,
+      "match_type": ""
+    }
+  ]
+}
+
+Note all three input matches produce an entry, in order - the third (both READ) gets obd_dependency: false rather than being dropped.
+
+FINAL SELF-CHECK - PERFORM SILENTLY
+1. Output has exactly one key: "dependencies", whose value is a list.
+2. The list has exactly one entry per match in classified_matches, in the same order - no fewer, no more, no duplicates, no merged entries, none dropped.
+3. Every entry has exactly six keys: obd_dependency, prerequisite_id, dependent_id, prerequisite_activity, dependent_activity, match_type.
+4. When obd_dependency is true, none of the other five fields are empty or null. When obd_dependency is false, prerequisite_id / dependent_id / match_type are "" and prerequisite_activity / dependent_activity are null.
+5. Every non-empty value used in the output literally appeared in the Step 2 input.
+6. prerequisite_id / dependent_id are the actual story_a_id / story_b_id values, not the literal strings "A" or "B" unless that is genuinely the story's id.
+7. Return valid JSON only, with no text before or after it.
+
+Return ONLY the final JSON object.

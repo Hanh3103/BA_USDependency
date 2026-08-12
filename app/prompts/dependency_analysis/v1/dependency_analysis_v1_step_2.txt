@@ -29,7 +29,7 @@ REQUIRED OUTPUT SCHEMA
 {
   "story_a_id": "",
   "story_b_id": "",
-  "verb_classification": {
+  "verb_class": {
     "story_a": [
       {"action": "", "entity": "", "class": "PROVISIONS|REQUIRES|AMBIGUOUS|UNKNOWN"}
     ],
@@ -60,7 +60,7 @@ Output:
 {
   "story_a_id": "A",
   "story_b_id": "B",
-  "verb_classification": {
+  "verb_class": {
     "story_a": [
         {"action": "add", "entity": "spot", "class": "PROVISIONS"}
     ],
