@@ -6,7 +6,7 @@ from itertools import combinations
 from stages.well_formulated_extractor import filter_well_formed
 from stages.taxonomy import collect_distinct_verbs, build_verb_taxonomy
 
-from stages.dependency_analysis import detect_dependency
+from stages.dependency_analysis_annotated import detect_dependency
 import json
 
 

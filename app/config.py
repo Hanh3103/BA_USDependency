@@ -1,6 +1,7 @@
 from pydantic_settings import BaseSettings
 from pathlib import Path
 from dotenv import dotenv_values
+from spacy.lang.ro.tokenizer_exceptions import variant
 
 from errors import AppError
 
@@ -24,34 +25,51 @@ class Settings(BaseSettings):
     ollama_format: str
 
     prompt_dir: Path = BASE_DIR / "prompts"
-    prompt_version: dict[str, str] = {
+    prompt_versions: dict[str, dict[str, str] | str] = {
         "annotation": "v3",
-        "dependency_analysis" : "v1",
+        "dependency_analysis": {
+            "annotated": "v3",
+            "text": "v1",
+        },
     }
 
     @property
     def models(self) -> list[str] :
         return self.ollama_models.split(",")  # Split the comma-separated string into a list
 
-    def prompt_path(self, task: str, step: int | None = None) -> Path:
-        """
-        Resolve a prompt file for a given task and step if the sequential chain of thought is used.
-        Layout: prompts/<task>/<version>/<task>_<version>_[step_<n>].txt
-        task: "annotation" or "dependency_analysis"
-        step: None for single shot prompt (<task>_<version>.txt),
-            otherwise the step number/name (<task>_<version>_<step>_<n>.txt)
-
-        Raises:
-            KeyError if the task has no version registed in prompt_versions
-        """
+    def prompt_path(self, task: str, variant:str | None=None, step: int | None = None) -> Path:
         try:
-            version = self.prompt_version[task]
+            versions = self.prompt_versions[task]
         except KeyError:
             raise KeyError(
                 f"No prompt version configured for task {task!r}. "
-                f"Add it to Settings.prompt_version in config.py."
+                f"Add it to Settings.prompt_versions in config.py."
             )
-        base= f"{task}_{version}"
+
+        if isinstance(versions, dict):
+            if variant is None:
+                raise ValueError(
+                    f"prompt_path requires a 'variant' for task {task!r} "
+                    f"(one of {list(versions.keys())})."
+                )
+            try:
+                version = versions[variant]
+            except KeyError:
+                raise KeyError(
+                    f"No prompt version configured for {task!r} variant {variant!r}. "
+                    f"Add it to Settings.prompt_versions[{task!r}] in config.py."
+                )
+
+            base = f"{task}_{version}"
+            filename = f"{base}_text.txt" if variant == "text" else (
+                f"{base}.txt" if step is None else f"{base}_step_{step}.txt"
+            )
+            return self.prompt_dir / task / variant / version / filename
+
+        if variant is not None:
+            raise ValueError(f"Task {task!r} does not support variants, but variant={variant!r} was given.")
+        version = versions
+        base = f"{task}_{version}"
         filename = f"{base}.txt" if step is None else f"{base}_step_{step}.txt"
         return self.prompt_dir / task / version / filename
 

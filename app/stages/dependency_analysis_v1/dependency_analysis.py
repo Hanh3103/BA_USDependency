@@ -1,5 +1,5 @@
 from utils.llm_client_helpers import _call_stage, _load_prompt
-from schemas.dependency.dependency_schema import StoryActivity, Taxonomy, VerbClassifyResult, EntityMatchResult, DependencyResult, PairResult
+from schemas.dependency.dependency_schema import StoryActivity, Taxonomy, VerbClassifyResult, EntityMatchResult, FoundedDependencyUsingAnnotated, PairResult
 from config import settings
 
 CLASSIFY_PROMPT_PATH =settings.prompt_path("dependency_analysis", step=2)
@@ -36,7 +36,7 @@ def find_entity_matches(step2_output: VerbClassifyResult) -> EntityMatchResult:
     )
 
 
-def decide_dependency(step3_output: EntityMatchResult) -> DependencyResult:
+def decide_dependency(step3_output: EntityMatchResult) -> FoundedDependencyUsingAnnotated:
     """Step 4: apply PROVISIONS -> REQUIRES direction rules and produce the final verdict."""
     decision_prompt = _load_prompt(DECISION_PROMPT_PATH)
 
@@ -46,7 +46,7 @@ def decide_dependency(step3_output: EntityMatchResult) -> DependencyResult:
             {"role": "assistant", "content": step3_output.model_dump_json(indent=2)},
             {"role": "user", "content": "Produce the final dependency verdict based on these candidate matches."}
         ],
-        schema_model=DependencyResult
+        schema_model=FoundedDependencyUsingAnnotated
     )
 
 

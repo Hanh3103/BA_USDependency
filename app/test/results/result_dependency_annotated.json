@@ -1,0 +1,136 @@
+[
+    {
+        "story_a": "As a user, I want to create a new album and edit the caption of an uploaded photo.",
+        "story_b": "As a user, I want to upload a new photo and rename an existing album.",
+        "step_1_match": {
+            "story_a_id": "US-001",
+            "story_b_id": "US-002",
+            "entity_matches": [
+                {
+                    "activity_a": {
+                        "action": "create",
+                        "entity": "new album"
+                    },
+                    "activity_b": {
+                        "action": "rename",
+                        "entity": "existing album"
+                    },
+                    "match_type": "semantic",
+                    "explanation": "Both 'new album' and 'existing album' refer to the same concept of an album in a different state."
+                },
+                {
+                    "activity_a": {
+                        "action": "edit",
+                        "entity": "uploaded photo"
+                    },
+                    "activity_b": {
+                        "action": "upload",
+                        "entity": "new photo"
+                    },
+                    "match_type": "semantic",
+                    "explanation": "Both entities refer to a photo but in different contexts (uploaded vs. new)."
+                }
+            ]
+        },
+        "step_2_classify": {
+            "story_a_id": "US-001",
+            "story_b_id": "US-002",
+            "classified_matches": [
+                {
+                    "activity_a": {
+                        "action": "create",
+                        "entity": "new album",
+                        "operation_type": "CREATE"
+                    },
+                    "activity_b": {
+                        "action": "rename",
+                        "entity": "existing album",
+                        "operation_type": "UPDATE"
+                    },
+                    "match_type": "semantic"
+                },
+                {
+                    "activity_a": {
+                        "action": "edit",
+                        "entity": "uploaded photo",
+                        "operation_type": "UPDATE"
+                    },
+                    "activity_b": {
+                        "action": "upload",
+                        "entity": "new photo",
+                        "operation_type": "CREATE"
+                    },
+                    "match_type": "semantic"
+                }
+            ]
+        },
+        "final_llm": {
+            "dependencies": [
+                {
+                    "prerequisite_id": "US-001",
+                    "dependent_id": "US-002",
+                    "prerequisite_activity": {
+                        "action": "create",
+                        "entity": "new album",
+                        "operation_type": "CREATE"
+                    },
+                    "dependent_activity": {
+                        "action": "rename",
+                        "entity": "existing album",
+                        "operation_type": "UPDATE"
+                    },
+                    "match_type": "semantic"
+                },
+                {
+                    "prerequisite_id": "US-002",
+                    "dependent_id": "US-001",
+                    "prerequisite_activity": {
+                        "action": "upload",
+                        "entity": "new photo",
+                        "operation_type": "CREATE"
+                    },
+                    "dependent_activity": {
+                        "action": "edit",
+                        "entity": "uploaded photo",
+                        "operation_type": "UPDATE"
+                    },
+                    "match_type": "semantic"
+                }
+            ]
+        },
+        "final_nlp": {
+            "dependencies": [
+                {
+                    "prerequisite_id": "US-001",
+                    "dependent_id": "US-002",
+                    "prerequisite_activity": {
+                        "action": "create",
+                        "entity": "new album",
+                        "operation_type": "CREATE"
+                    },
+                    "dependent_activity": {
+                        "action": "rename",
+                        "entity": "existing album",
+                        "operation_type": "UPDATE"
+                    },
+                    "match_type": "semantic"
+                },
+                {
+                    "prerequisite_id": "US-002",
+                    "dependent_id": "US-001",
+                    "prerequisite_activity": {
+                        "action": "upload",
+                        "entity": "new photo",
+                        "operation_type": "CREATE"
+                    },
+                    "dependent_activity": {
+                        "action": "edit",
+                        "entity": "uploaded photo",
+                        "operation_type": "UPDATE"
+                    },
+                    "match_type": "semantic"
+                }
+            ]
+        }
+    }
+]

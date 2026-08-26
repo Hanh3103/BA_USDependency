@@ -5,8 +5,6 @@ TASK
 For every matched activity from Step 1, classify its action verb into a CRUD-style and non-CRUD operation_type.
 Use the paired entity as context to resolve verbs whose meaning depends on what they act on.
 
-Return ONLY one valid JSON object. Do not include markdown, reasoning, comments, or any text outside JSON.
-
 INPUT
 Step 1 output:
 {{STEP_1_OUTPUT_JSON}}
@@ -50,7 +48,7 @@ OPERATION_TYPE CLASS DEFINITIONS
 - NON_CRUD: the verb does not represent an operation on the paired entity at all (e.g. log out, navigate, notify), or its CRUD category genuinely cannot be determined even with the paired entity as context.
     Use this class rather than guessing.
 
-INTERNAL METHOD - PERFORM SILENTLY
+ACTION CLASSIFICATION
 
 1. For each activity, determine its operation_type using its action verb together with its paired entity (the entity of the SAME activity, and, where useful, the entity of the matched activity on the other side).
 2. Classify using this priority order, top to bottom:
@@ -160,6 +158,4 @@ FINAL SELF-CHECK - PERFORM SILENTLY
 2. Every activity now has an "operation_type" field with exactly one of CREATE, READ, UPDATE, DELETE, NON_CRUD.
 3. No match is omitted, duplicated, or merged.
 4. story_a_id and story_b_id are copied through unchanged from the Step 1 input.
-5. Return valid JSON only, with no text before or after it.
-
-Return ONLY the final JSON object.
+5. Return valid JSON only, with no text before or after it. Do not include markdown, reasoning, comments, or any text outside JSON.

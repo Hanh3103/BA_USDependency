@@ -9,23 +9,33 @@ INPUT
 Step 2 output:
 {{STEP_2_OUTPUT_JSON}}
 
+Given as:
+{
+  "story_a_id": "",
+  "story_b_id": "",
+  "classified_matches": [
+    {
+      "activity_a": {"action": "", "entity": "", "operation_type": "CREATE|READ|UPDATE|DELETE|NON_CRUD"},
+      "activity_b": {"action": "", "entity": "", "operation_type": "CREATE|READ|UPDATE|DELETE|NON_CRUD"},
+      "match_type": "exact | semantic"
+    }
+  ]
+}
+
 REQUIRED OUTPUT SCHEMA
 {
   "dependencies": [
     {
       "prerequisite_id": "",
       "dependent_id": "",
-      "prerequisite_activity": {"action": "", "entity": "", "operation_type": ""},
-      "dependent_activity": {"action": "", "entity": "", "operation_type": ""},
+      "prerequisite_activity": {"action": "", "entity": "", "operation_type": "CREATE"},
+      "dependent_activity": {"action": "", "entity": "", "operation_type": "READ | UPDATE | DELETE"},
       "match_type": ""
     }
   ]
 }
 
-"dependencies" has exactly one entry per match in Step 2's classified_matches - every match gets an explicit verdict, not just the ones that qualify. This makes the output fully traceable: you can always see which matches were evaluated and why each one did or didn't produce a dependency.
-
-- When "obd_dependency" is true: prerequisite_id / dependent_id / prerequisite_activity / dependent_activity / match_type are filled in as described below.
-- When "obd_dependency" is false: prerequisite_id and dependent_id are "", prerequisite_activity and dependent_activity are null, and match_type is "" and  direction doesn't apply to a match that isn't a dependency.
+"dependencies" has exactly one entry per match in Step 2's classified_matches - every match gets an explicit verdict, not just the ones that qualify.
 
 If classified_matches is empty, return exactly:
 { "dependencies": [] }
@@ -44,9 +54,9 @@ DECISION RULES
 7. Never invent a prerequisite/dependent id, activity field, or match_type that did not appear in the Step 2 input.
 8. Before answering, check your output against rules 1-7. Reason through this internally but do not write out your reasoning.
 
-EXAMPLE 1 - one match, dependency found (continues Step 1/2's Example 1)
+EXAMPLE 1
 
-Input (Step 2 output):
+Input:
 {
   "story_a_id": "A",
   "story_b_id": "B",
@@ -63,7 +73,6 @@ Output:
 {
   "dependencies": [
     {
-      "obd_dependency": true,
       "prerequisite_id": "A",
       "dependent_id": "B",
       "prerequisite_activity": {"action": "add", "entity": "spot", "operation_type": "CREATE"},
@@ -73,7 +82,7 @@ Output:
   ]
 }
 
-EXAMPLE 2 - one match, no dependency (continues Step 1/2's Example 2)
+EXAMPLE 2
 
 Input (Step 2 output):
 {
@@ -122,7 +131,6 @@ Output:
 {
   "dependencies": [
     {
-      "obd_dependency": true,
       "prerequisite_id": "A",
       "dependent_id": "B",
       "prerequisite_activity": {"action": "create", "entity": "trip", "operation_type": "CREATE"},
@@ -130,33 +138,23 @@ Output:
       "match_type": "exact"
     },
     {
-      "obd_dependency": true,
       "prerequisite_id": "A",
       "dependent_id": "B",
       "prerequisite_activity": {"action": "add", "entity": "spot", "operation_type": "CREATE"},
       "dependent_activity": {"action": "attach", "entity": "saved spot", "operation_type": "UPDATE"},
       "match_type": "semantic"
-    },
-    {
-      "obd_dependency": false,
-      "prerequisite_id": "",
-      "dependent_id": "",
-      "prerequisite_activity": null,
-      "dependent_activity": null,
-      "match_type": ""
     }
   ]
 }
 
-Note all three input matches produce an entry, in order - the third (both READ) gets obd_dependency: false rather than being dropped.
+Note all three input matches produce an entry, in order - the third (both READ) is not an dependency, so its entry is omitted from the output.
 
 FINAL SELF-CHECK - PERFORM SILENTLY
 1. Output has exactly one key: "dependencies", whose value is a list.
 2. The list has exactly one entry per match in classified_matches, in the same order - no fewer, no more, no duplicates, no merged entries, none dropped.
-3. Every entry has exactly six keys: obd_dependency, prerequisite_id, dependent_id, prerequisite_activity, dependent_activity, match_type.
-4. When obd_dependency is true, none of the other five fields are empty or null. When obd_dependency is false, prerequisite_id / dependent_id / match_type are "" and prerequisite_activity / dependent_activity are null.
-5. Every non-empty value used in the output literally appeared in the Step 2 input.
-6. prerequisite_id / dependent_id are the actual story_a_id / story_b_id values, not the literal strings "A" or "B" unless that is genuinely the story's id.
-7. Return valid JSON only, with no text before or after it.
+3. Every entry has exactly six keys:  prerequisite_id, dependent_id, prerequisite_activity, dependent_activity, match_type.
+4. Every non-empty value used in the output literally appeared in the Step 2 input.
+5. prerequisite_id / dependent_id are the actual story_a_id / story_b_id values, not the literal strings "A" or "B" unless that is genuinely the story's id.
+6. Return valid JSON only, with no text before or after it.
 
 Return ONLY the final JSON object.

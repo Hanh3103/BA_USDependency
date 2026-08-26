@@ -1,16 +1,15 @@
-from schemas.dependency.dependency_schema import  AnnotatedStory, StoryActivity, PairResult
+from schemas.dependency.dependency_schema import  AnnotatedStory, StoryActivity, AnnotatedDependencyResult
 from utils.file_parser import load_annotated_stories
 from typing import Optional
 from itertools import combinations
 
 from stages.well_formulated_extractor import filter_well_formed
 
-from stages.dependency_analysis import detect_dependency
-import json
+from stages.dependency_analysis_annotated import detect_dependency
 
 
 
-def run_dependency_pipeline(data_set_path: str, pairs: Optional[list[tuple[str, str]]] = None) -> list[PairResult]:
+def run_dependency_pipeline(data_set_path: str, pairs: Optional[list[tuple[str, str]]] = None) -> list[AnnotatedDependencyResult]:
     stories = load_annotated_stories(data_set_path)
 
     # Step 0: Filter well-formed stories
@@ -31,7 +30,7 @@ def run_dependency_pipeline(data_set_path: str, pairs: Optional[list[tuple[str, 
 
     print(f"Analyzing {len(pairs)} story pairs for dependencies.")
 
-    results: list[PairResult] = []
+    results: list[AnnotatedDependencyResult] = []
 
     for pair in pairs:
         print(f"Analyzing pair: {pair[0]} and {pair[1]}")
@@ -40,16 +39,14 @@ def run_dependency_pipeline(data_set_path: str, pairs: Optional[list[tuple[str, 
 
     return results
 
-def save_results(result: list[PairResult], path: str):
-    with open(path, "w") as f:
-        json.dump([r.model_dump(by_alias=True) for r in result], f, indent=4)
-    print(f"Results saved to {path}")
 
 
 if __name__ == '__main__':
+    from utils.file_writer import save_results
+
     input_path = "test/results/annotated_stories.json"
-    output_path = f"test/results/result_dependency.json"
+    output_path = f"test/results/result_dependency_annotated.json"
 
     result_ = run_dependency_pipeline(data_set_path=input_path)
 
-    save_results(result_, output_path)
+    save_results(result_, output_path, indent=4)

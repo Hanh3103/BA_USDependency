@@ -131,14 +131,9 @@ def annotate(user_story: str, story_id: str, max_retries: int = 2, mode: MODE = 
     return None
 
 
-def _save_results(results, output_path: str) -> None:
-    Path(output_path).parent.mkdir(parents=True, exist_ok=True)
-    with open(output_path, "w") as f:
-        json.dump(results, f, indent=2)
-
-
 if __name__ == "__main__":
     from utils.file_parser import load_raw_stories
+    from utils.file_writer import save_results
 
     parser = argparse.ArgumentParser()
     parser.add_argument("--mode", choices=["sequential", "single"], default="sequential")
@@ -181,7 +176,7 @@ if __name__ == "__main__":
         # Save after every story, not just at the end — a crash or manual
         # interrupt (Ctrl+C) later in the run no longer loses everything
         # annotated so far.
-        _save_results(results, output_path)
+        save_results(results, output_path, indent=2)
 
     print(f"\nDone.")
     print(f"  Annotated  : {len(results)} stories")
