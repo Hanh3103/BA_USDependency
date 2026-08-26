@@ -18,74 +18,74 @@ def detect_dependency_text(story_a, story_b) -> TextDependencyResult:
         # Example 1 - single direction
         {"role": "user", "content": json.dumps({
             "story_a": {
-                "id": "A",
-                "text": "As a traveler, I want to add a new spot, so that I don't forget where I went.",
-                "benefit": "so that I don't forget where I went",
+                "id": "US-107",
+                "text": "As a shopper, I want to add a product to my wishlist, so that I can find it easily later.",
+                "benefit": "so that I can find it easily later",
             },
             "story_b": {
-                "id": "B",
-                "text": "As a planner, I want to attach a saved spot to my itinerary, so that my schedule is organized.",
-                "benefit": "so that my schedule is organized",
+                "id": "US-142",
+                "text": "As a shopper, I want to move a wishlist item into my cart, so that I can purchase it.",
+                "benefit": "so that I can purchase it",
             },
         })},
         {"role": "assistant", "content": json.dumps({
-            "story_a_id": "A", "story_b_id": "B", "dependencyFound": True,
+            "story_a_id": "US-107", "story_b_id": "US-142", "dependencyFound": True,
             "dependencies": [{
-                "prerequisite_id": "A", "dependent_id": "B",
-                "explanationOfDependency": "In the main part of Story A, a 'spot' is created. This acts as a prerequisite for the main part of Story B, which attaches that saved 'spot'.",
-                "matchingTextPairs": [["add a new spot", "attach a saved spot"]],
+                "prerequisite_id": "US-107", "dependent_id": "US-142",
+                "explanationOfDependency": "In the main part of Story US-107, a 'wishlist item' is created. This acts as a prerequisite for the main part of Story US-142, which moves that wishlist item into the cart.",
+                "matchingTextPairs": [["add a product to my wishlist", "move a wishlist item into my cart"]],
             }],
         })},
 
         # Example 2 - no dependency
         {"role": "user", "content": json.dumps({
             "story_a": {
-                "id": "A",
-                "text": "As a user, I want to view my profile, so that I can see my details.",
-                "benefit": "so that I can see my details",
+                "id": "US-063",
+                "text": "As a shopper, I want to view my order history, so that I can track past purchases.",
+                "benefit": "so that I can track past purchases",
             },
             "story_b": {
-                "id": "B",
-                "text": "As an admin, I want to browse system settings, so that I can configure the platform.",
-                "benefit": "so that I can configure the platform",
+                "id": "US-091",
+                "text": "As a support agent, I want to browse the FAQ articles, so that I can answer customer questions.",
+                "benefit": "so that I can answer customer questions",
             },
         })},
         {"role": "assistant", "content": json.dumps({
-            "story_a_id": "A", "story_b_id": "B", "dependencyFound": False, "dependencies": [],
+            "story_a_id": "US-063", "story_b_id": "US-091", "dependencyFound": False, "dependencies": [],
         })},
 
         # Example 3 - bidirectional dependency
         {"role": "user", "content": json.dumps({
             "story_a": {
-                "id": "A",
-                "text": "As a planner, I want to create a trip and view an existing saved spot, so that I can add it to my plans.",
-                "benefit": "so that I can add it to my plans",
+                "id": "US-215",
+                "text": "As a shopper, I want to create an order and view an existing saved payment method, so that I can complete checkout.",
+                "benefit": "so that I can complete checkout",
             },
             "story_b": {
-                "id": "B",
-                "text": "As a traveler, I want to save a new spot and view an existing trip, so that I know where to attach it.",
-                "benefit": "so that I know where to attach it",
+                "id": "US-228",
+                "text": "As a shopper, I want to save a new payment method and view an existing order, so that I know which order to apply it to.",
+                "benefit": "so that I know which order to apply it to",
             },
         })},
         {"role": "assistant", "content": json.dumps({
-            "story_a_id": "A", "story_b_id": "B", "dependencyFound": True,
+            "story_a_id": "US-215", "story_b_id": "US-228", "dependencyFound": True,
             "dependencies": [
                 {
-                    "prerequisite_id": "A", "dependent_id": "B",
-                    "explanationOfDependency": "Story A creates a 'trip', which Story B views as an existing trip.",
-                    "matchingTextPairs": [["create a trip", "view an existing trip"]],
+                    "prerequisite_id": "US-215", "dependent_id": "US-228",
+                    "explanationOfDependency": "Story US-215 creates an 'order', which Story US-228 views as an existing order.",
+                    "matchingTextPairs": [["create an order", "view an existing order"]],
                 },
                 {
-                    "prerequisite_id": "B", "dependent_id": "A",
-                    "explanationOfDependency": "Story B saves a new 'spot', which Story A views as an existing saved spot.",
-                    "matchingTextPairs": [["save a new spot", "view an existing saved spot"]],
+                    "prerequisite_id": "US-228", "dependent_id": "US-215",
+                    "explanationOfDependency": "Story US-228 saves a new 'payment method', which Story US-215 views as an existing saved payment method.",
+                    "matchingTextPairs": [["save a new payment method", "view an existing saved payment method"]],
                 },
             ],
         })},
 
         {"role": "user", "content": json.dumps(payload, indent=2)},
     ]
-
+    
     try:
         return _call_stage(messages=messages, schema_model=TextDependencyResult)
     except Exception as err:
