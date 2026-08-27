@@ -1,0 +1,1767 @@
+[
+  {
+    "story_a_id": "US-002",
+    "story_b_id": "US-003",
+    "dependencyFound": false,
+    "dependencies": []
+  },
+  {
+    "story_a_id": "US-002",
+    "story_b_id": "US-004",
+    "dependencyFound": false,
+    "dependencies": []
+  },
+  {
+    "story_a_id": "US-002",
+    "story_b_id": "US-005",
+    "dependencyFound": false,
+    "dependencies": []
+  },
+  {
+    "story_a_id": "US-002",
+    "story_b_id": "US-006",
+    "dependencyFound": false,
+    "dependencies": []
+  },
+  {
+    "story_a_id": "US-002",
+    "story_b_id": "US-007",
+    "dependencyFound": false,
+    "dependencies": []
+  },
+  {
+    "story_a_id": "US-002",
+    "story_b_id": "US-009",
+    "dependencyFound": false,
+    "dependencies": []
+  },
+  {
+    "story_a_id": "US-002",
+    "story_b_id": "US-010",
+    "dependencyFound": false,
+    "dependencies": []
+  },
+  {
+    "story_a_id": "US-002",
+    "story_b_id": "US-011",
+    "dependencyFound": false,
+    "dependencies": []
+  },
+  {
+    "story_a_id": "US-002",
+    "story_b_id": "US-012",
+    "dependencyFound": false,
+    "dependencies": []
+  },
+  {
+    "story_a_id": "US-002",
+    "story_b_id": "US-014",
+    "dependencyFound": false,
+    "dependencies": []
+  },
+  {
+    "story_a_id": "US-002",
+    "story_b_id": "US-015",
+    "dependencyFound": false,
+    "dependencies": []
+  },
+  {
+    "story_a_id": "US-002",
+    "story_b_id": "US-016",
+    "dependencyFound": false,
+    "dependencies": []
+  },
+  {
+    "story_a_id": "US-002",
+    "story_b_id": "US-017",
+    "dependencyFound": false,
+    "dependencies": []
+  },
+  {
+    "story_a_id": "US-002",
+    "story_b_id": "US-019",
+    "dependencyFound": false,
+    "dependencies": []
+  },
+  {
+    "story_a_id": "US-002",
+    "story_b_id": "US-020",
+    "dependencyFound": false,
+    "dependencies": []
+  },
+  {
+    "story_a_id": "US-003",
+    "story_b_id": "US-004",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-003",
+        "dependent_id": "US-004",
+        "explanationOfDependency": "In the main part of Story US-003, a 'list' and an 'itinerary' are generated. These concepts are prerequisites for the main part of Story US-004, which imports a location.",
+        "matchingTextPairs": [
+          [
+            "generate an itinerary",
+            "import a location"
+          ]
+        ]
+      },
+      {
+        "prerequisite_id": "US-004",
+        "dependent_id": "US-003",
+        "explanationOfDependency": "In the main part of Story US-004, a 'location' is imported. This concept is a prerequisite for the main part of Story US-003, which generates a 'list' and an 'itinerary'.",
+        "matchingTextPairs": [
+          [
+            "import a location",
+            "create a list"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-003",
+    "story_b_id": "US-005",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-003",
+        "dependent_id": "US-005",
+        "explanationOfDependency": "In the main part of Story US-003, a 'list' is generated, which is a prerequisite for the main part of Story US-005, which creates named lists and adds saved spots to them.",
+        "matchingTextPairs": [
+          [
+            "generate an itinerary",
+            "create named lists and add saved spots to them"
+          ]
+        ]
+      },
+      {
+        "prerequisite_id": "US-005",
+        "dependent_id": "US-003",
+        "explanationOfDependency": "In the main part of Story US-005, a 'spot' is added to a list, which is a prerequisite for the main part of Story US-003, which demonstrates how to import a spot.",
+        "matchingTextPairs": [
+          [
+            "add saved spots to them",
+            "import a spot"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-003",
+    "story_b_id": "US-006",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-003",
+        "dependent_id": "US-006",
+        "explanationOfDependency": "In the main part of Story US-003, an 'itinerary' is generated. This acts as a prerequisite for the main part of Story US-006, which attaches private notes to a 'saved spot'.",
+        "matchingTextPairs": [
+          [
+            "generate an itinerary",
+            "attach private notes to any saved spot"
+          ]
+        ]
+      },
+      {
+        "prerequisite_id": "US-006",
+        "dependent_id": "US-003",
+        "explanationOfDependency": "In the main part of Story US-006, a 'saved spot' is involved. This acts as a prerequisite for the main part of Story US-003, which generates an itinerary.",
+        "matchingTextPairs": [
+          [
+            "attach private notes to any saved spot",
+            "import a spot, create a list, and generate an itinerary"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-003",
+    "story_b_id": "US-007",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-003",
+        "dependent_id": "US-007",
+        "explanationOfDependency": "In the main part of Story US-003, a 'spot' is created, a 'list' is created, and an 'itinerary' is generated. This acts as a prerequisite for the main part of Story US-007, which opens the original video used to save a spot.",
+        "matchingTextPairs": [
+          [
+            "import a spot",
+            "open the original TikTok or Instagram video that was used to save a spot"
+          ],
+          [
+            "create a list",
+            "open the original TikTok or Instagram video that was used to save a spot"
+          ],
+          [
+            "generate an itinerary",
+            "open the original TikTok or Instagram video that was used to save a spot"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-003",
+    "story_b_id": "US-009",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-003",
+        "dependent_id": "US-009",
+        "explanationOfDependency": "In the main part of Story US-003, a 'list' and an 'itinerary' are generated, which are prerequisites for the main part of Story US-009, which involves creating a 'list' and adding a 'spot'.",
+        "matchingTextPairs": [
+          [
+            "generate an itinerary",
+            "create a list"
+          ],
+          [
+            "generate an itinerary",
+            "add a spot"
+          ],
+          [
+            "create a list",
+            "add a spot"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-003",
+    "story_b_id": "US-010",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-003",
+        "dependent_id": "US-010",
+        "explanationOfDependency": "In the main part of Story US-003, an 'itinerary' is generated, which is a prerequisite for the main part of Story US-010, which does not directly consume the itinerary but is related to lists, which are also created in US-003.",
+        "matchingTextPairs": [
+          [
+            "generate an itinerary",
+            "change the name of an existing list"
+          ]
+        ]
+      },
+      {
+        "prerequisite_id": "US-010",
+        "dependent_id": "US-003",
+        "explanationOfDependency": "In the main part of Story US-010, a 'list' is changed, which is a prerequisite for the main part of Story US-003, which creates a list.",
+        "matchingTextPairs": [
+          [
+            "change the name of an existing list",
+            "create a list"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-003",
+    "story_b_id": "US-011",
+    "dependencyFound": false,
+    "dependencies": []
+  },
+  {
+    "story_a_id": "US-003",
+    "story_b_id": "US-012",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-003",
+        "dependent_id": "US-012",
+        "explanationOfDependency": "In the main part of Story US-003, a 'list' is created. This acts as a prerequisite for the main part of Story US-012, which filters the map to show only spots from that specific list.",
+        "matchingTextPairs": [
+          [
+            "create a list",
+            "filter the map to show only spots from a specific list"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-003",
+    "story_b_id": "US-014",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-003",
+        "dependent_id": "US-014",
+        "explanationOfDependency": "In the main part of Story US-003, a 'list' is created, which is consumed by the main part of Story US-014.",
+        "matchingTextPairs": [
+          [
+            "create a list",
+            "select a list of saved spots"
+          ]
+        ]
+      },
+      {
+        "prerequisite_id": "US-003",
+        "dependent_id": "US-014",
+        "explanationOfDependency": "In the main part of Story US-003, an 'itinerary' is generated, which is consumed by the main part of Story US-014.",
+        "matchingTextPairs": [
+          [
+            "generate an itinerary",
+            "generate a logically ordered, day-by-day itinerary"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-003",
+    "story_b_id": "US-015",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-003",
+        "dependent_id": "US-015",
+        "explanationOfDependency": "In the main part of Story US-003, an 'itinerary' is generated. This acts as a prerequisite for the main part of Story US-015, which views the generated itinerary.",
+        "matchingTextPairs": [
+          [
+            "generate an itinerary",
+            "view the generated itinerary"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-003",
+    "story_b_id": "US-016",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-003",
+        "dependent_id": "US-016",
+        "explanationOfDependency": "In the main part of Story US-003, a 'list' and an 'itinerary' are generated. This acts as a prerequisite for the main part of Story US-016, which involves a 'day's plan' of the AI-generated schedule.",
+        "matchingTextPairs": [
+          [
+            "generate an itinerary",
+            "a day's plan of the AI-generated schedule"
+          ]
+        ]
+      },
+      {
+        "prerequisite_id": "US-016",
+        "dependent_id": "US-003",
+        "explanationOfDependency": "In the main part of Story US-016, a 'stop' is dragged and dropped. This acts as a prerequisite for the main part of Story US-003, which involves 'importing a spot'.",
+        "matchingTextPairs": [
+          [
+            "drag and drop stops",
+            "import a spot"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-003",
+    "story_b_id": "US-017",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-003",
+        "dependent_id": "US-017",
+        "explanationOfDependency": "In the main part of Story US-003, an 'itinerary' is generated. This acts as a prerequisite for the main part of Story US-017, which copies and adjusts a past trip's itinerary.",
+        "matchingTextPairs": [
+          [
+            "generate an itinerary",
+            "copy of a past trip's itinerary"
+          ]
+        ]
+      },
+      {
+        "prerequisite_id": "US-017",
+        "dependent_id": "US-003",
+        "explanationOfDependency": "In the main part of Story US-017, a 'past trip's itinerary' is copied and adjusted. This acts as a prerequisite for the main part of Story US-003, which generates an itinerary.",
+        "matchingTextPairs": [
+          [
+            "copy of a past trip's itinerary",
+            "generate an itinerary"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-003",
+    "story_b_id": "US-019",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-003",
+        "dependent_id": "US-019",
+        "explanationOfDependency": "In the main part of Story US-003, an 'itinerary' is generated. This acts as a prerequisite for the main part of Story US-019, which generates a read-only web link for that itinerary.",
+        "matchingTextPairs": [
+          [
+            "generate an itinerary",
+            "generate a read-only web link for my itinerary"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-003",
+    "story_b_id": "US-020",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-003",
+        "dependent_id": "US-020",
+        "explanationOfDependency": "In the main part of Story US-003, a 'list' and an 'itinerary' are generated. These are prerequisites for the main part of Story US-020, which downloads a complete itinerary including daily plans.",
+        "matchingTextPairs": [
+          [
+            "generate an itinerary",
+            "download a complete itinerary including daily plans"
+          ]
+        ]
+      },
+      {
+        "prerequisite_id": "US-020",
+        "dependent_id": "US-003",
+        "explanationOfDependency": "In the main part of Story US-020, a 'spot' is included in the itinerary. This is a prerequisite for the main part of Story US-003, which demonstrates how to import a spot.",
+        "matchingTextPairs": [
+          [
+            "import a spot",
+            "download a complete itinerary including maps, spot details"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-004",
+    "story_b_id": "US-005",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-004",
+        "dependent_id": "US-005",
+        "explanationOfDependency": "In the main part of Story US-004, a 'location' is imported from a saved video, which acts as a prerequisite for the main part of Story US-005, where saved spots are added to named lists.",
+        "matchingTextPairs": [
+          [
+            "import a location from a saved TikTok or Instagram video",
+            "add saved spots to them"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-004",
+    "story_b_id": "US-006",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-004",
+        "dependent_id": "US-006",
+        "explanationOfDependency": "In the main part of Story US-004, a 'location' is imported from a saved video, which acts as a prerequisite for the main part of Story US-006, which attaches private notes to a saved spot.",
+        "matchingTextPairs": [
+          [
+            "import a location from a saved TikTok or Instagram video",
+            "attach private notes to any saved spot"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-004",
+    "story_b_id": "US-007",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-004",
+        "dependent_id": "US-007",
+        "explanationOfDependency": "In the main part of Story US-004, a 'location' is imported from a saved TikTok or Instagram video. This acts as a prerequisite for the main part of Story US-007, which opens the original video.",
+        "matchingTextPairs": [
+          [
+            "import a location from a saved TikTok or Instagram video",
+            "open the original TikTok or Instagram video"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-004",
+    "story_b_id": "US-009",
+    "dependencyFound": false,
+    "dependencies": []
+  },
+  {
+    "story_a_id": "US-004",
+    "story_b_id": "US-010",
+    "dependencyFound": false,
+    "dependencies": []
+  },
+  {
+    "story_a_id": "US-004",
+    "story_b_id": "US-011",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-004",
+        "dependent_id": "US-011",
+        "explanationOfDependency": "In the main part of Story US-004, a 'location' is imported from a saved video, which acts as a prerequisite for the main part of Story US-011, which displays saved spots as pins on a live map.",
+        "matchingTextPairs": [
+          [
+            "import a location from a saved TikTok or Instagram video",
+            "see all my saved spots displayed as pins on a live map"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-004",
+    "story_b_id": "US-012",
+    "dependencyFound": false,
+    "dependencies": []
+  },
+  {
+    "story_a_id": "US-004",
+    "story_b_id": "US-014",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-004",
+        "dependent_id": "US-014",
+        "explanationOfDependency": "In the main part of Story US-004, a 'location' is imported from a saved video, which acts as a prerequisite for the main part of Story US-014, which uses saved spots.",
+        "matchingTextPairs": [
+          [
+            "import a location from a saved TikTok or Instagram video",
+            "saved spots"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-004",
+    "story_b_id": "US-015",
+    "dependencyFound": false,
+    "dependencies": []
+  },
+  {
+    "story_a_id": "US-004",
+    "story_b_id": "US-016",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-004",
+        "dependent_id": "US-016",
+        "explanationOfDependency": "In the main part of Story US-004, a 'location' is imported from a saved video, which is then used in the main part of Story US-016 as a 'stop' to be dragged and dropped.",
+        "matchingTextPairs": [
+          [
+            "import a location from a saved TikTok or Instagram video",
+            "drag and drop stops"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-004",
+    "story_b_id": "US-017",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-004",
+        "dependent_id": "US-017",
+        "explanationOfDependency": "In the main part of Story US-004, a 'location' is imported from a saved video, which acts as a prerequisite for the main part of Story US-017, which copies a past trip's itinerary.",
+        "matchingTextPairs": [
+          [
+            "import a location",
+            "copy of a past trip's itinerary"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-004",
+    "story_b_id": "US-019",
+    "dependencyFound": false,
+    "dependencies": []
+  },
+  {
+    "story_a_id": "US-004",
+    "story_b_id": "US-020",
+    "dependencyFound": false,
+    "dependencies": []
+  },
+  {
+    "story_a_id": "US-005",
+    "story_b_id": "US-006",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-005",
+        "dependent_id": "US-006",
+        "explanationOfDependency": "In the main part of Story US-005, a 'saved spot' is created and added to a 'named list'. This acts as a prerequisite for the main part of Story US-006, which attaches private notes to a 'saved spot'.",
+        "matchingTextPairs": [
+          [
+            "create named lists",
+            "add saved spots to them"
+          ],
+          [
+            "attach private notes to any saved spot",
+            "the place it belongs to"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-005",
+    "story_b_id": "US-007",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-005",
+        "dependent_id": "US-007",
+        "explanationOfDependency": "In the main part of Story US-005, a 'saved spot' is added to a 'named list'. This acts as a prerequisite for the main part of Story US-007, which opens the original video that was used to save that spot.",
+        "matchingTextPairs": [
+          [
+            "add saved spots to them",
+            "open the original TikTok or Instagram video that was used to save a spot"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-005",
+    "story_b_id": "US-009",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-005",
+        "dependent_id": "US-009",
+        "explanationOfDependency": "In the main part of Story US-005, a 'named list' is created, and a 'saved spot' is added to it. This acts as a prerequisite for the main part of Story US-009, which manually adds a spot.",
+        "matchingTextPairs": [
+          [
+            "create named lists",
+            "add saved spots to them"
+          ],
+          [
+            "add a spot",
+            "save places I discover outside of social media"
+          ]
+        ]
+      },
+      {
+        "prerequisite_id": "US-009",
+        "dependent_id": "US-005",
+        "explanationOfDependency": "In the main part of Story US-009, a 'spot' is manually added. This acts as a prerequisite for the main part of Story US-005, which adds saved spots to named lists.",
+        "matchingTextPairs": [
+          [
+            "manually add a spot",
+            "add saved spots to them"
+          ]
+        ]
+      },
+      {
+        "prerequisite_id": "US-005",
+        "dependent_id": "US-009",
+        "explanationOfDependency": "In the main part of Story US-005, a 'named list' is created. This acts as a prerequisite for the main part of Story US-009, which manually adds a spot.",
+        "matchingTextPairs": [
+          [
+            "create named lists",
+            "manually add a spot"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-005",
+    "story_b_id": "US-010",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-005",
+        "dependent_id": "US-010",
+        "explanationOfDependency": "In the main part of Story US-005, a 'list' is created and 'saved spots' are added to it. This acts as a prerequisite for the main part of Story US-010, which changes the name of an existing list.",
+        "matchingTextPairs": [
+          [
+            "create named lists",
+            "change the name of an existing list"
+          ],
+          [
+            "add saved spots to them",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-005",
+    "story_b_id": "US-011",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-005",
+        "dependent_id": "US-011",
+        "explanationOfDependency": "In the main part of Story US-005, a 'named list' is created and 'saved spots' are added to it. This acts as a prerequisite for the main part of Story US-011, which displays these saved spots as pins on a live map.",
+        "matchingTextPairs": [
+          [
+            "create named lists",
+            "add saved spots to them"
+          ],
+          [
+            "see all my saved spots",
+            "displayed as pins on a live map"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-005",
+    "story_b_id": "US-012",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-005",
+        "dependent_id": "US-012",
+        "explanationOfDependency": "In the main part of Story US-005, a 'named list' is created and 'saved spots' are added to it. This acts as a prerequisite for the main part of Story US-012, which filters the map to show only spots from a specific list.",
+        "matchingTextPairs": [
+          [
+            "create named lists",
+            "add saved spots to them"
+          ],
+          [
+            "create named lists",
+            "filter the map to show only spots from a specific list"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-005",
+    "story_b_id": "US-014",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-005",
+        "dependent_id": "US-014",
+        "explanationOfDependency": "In the main part of Story US-005, a 'list' is created and 'saved spots' are added to it. This acts as a prerequisite for the main part of Story US-014, which uses these lists and saved spots to generate an itinerary.",
+        "matchingTextPairs": [
+          [
+            "create named lists",
+            "select a list of saved spots"
+          ],
+          [
+            "add saved spots to them",
+            "use these lists and saved spots"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-005",
+    "story_b_id": "US-015",
+    "dependencyFound": false,
+    "dependencies": []
+  },
+  {
+    "story_a_id": "US-005",
+    "story_b_id": "US-016",
+    "dependencyFound": false,
+    "dependencies": []
+  },
+  {
+    "story_a_id": "US-005",
+    "story_b_id": "US-017",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-005",
+        "dependent_id": "US-017",
+        "explanationOfDependency": "In the main part of Story US-005, a 'named list' is created and 'saved spots' are added to it. This acts as a prerequisite for the main part of Story US-017, which copies a past trip's itinerary and adjusts the dates or spots.",
+        "matchingTextPairs": [
+          [
+            "create named lists",
+            "copy of a past trip's itinerary"
+          ],
+          [
+            "add saved spots to them",
+            "adjust the dates or spots"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-005",
+    "story_b_id": "US-019",
+    "dependencyFound": false,
+    "dependencies": []
+  },
+  {
+    "story_a_id": "US-005",
+    "story_b_id": "US-020",
+    "dependencyFound": false,
+    "dependencies": []
+  },
+  {
+    "story_a_id": "US-006",
+    "story_b_id": "US-007",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-006",
+        "dependent_id": "US-007",
+        "explanationOfDependency": "In the main part of Story US-006, a 'spot' is created and notes are attached to it. This acts as a prerequisite for the main part of Story US-007, which opens the original video associated with that spot.",
+        "matchingTextPairs": [
+          [
+            "attach private notes to any saved spot",
+            "open the original TikTok or Instagram video that was used to save a spot"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-006",
+    "story_b_id": "US-009",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-006",
+        "dependent_id": "US-009",
+        "explanationOfDependency": "In the main part of Story US-006, a 'spot' is created and notes can be attached to it. This acts as a prerequisite for the main part of Story US-009, which manually adds a spot.",
+        "matchingTextPairs": [
+          [
+            "attach private notes to any saved spot",
+            "manually add a spot by entering its name and selecting its location on a map"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-006",
+    "story_b_id": "US-010",
+    "dependencyFound": false,
+    "dependencies": []
+  },
+  {
+    "story_a_id": "US-006",
+    "story_b_id": "US-011",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-006",
+        "dependent_id": "US-011",
+        "explanationOfDependency": "In the main part of Story US-006, a 'saved spot' is created and notes are attached to it. This acts as a prerequisite for the main part of Story US-011, which displays these saved spots on a map.",
+        "matchingTextPairs": [
+          [
+            "attach private notes to any saved spot",
+            "see all my saved spots displayed as pins on a live map"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-006",
+    "story_b_id": "US-012",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-006",
+        "dependent_id": "US-012",
+        "explanationOfDependency": "In the main part of Story US-006, a 'spot' is created and notes are attached to it. This acts as a prerequisite for the main part of Story US-012, which filters the map to show only spots from a specific list.",
+        "matchingTextPairs": [
+          [
+            "attach private notes to any saved spot",
+            "filter the map to show only spots from a specific list"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-006",
+    "story_b_id": "US-014",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-006",
+        "dependent_id": "US-014",
+        "explanationOfDependency": "In the main part of Story US-006, a 'saved spot' is created and notes are attached to it. This acts as a prerequisite for the main part of Story US-014, which uses these saved spots to generate an itinerary.",
+        "matchingTextPairs": [
+          [
+            "attach private notes to any saved spot",
+            "saved spots"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-006",
+    "story_b_id": "US-015",
+    "dependencyFound": false,
+    "dependencies": []
+  },
+  {
+    "story_a_id": "US-006",
+    "story_b_id": "US-016",
+    "dependencyFound": false,
+    "dependencies": []
+  },
+  {
+    "story_a_id": "US-006",
+    "story_b_id": "US-017",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-006",
+        "dependent_id": "US-017",
+        "explanationOfDependency": "In the main part of Story US-006, a 'saved spot' is created and notes are attached to it. This acts as a prerequisite for the main part of Story US-017, which reuses a past trip's itinerary.",
+        "matchingTextPairs": [
+          [
+            "attach private notes to any saved spot",
+            "copy of a past trip's itinerary"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-006",
+    "story_b_id": "US-019",
+    "dependencyFound": false,
+    "dependencies": []
+  },
+  {
+    "story_a_id": "US-006",
+    "story_b_id": "US-020",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-006",
+        "dependent_id": "US-020",
+        "explanationOfDependency": "In the main part of Story US-006, a 'saved spot' is created and notes are attached to it. This acts as a prerequisite for the main part of Story US-020, which downloads an itinerary including spot details.",
+        "matchingTextPairs": [
+          [
+            "attach private notes to any saved spot",
+            "download a complete itinerary including spot details"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-007",
+    "story_b_id": "US-009",
+    "dependencyFound": false,
+    "dependencies": []
+  },
+  {
+    "story_a_id": "US-007",
+    "story_b_id": "US-010",
+    "dependencyFound": false,
+    "dependencies": []
+  },
+  {
+    "story_a_id": "US-007",
+    "story_b_id": "US-011",
+    "dependencyFound": false,
+    "dependencies": []
+  },
+  {
+    "story_a_id": "US-007",
+    "story_b_id": "US-012",
+    "dependencyFound": false,
+    "dependencies": []
+  },
+  {
+    "story_a_id": "US-007",
+    "story_b_id": "US-014",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-007",
+        "dependent_id": "US-014",
+        "explanationOfDependency": "In the main part of Story US-007, a 'TikTok or Instagram video' is opened, which is used to save a spot. This acts as a prerequisite for the main part of Story US-014, which generates an itinerary based on saved spots.",
+        "matchingTextPairs": [
+          [
+            "open the original TikTok or Instagram video",
+            "saved spots"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-007",
+    "story_b_id": "US-015",
+    "dependencyFound": false,
+    "dependencies": []
+  },
+  {
+    "story_a_id": "US-007",
+    "story_b_id": "US-016",
+    "dependencyFound": false,
+    "dependencies": []
+  },
+  {
+    "story_a_id": "US-007",
+    "story_b_id": "US-017",
+    "dependencyFound": false,
+    "dependencies": []
+  },
+  {
+    "story_a_id": "US-007",
+    "story_b_id": "US-019",
+    "dependencyFound": false,
+    "dependencies": []
+  },
+  {
+    "story_a_id": "US-007",
+    "story_b_id": "US-020",
+    "dependencyFound": false,
+    "dependencies": []
+  },
+  {
+    "story_a_id": "US-009",
+    "story_b_id": "US-010",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-009",
+        "dependent_id": "US-010",
+        "explanationOfDependency": "In the main part of Story US-009, a 'spot' is created by adding it to a list. This acts as a prerequisite for the main part of Story US-010, which changes the name of an existing list that contains spots.",
+        "matchingTextPairs": [
+          [
+            "add a spot",
+            "change the name of an existing list"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-009",
+    "story_b_id": "US-011",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-009",
+        "dependent_id": "US-011",
+        "explanationOfDependency": "In the main part of Story US-009, a 'spot' is created by manually adding it to the map. This acts as a prerequisite for the main part of Story US-011, which displays these saved spots as pins on a live map.",
+        "matchingTextPairs": [
+          [
+            "add a spot by entering its name and selecting its location on a map",
+            "see all my saved spots displayed as pins on a live map"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-009",
+    "story_b_id": "US-012",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-009",
+        "dependent_id": "US-012",
+        "explanationOfDependency": "In the main part of Story US-009, a 'spot' is created by manually adding it to the map. This acts as a prerequisite for the main part of Story US-012, which filters the map to show only spots from a specific list.",
+        "matchingTextPairs": [
+          [
+            "add a spot by entering its name and selecting its location on a map",
+            "filter the map to show only spots from a specific list"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-009",
+    "story_b_id": "US-014",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-009",
+        "dependent_id": "US-014",
+        "explanationOfDependency": "In the main part of Story US-009, a 'spot' is created by manually adding it. This acts as a prerequisite for the main part of Story US-014, which uses a list of saved spots to generate an itinerary.",
+        "matchingTextPairs": [
+          [
+            "add a spot",
+            "saved spots"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-009",
+    "story_b_id": "US-015",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-009",
+        "dependent_id": "US-015",
+        "explanationOfDependency": "In the main part of Story US-009, a 'spot' is created by manually adding it to the map. This acts as a prerequisite for the main part of Story US-015, which views the generated itinerary, including the created spot, as a daily route on a map.",
+        "matchingTextPairs": [
+          [
+            "add a spot by entering its name and selecting its location on a map",
+            "view the generated itinerary as a daily route on a map"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-009",
+    "story_b_id": "US-016",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-009",
+        "dependent_id": "US-016",
+        "explanationOfDependency": "In the main part of Story US-009, a 'spot' is created by manually adding it. This acts as a prerequisite for the main part of Story US-016, which involves dragging and dropping stops, specifically referencing 'a day's plan of the AI-generated schedule', which implies the spots created in US-009 are part of that plan.",
+        "matchingTextPairs": [
+          [
+            "add a spot",
+            "drag and drop stops"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-009",
+    "story_b_id": "US-017",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-009",
+        "dependent_id": "US-017",
+        "explanationOfDependency": "In the main part of Story US-009, a 'spot' is created by manually adding it. This acts as a prerequisite for the main part of Story US-017, which copies a past trip's itinerary and adjusts the spots.",
+        "matchingTextPairs": [
+          [
+            "add a spot",
+            "copy of a past trip's itinerary and adjust the spots"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-009",
+    "story_b_id": "US-019",
+    "dependencyFound": false,
+    "dependencies": []
+  },
+  {
+    "story_a_id": "US-009",
+    "story_b_id": "US-020",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-009",
+        "dependent_id": "US-020",
+        "explanationOfDependency": "In the main part of Story US-009, a 'spot' is created by manually adding it. This acts as a prerequisite for the main part of Story US-020, which downloads an itinerary including spot details.",
+        "matchingTextPairs": [
+          [
+            "add a spot",
+            "spot details"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-010",
+    "story_b_id": "US-011",
+    "dependencyFound": false,
+    "dependencies": []
+  },
+  {
+    "story_a_id": "US-010",
+    "story_b_id": "US-012",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-010",
+        "dependent_id": "US-012",
+        "explanationOfDependency": "In the main part of Story US-010, an 'existing list' is modified. This acts as a prerequisite for the main part of Story US-012, which filters the map based on that list.",
+        "matchingTextPairs": [
+          [
+            "change the name of an existing list",
+            "show only spots from a specific list"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-010",
+    "story_b_id": "US-014",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-010",
+        "dependent_id": "US-014",
+        "explanationOfDependency": "In the main part of Story US-010, an 'existing list' is modified. This acts as a prerequisite for the main part of Story US-014, which involves selecting a list of saved spots.",
+        "matchingTextPairs": [
+          [
+            "change the name of an existing list",
+            "select a list of saved spots"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-010",
+    "story_b_id": "US-015",
+    "dependencyFound": false,
+    "dependencies": []
+  },
+  {
+    "story_a_id": "US-010",
+    "story_b_id": "US-016",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-010",
+        "dependent_id": "US-016",
+        "explanationOfDependency": "In the main part of Story US-010, an 'existing list' is modified. This acts as a prerequisite for the main part of Story US-016, which involves 'stops' within a day's plan.",
+        "matchingTextPairs": [
+          [
+            "change the name of an existing list",
+            "drag and drop stops"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-010",
+    "story_b_id": "US-017",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-010",
+        "dependent_id": "US-017",
+        "explanationOfDependency": "In the main part of Story US-010, an 'existing list' is modified. This acts as a prerequisite for the main part of Story US-017, which copies and adjusts a past trip's itinerary.",
+        "matchingTextPairs": [
+          [
+            "change the name of an existing list",
+            "copy of a past trip's itinerary"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-010",
+    "story_b_id": "US-019",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-010",
+        "dependent_id": "US-019",
+        "explanationOfDependency": "In the main part of Story US-010, an 'existing list' is modified. This acts as a prerequisite for the main part of Story US-019, which generates a read-only web link for an 'itinerary', which is a type of list.",
+        "matchingTextPairs": [
+          [
+            "change the name of an existing list",
+            "generate a read-only web link for my itinerary"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-010",
+    "story_b_id": "US-020",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-010",
+        "dependent_id": "US-020",
+        "explanationOfDependency": "In the main part of Story US-010, an 'existing list' is modified. This acts as a prerequisite for the main part of Story US-020, which downloads an itinerary including daily plans.",
+        "matchingTextPairs": [
+          [
+            "change the name of an existing list",
+            "download a complete itinerary including daily plan"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-011",
+    "story_b_id": "US-012",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-011",
+        "dependent_id": "US-012",
+        "explanationOfDependency": "In the main part of Story US-011, 'spots' are displayed as pins on a live map. This acts as a prerequisite for the main part of Story US-012, which filters the map to show only spots from a specific list.",
+        "matchingTextPairs": [
+          [
+            "see all my saved spots displayed as pins on a live map",
+            "filter the map to show only spots from a specific list"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-011",
+    "story_b_id": "US-014",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-011",
+        "dependent_id": "US-014",
+        "explanationOfDependency": "In the main part of Story US-011, a 'live map' displays 'saved spots' as pins. This acts as a prerequisite for the main part of Story US-014, which uses these saved spots to generate an itinerary.",
+        "matchingTextPairs": [
+          [
+            "see all my saved spots displayed as pins on a live map",
+            "select a destination, travel dates, and a list of saved spots"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-011",
+    "story_b_id": "US-015",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-011",
+        "dependent_id": "US-015",
+        "explanationOfDependency": "In the main part of Story US-011, 'saved spots' are displayed as pins on a live map. This acts as a prerequisite for the main part of Story US-015, which views the generated itinerary as a daily route on a map.",
+        "matchingTextPairs": [
+          [
+            "see all my saved spots displayed as pins on a live map",
+            "view the generated itinerary as a daily route on a map"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-011",
+    "story_b_id": "US-016",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-011",
+        "dependent_id": "US-016",
+        "explanationOfDependency": "In the main part of Story US-011, 'saved spots' are displayed as pins on a live map. This acts as a prerequisite for the main part of Story US-016, which involves dragging and dropping stops.",
+        "matchingTextPairs": [
+          [
+            "see all my saved spots displayed as pins on a live map",
+            "drag and drop stops"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-011",
+    "story_b_id": "US-017",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-011",
+        "dependent_id": "US-017",
+        "explanationOfDependency": "In the main part of Story US-011, a 'live map' is used to display saved spots. This acts as a prerequisite for the main part of Story US-017, which copies a past trip's itinerary and adjusts the dates or spots.",
+        "matchingTextPairs": [
+          [
+            "see all my saved spots displayed as pins on a live map",
+            "copy of a past trip's itinerary"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-011",
+    "story_b_id": "US-019",
+    "dependencyFound": false,
+    "dependencies": []
+  },
+  {
+    "story_a_id": "US-011",
+    "story_b_id": "US-020",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-011",
+        "dependent_id": "US-020",
+        "explanationOfDependency": "In the main part of Story US-011, 'saved spots' are displayed on a live map. This acts as a prerequisite for the main part of Story US-020, which downloads an itinerary including maps of these saved spots.",
+        "matchingTextPairs": [
+          [
+            "see all my saved spots displayed as pins on a live map",
+            "download a complete itinerary including maps"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-012",
+    "story_b_id": "US-014",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-012",
+        "dependent_id": "US-014",
+        "explanationOfDependency": "In the main part of Story US-012, a 'list of spots' is filtered. This acts as a prerequisite for the main part of Story US-014, which uses a 'list of saved spots'.",
+        "matchingTextPairs": [
+          [
+            "filter the map to show only spots from a specific list",
+            "list of saved spots"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-012",
+    "story_b_id": "US-015",
+    "dependencyFound": false,
+    "dependencies": []
+  },
+  {
+    "story_a_id": "US-012",
+    "story_b_id": "US-016",
+    "dependencyFound": false,
+    "dependencies": []
+  },
+  {
+    "story_a_id": "US-012",
+    "story_b_id": "US-017",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-012",
+        "dependent_id": "US-017",
+        "explanationOfDependency": "In the main part of Story US-012, a 'specific list' is used to filter the map. This acts as a prerequisite for the main part of Story US-017, which copies a past trip's 'itinerary' and adjusts the 'spots'.",
+        "matchingTextPairs": [
+          [
+            "filter the map to show only spots from a specific list",
+            "copy of a past trip's itinerary and adjust the dates or spots"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-012",
+    "story_b_id": "US-019",
+    "dependencyFound": false,
+    "dependencies": []
+  },
+  {
+    "story_a_id": "US-012",
+    "story_b_id": "US-020",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-012",
+        "dependent_id": "US-020",
+        "explanationOfDependency": "In the main part of Story US-012, a 'specific list' of spots is filtered on the map. This acts as a prerequisite for the main part of Story US-020, which downloads an itinerary including maps of these filtered spots.",
+        "matchingTextPairs": [
+          [
+            "filter the map to show only spots from a specific list",
+            "download a complete itinerary including maps"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-014",
+    "story_b_id": "US-015",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-014",
+        "dependent_id": "US-015",
+        "explanationOfDependency": "In the main part of Story US-014, a 'day-by-day itinerary' is generated. This acts as a prerequisite for the main part of Story US-015, which views this generated itinerary.",
+        "matchingTextPairs": [
+          [
+            "generate a logically ordered, day-by-day itinerary",
+            "view the generated itinerary"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-014",
+    "story_b_id": "US-016",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-014",
+        "dependent_id": "US-016",
+        "explanationOfDependency": "Story US-014 generates a 'day-by-day itinerary', which Story US-016 manually adjusts the order within a day's plan of.",
+        "matchingTextPairs": [
+          [
+            "generate a logically ordered, day-by-day itinerary",
+            "a day's plan of the AI-generated schedule"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-014",
+    "story_b_id": "US-017",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-014",
+        "dependent_id": "US-017",
+        "explanationOfDependency": "In the main part of Story US-014, a 'day-by-day itinerary' is generated. This acts as a prerequisite for the main part of Story US-017, which copies and adjusts a past trip's itinerary.",
+        "matchingTextPairs": [
+          [
+            "generate a logically ordered, day-by-day itinerary",
+            "copy of a past trip's itinerary"
+          ]
+        ]
+      },
+      {
+        "prerequisite_id": "US-017",
+        "dependent_id": "US-014",
+        "explanationOfDependency": "In the main part of Story US-017, a 'past trip's itinerary' is copied and adjusted. This acts as a prerequisite for the main part of Story US-014, which generates a logically ordered, day-by-day itinerary.",
+        "matchingTextPairs": [
+          [
+            "copy of a past trip's itinerary",
+            "generate a logically ordered, day-by-day itinerary"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-014",
+    "story_b_id": "US-019",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-014",
+        "dependent_id": "US-019",
+        "explanationOfDependency": "In the main part of Story US-014, an 'itinerary' is created. This acts as a prerequisite for the main part of Story US-019, which generates a read-only web link for that itinerary.",
+        "matchingTextPairs": [
+          [
+            "generate a logically ordered, day-by-day itinerary",
+            "generate a read-only web link for my itinerary"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-014",
+    "story_b_id": "US-020",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-014",
+        "dependent_id": "US-020",
+        "explanationOfDependency": "In the main part of Story US-014, a 'day-by-day itinerary' is generated. This acts as a prerequisite for the main part of Story US-020, which downloads a complete itinerary including the daily plan.",
+        "matchingTextPairs": [
+          [
+            "generate a logically ordered, day-by-day itinerary",
+            "download a complete itinerary including daily plan"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-015",
+    "story_b_id": "US-016",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-015",
+        "dependent_id": "US-016",
+        "explanationOfDependency": "In the main part of Story US-015, an 'itinerary' is generated and viewed as a daily route on a map. This acts as a prerequisite for the main part of Story US-016, which involves dragging and dropping stops within that AI-generated schedule.",
+        "matchingTextPairs": [
+          [
+            "view the generated itinerary",
+            "drag and drop stops"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-015",
+    "story_b_id": "US-017",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-015",
+        "dependent_id": "US-017",
+        "explanationOfDependency": "In the main part of Story US-015, an 'itinerary' is created and viewed as a daily route on a map. This acts as a prerequisite for the main part of Story US-017, which copies a past trip's itinerary.",
+        "matchingTextPairs": [
+          [
+            "view the generated itinerary as a daily route on a map",
+            "copy of a past trip's itinerary"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-015",
+    "story_b_id": "US-019",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-015",
+        "dependent_id": "US-019",
+        "explanationOfDependency": "In the main part of Story US-015, an 'itinerary' is generated and viewed as a daily route on a map. This acts as a prerequisite for the main part of Story US-019, which generates a read-only web link for that itinerary.",
+        "matchingTextPairs": [
+          [
+            "view the generated itinerary",
+            "generate a read-only web link for my itinerary"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-015",
+    "story_b_id": "US-020",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-015",
+        "dependent_id": "US-020",
+        "explanationOfDependency": "In the main part of Story US-015, an 'itinerary' is viewed as a daily route on a map. This acts as a prerequisite for the main part of Story US-020, which downloads a complete itinerary including maps.",
+        "matchingTextPairs": [
+          [
+            "view the generated itinerary as a daily route on a map",
+            "download a complete itinerary including maps"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-016",
+    "story_b_id": "US-017",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-016",
+        "dependent_id": "US-017",
+        "explanationOfDependency": "In the main part of Story US-016, a 'day's plan' is created and adjusted manually. This acts as a prerequisite for the main part of Story US-017, which reuses a past trip's 'itinerary' and adjusts the dates or spots.",
+        "matchingTextPairs": [
+          [
+            "drag and drop stops",
+            "copy of a past trip's itinerary"
+          ],
+          [
+            "manually adjust the order within a day's plan",
+            "adjust the dates or spots"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-016",
+    "story_b_id": "US-019",
+    "dependencyFound": false,
+    "dependencies": []
+  },
+  {
+    "story_a_id": "US-016",
+    "story_b_id": "US-020",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-016",
+        "dependent_id": "US-020",
+        "explanationOfDependency": "In the main part of Story US-016, a 'day's plan' is created and manually adjusted. This acts as a prerequisite for the main part of Story US-020, which downloads a complete itinerary including that day's plan.",
+        "matchingTextPairs": [
+          [
+            "drag and drop stops",
+            "daily plan"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-017",
+    "story_b_id": "US-019",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-017",
+        "dependent_id": "US-019",
+        "explanationOfDependency": "In the main part of Story US-017, an 'itinerary' is created and adjusted. This acts as a prerequisite for the main part of Story US-019, which generates a read-only web link for that itinerary.",
+        "matchingTextPairs": [
+          [
+            "copy of a past trip's itinerary",
+            "generate a read-only web link for my itinerary"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-017",
+    "story_b_id": "US-020",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-017",
+        "dependent_id": "US-020",
+        "explanationOfDependency": "In the main part of Story US-017, a 'past trip's itinerary' is copied and adjusted. This acts as a prerequisite for the main part of Story US-020, which downloads a complete itinerary including maps, spot details, and daily plan.",
+        "matchingTextPairs": [
+          [
+            "copy of a past trip's itinerary",
+            "download a complete itinerary including maps, spot details, and daily plan"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "story_a_id": "US-019",
+    "story_b_id": "US-020",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-019",
+        "dependent_id": "US-020",
+        "explanationOfDependency": "In the main part of Story US-019, a 'read-only web link for my itinerary' is generated. This acts as a prerequisite for the main part of Story US-020, which downloads a complete itinerary including the same itinerary.",
+        "matchingTextPairs": [
+          [
+            "generate a read-only web link for my itinerary",
+            "download a complete itinerary including maps, spot details, and daily plan for offline use"
+          ]
+        ]
+      }
+    ]
+  }
+]
