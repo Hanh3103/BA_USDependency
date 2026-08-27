@@ -123,8 +123,12 @@ class DependencyEntryText(BaseModel):
     explanationOfDependency: str
     matchingTextPairs: list[tuple[str, str]]
 
-class TextDependencyResult(BaseModel):
+class TextDependencyLLMOutput(BaseModel):
     story_a_id: str
     story_b_id: str
     dependencyFound: bool
     dependencies: list[DependencyEntryText]
+
+class TextDependencyResult(TextDependencyLLMOutput):
+    story_a_text: str
+    story_b_text: str

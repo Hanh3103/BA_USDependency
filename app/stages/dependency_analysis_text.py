@@ -1,5 +1,5 @@
 from utils.llm_client_helpers import _call_stage, _load_prompt
-from schemas.dependency.dependency_schema import TextDependencyResult
+from schemas.dependency.dependency_schema import TextDependencyResult, TextDependencyLLMOutput
 from config import settings
 import json
 
@@ -87,10 +87,15 @@ def detect_dependency_text(story_a, story_b, model:str) -> TextDependencyResult:
     ]
     
     try:
-        return _call_stage(messages=messages, schema_model=TextDependencyResult, model=model)
+        llm_result=  _call_stage(messages=messages, schema_model=TextDependencyLLMOutput, model=model)
+        return TextDependencyResult(
+            story_a_text=story_a.Text
+            , story_b_text=story_b.Text
+            , **llm_result.model_dump()
+        )
     except Exception as err:
         print(f"Warning: Processing failed for pair ({story_a.id}, {story_b.id}): {err}")
         return TextDependencyResult(
-            story_a_id=story_a.id, story_b_id=story_b.id,
+            story_a_text=story_a.Text, story_b_text=story_b.Text, story_a_id=story_a.id, story_b_id=story_b.id,
             dependencyFound=False, dependencies=[],
         )
