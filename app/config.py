@@ -35,7 +35,7 @@ class Settings(BaseSettings):
 
     @property
     def models(self) -> list[str] :
-        return self.ollama_models.split(",") 
+        return self.ollama_models.split(",")
 
     def prompt_path(self, task: str, variant:str | None=None, step: int | None = None) -> Path:
         try:
@@ -75,7 +75,7 @@ class Settings(BaseSettings):
 
 
     class Config:
-        env_file = ".env"
+        env_file = str(env_path)
 
 
 settings = Settings()
