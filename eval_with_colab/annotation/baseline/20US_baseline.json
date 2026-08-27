@@ -213,7 +213,7 @@
     ]
   },
   {
-    "Text": "As a traveler, I want to create named lists (e.g., \"Tokyo food\" or \"Paris museums\") and add saved spots to them, so that I can group my travel inspiration by destination or theme.",
+    "Text": "As a traveler, I want to create named lists (e.g., Tokyo food or Paris museums) and add saved spots to them, so that I can group my travel inspiration by destination or theme.",
     "Persona": [
       "traveler"
     ],
