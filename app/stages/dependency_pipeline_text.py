@@ -18,12 +18,12 @@ def run_dependency_pipeline_text(data_set_path: str, pairs=None):
     for a_id, b_id in pairs:
         print(f"Analyzing pair: {a_id} and {b_id}")
         results.append(detect_dependency_text(story_lookup[a_id], story_lookup[b_id]))
-    return results
+    return results, kept_ids
 
 if __name__ == '__main__':
     from utils.file_writer import save_results
 
     input_path = "test/results/annotated_stories.json"
     output_path = "test/results/result_dependency_text.json"
-    results = run_dependency_pipeline_text(input_path)
+    results, _ = run_dependency_pipeline_text(input_path)
     save_results(results, output_path, indent=4)

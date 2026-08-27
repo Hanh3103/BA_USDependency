@@ -1,5 +1,5 @@
 from typing import Literal, Optional
-from pydantic import BaseModel
+from pydantic import BaseModel, computed_field
 
 from schemas.annotation.annotation_schema import AnnotationSchema
 
@@ -104,6 +104,16 @@ class AnnotatedDependencyResult(BaseModel):
     step_2_classify: ClassifiedMatchResult
     final_llm: FoundedDependencyUsingAnnotated
     final_nlp: FoundedDependencyUsingAnnotated
+
+    @computed_field
+    @property
+    def dependencyFoundLLM(self) -> bool:
+        return len(self.final_llm.dependencies) > 0
+
+    @computed_field
+    @property
+    def dependencyFoundNLP(self) -> bool:
+        return len(self.final_nlp.dependencies) > 0
 
 
 # text-based dependency analysis result

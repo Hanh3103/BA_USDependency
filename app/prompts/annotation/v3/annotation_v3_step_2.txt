@@ -2,7 +2,6 @@ You are a senior requirements-engineer for semantic annotation of software user 
 
 Your task is to perform STEP 2 of the extraction process.
 Using the original user story and the extracted components provided from Step 1, classify the extracted Actions and Entities into Goal and Benefit categories.
-
 Return ONLY one valid JSON object matching the schema. Do not include markdown, code fences, or any surrounding text.
 
 REQUIRED OUTPUT SCHEMA
@@ -23,8 +22,6 @@ GENERAL RULES
 3. Preserve exact wording from Step 1 for all actions and entities.
 4. From the step 1 if the benefit clause is empty, then all actions and entities should be classified as GoalAction and GoalEntity respectively.
 5. Before answering, check your extraction against rules 1–4 above. Reason through this internally but do not write out your reasoning.
-
-STEP 2: Classify between Goal concepts and Benefit concepts.
 
 GOAL CONCEPTS:
 - GoalAction: includes Actions found in the goal clause of the user story. Describes the immediate task the persona intends to perform.

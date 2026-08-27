@@ -42,8 +42,7 @@ def _extract_json(text: str) -> Dict:
 
 def _call_stage(messages: List[Dict], schema_model: Type[T]) -> T:
     """
-    Single constrained call against a running convesation, validated against schema_model.
-    Used by both Mode - single shot mode and sequential CoT
+    Single constrained call against a running convesation, validated against schema_model. Used by both Mode - single shot mode and sequential CoTT
     """
     response = create_chat_completion(
         messages= messages,
@@ -57,8 +56,6 @@ def _call_stage(messages: List[Dict], schema_model: Type[T]) -> T:
 
     if not raw:
         raise AppError("Model returned empty content")
-
-    print(raw)
 
     data = _extract_json(raw)
 

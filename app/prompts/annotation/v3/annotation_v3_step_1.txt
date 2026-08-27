@@ -1,8 +1,6 @@
 You are a senior requirements-engineer for semantic annotation of software user stories.
 
-Your task is to perform STEP 1 of a structured extraction process on exactly one software user story.
-
-Return ONLY one valid JSON object. Do not reveal analysis, reasoning, markdown, code fences, comments, or any text outside the JSON object.
+Your task is to perform STEP 1 of a structured extraction process on exactly one software user story. Return ONLY one valid JSON object. Do not reveal analysis, reasoning, markdown, code fences, comments, or any text outside the JSON object.
 
 REQUIRED OUTPUT SCHEMA
 {
@@ -16,42 +14,40 @@ GENERAL EXTRACTION RULES
 1. Use only facts stated explicitly in the user story. Do not invent actions, entities, or relations.
 2. There are no duplicates in the lists.
 3. Preserve exact wording where required, but remove only articles and possessive determiners when they do not change the entity meaning.
-4. Never insert punctuation inside words. For example, write "trips", never "tr,ips".
+4. Never insert punctuation inside words. For example, write "tips", never "t,ips".
 5. Before answering, check your extraction against rules 1–4 above. Reason through this internally but do not write out your reasoning.
-
-STEP 1: Extract the "Persona", "Entities", "Actions", and benefit from the story.
 
 PERSONA EXTRACTION:
     DEFINITION: PERSONA is the noun naming the role or user type involved in the story, as stated in "As a(n) <Persona>". Adjectives that are part of the noun phrase should be included (e.g., "returning user", "new user").
     RULES:
     - Extract the noun phrase after "As a" or "As an", without the article.
-    - Keep modifiers that are part of the noun phrase (e.g., "returning user", "new user").
+    - Keep modifiers that are part of the noun phrase (e.g., "returning user", "new user", "store admin").
     - It can be more than one noun phrase if the story mentions multiple personas (e.g., "As a returning user and a new user...").
 
 ACTION EXTRACTION:
     DEFINITION: ACTIONS are the verbs that describe what the Persona wants to do or what benefit they want to achieve.
     RULES:
     - Extract the verbs from the user story, including any adverbs that are functionally meaningful (e.g., "permanently delete", "securely store").
-    - Split coordinated verbs into separate entries (e.g., "log in and log out" becomes ["log in", "log out"]).
-    - Preserve phrasal verbs exactly: "sign up", "log in", "log out", "walk through", "re-watch".
+    - Split coordinated verbs into separate entries (e.g., "browse and purchase" becomes ["browse", "purchase"]).
+    - Preserve phrasal verbs exactly: "sign up", "log in", "log out", "opt in", "opt out".
     - Trim actions by removing objects, articles, and context phrases but do not change the verb to canonical form (e.g., "sign up using my email" becomes "sign up", "log in my account" becomes "log in").
-    - Do not extract descriptive past participles used as noun modifiers as actions (e.g., "saved spots" is an entity, not an action).
+    - Do not extract descriptive past participles used as noun modifiers as actions (e.g., "verified items" is an entity, not an action).
     - Do not extract verbs that occur inside subordinate or relative clauses. Extract only the main action(s) of the goal clause and the benefit clause.
             Examples:
-            - "places I discover" → ignore "discover"
-            - "keep my organization up to date as my plans evolve" → extract "keep"; ignore "evolve"
-            - "re-watch the tips before visiting" → extract "re-watch"; ignore "visiting"
-            - "tutorial that demonstrates how to import a spot" → extract "walk through"; ignore "demonstrates", "import"
+            - "places I browse" → ignore "browse"
+            - "keep my order history up to date as my preferences evolve" → extract "keep"; ignore "evolve"
+            - "revisit the product photos before purchasing" → extract "revisit"; ignore "purchasing"
+            - "guide that demonstrates how to apply a coupon" → extract "walk through"; ignore "demonstrates", "apply"
 
 
 ENTITY EXTRACTION:
     DEFINITION: ENTITY is a noun representing an element or component of the system in the user story.
     RULES:
     - Extract all the nouns which fulfill the definition of ENTITY in the user story.
-    - Keep meaningful adjective modifiers that are part of the nouns (e.g., "saved spot", "named lists", "private notes").
-    - Remove nonessential articles and possessives (e.g., "my email" becomes "email").
-    - Split explicit coordinated entities into separate entries (e.g., "spots and trips" becomes ["spots", "trips"]).
-    - Expand explicit alternatives that share one head noun (e.g., "saved TikTok or Instagram video" becomes ["saved TikTok video", "saved Instagram video"]).
+    - Keep meaningful modifiers such as adjectives, participle, gerund etc. that are part of the nouns (e.g., "linked accounts", "recurring transfers", "private notes").
+    - Remove nonessential articles and possessives (e.g., "my balance" becomes "balance").
+    - Split explicit coordinated entities into separate entries (e.g., "statements and receipts" becomes ["statements", "receipts"])
+    - Expand explicit alternatives that share one head noun (e.g., "personal or business video" becomes ["personal account", "business account"]).
 
 BENEFIT EXTRACTION:
     DEFINITION: BENEFIT is the clause that describes the intended outcome or advantage of the actions.

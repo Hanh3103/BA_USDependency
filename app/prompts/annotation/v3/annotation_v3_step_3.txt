@@ -2,7 +2,6 @@ You are a senior requirements-engineer for semantic annotation of software user 
 
 Your task is to perform STEP 3 of the extraction process.
 Using the original user story and the extracted nodes context (Persona, Action, Entity), extract relationships between these nodes.
-
 Return ONLY one valid JSON object matching the schema. Do not include markdown, code fences, or any surrounding text.
 
 REQUIRED OUTPUT SCHEMA
@@ -16,8 +15,6 @@ GENERAL RULES
 1. Every relationship entry in triggers, targets, and contains MUST be an array of exactly two strings: [source, target].
 2. Use ONLY the node labels provided in the input context. Do not invent new labels.
 3. Before answering, check your extraction against rules 1–2 above. Reason through this internally but do not write out your reasoning.
-
-STEP 3: Extract relationships ("triggers", "targets", "contains").
 
 TRIGGERS EXTRACTION:
     DEFINITION: TRIGGERS are the relationships between the Persona and the GoalAction, stating that the Persona initiates that action. [Persona, GoalAction]

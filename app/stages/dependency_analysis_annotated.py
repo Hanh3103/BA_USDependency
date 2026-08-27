@@ -128,8 +128,8 @@ def classify_activities(step1_output: EntityMatchResult) -> ClassifiedMatchResul
                     "content": (
                         "Input:\n"
                         '{\n'
-                        '  "activity_a": {"action": "add", "entity": "spot"},\n'
-                        '  "activity_b": {"action": "attach", "entity": "saved spot"}\n'
+                        '  "activity_a": {"action": "create", "entity": "invoice"},\n'
+                        '  "activity_b": {"action": "attach", "entity": "saved invoice"}\n'
                         '}'
                     ),
                 },
@@ -137,8 +137,8 @@ def classify_activities(step1_output: EntityMatchResult) -> ClassifiedMatchResul
                     "role": "assistant",
                     "content": (
                         '{\n'
-                        '  "activity_a": {"action": "add", "entity": "spot", "operation_type": "CREATE"},\n'
-                        '  "activity_b": {"action": "attach", "entity": "saved spot", "operation_type": "UPDATE"}\n'
+                        '  "activity_a": {"action": "create", "entity": "invoice", "operation_type": "CREATE"},\n'
+                        '  "activity_b": {"action": "attach", "entity": "saved invoice", "operation_type": "UPDATE"}\n'
                         '}'
                     ),
                 },
@@ -221,8 +221,8 @@ def decide_dependency(step2_output: ClassifiedMatchResult) -> FoundedDependencyU
                         '{\n'
                         '  "story_a_id": "US-015",\n'
                         '  "story_b_id": "US-021",\n'
-                        '  "activity_a": {"action": "add", "entity": "spot", "operation_type": "CREATE"},\n'
-                        '  "activity_b": {"action": "attach", "entity": "saved spot", "operation_type": "UPDATE"}\n'
+                        '  "activity_a": {"action": "create", "entity": "invoice", "operation_type": "CREATE"},\n'
+                        '  "activity_b": {"action": "attach", "entity": "saved invoice", "operation_type": "UPDATE"}\n'
                         '}'
                     ),
                 },
@@ -269,8 +269,8 @@ def decide_dependency(step2_output: ClassifiedMatchResult) -> FoundedDependencyU
                         '{\n'
                         '  "story_a_id": "US-018",\n'
                         '  "story_b_id": "US-025",\n'
-                        '  "activity_a": {"action": "view", "entity": "map", "operation_type": "READ"},\n'
-                        '  "activity_b": {"action": "view", "entity": "map", "operation_type": "READ"}\n'
+                        '  "activity_a": {"action": "view", "entity": "invoice", "operation_type": "READ"},\n'
+                        '  "activity_b": {"action": "view", "entity": "invoice", "operation_type": "READ"}\n'
                         '}'
                     ),
                 },
