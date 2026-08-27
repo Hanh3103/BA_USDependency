@@ -9,8 +9,6 @@ from config import settings
 
 #BASE_URL = "http://ollama:11434/v1"  # this line for docker
 
-print(settings.models[0])
-
 
 @lru_cache(maxsize=1)
 def get_ollama_client() -> Client:
@@ -24,11 +22,11 @@ def get_ollama_client() -> Client:
 def create_chat_completion(
         *,
         messages: list[dict],
-        model: str = settings.models[0],
+        model: str,
         format: Optional[Union[Literal['', 'json'], dict]] = None,
 ):
     try:
-        return get_ollama_client().chat(
+        response =  get_ollama_client().chat(
             model=model,
             messages=messages,
             stream= False,
@@ -42,5 +40,7 @@ def create_chat_completion(
             keep_alive=settings.ollama_keep_alive,
             think=settings.ollama_think,
         )
+        assert response.model == model, f"Requested {model!r}, Ollama served {response.model!r}"
+        return response
     except (RequestError, ResponseError) as exc:
         raise LLMConnectionError(f"{exc.__class__.__name__}: {exc}") from exc

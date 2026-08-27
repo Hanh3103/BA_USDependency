@@ -35,7 +35,7 @@ class Settings(BaseSettings):
 
     @property
     def models(self) -> list[str] :
-        return self.ollama_models.split(",")  # Split the comma-separated string into a list
+        return self.ollama_models.split(",") 
 
     def prompt_path(self, task: str, variant:str | None=None, step: int | None = None) -> Path:
         try:

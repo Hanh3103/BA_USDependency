@@ -12,6 +12,18 @@
                         "entity": "new album"
                     },
                     "activity_b": {
+                        "action": "upload",
+                        "entity": "new photo"
+                    },
+                    "match_type": "exact",
+                    "explanation": "Both activities reference the identical entity string 'new' followed by a noun."
+                },
+                {
+                    "activity_a": {
+                        "action": "create",
+                        "entity": "new album"
+                    },
+                    "activity_b": {
                         "action": "rename",
                         "entity": "existing album"
                     },
@@ -43,6 +55,19 @@
                         "operation_type": "CREATE"
                     },
                     "activity_b": {
+                        "action": "upload",
+                        "entity": "new photo",
+                        "operation_type": "UPDATE"
+                    },
+                    "match_type": "exact"
+                },
+                {
+                    "activity_a": {
+                        "action": "create",
+                        "entity": "new album",
+                        "operation_type": "CREATE"
+                    },
+                    "activity_b": {
                         "action": "rename",
                         "entity": "existing album",
                         "operation_type": "UPDATE"
@@ -66,6 +91,21 @@
         },
         "final_llm": {
             "dependencies": [
+                {
+                    "prerequisite_id": "US-001",
+                    "dependent_id": "US-002",
+                    "prerequisite_activity": {
+                        "action": "create",
+                        "entity": "new album",
+                        "operation_type": "CREATE"
+                    },
+                    "dependent_activity": {
+                        "action": "upload",
+                        "entity": "new photo",
+                        "operation_type": "UPDATE"
+                    },
+                    "match_type": "exact"
+                },
                 {
                     "prerequisite_id": "US-001",
                     "dependent_id": "US-002",
@@ -109,6 +149,21 @@
                         "operation_type": "CREATE"
                     },
                     "dependent_activity": {
+                        "action": "upload",
+                        "entity": "new photo",
+                        "operation_type": "UPDATE"
+                    },
+                    "match_type": "exact"
+                },
+                {
+                    "prerequisite_id": "US-001",
+                    "dependent_id": "US-002",
+                    "prerequisite_activity": {
+                        "action": "create",
+                        "entity": "new album",
+                        "operation_type": "CREATE"
+                    },
+                    "dependent_activity": {
                         "action": "rename",
                         "entity": "existing album",
                         "operation_type": "UPDATE"
@@ -131,6 +186,8 @@
                     "match_type": "semantic"
                 }
             ]
-        }
+        },
+        "dependencyFoundLLM": true,
+        "dependencyFoundNLP": true
     }
 ]

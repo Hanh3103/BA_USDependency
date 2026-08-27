@@ -3,7 +3,7 @@ from stages.dependency_analysis_text import detect_dependency_text
 from utils.file_parser import load_annotated_stories
 from itertools import combinations
 
-def run_dependency_pipeline_text(data_set_path: str, pairs=None):
+def run_dependency_pipeline_text(data_set_path: str, model:str,  pairs=None):
     stories = load_annotated_stories(data_set_path)
     kept, dropped = filter_well_formed(stories)
     print(f"Kept {len(kept)} well-formed stories, dropped {len(dropped)} ill-formed stories.")
@@ -17,7 +17,7 @@ def run_dependency_pipeline_text(data_set_path: str, pairs=None):
     results = []
     for a_id, b_id in pairs:
         print(f"Analyzing pair: {a_id} and {b_id}")
-        results.append(detect_dependency_text(story_lookup[a_id], story_lookup[b_id]))
+        results.append(detect_dependency_text(story_lookup[a_id], story_lookup[b_id], model=model))
     return results, kept_ids
 
 if __name__ == '__main__':
@@ -25,5 +25,5 @@ if __name__ == '__main__':
 
     input_path = "test/results/annotated_stories.json"
     output_path = "test/results/result_dependency_text.json"
-    results, _ = run_dependency_pipeline_text(input_path)
+    results, _ = run_dependency_pipeline_text(input_path, model="qwen3:1.7b", pairs=None)
     save_results(results, output_path, indent=4)

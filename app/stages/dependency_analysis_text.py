@@ -5,7 +5,7 @@ import json
 
 TEXT_PROMPT_PATH = settings.prompt_path("dependency_analysis", variant="text")
 
-def detect_dependency_text(story_a, story_b) -> TextDependencyResult:
+def detect_dependency_text(story_a, story_b, model:str) -> TextDependencyResult:
     prompt = _load_prompt(TEXT_PROMPT_PATH)
     payload = {
         "story_a": {"id": story_a.id, "text": story_a.Text, "benefit": story_a.benefit},
@@ -87,7 +87,7 @@ def detect_dependency_text(story_a, story_b) -> TextDependencyResult:
     ]
     
     try:
-        return _call_stage(messages=messages, schema_model=TextDependencyResult)
+        return _call_stage(messages=messages, schema_model=TextDependencyResult, model=model)
     except Exception as err:
         print(f"Warning: Processing failed for pair ({story_a.id}, {story_b.id}): {err}")
         return TextDependencyResult(

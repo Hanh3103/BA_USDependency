@@ -40,12 +40,13 @@ def _extract_json(text: str) -> Dict:
     raise AppError("Model returned unterminated JSON")
 
 
-def _call_stage(messages: List[Dict], schema_model: Type[T]) -> T:
+def _call_stage(messages: List[Dict], schema_model: Type[T], model: str) -> T:
     """
     Single constrained call against a running convesation, validated against schema_model. Used by both Mode - single shot mode and sequential CoTT
     """
     response = create_chat_completion(
         messages= messages,
+        model=model,
         format=schema_model.model_json_schema()
     )
 

@@ -2,23 +2,7 @@
     {
         "story_a_id": "US-001",
         "story_b_id": "US-002",
-        "dependencyFound": true,
-        "dependencies": [
-            {
-                "prerequisite_id": "US-001",
-                "dependent_id": "US-002",
-                "explanationOfDependency": "Story A creates a 'trip' and 'saved spot', which Story B views as an existing 'saved spot' to attach to a 'trip'.",
-                "matchingTextPairs": [
-                    [
-                        "create a new trip",
-                        "attach it to an existing trip"
-                    ],
-                    [
-                        "add a saved spot",
-                        "save a new spot"
-                    ]
-                ]
-            }
-        ]
+        "dependencyFound": false,
+        "dependencies": []
     }
 ]

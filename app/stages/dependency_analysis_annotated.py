@@ -14,7 +14,7 @@ DECISION_PROMPT_PATH = settings.prompt_path("dependency_analysis", variant="anno
 def cartesian_activity_pairs(story_a: StoryActivity, story_b: StoryActivity) -> list[tuple[ActionEntityPair, ActionEntityPair]]:
     return list(product(story_a.activity, story_b.activity))
 
-def find_entity_matches(story_a: StoryActivity, story_b: StoryActivity) -> EntityMatchResult:
+def find_entity_matches(story_a: StoryActivity, story_b: StoryActivity, model:str) -> EntityMatchResult:
     entity_prompt = _load_prompt(ENTITY_PROMPT_PATH)
     candidate_pairs = cartesian_activity_pairs(story_a, story_b)
 
@@ -97,6 +97,7 @@ def find_entity_matches(story_a: StoryActivity, story_b: StoryActivity) -> Entit
                 {"role": "user", "content": f"Candidate pair:\n{pair_json}"},
             ],
             schema_model=PairMatchVerdict,
+            model=model
         )
         if result.match_type in ("exact", "semantic"):
             entity_matches.append({
@@ -113,7 +114,7 @@ def find_entity_matches(story_a: StoryActivity, story_b: StoryActivity) -> Entit
     )
 
 
-def classify_activities(step1_output: EntityMatchResult) -> ClassifiedMatchResult:
+def classify_activities(step1_output: EntityMatchResult, model:str) -> ClassifiedMatchResult:
     classify_prompt = _load_prompt(CLASSIFY_PROMPT_PATH)
     classified_matches: list[ClassifiedMatch] = []
 
@@ -183,6 +184,7 @@ def classify_activities(step1_output: EntityMatchResult) -> ClassifiedMatchResul
                 {"role": "user", "content": f"Input:\n{pair_input.model_dump_json(indent=2)}"},
             ],
             schema_model=ClassifiedActivityPair,
+            model=model
         )
 
         classified_matches.append(
@@ -199,7 +201,7 @@ def classify_activities(step1_output: EntityMatchResult) -> ClassifiedMatchResul
         classified_matches=classified_matches,
     )
 
-def decide_dependency(step2_output: ClassifiedMatchResult) -> FoundedDependencyUsingAnnotated:
+def decide_dependency(step2_output: ClassifiedMatchResult, model: str) -> FoundedDependencyUsingAnnotated:
     decision_prompt = _load_prompt(DECISION_PROMPT_PATH)
     dependencies: list[DependencyEntryAnnotated] = []
 
@@ -281,6 +283,7 @@ def decide_dependency(step2_output: ClassifiedMatchResult) -> FoundedDependencyU
                 {"role": "user", "content": f"Input:\n{pair_input.model_dump_json(indent=2)}"},
             ],
             schema_model=DependencyVerdict,
+            model=model
         )
 
         if not result.qualifies:
@@ -346,10 +349,10 @@ def decide_dependency_nlp(step2_output: ClassifiedMatchResult) -> FoundedDepende
     return FoundedDependencyUsingAnnotated(dependencies=dependencies)
 
 
-def detect_dependency(story_a: StoryActivity, story_b: StoryActivity) -> AnnotatedDependencyResult:
+def detect_dependency(story_a: StoryActivity, story_b: StoryActivity, model:str) -> AnnotatedDependencyResult:
     try:
 
-        step_1 = find_entity_matches(story_a, story_b)
+        step_1 = find_entity_matches(story_a, story_b, model)
         if not step_1.entity_matches:
             print(f"No matches found for pair ({story_a.id}, {story_b.id}). Skipping further analysis.")
             return AnnotatedDependencyResult(
@@ -360,8 +363,8 @@ def detect_dependency(story_a: StoryActivity, story_b: StoryActivity) -> Annotat
                 final_llm=FoundedDependencyUsingAnnotated(dependencies=[]),
                 final_nlp=FoundedDependencyUsingAnnotated(dependencies=[])
             )
-        step_2 = classify_activities(step_1)
-        step_3_llm = decide_dependency(step_2)
+        step_2 = classify_activities(step_1, model)
+        step_3_llm = decide_dependency(step_2, model)
         step_3_nlp = decide_dependency_nlp(step_2)
 
         return AnnotatedDependencyResult(
