@@ -53,8 +53,6 @@ def load_raw_stories(path: str) -> list[str]:
 
 
 
-
-
 def load_annotated_stories(path:str) -> list[AnnotatedStory]:
     with open(path) as f:
         raw_data = json.load(f)

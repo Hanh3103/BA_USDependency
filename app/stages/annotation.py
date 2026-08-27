@@ -1,10 +1,7 @@
 import json
 import time
 from typing import Dict, Optional, Literal
-from pathlib import Path
 import argparse
-
-from connectionsHandle.ollama_connection import create_chat_completion
 from errors.app_error import AppError
 from errors.llm_errors import LLMConnectionError
 from schemas.annotation.annotation_schema import AnnotationSchema, Step1Schema, Step2Schema, Step3Schema
@@ -20,18 +17,19 @@ STAGE3_PROMPT_PATH = settings.prompt_path("annotation", step=3)
 MODE = Literal["single", "sequential"]
 
 
-def _run_single(user_story: str) -> AnnotationSchema:
+def _run_single(user_story: str, model:str) -> AnnotationSchema:
     prompt = _load_prompt(SINGLE_PROMPT_PATH)
     return _call_stage(
         messages=[
             {"role": "system", "content": prompt},
             {"role": "user", "content": user_story},
         ],
-        schema_model= AnnotationSchema
+        schema_model= AnnotationSchema,
+        model=model,
     )
 
 
-def _run_3steps(user_story: str) -> AnnotationSchema:
+def _run_3steps(user_story: str, model:str) -> AnnotationSchema:
     # STEP 1: Extract raw components
     step1_prompt = _load_prompt(STAGE1_PROMPT_PATH)
     step1_res = _call_stage(
@@ -40,6 +38,7 @@ def _run_3steps(user_story: str) -> AnnotationSchema:
             {"role": "user", "content": user_story},
         ],
         schema_model=Step1Schema,
+        model=model,
     )
 
     # STEP 2: Classify into Goal/Benefit concepts
@@ -52,6 +51,7 @@ def _run_3steps(user_story: str) -> AnnotationSchema:
             {"role": "user", "content": "Classify the extracted Actions and Entities into Goal and Benefit concepts."},
         ],
         schema_model=Step2Schema,
+        model=model,
     )
 
     # STEP 3: Extract relationships (triggers, targets, contains)
@@ -74,6 +74,7 @@ def _run_3steps(user_story: str) -> AnnotationSchema:
              "content": "Using only the nodes listed above, extract the triggers, targets, and contains edges."},
         ],
         schema_model=Step3Schema,
+        model=model
     )
 
     # Combine all steps into the final result
@@ -89,11 +90,11 @@ def _run_3steps(user_story: str) -> AnnotationSchema:
 
 # main run
 
-def run(user_story: str, *, mode: MODE = "sequential", temperature_override: Optional[float] = None) -> Dict:
+def run(user_story: str, *, mode: MODE = "sequential", temperature_override: Optional[float] = None, model: str) -> Dict:
     if mode == "single":
-        validated = _run_single(user_story)
+        validated = _run_single(user_story, model=model)
     elif mode == "sequential":
-        validated = _run_3steps(user_story)
+        validated = _run_3steps(user_story, model=model)
     else:
         raise ValueError(f"Unknown mode: {mode!r} (expected 'single' or 'sequential')")
 
@@ -101,33 +102,31 @@ def run(user_story: str, *, mode: MODE = "sequential", temperature_override: Opt
     return result
 
 
-def annotate(user_story: str, story_id: str, max_retries: int = 2, mode: MODE = "sequential") -> Optional[Dict]:
+def annotate(user_story: str,story_id:str, model: str, max_retries: int = 2, mode: MODE = "sequential") -> Optional[Dict]:
     last_error = None
     for attempt in range(max_retries):
         start = time.monotonic()
         try:
-            annotation = run(user_story, mode=mode)
-            elapsed = time.monotonic() - start
-            print(f"  ✓ {story_id} annotated in {elapsed:.1f}s (attempt {attempt + 1}, mode={mode})")
-            annotation["id"] = story_id
+            annotation = run(user_story, mode=mode, model=model)
+            print(f"{story_id} annotated in {elapsed:.1f}s (attempt {attempt + 1}, mode={mode})")
             return annotation
 
         except LLMConnectionError as e:
             elapsed = time.monotonic() - start
             last_error = e
-            print(f"  ⚠ {story_id} attempt {attempt + 1} timed out/failed after {elapsed:.1f}s: {e}")
+            print(f"{story_id} attempt {attempt + 1} timed out/failed after {elapsed:.1f}s: {e}")
 
         except AppError as e:
             elapsed = time.monotonic() - start
             last_error = e
-            print(f"  ⚠ {story_id} attempt {attempt + 1} failed after {elapsed:.1f}s: {e}")
+            print(f"{story_id} attempt {attempt + 1} failed after {elapsed:.1f}s: {e}")
 
         except Exception as e:
             elapsed = time.monotonic() - start
             last_error = e
-            print(f"  ⚠ {story_id} attempt {attempt + 1} unexpected error after {elapsed:.1f}s: {e!r}")
+            print(f"{story_id} attempt {attempt + 1} unexpected error after {elapsed:.1f}s: {e!r}")
 
-    print(f"  ✗ Skipping {story_id} after {max_retries} attempts — last error: {last_error}")
+    print(f"Skipping {story_id} after {max_retries} attempts — last error: {last_error}")
     return None
 
 
@@ -137,6 +136,7 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser()
     parser.add_argument("--mode", choices=["sequential", "single"], default="sequential")
+    parser.add_argument("--model", default="qwen3:1.7b")
     args = parser.parse_args()
 
 
@@ -149,36 +149,21 @@ if __name__ == "__main__":
     for story in stories:
         print(story)
 
-    print("Warming up model...")
-    warm_start = time.monotonic()
-    try:
-        create_chat_completion(
-            messages=[{"role": "user", "content": "hi"}],
-        )
-        print(f"  ✓ Model warm after {time.monotonic() - warm_start:.1f}s")
-    except LLMConnectionError as e:
-        print(f"  ⚠ Warm-up failed: {e} — proceeding anyway, first story may be slow")
 
     results = []
-    failed_ids = []
+    failed_text = []
 
     for i, story in enumerate(stories):
         story_id = f"US-{i+1:03d}"
-        print(f"  Annotating {story_id}...")
-
-        ann = annotate(story, story_id, mode=args.mode)
-
+        ann = annotate(story, story_id=story_id, mode=args.mode, model=args.model)
         if ann:
             results.append(ann)
         else:
-            failed_ids.append(story_id)
+            failed_text.append(story)
 
-        # Save after every story, not just at the end — a crash or manual
-        # interrupt (Ctrl+C) later in the run no longer loses everything
-        # annotated so far.
         save_results(results, output_path, indent=2)
 
     print(f"\nDone.")
     print(f"  Annotated  : {len(results)} stories")
-    print(f"  Failed     : {len(failed_ids)} stories {failed_ids if failed_ids else ''}")
+    print(f"  Failed     : {len(failed_text)} stories {failed_text if failed_text else ''}")
     print(f"  Saved to   : {output_path}")
