@@ -109,7 +109,12 @@ def annotate(user_story: str,story_id:str, model: str, max_retries: int = 2, mod
         try:
             annotation = run(user_story, mode=mode, model=model)
             print(f"{story_id} annotated in {elapsed:.1f}s (attempt {attempt + 1}, mode={mode})")
-            return annotation
+            return {
+                "story_id": story_id,
+                "annotation": annotation,
+                "runtime_sec": round(elapsed, 3),
+                "attempts": attempt + 1,
+            }
 
         except LLMConnectionError as e:
             elapsed = time.monotonic() - start
