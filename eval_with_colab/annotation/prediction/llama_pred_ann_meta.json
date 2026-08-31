@@ -1,0 +1,151 @@
+{
+  "model": "llama3.1:8b",
+  "mode": "sequential",
+  "raw_file": "/content/BA_USDependency/eval_with_colab/annotation/raw/test_1.txt",
+  "n_stories_input": 20,
+  "n_stories_annotated": 20,
+  "n_stories_failed": 0,
+  "per_story": [
+    {
+      "story_id": "US-001",
+      "runtime_sec": 101.956,
+      "attempts": 1,
+      "model": "llama3.1:8b",
+      "mode": "sequential"
+    },
+    {
+      "story_id": "US-002",
+      "runtime_sec": 7.073,
+      "attempts": 1,
+      "model": "llama3.1:8b",
+      "mode": "sequential"
+    },
+    {
+      "story_id": "US-003",
+      "runtime_sec": 8.007,
+      "attempts": 1,
+      "model": "llama3.1:8b",
+      "mode": "sequential"
+    },
+    {
+      "story_id": "US-004",
+      "runtime_sec": 7.523,
+      "attempts": 1,
+      "model": "llama3.1:8b",
+      "mode": "sequential"
+    },
+    {
+      "story_id": "US-005",
+      "runtime_sec": 7.733,
+      "attempts": 1,
+      "model": "llama3.1:8b",
+      "mode": "sequential"
+    },
+    {
+      "story_id": "US-006",
+      "runtime_sec": 6.704,
+      "attempts": 1,
+      "model": "llama3.1:8b",
+      "mode": "sequential"
+    },
+    {
+      "story_id": "US-007",
+      "runtime_sec": 7.613,
+      "attempts": 1,
+      "model": "llama3.1:8b",
+      "mode": "sequential"
+    },
+    {
+      "story_id": "US-008",
+      "runtime_sec": 6.252,
+      "attempts": 1,
+      "model": "llama3.1:8b",
+      "mode": "sequential"
+    },
+    {
+      "story_id": "US-009",
+      "runtime_sec": 7.783,
+      "attempts": 1,
+      "model": "llama3.1:8b",
+      "mode": "sequential"
+    },
+    {
+      "story_id": "US-010",
+      "runtime_sec": 5.716,
+      "attempts": 1,
+      "model": "llama3.1:8b",
+      "mode": "sequential"
+    },
+    {
+      "story_id": "US-011",
+      "runtime_sec": 8.712,
+      "attempts": 1,
+      "model": "llama3.1:8b",
+      "mode": "sequential"
+    },
+    {
+      "story_id": "US-012",
+      "runtime_sec": 7.993,
+      "attempts": 1,
+      "model": "llama3.1:8b",
+      "mode": "sequential"
+    },
+    {
+      "story_id": "US-013",
+      "runtime_sec": 8.483,
+      "attempts": 1,
+      "model": "llama3.1:8b",
+      "mode": "sequential"
+    },
+    {
+      "story_id": "US-014",
+      "runtime_sec": 9.57,
+      "attempts": 1,
+      "model": "llama3.1:8b",
+      "mode": "sequential"
+    },
+    {
+      "story_id": "US-015",
+      "runtime_sec": 8.656,
+      "attempts": 1,
+      "model": "llama3.1:8b",
+      "mode": "sequential"
+    },
+    {
+      "story_id": "US-016",
+      "runtime_sec": 8.237,
+      "attempts": 1,
+      "model": "llama3.1:8b",
+      "mode": "sequential"
+    },
+    {
+      "story_id": "US-017",
+      "runtime_sec": 9.375,
+      "attempts": 1,
+      "model": "llama3.1:8b",
+      "mode": "sequential"
+    },
+    {
+      "story_id": "US-018",
+      "runtime_sec": 6.667,
+      "attempts": 1,
+      "model": "llama3.1:8b",
+      "mode": "sequential"
+    },
+    {
+      "story_id": "US-019",
+      "runtime_sec": 8.69,
+      "attempts": 1,
+      "model": "llama3.1:8b",
+      "mode": "sequential"
+    },
+    {
+      "story_id": "US-020",
+      "runtime_sec": 11.015,
+      "attempts": 1,
+      "model": "llama3.1:8b",
+      "mode": "sequential"
+    }
+  ],
+  "failed_stories": []
+}

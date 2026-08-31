@@ -1,0 +1,1128 @@
+[
+  {
+    "Text": "As a new user, I want to sign up using my email or an existing Google/Apple account, so that my saved spots and trips are securely stored and synced across my devices.",
+    "mode": "sequential",
+    "Persona": [
+      "new user"
+    ],
+    "Action": {
+      "GoalAction": [
+        "sign up"
+      ],
+      "BenefitAction": [
+        "are securely stored and synced across my devices"
+      ]
+    },
+    "Entity": {
+      "GoalEntity": [
+        "email",
+        "Google account",
+        "Apple account"
+      ],
+      "BenefitEntity": [
+        "saved spots",
+        "trips",
+        "devices"
+      ]
+    },
+    "benefit": "my saved spots and trips are securely stored and synced across my devices",
+    "triggers": [
+      [
+        "new user",
+        "sign up"
+      ]
+    ],
+    "targets": [
+      [
+        "sign up",
+        "email"
+      ],
+      [
+        "sign up",
+        "Google account"
+      ],
+      [
+        "sign up",
+        "Apple account"
+      ]
+    ],
+    "contains": []
+  },
+  {
+    "Text": "As a returning user, I want to log in my account on a new device and log out when I'm finished, so that I can access my travel data safely and maintain privacy on shared devices.",
+    "mode": "sequential",
+    "Persona": [
+      "returning user"
+    ],
+    "Action": {
+      "GoalAction": [
+        "log in",
+        "log out"
+      ],
+      "BenefitAction": [
+        "access my travel data safely",
+        "maintain privacy on shared devices"
+      ]
+    },
+    "Entity": {
+      "GoalEntity": [
+        "new device"
+      ],
+      "BenefitEntity": [
+        "travel data",
+        "shared devices"
+      ]
+    },
+    "benefit": "I can access my travel data safely and maintain privacy on shared devices",
+    "triggers": [
+      [
+        "returning user",
+        "log in"
+      ],
+      [
+        "returning user",
+        "log out"
+      ]
+    ],
+    "targets": [
+      [
+        "log in",
+        "new device"
+      ],
+      [
+        "log out",
+        "new device"
+      ],
+      [
+        "log in",
+        "travel data"
+      ],
+      [
+        "log out",
+        "travel data"
+      ]
+    ],
+    "contains": []
+  },
+  {
+    "Text": "As a user, I want to walk through a short, guided tutorial that demonstrates how to import a spot, create a list, and generate an itinerary, so that I can understand the app's core workflow without reading external documentation.",
+    "mode": "sequential",
+    "Persona": [
+      "user"
+    ],
+    "Action": {
+      "GoalAction": [
+        "walk through",
+        "import",
+        "create",
+        "generate"
+      ],
+      "BenefitAction": [
+        "understand"
+      ]
+    },
+    "Entity": {
+      "GoalEntity": [
+        "tutorial",
+        "spot",
+        "list",
+        "itinerary"
+      ],
+      "BenefitEntity": [
+        "app's core workflow",
+        "external documentation"
+      ]
+    },
+    "benefit": "I can understand the app's core workflow without reading external documentation",
+    "triggers": [
+      [
+        "user",
+        "walk through"
+      ],
+      [
+        "user",
+        "import"
+      ],
+      [
+        "user",
+        "create"
+      ],
+      [
+        "user",
+        "generate"
+      ]
+    ],
+    "targets": [
+      [
+        "walk through",
+        "tutorial"
+      ],
+      [
+        "import",
+        "spot"
+      ],
+      [
+        "create",
+        "list"
+      ],
+      [
+        "generate",
+        "itinerary"
+      ]
+    ],
+    "contains": []
+  },
+  {
+    "Text": "As a traveler, I want to import a location from a saved TikTok or Instagram video with a single tap, so that I can quickly capture travel inspiration without manually typing details.",
+    "mode": "sequential",
+    "Persona": [
+      "traveler"
+    ],
+    "Action": {
+      "GoalAction": [
+        "import",
+        "capture"
+      ],
+      "BenefitAction": [
+        "quickly capture travel inspiration"
+      ]
+    },
+    "Entity": {
+      "GoalEntity": [
+        "location",
+        "TikTok video",
+        "Instagram video"
+      ],
+      "BenefitEntity": [
+        "travel inspiration"
+      ]
+    },
+    "benefit": "I can quickly capture travel inspiration without manually typing details",
+    "triggers": [
+      [
+        "traveler",
+        "import"
+      ],
+      [
+        "traveler",
+        "capture"
+      ]
+    ],
+    "targets": [
+      [
+        "import",
+        "location"
+      ],
+      [
+        "import",
+        "TikTok video"
+      ],
+      [
+        "import",
+        "Instagram video"
+      ],
+      [
+        "capture",
+        "location"
+      ],
+      [
+        "capture",
+        "TikTok video"
+      ],
+      [
+        "capture",
+        "Instagram video"
+      ]
+    ],
+    "contains": []
+  },
+  {
+    "Text": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth.",
+    "mode": "sequential",
+    "Persona": [
+      "traveler"
+    ],
+    "Action": {
+      "GoalAction": [
+        "add",
+        "enter",
+        "select"
+      ],
+      "BenefitAction": [
+        "save"
+      ]
+    },
+    "Entity": {
+      "GoalEntity": [
+        "spot",
+        "map"
+      ],
+      "BenefitEntity": [
+        "places",
+        "social media",
+        "blogs",
+        "word-of-mouth"
+      ]
+    },
+    "benefit": "so that I can save places I discover outside of social media",
+    "triggers": [
+      [
+        "traveler",
+        "add"
+      ],
+      [
+        "traveler",
+        "enter"
+      ],
+      [
+        "traveler",
+        "select"
+      ]
+    ],
+    "targets": [
+      [
+        "add",
+        "spot"
+      ],
+      [
+        "enter",
+        "spot"
+      ],
+      [
+        "select",
+        "map"
+      ]
+    ],
+    "contains": []
+  },
+  {
+    "Text": "As a traveler, I want to attach private notes (e.g., reservation numbers or tips) to any saved spot, so that I can keep critical information together with the place it belongs to.",
+    "mode": "sequential",
+    "Persona": [
+      "traveler"
+    ],
+    "Action": {
+      "GoalAction": [
+        "attach",
+        "keep"
+      ],
+      "BenefitAction": [
+        "keep"
+      ]
+    },
+    "Entity": {
+      "GoalEntity": [
+        "private notes",
+        "reservation numbers",
+        "tips",
+        "saved spot"
+      ],
+      "BenefitEntity": []
+    },
+    "benefit": "so that I can keep critical information together with the place it belongs to",
+    "triggers": [
+      [
+        "traveler",
+        "attach"
+      ],
+      [
+        "traveler",
+        "keep"
+      ]
+    ],
+    "targets": [
+      [
+        "attach",
+        "saved spot"
+      ],
+      [
+        "keep",
+        "saved spot"
+      ]
+    ],
+    "contains": []
+  },
+  {
+    "Text": "As a traveler, I want to open the original TikTok or Instagram video that was used to save a spot, so that I can rewatch the creator's tips and context before visiting.",
+    "mode": "sequential",
+    "Persona": [
+      "traveler"
+    ],
+    "Action": {
+      "GoalAction": [
+        "open"
+      ],
+      "BenefitAction": [
+        "rewatch"
+      ]
+    },
+    "Entity": {
+      "GoalEntity": [
+        "original TikTok",
+        "Instagram video",
+        "spot"
+      ],
+      "BenefitEntity": [
+        "creator's tips",
+        "context"
+      ]
+    },
+    "benefit": "so that I can rewatch the creator's tips and context before visiting",
+    "triggers": [
+      [
+        "traveler",
+        "open"
+      ]
+    ],
+    "targets": [
+      [
+        "open",
+        "original TikTok"
+      ],
+      [
+        "open",
+        "Instagram video"
+      ],
+      [
+        "rewatch",
+        "creator's tips"
+      ],
+      [
+        "rewatch",
+        "context"
+      ]
+    ],
+    "contains": []
+  },
+  {
+    "Text": "As a traveler, I want to remove a saved spot from my lists, so that my lists and map stay clean and only contain places I still intend to visit.",
+    "mode": "sequential",
+    "Persona": [
+      "traveler"
+    ],
+    "Action": {
+      "GoalAction": [
+        "remove"
+      ],
+      "BenefitAction": [
+        "stay"
+      ]
+    },
+    "Entity": {
+      "GoalEntity": [
+        "saved spot"
+      ],
+      "BenefitEntity": [
+        "lists",
+        "map",
+        "places"
+      ]
+    },
+    "benefit": "my lists and map stay clean and only contain places I still intend to visit",
+    "triggers": [
+      [
+        "traveler",
+        "remove"
+      ]
+    ],
+    "targets": [
+      [
+        "remove",
+        "saved spot"
+      ]
+    ],
+    "contains": []
+  },
+  {
+    "Text": "As a traveler, I want to create named lists (e.g., Tokyo food or Paris museums) and add saved spots to them, so that I can group my travel inspiration by destination or theme.",
+    "mode": "sequential",
+    "Persona": [
+      "traveler"
+    ],
+    "Action": {
+      "GoalAction": [
+        "create",
+        "add"
+      ],
+      "BenefitAction": [
+        "group"
+      ]
+    },
+    "Entity": {
+      "GoalEntity": [
+        "named lists",
+        "saved spots"
+      ],
+      "BenefitEntity": [
+        "destination",
+        "theme",
+        "travel inspiration"
+      ]
+    },
+    "benefit": "so that I can group my travel inspiration by destination or theme",
+    "triggers": [
+      [
+        "traveler",
+        "create"
+      ],
+      [
+        "traveler",
+        "add"
+      ],
+      [
+        "traveler",
+        "group"
+      ]
+    ],
+    "targets": [
+      [
+        "create",
+        "named lists"
+      ],
+      [
+        "add",
+        "saved spots"
+      ],
+      [
+        "group",
+        "travel inspiration"
+      ]
+    ],
+    "contains": []
+  },
+  {
+    "Text": "As a traveler, I want to change the name of an existing list, so that I can keep my organization up to date as my plans evolve.",
+    "mode": "sequential",
+    "Persona": [
+      "traveler"
+    ],
+    "Action": {
+      "GoalAction": [
+        "change"
+      ],
+      "BenefitAction": [
+        "keep"
+      ]
+    },
+    "Entity": {
+      "GoalEntity": [
+        "list"
+      ],
+      "BenefitEntity": [
+        "organization",
+        "plans"
+      ]
+    },
+    "benefit": "so that I can keep my organization up to date as my plans evolve",
+    "triggers": [
+      [
+        "traveler",
+        "change"
+      ]
+    ],
+    "targets": [
+      [
+        "change",
+        "list"
+      ]
+    ],
+    "contains": []
+  },
+  {
+    "Text": "As a traveler, I want to see all my saved spots displayed as pins on a live map, so that I can understand their spatial distribution and plan routes more effectively.",
+    "mode": "sequential",
+    "Persona": [
+      "traveler"
+    ],
+    "Action": {
+      "GoalAction": [
+        "see"
+      ],
+      "BenefitAction": [
+        "plan"
+      ]
+    },
+    "Entity": {
+      "GoalEntity": [
+        "spots",
+        "pins",
+        "live map"
+      ],
+      "BenefitEntity": [
+        "spatial distribution",
+        "routes"
+      ]
+    },
+    "benefit": "I can understand their spatial distribution and plan routes more effectively",
+    "triggers": [
+      [
+        "traveler",
+        "see"
+      ],
+      [
+        "traveler",
+        "plan"
+      ]
+    ],
+    "targets": [
+      [
+        "see",
+        "spots"
+      ],
+      [
+        "see",
+        "pins"
+      ],
+      [
+        "see",
+        "live map"
+      ],
+      [
+        "plan",
+        "routes"
+      ],
+      [
+        "plan",
+        "spatial distribution"
+      ]
+    ],
+    "contains": []
+  },
+  {
+    "Text": "As a traveler, I want to filter the map to show only spots from a specific list, so that I can focus on places relevant to a particular trip or category.",
+    "mode": "sequential",
+    "Persona": [
+      "traveler"
+    ],
+    "Action": {
+      "GoalAction": [
+        "filter",
+        "show"
+      ],
+      "BenefitAction": [
+        "focus"
+      ]
+    },
+    "Entity": {
+      "GoalEntity": [
+        "map",
+        "spots",
+        "list"
+      ],
+      "BenefitEntity": [
+        "trip",
+        "category"
+      ]
+    },
+    "benefit": "so that I can focus on places relevant to a particular trip or category",
+    "triggers": [
+      [
+        "traveler",
+        "filter"
+      ],
+      [
+        "traveler",
+        "show"
+      ]
+    ],
+    "targets": [
+      [
+        "filter",
+        "map"
+      ],
+      [
+        "filter",
+        "spots"
+      ],
+      [
+        "filter",
+        "list"
+      ],
+      [
+        "show",
+        "map"
+      ],
+      [
+        "show",
+        "spots"
+      ],
+      [
+        "show",
+        "list"
+      ],
+      [
+        "focus",
+        "trip"
+      ],
+      [
+        "focus",
+        "category"
+      ]
+    ],
+    "contains": []
+  },
+  {
+    "Text": "As a traveler, I want to specify the start date, end date, or total number of days for a trip, so that the AI itinerary matches the exact length of my stay.",
+    "mode": "sequential",
+    "Persona": [
+      "traveler"
+    ],
+    "Action": {
+      "GoalAction": [
+        "specify"
+      ],
+      "BenefitAction": [
+        "match"
+      ]
+    },
+    "Entity": {
+      "GoalEntity": [
+        "start date",
+        "end date",
+        "total number of days",
+        "trip"
+      ],
+      "BenefitEntity": [
+        "AI itinerary"
+      ]
+    },
+    "benefit": "so that the AI itinerary matches the exact length of my stay",
+    "triggers": [
+      [
+        "traveler",
+        "specify"
+      ]
+    ],
+    "targets": [
+      [
+        "specify",
+        "start date"
+      ],
+      [
+        "specify",
+        "end date"
+      ],
+      [
+        "specify",
+        "total number of days"
+      ],
+      [
+        "match",
+        "AI itinerary"
+      ]
+    ],
+    "contains": []
+  },
+  {
+    "Text": "As a traveler, I want to select a destination, travel dates, and a list of saved spots and have the app automatically generate a logically ordered, day-by-day itinerary, so that I can transform my scattered ideas into a structured plan without manual scheduling.",
+    "mode": "sequential",
+    "Persona": [
+      "traveler"
+    ],
+    "Action": {
+      "GoalAction": [
+        "select",
+        "travel dates",
+        "have",
+        "generate"
+      ],
+      "BenefitAction": [
+        "transform"
+      ]
+    },
+    "Entity": {
+      "GoalEntity": [
+        "destination",
+        "saved spots",
+        "itinerary"
+      ],
+      "BenefitEntity": [
+        "plan"
+      ]
+    },
+    "benefit": "I can transform my scattered ideas into a structured plan without manual scheduling",
+    "triggers": [
+      [
+        "traveler",
+        "select"
+      ],
+      [
+        "traveler",
+        "travel dates"
+      ],
+      [
+        "traveler",
+        "have"
+      ],
+      [
+        "traveler",
+        "generate"
+      ]
+    ],
+    "targets": [
+      [
+        "select",
+        "destination"
+      ],
+      [
+        "select",
+        "saved spots"
+      ],
+      [
+        "generate",
+        "itinerary"
+      ],
+      [
+        "transform",
+        "plan"
+      ]
+    ],
+    "contains": []
+  },
+  {
+    "Text": "As a traveler, I want to view the generated itinerary as a daily route on a map, so that I can see the travel distance and logical flow between stops at a glance.",
+    "mode": "sequential",
+    "Persona": [
+      "traveler"
+    ],
+    "Action": {
+      "GoalAction": [
+        "view"
+      ],
+      "BenefitAction": [
+        "see"
+      ]
+    },
+    "Entity": {
+      "GoalEntity": [
+        "generated itinerary",
+        "daily route",
+        "map"
+      ],
+      "BenefitEntity": [
+        "travel distance",
+        "logical flow",
+        "stops"
+      ]
+    },
+    "benefit": "so that I can see the travel distance and logical flow between stops at a glance",
+    "triggers": [
+      [
+        "traveler",
+        "view"
+      ]
+    ],
+    "targets": [
+      [
+        "view",
+        "generated itinerary"
+      ],
+      [
+        "view",
+        "daily route"
+      ],
+      [
+        "view",
+        "map"
+      ],
+      [
+        "see",
+        "travel distance"
+      ],
+      [
+        "see",
+        "logical flow"
+      ],
+      [
+        "see",
+        "stops"
+      ]
+    ],
+    "contains": []
+  },
+  {
+    "Text": "As a traveler, I want to drag and drop stops, so that I am able to manually adjust the order within a day's plan of the AI-generated schedule to my personal preferences.",
+    "mode": "sequential",
+    "Persona": [
+      "traveler"
+    ],
+    "Action": {
+      "GoalAction": [
+        "drag",
+        "drop"
+      ],
+      "BenefitAction": [
+        "adjust"
+      ]
+    },
+    "Entity": {
+      "GoalEntity": [
+        "stops",
+        "day's plan",
+        "AI-generated schedule"
+      ],
+      "BenefitEntity": []
+    },
+    "benefit": "I am able to manually adjust the order within a day's plan of the AI-generated schedule to my personal preferences",
+    "triggers": [
+      [
+        "traveler",
+        "drag"
+      ],
+      [
+        "traveler",
+        "drop"
+      ]
+    ],
+    "targets": [
+      [
+        "drag",
+        "stops"
+      ],
+      [
+        "drop",
+        "stops"
+      ],
+      [
+        "adjust",
+        "day's plan"
+      ],
+      [
+        "adjust",
+        "AI-generated schedule"
+      ]
+    ],
+    "contains": []
+  },
+  {
+    "Text": "As a traveler, I want to copy of a past trip's itinerary and adjust the dates or spots, so that I can reuse a proven plan for a repeat visit without starting from scratch.",
+    "mode": "sequential",
+    "Persona": [
+      "traveler"
+    ],
+    "Action": {
+      "GoalAction": [
+        "copy",
+        "adjust"
+      ],
+      "BenefitAction": [
+        "reuse"
+      ]
+    },
+    "Entity": {
+      "GoalEntity": [
+        "past trip's itinerary",
+        "dates",
+        "spots"
+      ],
+      "BenefitEntity": [
+        "plan",
+        "visit"
+      ]
+    },
+    "benefit": "I can reuse a proven plan for a repeat visit without starting from scratch",
+    "triggers": [
+      [
+        "traveler",
+        "copy"
+      ],
+      [
+        "traveler",
+        "adjust"
+      ]
+    ],
+    "targets": [
+      [
+        "copy",
+        "past trip's itinerary"
+      ],
+      [
+        "adjust",
+        "dates"
+      ],
+      [
+        "adjust",
+        "spots"
+      ],
+      [
+        "reuse",
+        "plan"
+      ]
+    ],
+    "contains": []
+  },
+  {
+    "Text": "As a traveler, I want to permanently delete a trip I no longer need, so that my trip list remains uncluttered and only shows active or relevant plans.",
+    "mode": "sequential",
+    "Persona": [
+      "traveler"
+    ],
+    "Action": {
+      "GoalAction": [
+        "delete"
+      ],
+      "BenefitAction": [
+        "show"
+      ]
+    },
+    "Entity": {
+      "GoalEntity": [
+        "trip",
+        "trip list"
+      ],
+      "BenefitEntity": []
+    },
+    "benefit": "my trip list remains uncluttered and only shows active or relevant plans",
+    "triggers": [
+      [
+        "traveler",
+        "delete"
+      ]
+    ],
+    "targets": [
+      [
+        "delete",
+        "trip"
+      ],
+      [
+        "delete",
+        "trip list"
+      ]
+    ],
+    "contains": []
+  },
+  {
+    "Text": "As a traveler, I want to generate a read-only web link for my itinerary, so that I can share my plans with friends and family without giving them editing rights.",
+    "mode": "sequential",
+    "Persona": [
+      "traveler"
+    ],
+    "Action": {
+      "GoalAction": [
+        "generate"
+      ],
+      "BenefitAction": [
+        "share"
+      ]
+    },
+    "Entity": {
+      "GoalEntity": [
+        "web link",
+        "itinerary"
+      ],
+      "BenefitEntity": [
+        "friends",
+        "family"
+      ]
+    },
+    "benefit": "I can share my plans with friends and family without giving them editing rights",
+    "triggers": [
+      [
+        "traveler",
+        "generate"
+      ]
+    ],
+    "targets": [
+      [
+        "generate",
+        "web link"
+      ],
+      [
+        "generate",
+        "itinerary"
+      ],
+      [
+        "share",
+        "friends"
+      ],
+      [
+        "share",
+        "family"
+      ]
+    ],
+    "contains": []
+  },
+  {
+    "Text": "As a traveler, I want to download a complete itinerary including maps, spot details, and daily plan for offline use, so that I can navigate and follow my plan even when I don't have an internet connection abroad.",
+    "mode": "sequential",
+    "Persona": [
+      "traveler"
+    ],
+    "Action": {
+      "GoalAction": [
+        "download"
+      ],
+      "BenefitAction": [
+        "navigate",
+        "follow"
+      ]
+    },
+    "Entity": {
+      "GoalEntity": [
+        "itinerary",
+        "maps",
+        "spot details",
+        "daily plan"
+      ],
+      "BenefitEntity": []
+    },
+    "benefit": "I can navigate and follow my plan even when I don't have an internet connection abroad",
+    "triggers": [
+      [
+        "traveler",
+        "download"
+      ]
+    ],
+    "targets": [
+      [
+        "download",
+        "itinerary"
+      ],
+      [
+        "download",
+        "maps"
+      ],
+      [
+        "download",
+        "spot details"
+      ],
+      [
+        "download",
+        "daily plan"
+      ],
+      [
+        "navigate",
+        "itinerary"
+      ],
+      [
+        "follow",
+        "itinerary"
+      ],
+      [
+        "navigate",
+        "maps"
+      ],
+      [
+        "follow",
+        "maps"
+      ],
+      [
+        "navigate",
+        "spot details"
+      ],
+      [
+        "follow",
+        "spot details"
+      ],
+      [
+        "navigate",
+        "daily plan"
+      ],
+      [
+        "follow",
+        "daily plan"
+      ]
+    ],
+    "contains": []
+  }
+]
