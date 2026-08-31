@@ -95,7 +95,7 @@ def detect_dependency_text(story_a, story_b, model:str, max_retries: int = 2):
                 story_b_text=story_b.Text,
                 **llm_result.model_dump()
             )
-            return result, True, attempt + 1
+            return result, False, attempt + 1
         except Exception as err:
             last_error = err
             print(f"Warning: attempt {attempt + 1} failed for pair ({story_a.id}, {story_b.id}): {err}")
@@ -109,4 +109,4 @@ def detect_dependency_text(story_a, story_b, model:str, max_retries: int = 2):
         dependencyFound=False,
         dependencies=[]
     )
-    return result, False, max_retries
+    return result, True, max_retries
