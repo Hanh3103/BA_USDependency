@@ -14,7 +14,7 @@ DEPENDENCY DEFINITION
 A dependency exists when:
 - One User Story creates, adds, generates, or registers an entity in its Main Part (CRUD: CREATE).
 - The other User Story retrieves, updates, edits, attaches, or deletes that exact same or semantically equivalent entity in its Main Part (CRUD: READ/UPDATE/DELETE).
-- The entity being created in the prerequisite story MUST be the target-entity of the action in the dependent story, which means not just semantically related, but lexically identical or semantically equivalent (a synonym, an abbreviation, or a different name for the same underlying thing).
+- The entity being created in the prerequisite story MUST be the target-entity of the action in the dependent story, which means not just semantically related, but lexically identical or semantically equivalent.
 - Two stories are NOT dependent if they only share topical similarity (e.g., "order" and "shopping cart") without a clear creation-to-consumption lifecycle, or if both only read/view the entity.
 
 BIDIRECTIONAL DEPENDENCIES

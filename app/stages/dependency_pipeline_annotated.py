@@ -9,7 +9,7 @@ from stages.dependency_analysis_annotated import detect_dependency
 
 
 
-def run_dependency_pipeline(data_set_path: str, model:str, pairs: Optional[list[tuple[str, str]]] = None) :
+def run_dependency_pipeline(data_set_path: str, model:str, pairs: Optional[list[tuple[str, str]]] = None, max_retries: int = 2):
     stories = load_annotated_stories(data_set_path)
 
     # Step 0: Filter well-formed stories
@@ -33,13 +33,21 @@ def run_dependency_pipeline(data_set_path: str, model:str, pairs: Optional[list[
     print(f"Analyzing {len(pairs)} story pairs for dependencies.")
 
     results: list[AnnotatedDependencyResult] = []
+    failed_pairs: list[tuple[str, str]] = []
+    attempts_by_pair: dict[tuple[str, str], int] = {}
 
     for pair in pairs:
         print(f"Analyzing pair: {pair[0]} and {pair[1]}")
-        pair_result= detect_dependency(story_a=story_activities[pair[0]],story_b=story_activities[pair[1]], model=model)
+        pair_result, failed, attempts_used = detect_dependency(
+            story_a=story_activities[pair[0]], story_b=story_activities[pair[1]],
+            model=model, max_retries=max_retries
+        )
         results.append(pair_result)
+        attempts_by_pair[pair] = attempts_used
+        if failed:
+            failed_pairs.append(pair)
 
-    return results, kept_ids
+    return results, kept_ids, failed_pairs, attempts_by_pair
 
 
 
@@ -49,6 +57,6 @@ if __name__ == '__main__':
     input_path = "test/results/annotated_stories.json"
     output_path = f"test/results/result_dependency_annotated.json"
 
-    result_, _ = run_dependency_pipeline(data_set_path=input_path, model="qwen3:1.7b", pairs=None)
+    result_, kept_ids, failed_pairs, attempts_by_pair = run_dependency_pipeline(data_set_path=input_path, model="qwen3:1.7b", pairs=None, max_retries=2)
 
     save_results(result_, output_path, indent=4)

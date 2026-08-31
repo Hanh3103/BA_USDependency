@@ -5,7 +5,7 @@ import json
 
 TEXT_PROMPT_PATH = settings.prompt_path("dependency_analysis", variant="text")
 
-def detect_dependency_text(story_a, story_b, model:str, max_retries: int = 2) -> TextDependencyResult:
+def detect_dependency_text(story_a, story_b, model:str, max_retries: int = 2):
     prompt = _load_prompt(TEXT_PROMPT_PATH)
     payload = {
         "story_a": {"id": story_a.id, "text": story_a.Text, "benefit": story_a.benefit},
@@ -90,17 +90,23 @@ def detect_dependency_text(story_a, story_b, model:str, max_retries: int = 2) ->
     for attempt in range(max_retries):
         try:
             llm_result = _call_stage(messages=messages, schema_model=TextDependencyLLMOutput, model=model)
-            return TextDependencyResult(
+            result = TextDependencyResult(
                 story_a_text=story_a.Text,
                 story_b_text=story_b.Text,
                 **llm_result.model_dump()
             )
+            return result, True, attempt + 1
         except Exception as err:
             last_error = err
             print(f"Warning: attempt {attempt + 1} failed for pair ({story_a.id}, {story_b.id}): {err}")
 
     print(f"Skipping pair ({story_a.id}, {story_b.id}) after {max_retries} attempts — last error: {last_error}")
-    return TextDependencyResult(
-        story_a_text=story_a.Text, story_b_text=story_b.Text, story_a_id=story_a.id, story_b_id=story_b.id,
-        dependencyFound=False, dependencies=[]
+    result = TextDependencyResult(
+        story_a_text=story_a.Text,
+        story_b_text=story_b.Text,
+        story_a_id=story_a.id,
+        story_b_id=story_b.id,
+        dependencyFound=False,
+        dependencies=[]
     )
+    return result, False, max_retries

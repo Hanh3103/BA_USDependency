@@ -349,41 +349,50 @@ def decide_dependency_nlp(step2_output: ClassifiedMatchResult) -> FoundedDepende
     return FoundedDependencyUsingAnnotated(dependencies=dependencies)
 
 
-def detect_dependency(story_a: StoryActivity, story_b: StoryActivity, model:str) -> AnnotatedDependencyResult:
-    try:
+def detect_dependency(story_a: StoryActivity, story_b: StoryActivity, model:str, max_retries: int = 2):
+    last_error = None
+    for attempt in range(max_retries):
+        try:
+            step_1 = find_entity_matches(story_a, story_b, model)
+            if not step_1.entity_matches:
+                print(f"No matches found for pair ({story_a.id}, {story_b.id}). Skipping further analysis.")
+                result = AnnotatedDependencyResult(
+                    story_a=story_a.Text,
+                    story_b=story_b.Text,
+                    step_1_match=step_1,
+                    step_2_classify=ClassifiedMatchResult(story_a_id=story_a.id, story_b_id=story_b.id, classified_matches=[]),
+                    final_llm=FoundedDependencyUsingAnnotated(dependencies=[]),
+                    final_nlp=FoundedDependencyUsingAnnotated(dependencies=[])
+                )
+                return result, False, attempt + 1
 
-        step_1 = find_entity_matches(story_a, story_b, model)
-        if not step_1.entity_matches:
-            print(f"No matches found for pair ({story_a.id}, {story_b.id}). Skipping further analysis.")
-            return AnnotatedDependencyResult(
+            step_2 = classify_activities(step_1, model)
+            step_3_llm = decide_dependency(step_2, model)
+            step_3_nlp = decide_dependency_nlp(step_2)
+
+            result = AnnotatedDependencyResult(
                 story_a=story_a.Text,
                 story_b=story_b.Text,
                 step_1_match=step_1,
-                step_2_classify=ClassifiedMatchResult(story_a_id=story_a.id, story_b_id=story_b.id, classified_matches=[]),
-                final_llm=FoundedDependencyUsingAnnotated(dependencies=[]),
-                final_nlp=FoundedDependencyUsingAnnotated(dependencies=[])
+                step_2_classify=step_2,
+                final_llm=step_3_llm,
+                final_nlp=step_3_nlp
             )
-        step_2 = classify_activities(step_1, model)
-        step_3_llm = decide_dependency(step_2, model)
-        step_3_nlp = decide_dependency_nlp(step_2)
 
-        return AnnotatedDependencyResult(
-            story_a=story_a.Text,
-            story_b=story_b.Text,
-            step_1_match=step_1,
-            step_2_classify=step_2,
-            final_llm=step_3_llm,
-            final_nlp=step_3_nlp
-        )
-    except Exception as err:
-        print(f"Warning: Processing failed for pair ({story_a.id}, {story_b.id}): {err}")
-        return AnnotatedDependencyResult(
-            story_a=story_a.Text, story_b=story_b.Text,
-            step_1_match=EntityMatchResult(story_a_id=story_a.id, story_b_id=story_b.id, entity_matches=[]),
-            step_2_classify=ClassifiedMatchResult(story_a_id=story_a.id, story_b_id=story_b.id, classified_matches=[]),
-            final_llm=FoundedDependencyUsingAnnotated(dependencies=[]),
-            final_nlp=FoundedDependencyUsingAnnotated(dependencies=[])
-        )
+            return result, False, attempt + 1
+        except Exception as err:
+            last_error = err
+            print(f"Warning: attempt {attempt + 1} failed for pair ({story_a.id}, {story_b.id}): {err}")
+
+    print(f"Skipping pair ({story_a.id}, {story_b.id}) after {max_retries} attempts — last error: {last_error}")
+    result = AnnotatedDependencyResult(
+        story_a=story_a.Text, story_b=story_b.Text,
+        step_1_match=EntityMatchResult(story_a_id=story_a.id, story_b_id=story_b.id, entity_matches=[]),
+        step_2_classify=ClassifiedMatchResult(story_a_id=story_a.id, story_b_id=story_b.id, classified_matches=[]),
+        final_llm=FoundedDependencyUsingAnnotated(dependencies=[]),
+        final_nlp=FoundedDependencyUsingAnnotated(dependencies=[])
+    )
+    return result, True, max_retries
 
 
 
