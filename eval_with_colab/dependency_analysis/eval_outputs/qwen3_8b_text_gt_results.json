@@ -1,0 +1,1142 @@
+[
+  {
+    "story_a_id": "US-002",
+    "story_b_id": "US-003",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a returning user, I want to log in my account on a new device and log out when I'm finished, so that I can access my travel data safely and maintain privacy on shared devices.",
+    "story_b_text": "As a user, I want to walk through a short, guided tutorial that demonstrates how to import a spot, create a list, and generate an itinerary, so that I can understand the app's core workflow without reading external documentation."
+  },
+  {
+    "story_a_id": "US-002",
+    "story_b_id": "US-004",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a returning user, I want to log in my account on a new device and log out when I'm finished, so that I can access my travel data safely and maintain privacy on shared devices.",
+    "story_b_text": "As a traveler, I want to import a location from a saved TikTok or Instagram video with a single tap, so that I can quickly capture travel inspiration without manually typing details."
+  },
+  {
+    "story_a_id": "US-002",
+    "story_b_id": "US-005",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a returning user, I want to log in my account on a new device and log out when I'm finished, so that I can access my travel data safely and maintain privacy on shared devices.",
+    "story_b_text": "As a traveler, I want to create named lists (e.g., Tokyo food or Paris museums) and add saved spots to them, so that I can group my travel inspiration by destination or theme."
+  },
+  {
+    "story_a_id": "US-002",
+    "story_b_id": "US-006",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a returning user, I want to log in my account on a new device and log out when I'm finished, so that I can access my travel data safely and maintain privacy on shared devices.",
+    "story_b_text": "As a traveler, I want to attach private notes (e.g., reservation numbers or tips) to any saved spot, so that I can keep critical information together with the place it belongs to."
+  },
+  {
+    "story_a_id": "US-002",
+    "story_b_id": "US-007",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a returning user, I want to log in my account on a new device and log out when I'm finished, so that I can access my travel data safely and maintain privacy on shared devices.",
+    "story_b_text": "As a traveler, I want to open the original TikTok or Instagram video that was used to save a spot, so that I can rewatch the creator's tips and context before visiting."
+  },
+  {
+    "story_a_id": "US-002",
+    "story_b_id": "US-009",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a returning user, I want to log in my account on a new device and log out when I'm finished, so that I can access my travel data safely and maintain privacy on shared devices.",
+    "story_b_text": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth."
+  },
+  {
+    "story_a_id": "US-002",
+    "story_b_id": "US-010",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a returning user, I want to log in my account on a new device and log out when I'm finished, so that I can access my travel data safely and maintain privacy on shared devices.",
+    "story_b_text": "As a traveler, I want to change the name of an existing list, so that I can keep my organization up to date as my plans evolve."
+  },
+  {
+    "story_a_id": "US-002",
+    "story_b_id": "US-011",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a returning user, I want to log in my account on a new device and log out when I'm finished, so that I can access my travel data safely and maintain privacy on shared devices.",
+    "story_b_text": "As a traveler, I want to see all my saved spots displayed as pins on a live map, so that I can understand their spatial distribution and plan routes more effectively."
+  },
+  {
+    "story_a_id": "US-002",
+    "story_b_id": "US-012",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a returning user, I want to log in my account on a new device and log out when I'm finished, so that I can access my travel data safely and maintain privacy on shared devices.",
+    "story_b_text": "As a traveler, I want to filter the map to show only spots from a specific list, so that I can focus on places relevant to a particular trip or category."
+  },
+  {
+    "story_a_id": "US-002",
+    "story_b_id": "US-014",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a returning user, I want to log in my account on a new device and log out when I'm finished, so that I can access my travel data safely and maintain privacy on shared devices.",
+    "story_b_text": "As a traveler, I want to select a destination, travel dates, and a list of saved spots and have the app automatically generate a logically ordered, day-by-day itinerary, so that I can transform my scattered ideas into a structured plan without manual scheduling."
+  },
+  {
+    "story_a_id": "US-002",
+    "story_b_id": "US-015",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a returning user, I want to log in my account on a new device and log out when I'm finished, so that I can access my travel data safely and maintain privacy on shared devices.",
+    "story_b_text": "As a traveler, I want to view the generated itinerary as a daily route on a map, so that I can see the travel distance and logical flow between stops at a glance."
+  },
+  {
+    "story_a_id": "US-002",
+    "story_b_id": "US-016",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a returning user, I want to log in my account on a new device and log out when I'm finished, so that I can access my travel data safely and maintain privacy on shared devices.",
+    "story_b_text": "As a traveler, I want to drag and drop stops, so that I am able to manually adjust the order within a day's plan of the AI-generated schedule to my personal preferences."
+  },
+  {
+    "story_a_id": "US-002",
+    "story_b_id": "US-017",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a returning user, I want to log in my account on a new device and log out when I'm finished, so that I can access my travel data safely and maintain privacy on shared devices.",
+    "story_b_text": "As a traveler, I want to copy of a past trip's itinerary and adjust the dates or spots, so that I can reuse a proven plan for a repeat visit without starting from scratch."
+  },
+  {
+    "story_a_id": "US-002",
+    "story_b_id": "US-019",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a returning user, I want to log in my account on a new device and log out when I'm finished, so that I can access my travel data safely and maintain privacy on shared devices.",
+    "story_b_text": "As a traveler, I want to generate a read-only web link for my itinerary, so that I can share my plans with friends and family without giving them editing rights."
+  },
+  {
+    "story_a_id": "US-002",
+    "story_b_id": "US-020",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a returning user, I want to log in my account on a new device and log out when I'm finished, so that I can access my travel data safely and maintain privacy on shared devices.",
+    "story_b_text": "As a traveler, I want to download a complete itinerary including maps, spot details, and daily plan for offline use, so that I can navigate and follow my plan even when I don't have an internet connection abroad."
+  },
+  {
+    "story_a_id": "US-003",
+    "story_b_id": "US-004",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a user, I want to walk through a short, guided tutorial that demonstrates how to import a spot, create a list, and generate an itinerary, so that I can understand the app's core workflow without reading external documentation.",
+    "story_b_text": "As a traveler, I want to import a location from a saved TikTok or Instagram video with a single tap, so that I can quickly capture travel inspiration without manually typing details."
+  },
+  {
+    "story_a_id": "US-003",
+    "story_b_id": "US-005",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a user, I want to walk through a short, guided tutorial that demonstrates how to import a spot, create a list, and generate an itinerary, so that I can understand the app's core workflow without reading external documentation.",
+    "story_b_text": "As a traveler, I want to create named lists (e.g., Tokyo food or Paris museums) and add saved spots to them, so that I can group my travel inspiration by destination or theme."
+  },
+  {
+    "story_a_id": "US-003",
+    "story_b_id": "US-006",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a user, I want to walk through a short, guided tutorial that demonstrates how to import a spot, create a list, and generate an itinerary, so that I can understand the app's core workflow without reading external documentation.",
+    "story_b_text": "As a traveler, I want to attach private notes (e.g., reservation numbers or tips) to any saved spot, so that I can keep critical information together with the place it belongs to."
+  },
+  {
+    "story_a_id": "US-003",
+    "story_b_id": "US-007",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a user, I want to walk through a short, guided tutorial that demonstrates how to import a spot, create a list, and generate an itinerary, so that I can understand the app's core workflow without reading external documentation.",
+    "story_b_text": "As a traveler, I want to open the original TikTok or Instagram video that was used to save a spot, so that I can rewatch the creator's tips and context before visiting."
+  },
+  {
+    "story_a_id": "US-003",
+    "story_b_id": "US-009",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a user, I want to walk through a short, guided tutorial that demonstrates how to import a spot, create a list, and generate an itinerary, so that I can understand the app's core workflow without reading external documentation.",
+    "story_b_text": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth."
+  },
+  {
+    "story_a_id": "US-003",
+    "story_b_id": "US-010",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a user, I want to walk through a short, guided tutorial that demonstrates how to import a spot, create a list, and generate an itinerary, so that I can understand the app's core workflow without reading external documentation.",
+    "story_b_text": "As a traveler, I want to change the name of an existing list, so that I can keep my organization up to date as my plans evolve."
+  },
+  {
+    "story_a_id": "US-003",
+    "story_b_id": "US-011",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a user, I want to walk through a short, guided tutorial that demonstrates how to import a spot, create a list, and generate an itinerary, so that I can understand the app's core workflow without reading external documentation.",
+    "story_b_text": "As a traveler, I want to see all my saved spots displayed as pins on a live map, so that I can understand their spatial distribution and plan routes more effectively."
+  },
+  {
+    "story_a_id": "US-003",
+    "story_b_id": "US-012",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a user, I want to walk through a short, guided tutorial that demonstrates how to import a spot, create a list, and generate an itinerary, so that I can understand the app's core workflow without reading external documentation.",
+    "story_b_text": "As a traveler, I want to filter the map to show only spots from a specific list, so that I can focus on places relevant to a particular trip or category."
+  },
+  {
+    "story_a_id": "US-003",
+    "story_b_id": "US-014",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a user, I want to walk through a short, guided tutorial that demonstrates how to import a spot, create a list, and generate an itinerary, so that I can understand the app's core workflow without reading external documentation.",
+    "story_b_text": "As a traveler, I want to select a destination, travel dates, and a list of saved spots and have the app automatically generate a logically ordered, day-by-day itinerary, so that I can transform my scattered ideas into a structured plan without manual scheduling."
+  },
+  {
+    "story_a_id": "US-003",
+    "story_b_id": "US-015",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-003",
+        "dependent_id": "US-015",
+        "explanationOfDependency": "Story US-003 generates an 'itinerary', which Story US-015 views as a generated itinerary.",
+        "matchingTextPairs": [
+          [
+            "generate an itinerary",
+            "view the generated itinerary"
+          ]
+        ]
+      }
+    ],
+    "story_a_text": "As a user, I want to walk through a short, guided tutorial that demonstrates how to import a spot, create a list, and generate an itinerary, so that I can understand the app's core workflow without reading external documentation.",
+    "story_b_text": "As a traveler, I want to view the generated itinerary as a daily route on a map, so that I can see the travel distance and logical flow between stops at a glance."
+  },
+  {
+    "story_a_id": "US-003",
+    "story_b_id": "US-016",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a user, I want to walk through a short, guided tutorial that demonstrates how to import a spot, create a list, and generate an itinerary, so that I can understand the app's core workflow without reading external documentation.",
+    "story_b_text": "As a traveler, I want to drag and drop stops, so that I am able to manually adjust the order within a day's plan of the AI-generated schedule to my personal preferences."
+  },
+  {
+    "story_a_id": "US-003",
+    "story_b_id": "US-017",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a user, I want to walk through a short, guided tutorial that demonstrates how to import a spot, create a list, and generate an itinerary, so that I can understand the app's core workflow without reading external documentation.",
+    "story_b_text": "As a traveler, I want to copy of a past trip's itinerary and adjust the dates or spots, so that I can reuse a proven plan for a repeat visit without starting from scratch."
+  },
+  {
+    "story_a_id": "US-003",
+    "story_b_id": "US-019",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a user, I want to walk through a short, guided tutorial that demonstrates how to import a spot, create a list, and generate an itinerary, so that I can understand the app's core workflow without reading external documentation.",
+    "story_b_text": "As a traveler, I want to generate a read-only web link for my itinerary, so that I can share my plans with friends and family without giving them editing rights."
+  },
+  {
+    "story_a_id": "US-003",
+    "story_b_id": "US-020",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a user, I want to walk through a short, guided tutorial that demonstrates how to import a spot, create a list, and generate an itinerary, so that I can understand the app's core workflow without reading external documentation.",
+    "story_b_text": "As a traveler, I want to download a complete itinerary including maps, spot details, and daily plan for offline use, so that I can navigate and follow my plan even when I don't have an internet connection abroad."
+  },
+  {
+    "story_a_id": "US-004",
+    "story_b_id": "US-005",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to import a location from a saved TikTok or Instagram video with a single tap, so that I can quickly capture travel inspiration without manually typing details.",
+    "story_b_text": "As a traveler, I want to create named lists (e.g., Tokyo food or Paris museums) and add saved spots to them, so that I can group my travel inspiration by destination or theme."
+  },
+  {
+    "story_a_id": "US-004",
+    "story_b_id": "US-006",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to import a location from a saved TikTok or Instagram video with a single tap, so that I can quickly capture travel inspiration without manually typing details.",
+    "story_b_text": "As a traveler, I want to attach private notes (e.g., reservation numbers or tips) to any saved spot, so that I can keep critical information together with the place it belongs to."
+  },
+  {
+    "story_a_id": "US-004",
+    "story_b_id": "US-007",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-004",
+        "dependent_id": "US-007",
+        "explanationOfDependency": "Story US-004 saves a 'location' from a TikTok or Instagram video, which Story US-007 opens as the original video used to save a spot.",
+        "matchingTextPairs": [
+          [
+            "import a location from a saved TikTok or Instagram video",
+            "open the original TikTok or Instagram video that was used to save a spot"
+          ]
+        ]
+      }
+    ],
+    "story_a_text": "As a traveler, I want to import a location from a saved TikTok or Instagram video with a single tap, so that I can quickly capture travel inspiration without manually typing details.",
+    "story_b_text": "As a traveler, I want to open the original TikTok or Instagram video that was used to save a spot, so that I can rewatch the creator's tips and context before visiting."
+  },
+  {
+    "story_a_id": "US-004",
+    "story_b_id": "US-009",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to import a location from a saved TikTok or Instagram video with a single tap, so that I can quickly capture travel inspiration without manually typing details.",
+    "story_b_text": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth."
+  },
+  {
+    "story_a_id": "US-004",
+    "story_b_id": "US-010",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to import a location from a saved TikTok or Instagram video with a single tap, so that I can quickly capture travel inspiration without manually typing details.",
+    "story_b_text": "As a traveler, I want to change the name of an existing list, so that I can keep my organization up to date as my plans evolve."
+  },
+  {
+    "story_a_id": "US-004",
+    "story_b_id": "US-011",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-004",
+        "dependent_id": "US-011",
+        "explanationOfDependency": "Story US-004 creates 'saved spots' which are displayed as pins in Story US-011.",
+        "matchingTextPairs": [
+          [
+            "import a location from a saved TikTok or Instagram video",
+            "see all my saved spots"
+          ]
+        ]
+      }
+    ],
+    "story_a_text": "As a traveler, I want to import a location from a saved TikTok or Instagram video with a single tap, so that I can quickly capture travel inspiration without manually typing details.",
+    "story_b_text": "As a traveler, I want to see all my saved spots displayed as pins on a live map, so that I can understand their spatial distribution and plan routes more effectively."
+  },
+  {
+    "story_a_id": "US-004",
+    "story_b_id": "US-012",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to import a location from a saved TikTok or Instagram video with a single tap, so that I can quickly capture travel inspiration without manually typing details.",
+    "story_b_text": "As a traveler, I want to filter the map to show only spots from a specific list, so that I can focus on places relevant to a particular trip or category."
+  },
+  {
+    "story_a_id": "US-004",
+    "story_b_id": "US-014",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to import a location from a saved TikTok or Instagram video with a single tap, so that I can quickly capture travel inspiration without manually typing details.",
+    "story_b_text": "As a traveler, I want to select a destination, travel dates, and a list of saved spots and have the app automatically generate a logically ordered, day-by-day itinerary, so that I can transform my scattered ideas into a structured plan without manual scheduling."
+  },
+  {
+    "story_a_id": "US-004",
+    "story_b_id": "US-015",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to import a location from a saved TikTok or Instagram video with a single tap, so that I can quickly capture travel inspiration without manually typing details.",
+    "story_b_text": "As a traveler, I want to view the generated itinerary as a daily route on a map, so that I can see the travel distance and logical flow between stops at a glance."
+  },
+  {
+    "story_a_id": "US-004",
+    "story_b_id": "US-016",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to import a location from a saved TikTok or Instagram video with a single tap, so that I can quickly capture travel inspiration without manually typing details.",
+    "story_b_text": "As a traveler, I want to drag and drop stops, so that I am able to manually adjust the order within a day's plan of the AI-generated schedule to my personal preferences."
+  },
+  {
+    "story_a_id": "US-004",
+    "story_b_id": "US-017",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to import a location from a saved TikTok or Instagram video with a single tap, so that I can quickly capture travel inspiration without manually typing details.",
+    "story_b_text": "As a traveler, I want to copy of a past trip's itinerary and adjust the dates or spots, so that I can reuse a proven plan for a repeat visit without starting from scratch."
+  },
+  {
+    "story_a_id": "US-004",
+    "story_b_id": "US-019",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to import a location from a saved TikTok or Instagram video with a single tap, so that I can quickly capture travel inspiration without manually typing details.",
+    "story_b_text": "As a traveler, I want to generate a read-only web link for my itinerary, so that I can share my plans with friends and family without giving them editing rights."
+  },
+  {
+    "story_a_id": "US-004",
+    "story_b_id": "US-020",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to import a location from a saved TikTok or Instagram video with a single tap, so that I can quickly capture travel inspiration without manually typing details.",
+    "story_b_text": "As a traveler, I want to download a complete itinerary including maps, spot details, and daily plan for offline use, so that I can navigate and follow my plan even when I don't have an internet connection abroad."
+  },
+  {
+    "story_a_id": "US-005",
+    "story_b_id": "US-006",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to create named lists (e.g., Tokyo food or Paris museums) and add saved spots to them, so that I can group my travel inspiration by destination or theme.",
+    "story_b_text": "As a traveler, I want to attach private notes (e.g., reservation numbers or tips) to any saved spot, so that I can keep critical information together with the place it belongs to."
+  },
+  {
+    "story_a_id": "US-005",
+    "story_b_id": "US-007",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to create named lists (e.g., Tokyo food or Paris museums) and add saved spots to them, so that I can group my travel inspiration by destination or theme.",
+    "story_b_text": "As a traveler, I want to open the original TikTok or Instagram video that was used to save a spot, so that I can rewatch the creator's tips and context before visiting."
+  },
+  {
+    "story_a_id": "US-005",
+    "story_b_id": "US-009",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to create named lists (e.g., Tokyo food or Paris museums) and add saved spots to them, so that I can group my travel inspiration by destination or theme.",
+    "story_b_text": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth."
+  },
+  {
+    "story_a_id": "US-005",
+    "story_b_id": "US-010",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-005",
+        "dependent_id": "US-010",
+        "explanationOfDependency": "Story US-005 creates 'named lists', which Story US-010 modifies by changing the name of an existing list.",
+        "matchingTextPairs": [
+          [
+            "create named lists",
+            "change the name of an existing list"
+          ]
+        ]
+      }
+    ],
+    "story_a_text": "As a traveler, I want to create named lists (e.g., Tokyo food or Paris museums) and add saved spots to them, so that I can group my travel inspiration by destination or theme.",
+    "story_b_text": "As a traveler, I want to change the name of an existing list, so that I can keep my organization up to date as my plans evolve."
+  },
+  {
+    "story_a_id": "US-005",
+    "story_b_id": "US-011",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to create named lists (e.g., Tokyo food or Paris museums) and add saved spots to them, so that I can group my travel inspiration by destination or theme.",
+    "story_b_text": "As a traveler, I want to see all my saved spots displayed as pins on a live map, so that I can understand their spatial distribution and plan routes more effectively."
+  },
+  {
+    "story_a_id": "US-005",
+    "story_b_id": "US-012",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-005",
+        "dependent_id": "US-012",
+        "explanationOfDependency": "Story US-005 creates 'named lists' and adds 'saved spots' to them, which Story US-012 filters the map to show only spots from a specific list.",
+        "matchingTextPairs": [
+          [
+            "create named lists and add saved spots to them",
+            "filter the map to show only spots from a specific list"
+          ]
+        ]
+      }
+    ],
+    "story_a_text": "As a traveler, I want to create named lists (e.g., Tokyo food or Paris museums) and add saved spots to them, so that I can group my travel inspiration by destination or theme.",
+    "story_b_text": "As a traveler, I want to filter the map to show only spots from a specific list, so that I can focus on places relevant to a particular trip or category."
+  },
+  {
+    "story_a_id": "US-005",
+    "story_b_id": "US-014",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-005",
+        "dependent_id": "US-014",
+        "explanationOfDependency": "Story US-005 creates 'saved spots' and 'named lists', which are used in Story US-014 to generate a day-by-day itinerary.",
+        "matchingTextPairs": [
+          [
+            "add saved spots to them",
+            "select a list of saved spots"
+          ]
+        ]
+      }
+    ],
+    "story_a_text": "As a traveler, I want to create named lists (e.g., Tokyo food or Paris museums) and add saved spots to them, so that I can group my travel inspiration by destination or theme.",
+    "story_b_text": "As a traveler, I want to select a destination, travel dates, and a list of saved spots and have the app automatically generate a logically ordered, day-by-day itinerary, so that I can transform my scattered ideas into a structured plan without manual scheduling."
+  },
+  {
+    "story_a_id": "US-005",
+    "story_b_id": "US-015",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to create named lists (e.g., Tokyo food or Paris museums) and add saved spots to them, so that I can group my travel inspiration by destination or theme.",
+    "story_b_text": "As a traveler, I want to view the generated itinerary as a daily route on a map, so that I can see the travel distance and logical flow between stops at a glance."
+  },
+  {
+    "story_a_id": "US-005",
+    "story_b_id": "US-016",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to create named lists (e.g., Tokyo food or Paris museums) and add saved spots to them, so that I can group my travel inspiration by destination or theme.",
+    "story_b_text": "As a traveler, I want to drag and drop stops, so that I am able to manually adjust the order within a day's plan of the AI-generated schedule to my personal preferences."
+  },
+  {
+    "story_a_id": "US-005",
+    "story_b_id": "US-017",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to create named lists (e.g., Tokyo food or Paris museums) and add saved spots to them, so that I can group my travel inspiration by destination or theme.",
+    "story_b_text": "As a traveler, I want to copy of a past trip's itinerary and adjust the dates or spots, so that I can reuse a proven plan for a repeat visit without starting from scratch."
+  },
+  {
+    "story_a_id": "US-005",
+    "story_b_id": "US-019",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to create named lists (e.g., Tokyo food or Paris museums) and add saved spots to them, so that I can group my travel inspiration by destination or theme.",
+    "story_b_text": "As a traveler, I want to generate a read-only web link for my itinerary, so that I can share my plans with friends and family without giving them editing rights."
+  },
+  {
+    "story_a_id": "US-005",
+    "story_b_id": "US-020",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to create named lists (e.g., Tokyo food or Paris museums) and add saved spots to them, so that I can group my travel inspiration by destination or theme.",
+    "story_b_text": "As a traveler, I want to download a complete itinerary including maps, spot details, and daily plan for offline use, so that I can navigate and follow my plan even when I don't have an internet connection abroad."
+  },
+  {
+    "story_a_id": "US-006",
+    "story_b_id": "US-007",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to attach private notes (e.g., reservation numbers or tips) to any saved spot, so that I can keep critical information together with the place it belongs to.",
+    "story_b_text": "As a traveler, I want to open the original TikTok or Instagram video that was used to save a spot, so that I can rewatch the creator's tips and context before visiting."
+  },
+  {
+    "story_a_id": "US-006",
+    "story_b_id": "US-009",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to attach private notes (e.g., reservation numbers or tips) to any saved spot, so that I can keep critical information together with the place it belongs to.",
+    "story_b_text": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth."
+  },
+  {
+    "story_a_id": "US-006",
+    "story_b_id": "US-010",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to attach private notes (e.g., reservation numbers or tips) to any saved spot, so that I can keep critical information together with the place it belongs to.",
+    "story_b_text": "As a traveler, I want to change the name of an existing list, so that I can keep my organization up to date as my plans evolve."
+  },
+  {
+    "story_a_id": "US-006",
+    "story_b_id": "US-011",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to attach private notes (e.g., reservation numbers or tips) to any saved spot, so that I can keep critical information together with the place it belongs to.",
+    "story_b_text": "As a traveler, I want to see all my saved spots displayed as pins on a live map, so that I can understand their spatial distribution and plan routes more effectively."
+  },
+  {
+    "story_a_id": "US-006",
+    "story_b_id": "US-012",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to attach private notes (e.g., reservation numbers or tips) to any saved spot, so that I can keep critical information together with the place it belongs to.",
+    "story_b_text": "As a traveler, I want to filter the map to show only spots from a specific list, so that I can focus on places relevant to a particular trip or category."
+  },
+  {
+    "story_a_id": "US-006",
+    "story_b_id": "US-014",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to attach private notes (e.g., reservation numbers or tips) to any saved spot, so that I can keep critical information together with the place it belongs to.",
+    "story_b_text": "As a traveler, I want to select a destination, travel dates, and a list of saved spots and have the app automatically generate a logically ordered, day-by-day itinerary, so that I can transform my scattered ideas into a structured plan without manual scheduling."
+  },
+  {
+    "story_a_id": "US-006",
+    "story_b_id": "US-015",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to attach private notes (e.g., reservation numbers or tips) to any saved spot, so that I can keep critical information together with the place it belongs to.",
+    "story_b_text": "As a traveler, I want to view the generated itinerary as a daily route on a map, so that I can see the travel distance and logical flow between stops at a glance."
+  },
+  {
+    "story_a_id": "US-006",
+    "story_b_id": "US-016",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to attach private notes (e.g., reservation numbers or tips) to any saved spot, so that I can keep critical information together with the place it belongs to.",
+    "story_b_text": "As a traveler, I want to drag and drop stops, so that I am able to manually adjust the order within a day's plan of the AI-generated schedule to my personal preferences."
+  },
+  {
+    "story_a_id": "US-006",
+    "story_b_id": "US-017",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to attach private notes (e.g., reservation numbers or tips) to any saved spot, so that I can keep critical information together with the place it belongs to.",
+    "story_b_text": "As a traveler, I want to copy of a past trip's itinerary and adjust the dates or spots, so that I can reuse a proven plan for a repeat visit without starting from scratch."
+  },
+  {
+    "story_a_id": "US-006",
+    "story_b_id": "US-019",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to attach private notes (e.g., reservation numbers or tips) to any saved spot, so that I can keep critical information together with the place it belongs to.",
+    "story_b_text": "As a traveler, I want to generate a read-only web link for my itinerary, so that I can share my plans with friends and family without giving them editing rights."
+  },
+  {
+    "story_a_id": "US-006",
+    "story_b_id": "US-020",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to attach private notes (e.g., reservation numbers or tips) to any saved spot, so that I can keep critical information together with the place it belongs to.",
+    "story_b_text": "As a traveler, I want to download a complete itinerary including maps, spot details, and daily plan for offline use, so that I can navigate and follow my plan even when I don't have an internet connection abroad."
+  },
+  {
+    "story_a_id": "US-007",
+    "story_b_id": "US-009",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to open the original TikTok or Instagram video that was used to save a spot, so that I can rewatch the creator's tips and context before visiting.",
+    "story_b_text": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth."
+  },
+  {
+    "story_a_id": "US-007",
+    "story_b_id": "US-010",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to open the original TikTok or Instagram video that was used to save a spot, so that I can rewatch the creator's tips and context before visiting.",
+    "story_b_text": "As a traveler, I want to change the name of an existing list, so that I can keep my organization up to date as my plans evolve."
+  },
+  {
+    "story_a_id": "US-007",
+    "story_b_id": "US-011",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to open the original TikTok or Instagram video that was used to save a spot, so that I can rewatch the creator's tips and context before visiting.",
+    "story_b_text": "As a traveler, I want to see all my saved spots displayed as pins on a live map, so that I can understand their spatial distribution and plan routes more effectively."
+  },
+  {
+    "story_a_id": "US-007",
+    "story_b_id": "US-012",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to open the original TikTok or Instagram video that was used to save a spot, so that I can rewatch the creator's tips and context before visiting.",
+    "story_b_text": "As a traveler, I want to filter the map to show only spots from a specific list, so that I can focus on places relevant to a particular trip or category."
+  },
+  {
+    "story_a_id": "US-007",
+    "story_b_id": "US-014",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-007",
+        "dependent_id": "US-014",
+        "explanationOfDependency": "Story US-007 saves a 'spot', which Story US-014 uses to generate a day-by-day itinerary.",
+        "matchingTextPairs": [
+          [
+            "open the original TikTok or Instagram video that was used to save a spot",
+            "select a destination, travel dates, and a list of saved spots"
+          ]
+        ]
+      }
+    ],
+    "story_a_text": "As a traveler, I want to open the original TikTok or Instagram video that was used to save a spot, so that I can rewatch the creator's tips and context before visiting.",
+    "story_b_text": "As a traveler, I want to select a destination, travel dates, and a list of saved spots and have the app automatically generate a logically ordered, day-by-day itinerary, so that I can transform my scattered ideas into a structured plan without manual scheduling."
+  },
+  {
+    "story_a_id": "US-007",
+    "story_b_id": "US-015",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to open the original TikTok or Instagram video that was used to save a spot, so that I can rewatch the creator's tips and context before visiting.",
+    "story_b_text": "As a traveler, I want to view the generated itinerary as a daily route on a map, so that I can see the travel distance and logical flow between stops at a glance."
+  },
+  {
+    "story_a_id": "US-007",
+    "story_b_id": "US-016",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to open the original TikTok or Instagram video that was used to save a spot, so that I can rewatch the creator's tips and context before visiting.",
+    "story_b_text": "As a traveler, I want to drag and drop stops, so that I am able to manually adjust the order within a day's plan of the AI-generated schedule to my personal preferences."
+  },
+  {
+    "story_a_id": "US-007",
+    "story_b_id": "US-017",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to open the original TikTok or Instagram video that was used to save a spot, so that I can rewatch the creator's tips and context before visiting.",
+    "story_b_text": "As a traveler, I want to copy of a past trip's itinerary and adjust the dates or spots, so that I can reuse a proven plan for a repeat visit without starting from scratch."
+  },
+  {
+    "story_a_id": "US-007",
+    "story_b_id": "US-019",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to open the original TikTok or Instagram video that was used to save a spot, so that I can rewatch the creator's tips and context before visiting.",
+    "story_b_text": "As a traveler, I want to generate a read-only web link for my itinerary, so that I can share my plans with friends and family without giving them editing rights."
+  },
+  {
+    "story_a_id": "US-007",
+    "story_b_id": "US-020",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to open the original TikTok or Instagram video that was used to save a spot, so that I can rewatch the creator's tips and context before visiting.",
+    "story_b_text": "As a traveler, I want to download a complete itinerary including maps, spot details, and daily plan for offline use, so that I can navigate and follow my plan even when I don't have an internet connection abroad."
+  },
+  {
+    "story_a_id": "US-009",
+    "story_b_id": "US-010",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth.",
+    "story_b_text": "As a traveler, I want to change the name of an existing list, so that I can keep my organization up to date as my plans evolve."
+  },
+  {
+    "story_a_id": "US-009",
+    "story_b_id": "US-011",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-009",
+        "dependent_id": "US-011",
+        "explanationOfDependency": "Story US-009 creates 'saved spots', which Story US-011 displays as pins on a live map.",
+        "matchingTextPairs": [
+          [
+            "manually add a spot",
+            "see all my saved spots"
+          ]
+        ]
+      }
+    ],
+    "story_a_text": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth.",
+    "story_b_text": "As a traveler, I want to see all my saved spots displayed as pins on a live map, so that I can understand their spatial distribution and plan routes more effectively."
+  },
+  {
+    "story_a_id": "US-009",
+    "story_b_id": "US-012",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth.",
+    "story_b_text": "As a traveler, I want to filter the map to show only spots from a specific list, so that I can focus on places relevant to a particular trip or category."
+  },
+  {
+    "story_a_id": "US-009",
+    "story_b_id": "US-014",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-009",
+        "dependent_id": "US-014",
+        "explanationOfDependency": "Story US-009 creates 'saved spots', which Story US-014 uses as part of the itinerary generation process.",
+        "matchingTextPairs": [
+          [
+            "manually add a spot",
+            "select a list of saved spots"
+          ]
+        ]
+      }
+    ],
+    "story_a_text": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth.",
+    "story_b_text": "As a traveler, I want to select a destination, travel dates, and a list of saved spots and have the app automatically generate a logically ordered, day-by-day itinerary, so that I can transform my scattered ideas into a structured plan without manual scheduling."
+  },
+  {
+    "story_a_id": "US-009",
+    "story_b_id": "US-015",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth.",
+    "story_b_text": "As a traveler, I want to view the generated itinerary as a daily route on a map, so that I can see the travel distance and logical flow between stops at a glance."
+  },
+  {
+    "story_a_id": "US-009",
+    "story_b_id": "US-016",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth.",
+    "story_b_text": "As a traveler, I want to drag and drop stops, so that I am able to manually adjust the order within a day's plan of the AI-generated schedule to my personal preferences."
+  },
+  {
+    "story_a_id": "US-009",
+    "story_b_id": "US-017",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth.",
+    "story_b_text": "As a traveler, I want to copy of a past trip's itinerary and adjust the dates or spots, so that I can reuse a proven plan for a repeat visit without starting from scratch."
+  },
+  {
+    "story_a_id": "US-009",
+    "story_b_id": "US-019",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth.",
+    "story_b_text": "As a traveler, I want to generate a read-only web link for my itinerary, so that I can share my plans with friends and family without giving them editing rights."
+  },
+  {
+    "story_a_id": "US-009",
+    "story_b_id": "US-020",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth.",
+    "story_b_text": "As a traveler, I want to download a complete itinerary including maps, spot details, and daily plan for offline use, so that I can navigate and follow my plan even when I don't have an internet connection abroad."
+  },
+  {
+    "story_a_id": "US-010",
+    "story_b_id": "US-011",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to change the name of an existing list, so that I can keep my organization up to date as my plans evolve.",
+    "story_b_text": "As a traveler, I want to see all my saved spots displayed as pins on a live map, so that I can understand their spatial distribution and plan routes more effectively."
+  },
+  {
+    "story_a_id": "US-010",
+    "story_b_id": "US-012",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-010",
+        "dependent_id": "US-012",
+        "explanationOfDependency": "Story US-010 creates an 'existing list', which Story US-012 filters the map based on a specific list.",
+        "matchingTextPairs": [
+          [
+            "change the name of an existing list",
+            "filter the map to show only spots from a specific list"
+          ]
+        ]
+      }
+    ],
+    "story_a_text": "As a traveler, I want to change the name of an existing list, so that I can keep my organization up to date as my plans evolve.",
+    "story_b_text": "As a traveler, I want to filter the map to show only spots from a specific list, so that I can focus on places relevant to a particular trip or category."
+  },
+  {
+    "story_a_id": "US-010",
+    "story_b_id": "US-014",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to change the name of an existing list, so that I can keep my organization up to date as my plans evolve.",
+    "story_b_text": "As a traveler, I want to select a destination, travel dates, and a list of saved spots and have the app automatically generate a logically ordered, day-by-day itinerary, so that I can transform my scattered ideas into a structured plan without manual scheduling."
+  },
+  {
+    "story_a_id": "US-010",
+    "story_b_id": "US-015",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to change the name of an existing list, so that I can keep my organization up to date as my plans evolve.",
+    "story_b_text": "As a traveler, I want to view the generated itinerary as a daily route on a map, so that I can see the travel distance and logical flow between stops at a glance."
+  },
+  {
+    "story_a_id": "US-010",
+    "story_b_id": "US-016",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to change the name of an existing list, so that I can keep my organization up to date as my plans evolve.",
+    "story_b_text": "As a traveler, I want to drag and drop stops, so that I am able to manually adjust the order within a day's plan of the AI-generated schedule to my personal preferences."
+  },
+  {
+    "story_a_id": "US-010",
+    "story_b_id": "US-017",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to change the name of an existing list, so that I can keep my organization up to date as my plans evolve.",
+    "story_b_text": "As a traveler, I want to copy of a past trip's itinerary and adjust the dates or spots, so that I can reuse a proven plan for a repeat visit without starting from scratch."
+  },
+  {
+    "story_a_id": "US-010",
+    "story_b_id": "US-019",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to change the name of an existing list, so that I can keep my organization up to date as my plans evolve.",
+    "story_b_text": "As a traveler, I want to generate a read-only web link for my itinerary, so that I can share my plans with friends and family without giving them editing rights."
+  },
+  {
+    "story_a_id": "US-010",
+    "story_b_id": "US-020",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to change the name of an existing list, so that I can keep my organization up to date as my plans evolve.",
+    "story_b_text": "As a traveler, I want to download a complete itinerary including maps, spot details, and daily plan for offline use, so that I can navigate and follow my plan even when I don't have an internet connection abroad."
+  },
+  {
+    "story_a_id": "US-011",
+    "story_b_id": "US-012",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to see all my saved spots displayed as pins on a live map, so that I can understand their spatial distribution and plan routes more effectively.",
+    "story_b_text": "As a traveler, I want to filter the map to show only spots from a specific list, so that I can focus on places relevant to a particular trip or category."
+  },
+  {
+    "story_a_id": "US-011",
+    "story_b_id": "US-014",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-011",
+        "dependent_id": "US-014",
+        "explanationOfDependency": "Story US-011 creates 'saved spots', which Story US-014 uses as part of the input to generate an itinerary.",
+        "matchingTextPairs": [
+          [
+            "see all my saved spots displayed as pins on a live map",
+            "select a list of saved spots"
+          ]
+        ]
+      }
+    ],
+    "story_a_text": "As a traveler, I want to see all my saved spots displayed as pins on a live map, so that I can understand their spatial distribution and plan routes more effectively.",
+    "story_b_text": "As a traveler, I want to select a destination, travel dates, and a list of saved spots and have the app automatically generate a logically ordered, day-by-day itinerary, so that I can transform my scattered ideas into a structured plan without manual scheduling."
+  },
+  {
+    "story_a_id": "US-011",
+    "story_b_id": "US-015",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to see all my saved spots displayed as pins on a live map, so that I can understand their spatial distribution and plan routes more effectively.",
+    "story_b_text": "As a traveler, I want to view the generated itinerary as a daily route on a map, so that I can see the travel distance and logical flow between stops at a glance."
+  },
+  {
+    "story_a_id": "US-011",
+    "story_b_id": "US-016",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to see all my saved spots displayed as pins on a live map, so that I can understand their spatial distribution and plan routes more effectively.",
+    "story_b_text": "As a traveler, I want to drag and drop stops, so that I am able to manually adjust the order within a day's plan of the AI-generated schedule to my personal preferences."
+  },
+  {
+    "story_a_id": "US-011",
+    "story_b_id": "US-017",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to see all my saved spots displayed as pins on a live map, so that I can understand their spatial distribution and plan routes more effectively.",
+    "story_b_text": "As a traveler, I want to copy of a past trip's itinerary and adjust the dates or spots, so that I can reuse a proven plan for a repeat visit without starting from scratch."
+  },
+  {
+    "story_a_id": "US-011",
+    "story_b_id": "US-019",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to see all my saved spots displayed as pins on a live map, so that I can understand their spatial distribution and plan routes more effectively.",
+    "story_b_text": "As a traveler, I want to generate a read-only web link for my itinerary, so that I can share my plans with friends and family without giving them editing rights."
+  },
+  {
+    "story_a_id": "US-011",
+    "story_b_id": "US-020",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to see all my saved spots displayed as pins on a live map, so that I can understand their spatial distribution and plan routes more effectively.",
+    "story_b_text": "As a traveler, I want to download a complete itinerary including maps, spot details, and daily plan for offline use, so that I can navigate and follow my plan even when I don't have an internet connection abroad."
+  },
+  {
+    "story_a_id": "US-012",
+    "story_b_id": "US-014",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to filter the map to show only spots from a specific list, so that I can focus on places relevant to a particular trip or category.",
+    "story_b_text": "As a traveler, I want to select a destination, travel dates, and a list of saved spots and have the app automatically generate a logically ordered, day-by-day itinerary, so that I can transform my scattered ideas into a structured plan without manual scheduling."
+  },
+  {
+    "story_a_id": "US-012",
+    "story_b_id": "US-015",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to filter the map to show only spots from a specific list, so that I can focus on places relevant to a particular trip or category.",
+    "story_b_text": "As a traveler, I want to view the generated itinerary as a daily route on a map, so that I can see the travel distance and logical flow between stops at a glance."
+  },
+  {
+    "story_a_id": "US-012",
+    "story_b_id": "US-016",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to filter the map to show only spots from a specific list, so that I can focus on places relevant to a particular trip or category.",
+    "story_b_text": "As a traveler, I want to drag and drop stops, so that I am able to manually adjust the order within a day's plan of the AI-generated schedule to my personal preferences."
+  },
+  {
+    "story_a_id": "US-012",
+    "story_b_id": "US-017",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to filter the map to show only spots from a specific list, so that I can focus on places relevant to a particular trip or category.",
+    "story_b_text": "As a traveler, I want to copy of a past trip's itinerary and adjust the dates or spots, so that I can reuse a proven plan for a repeat visit without starting from scratch."
+  },
+  {
+    "story_a_id": "US-012",
+    "story_b_id": "US-019",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to filter the map to show only spots from a specific list, so that I can focus on places relevant to a particular trip or category.",
+    "story_b_text": "As a traveler, I want to generate a read-only web link for my itinerary, so that I can share my plans with friends and family without giving them editing rights."
+  },
+  {
+    "story_a_id": "US-012",
+    "story_b_id": "US-020",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to filter the map to show only spots from a specific list, so that I can focus on places relevant to a particular trip or category.",
+    "story_b_text": "As a traveler, I want to download a complete itinerary including maps, spot details, and daily plan for offline use, so that I can navigate and follow my plan even when I don't have an internet connection abroad."
+  },
+  {
+    "story_a_id": "US-014",
+    "story_b_id": "US-015",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-014",
+        "dependent_id": "US-015",
+        "explanationOfDependency": "Story US-014 generates a 'generated itinerary', which Story US-015 views as a daily route on a map.",
+        "matchingTextPairs": [
+          [
+            "generate a logically ordered, day-by-day itinerary",
+            "view the generated itinerary as a daily route on a map"
+          ]
+        ]
+      }
+    ],
+    "story_a_text": "As a traveler, I want to select a destination, travel dates, and a list of saved spots and have the app automatically generate a logically ordered, day-by-day itinerary, so that I can transform my scattered ideas into a structured plan without manual scheduling.",
+    "story_b_text": "As a traveler, I want to view the generated itinerary as a daily route on a map, so that I can see the travel distance and logical flow between stops at a glance."
+  },
+  {
+    "story_a_id": "US-014",
+    "story_b_id": "US-016",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-014",
+        "dependent_id": "US-016",
+        "explanationOfDependency": "Story US-014 generates a 'day-by-day itinerary', which Story US-016 allows the user to manually adjust.",
+        "matchingTextPairs": [
+          [
+            "generate a logically ordered, day-by-day itinerary",
+            "adjust the order within a day's plan"
+          ]
+        ]
+      }
+    ],
+    "story_a_text": "As a traveler, I want to select a destination, travel dates, and a list of saved spots and have the app automatically generate a logically ordered, day-by-day itinerary, so that I can transform my scattered ideas into a structured plan without manual scheduling.",
+    "story_b_text": "As a traveler, I want to drag and drop stops, so that I am able to manually adjust the order within a day's plan of the AI-generated schedule to my personal preferences."
+  },
+  {
+    "story_a_id": "US-014",
+    "story_b_id": "US-017",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-014",
+        "dependent_id": "US-017",
+        "explanationOfDependency": "Story US-014 generates a 'itinerary', which Story US-017 copies as a past trip's itinerary.",
+        "matchingTextPairs": [
+          [
+            "generate a logically ordered, day-by-day itinerary",
+            "copy of a past trip's itinerary"
+          ]
+        ]
+      }
+    ],
+    "story_a_text": "As a traveler, I want to select a destination, travel dates, and a list of saved spots and have the app automatically generate a logically ordered, day-by-day itinerary, so that I can transform my scattered ideas into a structured plan without manual scheduling.",
+    "story_b_text": "As a traveler, I want to copy of a past trip's itinerary and adjust the dates or spots, so that I can reuse a proven plan for a repeat visit without starting from scratch."
+  },
+  {
+    "story_a_id": "US-014",
+    "story_b_id": "US-019",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to select a destination, travel dates, and a list of saved spots and have the app automatically generate a logically ordered, day-by-day itinerary, so that I can transform my scattered ideas into a structured plan without manual scheduling.",
+    "story_b_text": "As a traveler, I want to generate a read-only web link for my itinerary, so that I can share my plans with friends and family without giving them editing rights."
+  },
+  {
+    "story_a_id": "US-014",
+    "story_b_id": "US-020",
+    "dependencyFound": true,
+    "dependencies": [
+      {
+        "prerequisite_id": "US-014",
+        "dependent_id": "US-020",
+        "explanationOfDependency": "Story US-014 generates a 'itinerary', which Story US-020 downloads as a complete itinerary.",
+        "matchingTextPairs": [
+          [
+            "generate a logically ordered, day-by-day itinerary",
+            "download a complete itinerary"
+          ]
+        ]
+      }
+    ],
+    "story_a_text": "As a traveler, I want to select a destination, travel dates, and a list of saved spots and have the app automatically generate a logically ordered, day-by-day itinerary, so that I can transform my scattered ideas into a structured plan without manual scheduling.",
+    "story_b_text": "As a traveler, I want to download a complete itinerary including maps, spot details, and daily plan for offline use, so that I can navigate and follow my plan even when I don't have an internet connection abroad."
+  },
+  {
+    "story_a_id": "US-015",
+    "story_b_id": "US-016",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to view the generated itinerary as a daily route on a map, so that I can see the travel distance and logical flow between stops at a glance.",
+    "story_b_text": "As a traveler, I want to drag and drop stops, so that I am able to manually adjust the order within a day's plan of the AI-generated schedule to my personal preferences."
+  },
+  {
+    "story_a_id": "US-015",
+    "story_b_id": "US-017",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to view the generated itinerary as a daily route on a map, so that I can see the travel distance and logical flow between stops at a glance.",
+    "story_b_text": "As a traveler, I want to copy of a past trip's itinerary and adjust the dates or spots, so that I can reuse a proven plan for a repeat visit without starting from scratch."
+  },
+  {
+    "story_a_id": "US-015",
+    "story_b_id": "US-019",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to view the generated itinerary as a daily route on a map, so that I can see the travel distance and logical flow between stops at a glance.",
+    "story_b_text": "As a traveler, I want to generate a read-only web link for my itinerary, so that I can share my plans with friends and family without giving them editing rights."
+  },
+  {
+    "story_a_id": "US-015",
+    "story_b_id": "US-020",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to view the generated itinerary as a daily route on a map, so that I can see the travel distance and logical flow between stops at a glance.",
+    "story_b_text": "As a traveler, I want to download a complete itinerary including maps, spot details, and daily plan for offline use, so that I can navigate and follow my plan even when I don't have an internet connection abroad."
+  },
+  {
+    "story_a_id": "US-016",
+    "story_b_id": "US-017",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to drag and drop stops, so that I am able to manually adjust the order within a day's plan of the AI-generated schedule to my personal preferences.",
+    "story_b_text": "As a traveler, I want to copy of a past trip's itinerary and adjust the dates or spots, so that I can reuse a proven plan for a repeat visit without starting from scratch."
+  },
+  {
+    "story_a_id": "US-016",
+    "story_b_id": "US-019",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to drag and drop stops, so that I am able to manually adjust the order within a day's plan of the AI-generated schedule to my personal preferences.",
+    "story_b_text": "As a traveler, I want to generate a read-only web link for my itinerary, so that I can share my plans with friends and family without giving them editing rights."
+  },
+  {
+    "story_a_id": "US-016",
+    "story_b_id": "US-020",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to drag and drop stops, so that I am able to manually adjust the order within a day's plan of the AI-generated schedule to my personal preferences.",
+    "story_b_text": "As a traveler, I want to download a complete itinerary including maps, spot details, and daily plan for offline use, so that I can navigate and follow my plan even when I don't have an internet connection abroad."
+  },
+  {
+    "story_a_id": "US-017",
+    "story_b_id": "US-019",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to copy of a past trip's itinerary and adjust the dates or spots, so that I can reuse a proven plan for a repeat visit without starting from scratch.",
+    "story_b_text": "As a traveler, I want to generate a read-only web link for my itinerary, so that I can share my plans with friends and family without giving them editing rights."
+  },
+  {
+    "story_a_id": "US-017",
+    "story_b_id": "US-020",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to copy of a past trip's itinerary and adjust the dates or spots, so that I can reuse a proven plan for a repeat visit without starting from scratch.",
+    "story_b_text": "As a traveler, I want to download a complete itinerary including maps, spot details, and daily plan for offline use, so that I can navigate and follow my plan even when I don't have an internet connection abroad."
+  },
+  {
+    "story_a_id": "US-019",
+    "story_b_id": "US-020",
+    "dependencyFound": false,
+    "dependencies": [],
+    "story_a_text": "As a traveler, I want to generate a read-only web link for my itinerary, so that I can share my plans with friends and family without giving them editing rights.",
+    "story_b_text": "As a traveler, I want to download a complete itinerary including maps, spot details, and daily plan for offline use, so that I can navigate and follow my plan even when I don't have an internet connection abroad."
+  }
+]
