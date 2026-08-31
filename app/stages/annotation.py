@@ -108,6 +108,7 @@ def annotate(user_story: str,story_id:str, model: str, max_retries: int = 2, mod
         start = time.monotonic()
         try:
             annotation = run(user_story, mode=mode, model=model)
+            elapsed = time.monotonic() - start
             print(f"{story_id} annotated in {elapsed:.1f}s (attempt {attempt + 1}, mode={mode})")
             return {
                 "story_id": story_id,
