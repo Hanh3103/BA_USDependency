@@ -1,4 +1,4 @@
-# eval/tests/user_stories.yaml
+# eval_promptfoo/tests/user_stories.yaml
 
 - vars:
     USER_STORY: "As a shopper, I want to save items to a wishlist so that I can purchase them later."

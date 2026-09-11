@@ -1,7 +1,7 @@
 from utils.llm_client_helpers import _call_stage, _load_prompt
 from schemas.dependency.dependency_schema import (
     StoryActivity, ActionEntityPair,PairMatchVerdict, EntityMatchResult, ActivityPairInput, ClassifiedMatch, ClassifiedActivityPair,
-    ClassifiedMatchResult, ClassifiedActivityPairInput, DependencyVerdict, FoundedDependencyUsingAnnotated,DependencyEntryAnnotated, AnnotatedDependencyResult)
+    ClassifiedMatchResult, ClassifiedActivityPairInput, DependencyVerdict, FoundedDependencyUsingAnnotated,DependencyEntryAnnotated, AnnotatedDependencyResult, OperationType, ActivityCacheKey, ClassifiedActivity)
 from itertools import product
 import json
 from config import settings
@@ -10,6 +10,11 @@ ENTITY_PROMPT_PATH =settings.prompt_path("dependency_analysis", variant="annotat
 CLASSIFY_PROMPT_PATH = settings.prompt_path("dependency_analysis", variant="annotated", step=2)
 DECISION_PROMPT_PATH = settings.prompt_path("dependency_analysis", variant="annotated", step=3)
 
+def make_activity_key(activity: ActionEntityPair) -> ActivityCacheKey:
+    return (
+        activity.action.strip().casefold(),
+        activity.entity.strip().casefold(),
+    )
 
 def cartesian_activity_pairs(story_a: StoryActivity, story_b: StoryActivity) -> list[tuple[ActionEntityPair, ActionEntityPair]]:
     return list(product(story_a.activity, story_b.activity))
@@ -114,11 +119,36 @@ def find_entity_matches(story_a: StoryActivity, story_b: StoryActivity, model:st
     )
 
 
-def classify_activities(step1_output: EntityMatchResult, model:str) -> ClassifiedMatchResult:
+def classify_activities(step1_output: EntityMatchResult, model:str, operation_cache: dict[ActivityCacheKey, OperationType]) -> ClassifiedMatchResult:
     classify_prompt = _load_prompt(CLASSIFY_PROMPT_PATH)
     classified_matches: list[ClassifiedMatch] = []
 
+
+
     for match in step1_output.entity_matches:
+        key_a = make_activity_key(match.activity_a)
+        key_b = make_activity_key(match.activity_b)
+
+        # Both activities have previously been classified.
+        # Reuse cache values and do not make an LLM request.
+        if key_a in operation_cache and key_b in operation_cache:
+            classified_matches.append(
+                ClassifiedMatch(
+                    activity_a=ClassifiedActivity(
+                        action=match.activity_a.action,
+                        entity=match.activity_a.entity,
+                        operation_type=operation_cache[key_a],
+                    ),
+                    activity_b=ClassifiedActivity(
+                        action=match.activity_b.action,
+                        entity=match.activity_b.entity,
+                        operation_type=operation_cache[key_b],
+                    ),
+                    match_type=match.match_type,
+                )
+            )
+            continue
+
         pair_input = ActivityPairInput(activity_a=match.activity_a, activity_b=match.activity_b)
 
         result = _call_stage(
@@ -187,11 +217,22 @@ def classify_activities(step1_output: EntityMatchResult, model:str) -> Classifie
             model=model
         )
 
+        operation_cache.setdefault(key_a, result.activity_a.operation_type)
+        operation_cache.setdefault(key_b, result.activity_b.operation_type)
+
         classified_matches.append(
             ClassifiedMatch(
-                activity_a=result.activity_a,
-                activity_b=result.activity_b,
-                match_type=match.match_type,  # copied through in code, not sent to LLM
+                activity_a=ClassifiedActivity(
+                    action=match.activity_a.action,
+                    entity=match.activity_a.entity,
+                    operation_type=operation_cache[key_a],
+                ),
+                activity_b=ClassifiedActivity(
+                    action=match.activity_b.action,
+                    entity=match.activity_b.entity,
+                    operation_type=operation_cache[key_b],
+                ),
+                match_type=match.match_type,
             )
         )
 
@@ -349,7 +390,7 @@ def decide_dependency_nlp(step2_output: ClassifiedMatchResult) -> FoundedDepende
     return FoundedDependencyUsingAnnotated(dependencies=dependencies)
 
 
-def detect_dependency(story_a: StoryActivity, story_b: StoryActivity, model:str, max_retries: int = 2):
+def detect_dependency(story_a: StoryActivity, story_b: StoryActivity, model:str, operation_cache:dict[ActivityCacheKey, OperationType], max_retries: int = 2):
     last_error = None
     for attempt in range(max_retries):
         try:
@@ -366,7 +407,7 @@ def detect_dependency(story_a: StoryActivity, story_b: StoryActivity, model:str,
                 )
                 return result, False, attempt + 1
 
-            step_2 = classify_activities(step_1, model)
+            step_2 = classify_activities(step_1, model, operation_cache)
             step_3_llm = decide_dependency(step_2, model)
             step_3_nlp = decide_dependency_nlp(step_2)
 

@@ -14,7 +14,7 @@ REQUIRED OUTPUT SCHEMA
 OUTPUT RULES AND CONSTRAINTS
 1. The "match_type" field must be exactly one of "exact", "semantic", "other". No other value is allowed.
    1.1 Use "exact" when activity_a.entity and activity_b.entity are identical or near-identical strings (e.g. "books" and "book").
-   1.2 Use "semantic" when the two entity values are different wording for the same entity - a synonym, abbreviation, or a state/condition of the same entity (e.g. "book" and "saved books", "account" and "Google account").
+   1.2 Use "semantic" when the two entity values are different wording for the same entity - a synonym, abbreviation, or a state/condition of the same entity (e.g. "book" and "saved books", "account" and "Google account", provided they refer to the same underlying entity in context - if they represent functionally distinct data, classify as "other" instead).
    1.3 Use "other" when the two entities refer to completely different things or concepts, even if related (e.g. "order history" and "receipt").
 2. The "explanation" field is a short string (one sentence) justifying the match_type decision. It must not be empty.
 3. Never invent an action or entity value that did not appear in the input candidate pair.

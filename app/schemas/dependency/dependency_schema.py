@@ -50,6 +50,8 @@ class EntityMatchResult(BaseModel):
 # Step 2 - CRUD verb classification
 OperationType = Literal["CREATE", "READ", "UPDATE", "DELETE", "NON_CRUD"]
 
+ActivityCacheKey = tuple[str, str]
+
 class ActivityPairInput(BaseModel):
     activity_a: ActionEntityPair
     activity_b: ActionEntityPair

@@ -1,4 +1,4 @@
-from schemas.dependency.dependency_schema import  AnnotatedStory, StoryActivity, AnnotatedDependencyResult
+from schemas.dependency.dependency_schema import  AnnotatedStory, StoryActivity, AnnotatedDependencyResult, OperationType, ActivityCacheKey
 from utils.file_parser import load_annotated_stories
 from typing import Optional
 from itertools import combinations
@@ -35,12 +35,13 @@ def run_dependency_pipeline(data_set_path: str, model:str, pairs: Optional[list[
     results: list[AnnotatedDependencyResult] = []
     failed_pairs: list[tuple[str, str]] = []
     attempts_by_pair: dict[tuple[str, str], int] = {}
+    operation_cache:dict[ActivityCacheKey, OperationType] = {}
 
     for pair in pairs:
         print(f"Analyzing pair: {pair[0]} and {pair[1]}")
         pair_result, failed, attempts_used = detect_dependency(
             story_a=story_activities[pair[0]], story_b=story_activities[pair[1]],
-            model=model, max_retries=max_retries
+            model=model, operation_cache=operation_cache, max_retries=max_retries
         )
         results.append(pair_result)
         attempts_by_pair[pair] = attempts_used
@@ -48,6 +49,7 @@ def run_dependency_pipeline(data_set_path: str, model:str, pairs: Optional[list[
             failed_pairs.append(pair)
 
     return results, kept_ids, failed_pairs, attempts_by_pair
+
 
 
 

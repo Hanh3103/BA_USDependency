@@ -636,10 +636,6 @@
       [
         "traveler",
         "filter"
-      ],
-      [
-        "traveler",
-        "show"
       ]
     ],
     "targets": [
@@ -941,12 +937,7 @@
         "proven plan"
       ]
     ],
-    "contains": [
-      [
-        "past trip",
-        "itinerary"
-      ]
-    ]
+    "contains": []
   },
   {
     "Text": "As a traveler, I want to permanently delete a trip I no longer need, so that my trip list remains uncluttered and only shows active or relevant plans.",
