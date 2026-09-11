@@ -16,7 +16,7 @@
             "entity": "account"
           },
           "match_type": "semantic",
-          "explanation": "'Google/Apple account' is a specific type of 'account'."
+          "explanation": "'Google/Apple account' and 'account' refer to the same entity in this context."
         }
       ]
     },
@@ -762,7 +762,7 @@
             "entity": "saved spot"
           },
           "match_type": "semantic",
-          "explanation": "Both activities refer to saved media content, even though the wording differs."
+          "explanation": "Both activities refer to saved media content from social platforms."
         }
       ]
     },
@@ -886,7 +886,7 @@
             "entity": "saved spots"
           },
           "match_type": "semantic",
-          "explanation": "'saved spots' is a synonym for 'location' in the context of saved places."
+          "explanation": "'saved spots' is a synonym for 'location' in the context of saved locations."
         },
         {
           "activity_a": {
@@ -982,7 +982,7 @@
             "entity": "saved spots"
           },
           "match_type": "semantic",
-          "explanation": "'saved spots' is a synonym for 'location' in this context."
+          "explanation": "'saved spots' refers to the same entity as 'location' in the context of stored places."
         },
         {
           "activity_a": {
@@ -1038,21 +1038,6 @@
           "prerequisite_activity": {
             "action": "import",
             "entity": "location",
-            "operation_type": "CREATE"
-          },
-          "dependent_activity": {
-            "action": "see",
-            "entity": "saved spots",
-            "operation_type": "READ"
-          },
-          "match_type": "semantic"
-        },
-        {
-          "prerequisite_id": "US-004",
-          "dependent_id": "US-011",
-          "prerequisite_activity": {
-            "action": "import",
-            "entity": "saved TikTok or Instagram video",
             "operation_type": "CREATE"
           },
           "dependent_activity": {
@@ -1162,7 +1147,7 @@
             "entity": "list of saved spots"
           },
           "match_type": "semantic",
-          "explanation": "'List of saved spots' is a synonym for 'location' in this context."
+          "explanation": "'List of saved spots' refers to a collection of locations, which aligns with the 'location' entity in the import activity."
         }
       ]
     },
@@ -1449,7 +1434,7 @@
             "entity": "named lists"
           },
           "match_type": "semantic",
-          "explanation": "Both activities refer to the concept of a list that has a name."
+          "explanation": "Both activities refer to the same entity, 'name', in different contexts."
         },
         {
           "activity_a": {
@@ -1580,7 +1565,7 @@
           "activity_a": {
             "action": "entering",
             "entity": "name",
-            "operation_type": "CREATE"
+            "operation_type": "NON_CRUD"
           },
           "activity_b": {
             "action": "change",
@@ -1592,45 +1577,13 @@
       ]
     },
     "final_llm": {
-      "dependencies": [
-        {
-          "prerequisite_id": "US-005",
-          "dependent_id": "US-010",
-          "prerequisite_activity": {
-            "action": "entering",
-            "entity": "name",
-            "operation_type": "CREATE"
-          },
-          "dependent_activity": {
-            "action": "change",
-            "entity": "name of an existing list",
-            "operation_type": "UPDATE"
-          },
-          "match_type": "semantic"
-        }
-      ]
+      "dependencies": []
     },
     "final_nlp": {
-      "dependencies": [
-        {
-          "prerequisite_id": "US-005",
-          "dependent_id": "US-010",
-          "prerequisite_activity": {
-            "action": "entering",
-            "entity": "name",
-            "operation_type": "CREATE"
-          },
-          "dependent_activity": {
-            "action": "change",
-            "entity": "name of an existing list",
-            "operation_type": "UPDATE"
-          },
-          "match_type": "semantic"
-        }
-      ]
+      "dependencies": []
     },
-    "dependencyFoundLLM": true,
-    "dependencyFoundNLP": true
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
   },
   {
     "story_a": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth.",
@@ -1661,7 +1614,7 @@
             "entity": "saved spots"
           },
           "match_type": "semantic",
-          "explanation": "'saved spots' is a synonym for 'location' in the context of previously selected locations."
+          "explanation": "'saved spots' refers to previously selected locations, which are the same as 'location' in context."
         }
       ]
     },
@@ -1870,7 +1823,7 @@
             "entity": "destination"
           },
           "match_type": "semantic",
-          "explanation": "Location and destination are synonymous in this context."
+          "explanation": "Location and destination are synonymous in the context of selecting a place to go."
         },
         {
           "activity_a": {
@@ -1882,7 +1835,7 @@
             "entity": "list of saved spots"
           },
           "match_type": "semantic",
-          "explanation": "'list of saved spots' is a synonym for 'location' in this context."
+          "explanation": "'list of saved spots' refers to a collection of locations, making it semantically related to 'location'."
         }
       ]
     },
@@ -2163,7 +2116,7 @@
             "entity": "saved spots"
           },
           "match_type": "semantic",
-          "explanation": "'saved spot' and 'saved spots' refer to the same entity with a plural form difference."
+          "explanation": "'saved spot' and 'saved spots' refer to the same entity with different pluralization."
         }
       ]
     },
@@ -2304,39 +2257,12 @@
     "step_1_match": {
       "story_a_id": "US-006",
       "story_b_id": "US-012",
-      "entity_matches": [
-        {
-          "activity_a": {
-            "action": "attach",
-            "entity": "saved spot"
-          },
-          "activity_b": {
-            "action": "filter",
-            "entity": "spots"
-          },
-          "match_type": "semantic",
-          "explanation": "'saved spot' and 'spots' refer to the same type of entity, with 'saved spot' being a specific instance of 'spots'."
-        }
-      ]
+      "entity_matches": []
     },
     "step_2_classify": {
       "story_a_id": "US-006",
       "story_b_id": "US-012",
-      "classified_matches": [
-        {
-          "activity_a": {
-            "action": "attach",
-            "entity": "saved spot",
-            "operation_type": "UPDATE"
-          },
-          "activity_b": {
-            "action": "filter",
-            "entity": "spots",
-            "operation_type": "READ"
-          },
-          "match_type": "semantic"
-        }
-      ]
+      "classified_matches": []
     },
     "final_llm": {
       "dependencies": []
@@ -2479,7 +2405,7 @@
             "entity": "spots"
           },
           "match_type": "semantic",
-          "explanation": "'saved spot' and 'spots' refer to the same concept in different contexts."
+          "explanation": "'saved spot' and 'spots' refer to the same entity in different contexts."
         }
       ]
     },
@@ -2712,7 +2638,7 @@
             "entity": "specific list"
           },
           "match_type": "semantic",
-          "explanation": "'Named lists' and 'specific list' refer to the same type of entity, a list with defined characteristics."
+          "explanation": "'Named lists' and 'specific list' refer to the same type of entity, a list."
         },
         {
           "activity_a": {
@@ -2724,7 +2650,7 @@
             "entity": "spots"
           },
           "match_type": "semantic",
-          "explanation": "'saved spots' and 'spots' refer to the same entity with different states or contexts."
+          "explanation": "'saved spots' and 'spots' refer to the same entity in different states."
         }
       ]
     },
@@ -2870,7 +2796,7 @@
             "entity": "list of saved spots"
           },
           "match_type": "semantic",
-          "explanation": "'saved spots' and 'list of saved spots' refer to the same entity with slightly different wording."
+          "explanation": "'saved spots' and 'list of saved spots' refer to the same underlying entity."
         }
       ]
     },
@@ -2962,39 +2888,12 @@
     "step_1_match": {
       "story_a_id": "US-009",
       "story_b_id": "US-016",
-      "entity_matches": [
-        {
-          "activity_a": {
-            "action": "add",
-            "entity": "saved spots"
-          },
-          "activity_b": {
-            "action": "drag and drop",
-            "entity": "stops"
-          },
-          "match_type": "semantic",
-          "explanation": "'Saved spots' and 'stops' refer to the same concept of locations in a route."
-        }
-      ]
+      "entity_matches": []
     },
     "step_2_classify": {
       "story_a_id": "US-009",
       "story_b_id": "US-016",
-      "classified_matches": [
-        {
-          "activity_a": {
-            "action": "add",
-            "entity": "saved spots",
-            "operation_type": "CREATE"
-          },
-          "activity_b": {
-            "action": "drag and drop",
-            "entity": "stops",
-            "operation_type": "NON_CRUD"
-          },
-          "match_type": "semantic"
-        }
-      ]
+      "classified_matches": []
     },
     "final_llm": {
       "dependencies": []
@@ -3022,7 +2921,7 @@
             "entity": "spots"
           },
           "match_type": "semantic",
-          "explanation": "'saved spots' and 'spots' refer to the same entity in different states."
+          "explanation": "'Saved spots' and 'spots' refer to the same entity in different states."
         }
       ]
     },
@@ -3328,7 +3227,7 @@
             "entity": "spots"
           },
           "match_type": "semantic",
-          "explanation": "'saved spots' and 'spots' refer to the same entity with different states or contexts."
+          "explanation": "'saved spots' and 'spots' refer to the same entity in different states."
         },
         {
           "activity_a": {
@@ -3424,7 +3323,7 @@
             "entity": "list of saved spots"
           },
           "match_type": "semantic",
-          "explanation": "'saved spots' and 'list of saved spots' refer to the same entity with slightly different wording."
+          "explanation": "'saved spots' and 'list of saved spots' refer to the same underlying entity."
         }
       ]
     },
@@ -3473,7 +3372,7 @@
             "entity": "map"
           },
           "match_type": "semantic",
-          "explanation": "'Live map' and 'map' refer to the same entity with different levels of specificity."
+          "explanation": "'Live map' and 'map' refer to the same entity in different states or contexts."
         }
       ]
     },
@@ -3544,7 +3443,7 @@
             "entity": "spots"
           },
           "match_type": "semantic",
-          "explanation": "'saved spots' and 'spots' refer to the same concept with different wording."
+          "explanation": "'saved spots' and 'spots' refer to the same entity in different states."
         }
       ]
     },
@@ -3637,7 +3536,7 @@
             "entity": "list of saved spots"
           },
           "match_type": "semantic",
-          "explanation": "'list of saved spots' refers to the same entity as 'spots' in a saved context."
+          "explanation": "'List of saved spots' refers to the same entity as 'spots' in a saved context."
         }
       ]
     },
@@ -3698,7 +3597,7 @@
           "activity_a": {
             "action": "filter",
             "entity": "map",
-            "operation_type": "READ"
+            "operation_type": "UPDATE"
           },
           "activity_b": {
             "action": "view",
@@ -3833,18 +3732,6 @@
         {
           "activity_a": {
             "action": "specify",
-            "entity": "total number of days"
-          },
-          "activity_b": {
-            "action": "have the app automatically generate",
-            "entity": "day-by-day itinerary"
-          },
-          "match_type": "semantic",
-          "explanation": "Both entities refer to a structured plan of days, albeit with different wording."
-        },
-        {
-          "activity_a": {
-            "action": "specify",
             "entity": "trip"
           },
           "activity_b": {
@@ -3852,7 +3739,7 @@
             "entity": "day-by-day itinerary"
           },
           "match_type": "semantic",
-          "explanation": "A trip and a day-by-day itinerary are related entities representing the same travel plan."
+          "explanation": "A 'trip' and a 'day-by-day itinerary' are related as parts of the same travel-related entity."
         }
       ]
     },
@@ -3870,19 +3757,6 @@
             "action": "select",
             "entity": "travel dates",
             "operation_type": "READ"
-          },
-          "match_type": "semantic"
-        },
-        {
-          "activity_a": {
-            "action": "specify",
-            "entity": "total number of days",
-            "operation_type": "CREATE"
-          },
-          "activity_b": {
-            "action": "have the app automatically generate",
-            "entity": "day-by-day itinerary",
-            "operation_type": "CREATE"
           },
           "match_type": "semantic"
         },
@@ -3958,7 +3832,7 @@
             "entity": "generated itinerary"
           },
           "match_type": "semantic",
-          "explanation": "A generated itinerary is a trip in a structured form."
+          "explanation": "A generated itinerary is a specific instance of a trip."
         }
       ]
     },
@@ -3970,7 +3844,7 @@
           "activity_a": {
             "action": "specify",
             "entity": "trip",
-            "operation_type": "CREATE"
+            "operation_type": "UPDATE"
           },
           "activity_b": {
             "action": "view",
@@ -3985,26 +3859,10 @@
       "dependencies": []
     },
     "final_nlp": {
-      "dependencies": [
-        {
-          "prerequisite_id": "US-013",
-          "dependent_id": "US-015",
-          "prerequisite_activity": {
-            "action": "specify",
-            "entity": "trip",
-            "operation_type": "CREATE"
-          },
-          "dependent_activity": {
-            "action": "view",
-            "entity": "generated itinerary",
-            "operation_type": "READ"
-          },
-          "match_type": "semantic"
-        }
-      ]
+      "dependencies": []
     },
     "dependencyFoundLLM": false,
-    "dependencyFoundNLP": true
+    "dependencyFoundNLP": false
   },
   {
     "story_a": "As a traveler, I want to specify the start date, end date, or total number of days for a trip, so that the AI itinerary matches the exact length of my stay.",
@@ -4045,7 +3903,7 @@
             "entity": "dates"
           },
           "match_type": "semantic",
-          "explanation": "'Start date' is a specific type of 'dates'."
+          "explanation": "'Start date' is a specific type of 'dates' and refers to the same underlying entity."
         },
         {
           "activity_a": {
@@ -4057,19 +3915,7 @@
             "entity": "dates"
           },
           "match_type": "semantic",
-          "explanation": "'End date' is a specific type of 'dates'."
-        },
-        {
-          "activity_a": {
-            "action": "specify",
-            "entity": "total number of days"
-          },
-          "activity_b": {
-            "action": "adjust",
-            "entity": "dates"
-          },
-          "match_type": "semantic",
-          "explanation": "Both entities refer to a time period, with 'total number of days' and 'dates' being different ways of expressing the same concept."
+          "explanation": "'End date' is a specific type of 'dates' and refers to the same underlying entity."
         },
         {
           "activity_a": {
@@ -4118,21 +3964,8 @@
         {
           "activity_a": {
             "action": "specify",
-            "entity": "total number of days",
-            "operation_type": "CREATE"
-          },
-          "activity_b": {
-            "action": "adjust",
-            "entity": "dates",
-            "operation_type": "UPDATE"
-          },
-          "match_type": "semantic"
-        },
-        {
-          "activity_a": {
-            "action": "specify",
             "entity": "trip",
-            "operation_type": "CREATE"
+            "operation_type": "UPDATE"
           },
           "activity_b": {
             "action": "copy",
@@ -4174,36 +4007,6 @@
             "operation_type": "UPDATE"
           },
           "match_type": "semantic"
-        },
-        {
-          "prerequisite_id": "US-013",
-          "dependent_id": "US-017",
-          "prerequisite_activity": {
-            "action": "specify",
-            "entity": "total number of days",
-            "operation_type": "CREATE"
-          },
-          "dependent_activity": {
-            "action": "adjust",
-            "entity": "dates",
-            "operation_type": "UPDATE"
-          },
-          "match_type": "semantic"
-        },
-        {
-          "prerequisite_id": "US-013",
-          "dependent_id": "US-017",
-          "prerequisite_activity": {
-            "action": "specify",
-            "entity": "trip",
-            "operation_type": "CREATE"
-          },
-          "dependent_activity": {
-            "action": "copy",
-            "entity": "past trip's itinerary",
-            "operation_type": "UPDATE"
-          },
-          "match_type": "semantic"
         }
       ]
     },
@@ -4235,36 +4038,6 @@
           "dependent_activity": {
             "action": "adjust",
             "entity": "dates",
-            "operation_type": "UPDATE"
-          },
-          "match_type": "semantic"
-        },
-        {
-          "prerequisite_id": "US-013",
-          "dependent_id": "US-017",
-          "prerequisite_activity": {
-            "action": "specify",
-            "entity": "total number of days",
-            "operation_type": "CREATE"
-          },
-          "dependent_activity": {
-            "action": "adjust",
-            "entity": "dates",
-            "operation_type": "UPDATE"
-          },
-          "match_type": "semantic"
-        },
-        {
-          "prerequisite_id": "US-013",
-          "dependent_id": "US-017",
-          "prerequisite_activity": {
-            "action": "specify",
-            "entity": "trip",
-            "operation_type": "CREATE"
-          },
-          "dependent_activity": {
-            "action": "copy",
-            "entity": "past trip's itinerary",
             "operation_type": "UPDATE"
           },
           "match_type": "semantic"
@@ -4303,7 +4076,7 @@
           "activity_a": {
             "action": "specify",
             "entity": "trip",
-            "operation_type": "CREATE"
+            "operation_type": "UPDATE"
           },
           "activity_b": {
             "action": "permanently delete",
@@ -4318,26 +4091,10 @@
       "dependencies": []
     },
     "final_nlp": {
-      "dependencies": [
-        {
-          "prerequisite_id": "US-013",
-          "dependent_id": "US-018",
-          "prerequisite_activity": {
-            "action": "specify",
-            "entity": "trip",
-            "operation_type": "CREATE"
-          },
-          "dependent_activity": {
-            "action": "permanently delete",
-            "entity": "trip",
-            "operation_type": "DELETE"
-          },
-          "match_type": "exact"
-        }
-      ]
+      "dependencies": []
     },
     "dependencyFoundLLM": false,
-    "dependencyFoundNLP": true
+    "dependencyFoundNLP": false
   },
   {
     "story_a": "As a traveler, I want to select a destination, travel dates, and a list of saved spots and have the app automatically generate a logically ordered, day-by-day itinerary, so that I can transform my scattered ideas into a structured plan without manual scheduling.",
@@ -4356,7 +4113,7 @@
             "entity": "generated itinerary"
           },
           "match_type": "semantic",
-          "explanation": "'Day-by-day itinerary' and 'generated itinerary' refer to the same type of itinerary entity."
+          "explanation": "'Day-by-day itinerary' and 'generated itinerary' refer to the same type of entity, a travel plan."
         }
       ]
     },
@@ -4454,7 +4211,7 @@
           "activity_b": {
             "action": "drag and drop",
             "entity": "stops",
-            "operation_type": "UPDATE"
+            "operation_type": "NON_CRUD"
           },
           "match_type": "semantic"
         }
@@ -4479,18 +4236,6 @@
         {
           "activity_a": {
             "action": "select",
-            "entity": "destination"
-          },
-          "activity_b": {
-            "action": "copy",
-            "entity": "past trip's itinerary"
-          },
-          "match_type": "semantic",
-          "explanation": "'past trip's itinerary' refers to a previously selected destination."
-        },
-        {
-          "activity_a": {
-            "action": "select",
             "entity": "travel dates"
           },
           "activity_b": {
@@ -4498,7 +4243,7 @@
             "entity": "dates"
           },
           "match_type": "semantic",
-          "explanation": "'Travel dates' and 'dates' refer to the same entity in different contexts."
+          "explanation": "'Travel dates' and 'dates' refer to the same entity in the context of scheduling."
         },
         {
           "activity_a": {
@@ -4510,19 +4255,7 @@
             "entity": "spots"
           },
           "match_type": "semantic",
-          "explanation": "'List of saved spots' and 'spots' refer to the same concept in different wording."
-        },
-        {
-          "activity_a": {
-            "action": "have the app automatically generate",
-            "entity": "day-by-day itinerary"
-          },
-          "activity_b": {
-            "action": "copy",
-            "entity": "past trip's itinerary"
-          },
-          "match_type": "semantic",
-          "explanation": "'Day-by-day itinerary' and 'past trip's itinerary' both refer to travel plans."
+          "explanation": "'List of saved spots' and 'spots' refer to the same entity in different contexts."
         }
       ]
     },
@@ -4530,19 +4263,6 @@
       "story_a_id": "US-014",
       "story_b_id": "US-017",
       "classified_matches": [
-        {
-          "activity_a": {
-            "action": "select",
-            "entity": "destination",
-            "operation_type": "READ"
-          },
-          "activity_b": {
-            "action": "copy",
-            "entity": "past trip's itinerary",
-            "operation_type": "READ"
-          },
-          "match_type": "semantic"
-        },
         {
           "activity_a": {
             "action": "select",
@@ -4568,62 +4288,17 @@
             "operation_type": "UPDATE"
           },
           "match_type": "semantic"
-        },
-        {
-          "activity_a": {
-            "action": "have the app automatically generate",
-            "entity": "day-by-day itinerary",
-            "operation_type": "CREATE"
-          },
-          "activity_b": {
-            "action": "copy",
-            "entity": "past trip's itinerary",
-            "operation_type": "UPDATE"
-          },
-          "match_type": "semantic"
         }
       ]
     },
     "final_llm": {
-      "dependencies": [
-        {
-          "prerequisite_id": "US-014",
-          "dependent_id": "US-017",
-          "prerequisite_activity": {
-            "action": "have the app automatically generate",
-            "entity": "day-by-day itinerary",
-            "operation_type": "CREATE"
-          },
-          "dependent_activity": {
-            "action": "copy",
-            "entity": "past trip's itinerary",
-            "operation_type": "UPDATE"
-          },
-          "match_type": "semantic"
-        }
-      ]
+      "dependencies": []
     },
     "final_nlp": {
-      "dependencies": [
-        {
-          "prerequisite_id": "US-014",
-          "dependent_id": "US-017",
-          "prerequisite_activity": {
-            "action": "have the app automatically generate",
-            "entity": "day-by-day itinerary",
-            "operation_type": "CREATE"
-          },
-          "dependent_activity": {
-            "action": "copy",
-            "entity": "past trip's itinerary",
-            "operation_type": "UPDATE"
-          },
-          "match_type": "semantic"
-        }
-      ]
+      "dependencies": []
     },
-    "dependencyFoundLLM": true,
-    "dependencyFoundNLP": true
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
   },
   {
     "story_a": "As a traveler, I want to select a destination, travel dates, and a list of saved spots and have the app automatically generate a logically ordered, day-by-day itinerary, so that I can transform my scattered ideas into a structured plan without manual scheduling.",
@@ -4686,7 +4361,7 @@
             "entity": "past trip's itinerary"
           },
           "match_type": "semantic",
-          "explanation": "Both entities refer to an itinerary, even though they are in different states."
+          "explanation": "Both activities refer to an itinerary, even though they are in different states."
         }
       ]
     },
@@ -4703,7 +4378,7 @@
           "activity_b": {
             "action": "copy",
             "entity": "past trip's itinerary",
-            "operation_type": "READ"
+            "operation_type": "UPDATE"
           },
           "match_type": "semantic"
         }

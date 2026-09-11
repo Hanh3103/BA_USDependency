@@ -850,7 +850,7 @@
             "entity": "saved spots"
           },
           "match_type": "semantic",
-          "explanation": "'saved spots' is a synonym for 'location' in this context."
+          "explanation": "'saved spots' refers to the same entity as 'location' in the context of stored places."
         }
       ]
     },
@@ -1303,7 +1303,7 @@
             "entity": "list"
           },
           "match_type": "semantic",
-          "explanation": "'Named lists' and 'list' refer to the same entity with different wording."
+          "explanation": "'Named lists' and 'list' refer to the same entity in different wording."
         }
       ]
     },
@@ -1428,7 +1428,7 @@
             "entity": "spots"
           },
           "match_type": "semantic",
-          "explanation": "'saved spots' and 'spots' refer to the same entity in different states."
+          "explanation": "'Saved spots' and 'spots' refer to the same entity in different states."
         }
       ]
     },
@@ -2108,7 +2108,7 @@
             "entity": "saved spots"
           },
           "match_type": "semantic",
-          "explanation": "'saved spots' is a synonym for 'location' in the context of previously selected locations."
+          "explanation": "'saved spots' refers to previously selected locations, which are the same as 'location' in context."
         }
       ]
     },
@@ -2224,7 +2224,7 @@
             "entity": "destination"
           },
           "match_type": "semantic",
-          "explanation": "Location and destination are synonymous in this context."
+          "explanation": "Location and destination are synonymous in the context of selecting a place to go."
         }
       ]
     },
@@ -2706,7 +2706,7 @@
             "entity": "spots"
           },
           "match_type": "semantic",
-          "explanation": "'saved spots' and 'spots' refer to the same concept with different wording."
+          "explanation": "'saved spots' and 'spots' refer to the same entity in different states."
         }
       ]
     },
@@ -2968,18 +2968,6 @@
         {
           "activity_a": {
             "action": "select",
-            "entity": "destination"
-          },
-          "activity_b": {
-            "action": "copy",
-            "entity": "past trip's itinerary"
-          },
-          "match_type": "semantic",
-          "explanation": "'past trip's itinerary' refers to a previously selected destination."
-        },
-        {
-          "activity_a": {
-            "action": "select",
             "entity": "travel dates"
           },
           "activity_b": {
@@ -2987,7 +2975,7 @@
             "entity": "dates"
           },
           "match_type": "semantic",
-          "explanation": "'Travel dates' and 'dates' refer to the same entity in different contexts."
+          "explanation": "'Travel dates' and 'dates' refer to the same entity in the context of scheduling."
         }
       ]
     },
@@ -2995,19 +2983,6 @@
       "story_a_id": "US-014",
       "story_b_id": "US-017",
       "classified_matches": [
-        {
-          "activity_a": {
-            "action": "select",
-            "entity": "destination",
-            "operation_type": "READ"
-          },
-          "activity_b": {
-            "action": "copy",
-            "entity": "past trip's itinerary",
-            "operation_type": "READ"
-          },
-          "match_type": "semantic"
-        },
         {
           "activity_a": {
             "action": "select",
@@ -3083,7 +3058,7 @@
             "entity": "complete itinerary"
           },
           "match_type": "semantic",
-          "explanation": "'Travel dates' and 'complete itinerary' are related concepts involving travel planning."
+          "explanation": "Travel dates are a component of a complete itinerary, referring to the same underlying entity in context."
         }
       ]
     },
@@ -3167,7 +3142,7 @@
             "entity": "past trip's itinerary"
           },
           "match_type": "semantic",
-          "explanation": "Both entities refer to an itinerary, even though they are in different states."
+          "explanation": "Both activities refer to an itinerary, even though they are in different states."
         }
       ]
     },
@@ -3238,7 +3213,7 @@
             "entity": "complete itinerary"
           },
           "match_type": "semantic",
-          "explanation": "'Generated itinerary' and 'complete itinerary' refer to the same type of document in different states."
+          "explanation": "'Generated itinerary' and 'complete itinerary' refer to the same type of entity, a travel plan."
         }
       ]
     },
@@ -3376,18 +3351,6 @@
           },
           "match_type": "semantic",
           "explanation": "'past trip's itinerary' and 'complete itinerary' refer to the same type of entity, a travel itinerary."
-        },
-        {
-          "activity_a": {
-            "action": "adjust",
-            "entity": "dates"
-          },
-          "activity_b": {
-            "action": "download",
-            "entity": "complete itinerary"
-          },
-          "match_type": "semantic",
-          "explanation": "Dates and a complete itinerary are related as parts of a travel plan."
         }
       ]
     },
@@ -3399,20 +3362,7 @@
           "activity_a": {
             "action": "copy",
             "entity": "past trip's itinerary",
-            "operation_type": "NON_CRUD"
-          },
-          "activity_b": {
-            "action": "download",
-            "entity": "complete itinerary",
             "operation_type": "READ"
-          },
-          "match_type": "semantic"
-        },
-        {
-          "activity_a": {
-            "action": "adjust",
-            "entity": "dates",
-            "operation_type": "UPDATE"
           },
           "activity_b": {
             "action": "download",
