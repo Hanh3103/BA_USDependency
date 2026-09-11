@@ -8,6 +8,9 @@ def run_dependency_pipeline_text(data_set_path: str, model:str,  pairs=None, max
     kept, dropped = filter_well_formed(stories)
     print(f"Kept {len(kept)} well-formed stories, dropped {len(dropped)} ill-formed stories.")
 
+    for r in dropped:
+        print(f"Dropped story {r.Text}: {r.well_formed_reason}")
+
     kept_ids = {r.id for r in kept}
     story_lookup = {s.id: s for s in stories if s.id in kept_ids}
 
@@ -28,7 +31,7 @@ def run_dependency_pipeline_text(data_set_path: str, model:str,  pairs=None, max
         if failed:
             failed_pairs.append((a_id, b_id))
 
-    return results, kept_ids, failed_pairs, attempts_by_pair
+    return results, kept_ids, dropped, failed_pairs, attempts_by_pair
 
 if __name__ == '__main__':
     from utils.file_writer import save_results

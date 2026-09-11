@@ -48,7 +48,7 @@ def run_dependency_pipeline(data_set_path: str, model:str, pairs: Optional[list[
         if failed:
             failed_pairs.append(pair)
 
-    return results, kept_ids, failed_pairs, attempts_by_pair
+    return results, kept_ids, dropped, failed_pairs, attempts_by_pair
 
 
 
