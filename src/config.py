@@ -3,7 +3,8 @@ from pathlib import Path
 from dotenv import dotenv_values
 
 BASE_DIR = Path(__file__).resolve().parent
-env_path = BASE_DIR / ".env"
+PROJECT_ROOT = BASE_DIR.parent
+env_path = PROJECT_ROOT / ".env"
 
 print(f"ENV path: {env_path}")
 print(f"ENV exists: {env_path.exists()}")
