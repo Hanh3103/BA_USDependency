@@ -1,5 +1,0 @@
-Model,Condition,Precision (directed),Recall (directed),F1 (directed),F1 (undirected),Direction errors,Time (s),TP,FP,FN
-llama3.1:8b,Text Dependency Analysis,0.0735,1.0,0.137,0.1515,1,448.68,5,63,0
-llama3.1:8b,Annotated Dependency Analysis,0.5,1.0,0.6667,0.6667,0,359.18,5,5,0
-qwen3:8b,Text Dependency Analysis,0.1333,0.4,0.2,0.2,0,244.24,2,13,3
-qwen3:8b,Annotated Dependency Analysis,0.625,1.0,0.7692,0.7692,0,364.59,5,3,0
