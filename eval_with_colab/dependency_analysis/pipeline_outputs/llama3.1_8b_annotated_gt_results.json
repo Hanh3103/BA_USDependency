@@ -1,0 +1,3555 @@
+[
+  {
+    "story_a": "As a returning user, I want to log in my account on a new device and log out when I'm finished, so that I can access my travel data safely and maintain privacy on shared devices.",
+    "story_b": "As a user, I want to walk through a short, guided tutorial that demonstrates how to import a spot, create a list, and generate an itinerary, so that I can understand the app's core workflow without reading external documentation.",
+    "step_1_match": {
+      "story_a_id": "US-002",
+      "story_b_id": "US-003",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-002",
+      "story_b_id": "US-003",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a returning user, I want to log in my account on a new device and log out when I'm finished, so that I can access my travel data safely and maintain privacy on shared devices.",
+    "story_b": "As a traveler, I want to import a location from a saved TikTok or Instagram video with a single tap, so that I can quickly capture travel inspiration without manually typing details.",
+    "step_1_match": {
+      "story_a_id": "US-002",
+      "story_b_id": "US-004",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-002",
+      "story_b_id": "US-004",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a returning user, I want to log in my account on a new device and log out when I'm finished, so that I can access my travel data safely and maintain privacy on shared devices.",
+    "story_b": "As a traveler, I want to create named lists (e.g., Tokyo food or Paris museums) and add saved spots to them, so that I can group my travel inspiration by destination or theme.",
+    "step_1_match": {
+      "story_a_id": "US-002",
+      "story_b_id": "US-005",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-002",
+      "story_b_id": "US-005",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a returning user, I want to log in my account on a new device and log out when I'm finished, so that I can access my travel data safely and maintain privacy on shared devices.",
+    "story_b": "As a traveler, I want to attach private notes (e.g., reservation numbers or tips) to any saved spot, so that I can keep critical information together with the place it belongs to.",
+    "step_1_match": {
+      "story_a_id": "US-002",
+      "story_b_id": "US-006",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-002",
+      "story_b_id": "US-006",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a returning user, I want to log in my account on a new device and log out when I'm finished, so that I can access my travel data safely and maintain privacy on shared devices.",
+    "story_b": "As a traveler, I want to open the original TikTok or Instagram video that was used to save a spot, so that I can rewatch the creator's tips and context before visiting.",
+    "step_1_match": {
+      "story_a_id": "US-002",
+      "story_b_id": "US-007",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-002",
+      "story_b_id": "US-007",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a returning user, I want to log in my account on a new device and log out when I'm finished, so that I can access my travel data safely and maintain privacy on shared devices.",
+    "story_b": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth.",
+    "step_1_match": {
+      "story_a_id": "US-002",
+      "story_b_id": "US-009",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-002",
+      "story_b_id": "US-009",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a returning user, I want to log in my account on a new device and log out when I'm finished, so that I can access my travel data safely and maintain privacy on shared devices.",
+    "story_b": "As a traveler, I want to change the name of an existing list, so that I can keep my organization up to date as my plans evolve.",
+    "step_1_match": {
+      "story_a_id": "US-002",
+      "story_b_id": "US-010",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-002",
+      "story_b_id": "US-010",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a returning user, I want to log in my account on a new device and log out when I'm finished, so that I can access my travel data safely and maintain privacy on shared devices.",
+    "story_b": "As a traveler, I want to see all my saved spots displayed as pins on a live map, so that I can understand their spatial distribution and plan routes more effectively.",
+    "step_1_match": {
+      "story_a_id": "US-002",
+      "story_b_id": "US-011",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-002",
+      "story_b_id": "US-011",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a returning user, I want to log in my account on a new device and log out when I'm finished, so that I can access my travel data safely and maintain privacy on shared devices.",
+    "story_b": "As a traveler, I want to filter the map to show only spots from a specific list, so that I can focus on places relevant to a particular trip or category.",
+    "step_1_match": {
+      "story_a_id": "US-002",
+      "story_b_id": "US-012",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-002",
+      "story_b_id": "US-012",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a returning user, I want to log in my account on a new device and log out when I'm finished, so that I can access my travel data safely and maintain privacy on shared devices.",
+    "story_b": "As a traveler, I want to select a destination, travel dates, and a list of saved spots and have the app automatically generate a logically ordered, day-by-day itinerary, so that I can transform my scattered ideas into a structured plan without manual scheduling.",
+    "step_1_match": {
+      "story_a_id": "US-002",
+      "story_b_id": "US-014",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-002",
+      "story_b_id": "US-014",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a returning user, I want to log in my account on a new device and log out when I'm finished, so that I can access my travel data safely and maintain privacy on shared devices.",
+    "story_b": "As a traveler, I want to view the generated itinerary as a daily route on a map, so that I can see the travel distance and logical flow between stops at a glance.",
+    "step_1_match": {
+      "story_a_id": "US-002",
+      "story_b_id": "US-015",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-002",
+      "story_b_id": "US-015",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a returning user, I want to log in my account on a new device and log out when I'm finished, so that I can access my travel data safely and maintain privacy on shared devices.",
+    "story_b": "As a traveler, I want to drag and drop stops, so that I am able to manually adjust the order within a day's plan of the AI-generated schedule to my personal preferences.",
+    "step_1_match": {
+      "story_a_id": "US-002",
+      "story_b_id": "US-016",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-002",
+      "story_b_id": "US-016",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a returning user, I want to log in my account on a new device and log out when I'm finished, so that I can access my travel data safely and maintain privacy on shared devices.",
+    "story_b": "As a traveler, I want to copy of a past trip's itinerary and adjust the dates or spots, so that I can reuse a proven plan for a repeat visit without starting from scratch.",
+    "step_1_match": {
+      "story_a_id": "US-002",
+      "story_b_id": "US-017",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-002",
+      "story_b_id": "US-017",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a returning user, I want to log in my account on a new device and log out when I'm finished, so that I can access my travel data safely and maintain privacy on shared devices.",
+    "story_b": "As a traveler, I want to generate a read-only web link for my itinerary, so that I can share my plans with friends and family without giving them editing rights.",
+    "step_1_match": {
+      "story_a_id": "US-002",
+      "story_b_id": "US-019",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-002",
+      "story_b_id": "US-019",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a returning user, I want to log in my account on a new device and log out when I'm finished, so that I can access my travel data safely and maintain privacy on shared devices.",
+    "story_b": "As a traveler, I want to download a complete itinerary including maps, spot details, and daily plan for offline use, so that I can navigate and follow my plan even when I don't have an internet connection abroad.",
+    "step_1_match": {
+      "story_a_id": "US-002",
+      "story_b_id": "US-020",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-002",
+      "story_b_id": "US-020",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a user, I want to walk through a short, guided tutorial that demonstrates how to import a spot, create a list, and generate an itinerary, so that I can understand the app's core workflow without reading external documentation.",
+    "story_b": "As a traveler, I want to import a location from a saved TikTok or Instagram video with a single tap, so that I can quickly capture travel inspiration without manually typing details.",
+    "step_1_match": {
+      "story_a_id": "US-003",
+      "story_b_id": "US-004",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-003",
+      "story_b_id": "US-004",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a user, I want to walk through a short, guided tutorial that demonstrates how to import a spot, create a list, and generate an itinerary, so that I can understand the app's core workflow without reading external documentation.",
+    "story_b": "As a traveler, I want to create named lists (e.g., Tokyo food or Paris museums) and add saved spots to them, so that I can group my travel inspiration by destination or theme.",
+    "step_1_match": {
+      "story_a_id": "US-003",
+      "story_b_id": "US-005",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-003",
+      "story_b_id": "US-005",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a user, I want to walk through a short, guided tutorial that demonstrates how to import a spot, create a list, and generate an itinerary, so that I can understand the app's core workflow without reading external documentation.",
+    "story_b": "As a traveler, I want to attach private notes (e.g., reservation numbers or tips) to any saved spot, so that I can keep critical information together with the place it belongs to.",
+    "step_1_match": {
+      "story_a_id": "US-003",
+      "story_b_id": "US-006",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-003",
+      "story_b_id": "US-006",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a user, I want to walk through a short, guided tutorial that demonstrates how to import a spot, create a list, and generate an itinerary, so that I can understand the app's core workflow without reading external documentation.",
+    "story_b": "As a traveler, I want to open the original TikTok or Instagram video that was used to save a spot, so that I can rewatch the creator's tips and context before visiting.",
+    "step_1_match": {
+      "story_a_id": "US-003",
+      "story_b_id": "US-007",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-003",
+      "story_b_id": "US-007",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a user, I want to walk through a short, guided tutorial that demonstrates how to import a spot, create a list, and generate an itinerary, so that I can understand the app's core workflow without reading external documentation.",
+    "story_b": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth.",
+    "step_1_match": {
+      "story_a_id": "US-003",
+      "story_b_id": "US-009",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-003",
+      "story_b_id": "US-009",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a user, I want to walk through a short, guided tutorial that demonstrates how to import a spot, create a list, and generate an itinerary, so that I can understand the app's core workflow without reading external documentation.",
+    "story_b": "As a traveler, I want to change the name of an existing list, so that I can keep my organization up to date as my plans evolve.",
+    "step_1_match": {
+      "story_a_id": "US-003",
+      "story_b_id": "US-010",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-003",
+      "story_b_id": "US-010",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a user, I want to walk through a short, guided tutorial that demonstrates how to import a spot, create a list, and generate an itinerary, so that I can understand the app's core workflow without reading external documentation.",
+    "story_b": "As a traveler, I want to see all my saved spots displayed as pins on a live map, so that I can understand their spatial distribution and plan routes more effectively.",
+    "step_1_match": {
+      "story_a_id": "US-003",
+      "story_b_id": "US-011",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-003",
+      "story_b_id": "US-011",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a user, I want to walk through a short, guided tutorial that demonstrates how to import a spot, create a list, and generate an itinerary, so that I can understand the app's core workflow without reading external documentation.",
+    "story_b": "As a traveler, I want to filter the map to show only spots from a specific list, so that I can focus on places relevant to a particular trip or category.",
+    "step_1_match": {
+      "story_a_id": "US-003",
+      "story_b_id": "US-012",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-003",
+      "story_b_id": "US-012",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a user, I want to walk through a short, guided tutorial that demonstrates how to import a spot, create a list, and generate an itinerary, so that I can understand the app's core workflow without reading external documentation.",
+    "story_b": "As a traveler, I want to select a destination, travel dates, and a list of saved spots and have the app automatically generate a logically ordered, day-by-day itinerary, so that I can transform my scattered ideas into a structured plan without manual scheduling.",
+    "step_1_match": {
+      "story_a_id": "US-003",
+      "story_b_id": "US-014",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-003",
+      "story_b_id": "US-014",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a user, I want to walk through a short, guided tutorial that demonstrates how to import a spot, create a list, and generate an itinerary, so that I can understand the app's core workflow without reading external documentation.",
+    "story_b": "As a traveler, I want to view the generated itinerary as a daily route on a map, so that I can see the travel distance and logical flow between stops at a glance.",
+    "step_1_match": {
+      "story_a_id": "US-003",
+      "story_b_id": "US-015",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-003",
+      "story_b_id": "US-015",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a user, I want to walk through a short, guided tutorial that demonstrates how to import a spot, create a list, and generate an itinerary, so that I can understand the app's core workflow without reading external documentation.",
+    "story_b": "As a traveler, I want to drag and drop stops, so that I am able to manually adjust the order within a day's plan of the AI-generated schedule to my personal preferences.",
+    "step_1_match": {
+      "story_a_id": "US-003",
+      "story_b_id": "US-016",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-003",
+      "story_b_id": "US-016",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a user, I want to walk through a short, guided tutorial that demonstrates how to import a spot, create a list, and generate an itinerary, so that I can understand the app's core workflow without reading external documentation.",
+    "story_b": "As a traveler, I want to copy of a past trip's itinerary and adjust the dates or spots, so that I can reuse a proven plan for a repeat visit without starting from scratch.",
+    "step_1_match": {
+      "story_a_id": "US-003",
+      "story_b_id": "US-017",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-003",
+      "story_b_id": "US-017",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a user, I want to walk through a short, guided tutorial that demonstrates how to import a spot, create a list, and generate an itinerary, so that I can understand the app's core workflow without reading external documentation.",
+    "story_b": "As a traveler, I want to generate a read-only web link for my itinerary, so that I can share my plans with friends and family without giving them editing rights.",
+    "step_1_match": {
+      "story_a_id": "US-003",
+      "story_b_id": "US-019",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-003",
+      "story_b_id": "US-019",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a user, I want to walk through a short, guided tutorial that demonstrates how to import a spot, create a list, and generate an itinerary, so that I can understand the app's core workflow without reading external documentation.",
+    "story_b": "As a traveler, I want to download a complete itinerary including maps, spot details, and daily plan for offline use, so that I can navigate and follow my plan even when I don't have an internet connection abroad.",
+    "step_1_match": {
+      "story_a_id": "US-003",
+      "story_b_id": "US-020",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-003",
+      "story_b_id": "US-020",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to import a location from a saved TikTok or Instagram video with a single tap, so that I can quickly capture travel inspiration without manually typing details.",
+    "story_b": "As a traveler, I want to create named lists (e.g., Tokyo food or Paris museums) and add saved spots to them, so that I can group my travel inspiration by destination or theme.",
+    "step_1_match": {
+      "story_a_id": "US-004",
+      "story_b_id": "US-005",
+      "entity_matches": [
+        {
+          "activity_a": {
+            "action": "import",
+            "entity": "location"
+          },
+          "activity_b": {
+            "action": "add",
+            "entity": "saved spots"
+          },
+          "match_type": "semantic",
+          "explanation": "Saved spots is a synonym for location."
+        }
+      ]
+    },
+    "step_2_classify": {
+      "story_a_id": "US-004",
+      "story_b_id": "US-005",
+      "classified_matches": [
+        {
+          "activity_a": {
+            "action": "import",
+            "entity": "location",
+            "operation_type": "CREATE"
+          },
+          "activity_b": {
+            "action": "add",
+            "entity": "saved spots",
+            "operation_type": "CREATE"
+          },
+          "match_type": "semantic"
+        }
+      ]
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to import a location from a saved TikTok or Instagram video with a single tap, so that I can quickly capture travel inspiration without manually typing details.",
+    "story_b": "As a traveler, I want to attach private notes (e.g., reservation numbers or tips) to any saved spot, so that I can keep critical information together with the place it belongs to.",
+    "step_1_match": {
+      "story_a_id": "US-004",
+      "story_b_id": "US-006",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-004",
+      "story_b_id": "US-006",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to import a location from a saved TikTok or Instagram video with a single tap, so that I can quickly capture travel inspiration without manually typing details.",
+    "story_b": "As a traveler, I want to open the original TikTok or Instagram video that was used to save a spot, so that I can rewatch the creator's tips and context before visiting.",
+    "step_1_match": {
+      "story_a_id": "US-004",
+      "story_b_id": "US-007",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-004",
+      "story_b_id": "US-007",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to import a location from a saved TikTok or Instagram video with a single tap, so that I can quickly capture travel inspiration without manually typing details.",
+    "story_b": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth.",
+    "step_1_match": {
+      "story_a_id": "US-004",
+      "story_b_id": "US-009",
+      "entity_matches": [
+        {
+          "activity_a": {
+            "action": "import",
+            "entity": "location"
+          },
+          "activity_b": {
+            "action": "selecting",
+            "entity": "location"
+          },
+          "match_type": "exact",
+          "explanation": "Both activities reference the identical entity string 'location'."
+        }
+      ]
+    },
+    "step_2_classify": {
+      "story_a_id": "US-004",
+      "story_b_id": "US-009",
+      "classified_matches": [
+        {
+          "activity_a": {
+            "action": "import",
+            "entity": "location",
+            "operation_type": "CREATE"
+          },
+          "activity_b": {
+            "action": "selecting",
+            "entity": "location",
+            "operation_type": "READ"
+          },
+          "match_type": "exact"
+        }
+      ]
+    },
+    "final_llm": {
+      "dependencies": [
+        {
+          "prerequisite_id": "US-004",
+          "dependent_id": "US-009",
+          "prerequisite_activity": {
+            "action": "import",
+            "entity": "location",
+            "operation_type": "CREATE"
+          },
+          "dependent_activity": {
+            "action": "selecting",
+            "entity": "location",
+            "operation_type": "READ"
+          },
+          "match_type": "exact"
+        }
+      ]
+    },
+    "final_nlp": {
+      "dependencies": [
+        {
+          "prerequisite_id": "US-004",
+          "dependent_id": "US-009",
+          "prerequisite_activity": {
+            "action": "import",
+            "entity": "location",
+            "operation_type": "CREATE"
+          },
+          "dependent_activity": {
+            "action": "selecting",
+            "entity": "location",
+            "operation_type": "READ"
+          },
+          "match_type": "exact"
+        }
+      ]
+    },
+    "dependencyFoundLLM": true,
+    "dependencyFoundNLP": true
+  },
+  {
+    "story_a": "As a traveler, I want to import a location from a saved TikTok or Instagram video with a single tap, so that I can quickly capture travel inspiration without manually typing details.",
+    "story_b": "As a traveler, I want to change the name of an existing list, so that I can keep my organization up to date as my plans evolve.",
+    "step_1_match": {
+      "story_a_id": "US-004",
+      "story_b_id": "US-010",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-004",
+      "story_b_id": "US-010",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to import a location from a saved TikTok or Instagram video with a single tap, so that I can quickly capture travel inspiration without manually typing details.",
+    "story_b": "As a traveler, I want to see all my saved spots displayed as pins on a live map, so that I can understand their spatial distribution and plan routes more effectively.",
+    "step_1_match": {
+      "story_a_id": "US-004",
+      "story_b_id": "US-011",
+      "entity_matches": [
+        {
+          "activity_a": {
+            "action": "import",
+            "entity": "location"
+          },
+          "activity_b": {
+            "action": "see",
+            "entity": "saved spots"
+          },
+          "match_type": "semantic",
+          "explanation": "Saved spots is a state of the location entity."
+        }
+      ]
+    },
+    "step_2_classify": {
+      "story_a_id": "US-004",
+      "story_b_id": "US-011",
+      "classified_matches": [
+        {
+          "activity_a": {
+            "action": "import",
+            "entity": "location",
+            "operation_type": "CREATE"
+          },
+          "activity_b": {
+            "action": "see",
+            "entity": "saved spots",
+            "operation_type": "READ"
+          },
+          "match_type": "semantic"
+        }
+      ]
+    },
+    "final_llm": {
+      "dependencies": [
+        {
+          "prerequisite_id": "US-004",
+          "dependent_id": "US-011",
+          "prerequisite_activity": {
+            "action": "import",
+            "entity": "location",
+            "operation_type": "CREATE"
+          },
+          "dependent_activity": {
+            "action": "see",
+            "entity": "saved spots",
+            "operation_type": "READ"
+          },
+          "match_type": "semantic"
+        }
+      ]
+    },
+    "final_nlp": {
+      "dependencies": [
+        {
+          "prerequisite_id": "US-004",
+          "dependent_id": "US-011",
+          "prerequisite_activity": {
+            "action": "import",
+            "entity": "location",
+            "operation_type": "CREATE"
+          },
+          "dependent_activity": {
+            "action": "see",
+            "entity": "saved spots",
+            "operation_type": "READ"
+          },
+          "match_type": "semantic"
+        }
+      ]
+    },
+    "dependencyFoundLLM": true,
+    "dependencyFoundNLP": true
+  },
+  {
+    "story_a": "As a traveler, I want to import a location from a saved TikTok or Instagram video with a single tap, so that I can quickly capture travel inspiration without manually typing details.",
+    "story_b": "As a traveler, I want to filter the map to show only spots from a specific list, so that I can focus on places relevant to a particular trip or category.",
+    "step_1_match": {
+      "story_a_id": "US-004",
+      "story_b_id": "US-012",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-004",
+      "story_b_id": "US-012",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to import a location from a saved TikTok or Instagram video with a single tap, so that I can quickly capture travel inspiration without manually typing details.",
+    "story_b": "As a traveler, I want to select a destination, travel dates, and a list of saved spots and have the app automatically generate a logically ordered, day-by-day itinerary, so that I can transform my scattered ideas into a structured plan without manual scheduling.",
+    "step_1_match": {
+      "story_a_id": "US-004",
+      "story_b_id": "US-014",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-004",
+      "story_b_id": "US-014",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to import a location from a saved TikTok or Instagram video with a single tap, so that I can quickly capture travel inspiration without manually typing details.",
+    "story_b": "As a traveler, I want to view the generated itinerary as a daily route on a map, so that I can see the travel distance and logical flow between stops at a glance.",
+    "step_1_match": {
+      "story_a_id": "US-004",
+      "story_b_id": "US-015",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-004",
+      "story_b_id": "US-015",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to import a location from a saved TikTok or Instagram video with a single tap, so that I can quickly capture travel inspiration without manually typing details.",
+    "story_b": "As a traveler, I want to drag and drop stops, so that I am able to manually adjust the order within a day's plan of the AI-generated schedule to my personal preferences.",
+    "step_1_match": {
+      "story_a_id": "US-004",
+      "story_b_id": "US-016",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-004",
+      "story_b_id": "US-016",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to import a location from a saved TikTok or Instagram video with a single tap, so that I can quickly capture travel inspiration without manually typing details.",
+    "story_b": "As a traveler, I want to copy of a past trip's itinerary and adjust the dates or spots, so that I can reuse a proven plan for a repeat visit without starting from scratch.",
+    "step_1_match": {
+      "story_a_id": "US-004",
+      "story_b_id": "US-017",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-004",
+      "story_b_id": "US-017",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to import a location from a saved TikTok or Instagram video with a single tap, so that I can quickly capture travel inspiration without manually typing details.",
+    "story_b": "As a traveler, I want to generate a read-only web link for my itinerary, so that I can share my plans with friends and family without giving them editing rights.",
+    "step_1_match": {
+      "story_a_id": "US-004",
+      "story_b_id": "US-019",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-004",
+      "story_b_id": "US-019",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to import a location from a saved TikTok or Instagram video with a single tap, so that I can quickly capture travel inspiration without manually typing details.",
+    "story_b": "As a traveler, I want to download a complete itinerary including maps, spot details, and daily plan for offline use, so that I can navigate and follow my plan even when I don't have an internet connection abroad.",
+    "step_1_match": {
+      "story_a_id": "US-004",
+      "story_b_id": "US-020",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-004",
+      "story_b_id": "US-020",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to create named lists (e.g., Tokyo food or Paris museums) and add saved spots to them, so that I can group my travel inspiration by destination or theme.",
+    "story_b": "As a traveler, I want to attach private notes (e.g., reservation numbers or tips) to any saved spot, so that I can keep critical information together with the place it belongs to.",
+    "step_1_match": {
+      "story_a_id": "US-005",
+      "story_b_id": "US-006",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-005",
+      "story_b_id": "US-006",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to create named lists (e.g., Tokyo food or Paris museums) and add saved spots to them, so that I can group my travel inspiration by destination or theme.",
+    "story_b": "As a traveler, I want to open the original TikTok or Instagram video that was used to save a spot, so that I can rewatch the creator's tips and context before visiting.",
+    "step_1_match": {
+      "story_a_id": "US-005",
+      "story_b_id": "US-007",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-005",
+      "story_b_id": "US-007",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to create named lists (e.g., Tokyo food or Paris museums) and add saved spots to them, so that I can group my travel inspiration by destination or theme.",
+    "story_b": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth.",
+    "step_1_match": {
+      "story_a_id": "US-005",
+      "story_b_id": "US-009",
+      "entity_matches": [
+        {
+          "activity_a": {
+            "action": "add",
+            "entity": "saved spots"
+          },
+          "activity_b": {
+            "action": "manually add",
+            "entity": "spot"
+          },
+          "match_type": "semantic",
+          "explanation": "Saved spots and spot refer to the same underlying entity, with different wording."
+        }
+      ]
+    },
+    "step_2_classify": {
+      "story_a_id": "US-005",
+      "story_b_id": "US-009",
+      "classified_matches": [
+        {
+          "activity_a": {
+            "action": "add",
+            "entity": "saved spots",
+            "operation_type": "CREATE"
+          },
+          "activity_b": {
+            "action": "manually add",
+            "entity": "spot",
+            "operation_type": "CREATE"
+          },
+          "match_type": "semantic"
+        }
+      ]
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to create named lists (e.g., Tokyo food or Paris museums) and add saved spots to them, so that I can group my travel inspiration by destination or theme.",
+    "story_b": "As a traveler, I want to change the name of an existing list, so that I can keep my organization up to date as my plans evolve.",
+    "step_1_match": {
+      "story_a_id": "US-005",
+      "story_b_id": "US-010",
+      "entity_matches": [
+        {
+          "activity_a": {
+            "action": "create",
+            "entity": "named lists"
+          },
+          "activity_b": {
+            "action": "change",
+            "entity": "name"
+          },
+          "match_type": "semantic",
+          "explanation": "Named lists and name are related entities, with 'name' being a component of 'named lists'."
+        }
+      ]
+    },
+    "step_2_classify": {
+      "story_a_id": "US-005",
+      "story_b_id": "US-010",
+      "classified_matches": [
+        {
+          "activity_a": {
+            "action": "create",
+            "entity": "named lists",
+            "operation_type": "CREATE"
+          },
+          "activity_b": {
+            "action": "change",
+            "entity": "name",
+            "operation_type": "UPDATE"
+          },
+          "match_type": "semantic"
+        }
+      ]
+    },
+    "final_llm": {
+      "dependencies": [
+        {
+          "prerequisite_id": "US-005",
+          "dependent_id": "US-010",
+          "prerequisite_activity": {
+            "action": "create",
+            "entity": "named lists",
+            "operation_type": "CREATE"
+          },
+          "dependent_activity": {
+            "action": "change",
+            "entity": "name",
+            "operation_type": "UPDATE"
+          },
+          "match_type": "semantic"
+        }
+      ]
+    },
+    "final_nlp": {
+      "dependencies": [
+        {
+          "prerequisite_id": "US-005",
+          "dependent_id": "US-010",
+          "prerequisite_activity": {
+            "action": "create",
+            "entity": "named lists",
+            "operation_type": "CREATE"
+          },
+          "dependent_activity": {
+            "action": "change",
+            "entity": "name",
+            "operation_type": "UPDATE"
+          },
+          "match_type": "semantic"
+        }
+      ]
+    },
+    "dependencyFoundLLM": true,
+    "dependencyFoundNLP": true
+  },
+  {
+    "story_a": "As a traveler, I want to create named lists (e.g., Tokyo food or Paris museums) and add saved spots to them, so that I can group my travel inspiration by destination or theme.",
+    "story_b": "As a traveler, I want to see all my saved spots displayed as pins on a live map, so that I can understand their spatial distribution and plan routes more effectively.",
+    "step_1_match": {
+      "story_a_id": "US-005",
+      "story_b_id": "US-011",
+      "entity_matches": [
+        {
+          "activity_a": {
+            "action": "create",
+            "entity": "named lists"
+          },
+          "activity_b": {
+            "action": "see",
+            "entity": "saved spots"
+          },
+          "match_type": "semantic",
+          "explanation": "Saved spots and named lists refer to the same underlying entity, a list of saved items."
+        },
+        {
+          "activity_a": {
+            "action": "add",
+            "entity": "saved spots"
+          },
+          "activity_b": {
+            "action": "see",
+            "entity": "saved spots"
+          },
+          "match_type": "exact",
+          "explanation": "Both activities reference the identical entity string 'saved spots'."
+        }
+      ]
+    },
+    "step_2_classify": {
+      "story_a_id": "US-005",
+      "story_b_id": "US-011",
+      "classified_matches": [
+        {
+          "activity_a": {
+            "action": "create",
+            "entity": "named lists",
+            "operation_type": "CREATE"
+          },
+          "activity_b": {
+            "action": "see",
+            "entity": "saved spots",
+            "operation_type": "READ"
+          },
+          "match_type": "semantic"
+        },
+        {
+          "activity_a": {
+            "action": "add",
+            "entity": "saved spots",
+            "operation_type": "CREATE"
+          },
+          "activity_b": {
+            "action": "see",
+            "entity": "saved spots",
+            "operation_type": "READ"
+          },
+          "match_type": "exact"
+        }
+      ]
+    },
+    "final_llm": {
+      "dependencies": [
+        {
+          "prerequisite_id": "US-005",
+          "dependent_id": "US-011",
+          "prerequisite_activity": {
+            "action": "add",
+            "entity": "saved spots",
+            "operation_type": "CREATE"
+          },
+          "dependent_activity": {
+            "action": "see",
+            "entity": "saved spots",
+            "operation_type": "READ"
+          },
+          "match_type": "exact"
+        }
+      ]
+    },
+    "final_nlp": {
+      "dependencies": [
+        {
+          "prerequisite_id": "US-005",
+          "dependent_id": "US-011",
+          "prerequisite_activity": {
+            "action": "create",
+            "entity": "named lists",
+            "operation_type": "CREATE"
+          },
+          "dependent_activity": {
+            "action": "see",
+            "entity": "saved spots",
+            "operation_type": "READ"
+          },
+          "match_type": "semantic"
+        },
+        {
+          "prerequisite_id": "US-005",
+          "dependent_id": "US-011",
+          "prerequisite_activity": {
+            "action": "add",
+            "entity": "saved spots",
+            "operation_type": "CREATE"
+          },
+          "dependent_activity": {
+            "action": "see",
+            "entity": "saved spots",
+            "operation_type": "READ"
+          },
+          "match_type": "exact"
+        }
+      ]
+    },
+    "dependencyFoundLLM": true,
+    "dependencyFoundNLP": true
+  },
+  {
+    "story_a": "As a traveler, I want to create named lists (e.g., Tokyo food or Paris museums) and add saved spots to them, so that I can group my travel inspiration by destination or theme.",
+    "story_b": "As a traveler, I want to filter the map to show only spots from a specific list, so that I can focus on places relevant to a particular trip or category.",
+    "step_1_match": {
+      "story_a_id": "US-005",
+      "story_b_id": "US-012",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-005",
+      "story_b_id": "US-012",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to create named lists (e.g., Tokyo food or Paris museums) and add saved spots to them, so that I can group my travel inspiration by destination or theme.",
+    "story_b": "As a traveler, I want to select a destination, travel dates, and a list of saved spots and have the app automatically generate a logically ordered, day-by-day itinerary, so that I can transform my scattered ideas into a structured plan without manual scheduling.",
+    "step_1_match": {
+      "story_a_id": "US-005",
+      "story_b_id": "US-014",
+      "entity_matches": [
+        {
+          "activity_a": {
+            "action": "create",
+            "entity": "named lists"
+          },
+          "activity_b": {
+            "action": "select",
+            "entity": "list"
+          },
+          "match_type": "semantic",
+          "explanation": "Named lists and list are the same entity with different wording."
+        }
+      ]
+    },
+    "step_2_classify": {
+      "story_a_id": "US-005",
+      "story_b_id": "US-014",
+      "classified_matches": [
+        {
+          "activity_a": {
+            "action": "create",
+            "entity": "named lists",
+            "operation_type": "CREATE"
+          },
+          "activity_b": {
+            "action": "select",
+            "entity": "list",
+            "operation_type": "READ"
+          },
+          "match_type": "semantic"
+        }
+      ]
+    },
+    "final_llm": {
+      "dependencies": [
+        {
+          "prerequisite_id": "US-005",
+          "dependent_id": "US-014",
+          "prerequisite_activity": {
+            "action": "create",
+            "entity": "named lists",
+            "operation_type": "CREATE"
+          },
+          "dependent_activity": {
+            "action": "select",
+            "entity": "list",
+            "operation_type": "READ"
+          },
+          "match_type": "semantic"
+        }
+      ]
+    },
+    "final_nlp": {
+      "dependencies": [
+        {
+          "prerequisite_id": "US-005",
+          "dependent_id": "US-014",
+          "prerequisite_activity": {
+            "action": "create",
+            "entity": "named lists",
+            "operation_type": "CREATE"
+          },
+          "dependent_activity": {
+            "action": "select",
+            "entity": "list",
+            "operation_type": "READ"
+          },
+          "match_type": "semantic"
+        }
+      ]
+    },
+    "dependencyFoundLLM": true,
+    "dependencyFoundNLP": true
+  },
+  {
+    "story_a": "As a traveler, I want to create named lists (e.g., Tokyo food or Paris museums) and add saved spots to them, so that I can group my travel inspiration by destination or theme.",
+    "story_b": "As a traveler, I want to view the generated itinerary as a daily route on a map, so that I can see the travel distance and logical flow between stops at a glance.",
+    "step_1_match": {
+      "story_a_id": "US-005",
+      "story_b_id": "US-015",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-005",
+      "story_b_id": "US-015",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to create named lists (e.g., Tokyo food or Paris museums) and add saved spots to them, so that I can group my travel inspiration by destination or theme.",
+    "story_b": "As a traveler, I want to drag and drop stops, so that I am able to manually adjust the order within a day's plan of the AI-generated schedule to my personal preferences.",
+    "step_1_match": {
+      "story_a_id": "US-005",
+      "story_b_id": "US-016",
+      "entity_matches": [
+        {
+          "activity_a": {
+            "action": "add",
+            "entity": "saved spots"
+          },
+          "activity_b": {
+            "action": "drag",
+            "entity": "stops"
+          },
+          "match_type": "semantic",
+          "explanation": "Saved spots and stops are related entities with different wording."
+        }
+      ]
+    },
+    "step_2_classify": {
+      "story_a_id": "US-005",
+      "story_b_id": "US-016",
+      "classified_matches": [
+        {
+          "activity_a": {
+            "action": "add",
+            "entity": "saved spots",
+            "operation_type": "CREATE"
+          },
+          "activity_b": {
+            "action": "drag",
+            "entity": "stops",
+            "operation_type": "NON_CRUD"
+          },
+          "match_type": "semantic"
+        }
+      ]
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to create named lists (e.g., Tokyo food or Paris museums) and add saved spots to them, so that I can group my travel inspiration by destination or theme.",
+    "story_b": "As a traveler, I want to copy of a past trip's itinerary and adjust the dates or spots, so that I can reuse a proven plan for a repeat visit without starting from scratch.",
+    "step_1_match": {
+      "story_a_id": "US-005",
+      "story_b_id": "US-017",
+      "entity_matches": [
+        {
+          "activity_a": {
+            "action": "add",
+            "entity": "saved spots"
+          },
+          "activity_b": {
+            "action": "adjust",
+            "entity": "spots"
+          },
+          "match_type": "semantic",
+          "explanation": "Although 'saved spots' and 'spots' have different wording, they refer to the same underlying entity."
+        }
+      ]
+    },
+    "step_2_classify": {
+      "story_a_id": "US-005",
+      "story_b_id": "US-017",
+      "classified_matches": [
+        {
+          "activity_a": {
+            "action": "add",
+            "entity": "saved spots",
+            "operation_type": "CREATE"
+          },
+          "activity_b": {
+            "action": "adjust",
+            "entity": "spots",
+            "operation_type": "UPDATE"
+          },
+          "match_type": "semantic"
+        }
+      ]
+    },
+    "final_llm": {
+      "dependencies": [
+        {
+          "prerequisite_id": "US-005",
+          "dependent_id": "US-017",
+          "prerequisite_activity": {
+            "action": "add",
+            "entity": "saved spots",
+            "operation_type": "CREATE"
+          },
+          "dependent_activity": {
+            "action": "adjust",
+            "entity": "spots",
+            "operation_type": "UPDATE"
+          },
+          "match_type": "semantic"
+        }
+      ]
+    },
+    "final_nlp": {
+      "dependencies": [
+        {
+          "prerequisite_id": "US-005",
+          "dependent_id": "US-017",
+          "prerequisite_activity": {
+            "action": "add",
+            "entity": "saved spots",
+            "operation_type": "CREATE"
+          },
+          "dependent_activity": {
+            "action": "adjust",
+            "entity": "spots",
+            "operation_type": "UPDATE"
+          },
+          "match_type": "semantic"
+        }
+      ]
+    },
+    "dependencyFoundLLM": true,
+    "dependencyFoundNLP": true
+  },
+  {
+    "story_a": "As a traveler, I want to create named lists (e.g., Tokyo food or Paris museums) and add saved spots to them, so that I can group my travel inspiration by destination or theme.",
+    "story_b": "As a traveler, I want to generate a read-only web link for my itinerary, so that I can share my plans with friends and family without giving them editing rights.",
+    "step_1_match": {
+      "story_a_id": "US-005",
+      "story_b_id": "US-019",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-005",
+      "story_b_id": "US-019",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to create named lists (e.g., Tokyo food or Paris museums) and add saved spots to them, so that I can group my travel inspiration by destination or theme.",
+    "story_b": "As a traveler, I want to download a complete itinerary including maps, spot details, and daily plan for offline use, so that I can navigate and follow my plan even when I don't have an internet connection abroad.",
+    "step_1_match": {
+      "story_a_id": "US-005",
+      "story_b_id": "US-020",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-005",
+      "story_b_id": "US-020",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to attach private notes (e.g., reservation numbers or tips) to any saved spot, so that I can keep critical information together with the place it belongs to.",
+    "story_b": "As a traveler, I want to open the original TikTok or Instagram video that was used to save a spot, so that I can rewatch the creator's tips and context before visiting.",
+    "step_1_match": {
+      "story_a_id": "US-006",
+      "story_b_id": "US-007",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-006",
+      "story_b_id": "US-007",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to attach private notes (e.g., reservation numbers or tips) to any saved spot, so that I can keep critical information together with the place it belongs to.",
+    "story_b": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth.",
+    "step_1_match": {
+      "story_a_id": "US-006",
+      "story_b_id": "US-009",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-006",
+      "story_b_id": "US-009",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to attach private notes (e.g., reservation numbers or tips) to any saved spot, so that I can keep critical information together with the place it belongs to.",
+    "story_b": "As a traveler, I want to change the name of an existing list, so that I can keep my organization up to date as my plans evolve.",
+    "step_1_match": {
+      "story_a_id": "US-006",
+      "story_b_id": "US-010",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-006",
+      "story_b_id": "US-010",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to attach private notes (e.g., reservation numbers or tips) to any saved spot, so that I can keep critical information together with the place it belongs to.",
+    "story_b": "As a traveler, I want to see all my saved spots displayed as pins on a live map, so that I can understand their spatial distribution and plan routes more effectively.",
+    "step_1_match": {
+      "story_a_id": "US-006",
+      "story_b_id": "US-011",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-006",
+      "story_b_id": "US-011",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to attach private notes (e.g., reservation numbers or tips) to any saved spot, so that I can keep critical information together with the place it belongs to.",
+    "story_b": "As a traveler, I want to filter the map to show only spots from a specific list, so that I can focus on places relevant to a particular trip or category.",
+    "step_1_match": {
+      "story_a_id": "US-006",
+      "story_b_id": "US-012",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-006",
+      "story_b_id": "US-012",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to attach private notes (e.g., reservation numbers or tips) to any saved spot, so that I can keep critical information together with the place it belongs to.",
+    "story_b": "As a traveler, I want to select a destination, travel dates, and a list of saved spots and have the app automatically generate a logically ordered, day-by-day itinerary, so that I can transform my scattered ideas into a structured plan without manual scheduling.",
+    "step_1_match": {
+      "story_a_id": "US-006",
+      "story_b_id": "US-014",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-006",
+      "story_b_id": "US-014",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to attach private notes (e.g., reservation numbers or tips) to any saved spot, so that I can keep critical information together with the place it belongs to.",
+    "story_b": "As a traveler, I want to view the generated itinerary as a daily route on a map, so that I can see the travel distance and logical flow between stops at a glance.",
+    "step_1_match": {
+      "story_a_id": "US-006",
+      "story_b_id": "US-015",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-006",
+      "story_b_id": "US-015",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to attach private notes (e.g., reservation numbers or tips) to any saved spot, so that I can keep critical information together with the place it belongs to.",
+    "story_b": "As a traveler, I want to drag and drop stops, so that I am able to manually adjust the order within a day's plan of the AI-generated schedule to my personal preferences.",
+    "step_1_match": {
+      "story_a_id": "US-006",
+      "story_b_id": "US-016",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-006",
+      "story_b_id": "US-016",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to attach private notes (e.g., reservation numbers or tips) to any saved spot, so that I can keep critical information together with the place it belongs to.",
+    "story_b": "As a traveler, I want to copy of a past trip's itinerary and adjust the dates or spots, so that I can reuse a proven plan for a repeat visit without starting from scratch.",
+    "step_1_match": {
+      "story_a_id": "US-006",
+      "story_b_id": "US-017",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-006",
+      "story_b_id": "US-017",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to attach private notes (e.g., reservation numbers or tips) to any saved spot, so that I can keep critical information together with the place it belongs to.",
+    "story_b": "As a traveler, I want to generate a read-only web link for my itinerary, so that I can share my plans with friends and family without giving them editing rights.",
+    "step_1_match": {
+      "story_a_id": "US-006",
+      "story_b_id": "US-019",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-006",
+      "story_b_id": "US-019",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to attach private notes (e.g., reservation numbers or tips) to any saved spot, so that I can keep critical information together with the place it belongs to.",
+    "story_b": "As a traveler, I want to download a complete itinerary including maps, spot details, and daily plan for offline use, so that I can navigate and follow my plan even when I don't have an internet connection abroad.",
+    "step_1_match": {
+      "story_a_id": "US-006",
+      "story_b_id": "US-020",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-006",
+      "story_b_id": "US-020",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to open the original TikTok or Instagram video that was used to save a spot, so that I can rewatch the creator's tips and context before visiting.",
+    "story_b": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth.",
+    "step_1_match": {
+      "story_a_id": "US-007",
+      "story_b_id": "US-009",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-007",
+      "story_b_id": "US-009",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to open the original TikTok or Instagram video that was used to save a spot, so that I can rewatch the creator's tips and context before visiting.",
+    "story_b": "As a traveler, I want to change the name of an existing list, so that I can keep my organization up to date as my plans evolve.",
+    "step_1_match": {
+      "story_a_id": "US-007",
+      "story_b_id": "US-010",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-007",
+      "story_b_id": "US-010",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to open the original TikTok or Instagram video that was used to save a spot, so that I can rewatch the creator's tips and context before visiting.",
+    "story_b": "As a traveler, I want to see all my saved spots displayed as pins on a live map, so that I can understand their spatial distribution and plan routes more effectively.",
+    "step_1_match": {
+      "story_a_id": "US-007",
+      "story_b_id": "US-011",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-007",
+      "story_b_id": "US-011",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to open the original TikTok or Instagram video that was used to save a spot, so that I can rewatch the creator's tips and context before visiting.",
+    "story_b": "As a traveler, I want to filter the map to show only spots from a specific list, so that I can focus on places relevant to a particular trip or category.",
+    "step_1_match": {
+      "story_a_id": "US-007",
+      "story_b_id": "US-012",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-007",
+      "story_b_id": "US-012",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to open the original TikTok or Instagram video that was used to save a spot, so that I can rewatch the creator's tips and context before visiting.",
+    "story_b": "As a traveler, I want to select a destination, travel dates, and a list of saved spots and have the app automatically generate a logically ordered, day-by-day itinerary, so that I can transform my scattered ideas into a structured plan without manual scheduling.",
+    "step_1_match": {
+      "story_a_id": "US-007",
+      "story_b_id": "US-014",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-007",
+      "story_b_id": "US-014",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to open the original TikTok or Instagram video that was used to save a spot, so that I can rewatch the creator's tips and context before visiting.",
+    "story_b": "As a traveler, I want to view the generated itinerary as a daily route on a map, so that I can see the travel distance and logical flow between stops at a glance.",
+    "step_1_match": {
+      "story_a_id": "US-007",
+      "story_b_id": "US-015",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-007",
+      "story_b_id": "US-015",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to open the original TikTok or Instagram video that was used to save a spot, so that I can rewatch the creator's tips and context before visiting.",
+    "story_b": "As a traveler, I want to drag and drop stops, so that I am able to manually adjust the order within a day's plan of the AI-generated schedule to my personal preferences.",
+    "step_1_match": {
+      "story_a_id": "US-007",
+      "story_b_id": "US-016",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-007",
+      "story_b_id": "US-016",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to open the original TikTok or Instagram video that was used to save a spot, so that I can rewatch the creator's tips and context before visiting.",
+    "story_b": "As a traveler, I want to copy of a past trip's itinerary and adjust the dates or spots, so that I can reuse a proven plan for a repeat visit without starting from scratch.",
+    "step_1_match": {
+      "story_a_id": "US-007",
+      "story_b_id": "US-017",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-007",
+      "story_b_id": "US-017",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to open the original TikTok or Instagram video that was used to save a spot, so that I can rewatch the creator's tips and context before visiting.",
+    "story_b": "As a traveler, I want to generate a read-only web link for my itinerary, so that I can share my plans with friends and family without giving them editing rights.",
+    "step_1_match": {
+      "story_a_id": "US-007",
+      "story_b_id": "US-019",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-007",
+      "story_b_id": "US-019",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to open the original TikTok or Instagram video that was used to save a spot, so that I can rewatch the creator's tips and context before visiting.",
+    "story_b": "As a traveler, I want to download a complete itinerary including maps, spot details, and daily plan for offline use, so that I can navigate and follow my plan even when I don't have an internet connection abroad.",
+    "step_1_match": {
+      "story_a_id": "US-007",
+      "story_b_id": "US-020",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-007",
+      "story_b_id": "US-020",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth.",
+    "story_b": "As a traveler, I want to change the name of an existing list, so that I can keep my organization up to date as my plans evolve.",
+    "step_1_match": {
+      "story_a_id": "US-009",
+      "story_b_id": "US-010",
+      "entity_matches": [
+        {
+          "activity_a": {
+            "action": "entering",
+            "entity": "name"
+          },
+          "activity_b": {
+            "action": "change",
+            "entity": "name"
+          },
+          "match_type": "semantic",
+          "explanation": "Both activities reference the same entity 'name' but in different states (entering vs changing)."
+        }
+      ]
+    },
+    "step_2_classify": {
+      "story_a_id": "US-009",
+      "story_b_id": "US-010",
+      "classified_matches": [
+        {
+          "activity_a": {
+            "action": "entering",
+            "entity": "name",
+            "operation_type": "UPDATE"
+          },
+          "activity_b": {
+            "action": "change",
+            "entity": "name",
+            "operation_type": "UPDATE"
+          },
+          "match_type": "semantic"
+        }
+      ]
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth.",
+    "story_b": "As a traveler, I want to see all my saved spots displayed as pins on a live map, so that I can understand their spatial distribution and plan routes more effectively.",
+    "step_1_match": {
+      "story_a_id": "US-009",
+      "story_b_id": "US-011",
+      "entity_matches": [
+        {
+          "activity_a": {
+            "action": "manually add",
+            "entity": "spot"
+          },
+          "activity_b": {
+            "action": "see",
+            "entity": "saved spots"
+          },
+          "match_type": "semantic",
+          "explanation": "Saved spots is a collection of spots, including the one being manually added."
+        },
+        {
+          "activity_a": {
+            "action": "selecting",
+            "entity": "location"
+          },
+          "activity_b": {
+            "action": "see",
+            "entity": "saved spots"
+          },
+          "match_type": "semantic",
+          "explanation": "Saved spots is a state/condition of the same underlying entity 'location'."
+        }
+      ]
+    },
+    "step_2_classify": {
+      "story_a_id": "US-009",
+      "story_b_id": "US-011",
+      "classified_matches": [
+        {
+          "activity_a": {
+            "action": "manually add",
+            "entity": "spot",
+            "operation_type": "CREATE"
+          },
+          "activity_b": {
+            "action": "see",
+            "entity": "saved spots",
+            "operation_type": "READ"
+          },
+          "match_type": "semantic"
+        },
+        {
+          "activity_a": {
+            "action": "selecting",
+            "entity": "location",
+            "operation_type": "READ"
+          },
+          "activity_b": {
+            "action": "see",
+            "entity": "saved spots",
+            "operation_type": "READ"
+          },
+          "match_type": "semantic"
+        }
+      ]
+    },
+    "final_llm": {
+      "dependencies": [
+        {
+          "prerequisite_id": "US-009",
+          "dependent_id": "US-011",
+          "prerequisite_activity": {
+            "action": "manually add",
+            "entity": "spot",
+            "operation_type": "CREATE"
+          },
+          "dependent_activity": {
+            "action": "see",
+            "entity": "saved spots",
+            "operation_type": "READ"
+          },
+          "match_type": "semantic"
+        }
+      ]
+    },
+    "final_nlp": {
+      "dependencies": [
+        {
+          "prerequisite_id": "US-009",
+          "dependent_id": "US-011",
+          "prerequisite_activity": {
+            "action": "manually add",
+            "entity": "spot",
+            "operation_type": "CREATE"
+          },
+          "dependent_activity": {
+            "action": "see",
+            "entity": "saved spots",
+            "operation_type": "READ"
+          },
+          "match_type": "semantic"
+        }
+      ]
+    },
+    "dependencyFoundLLM": true,
+    "dependencyFoundNLP": true
+  },
+  {
+    "story_a": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth.",
+    "story_b": "As a traveler, I want to filter the map to show only spots from a specific list, so that I can focus on places relevant to a particular trip or category.",
+    "step_1_match": {
+      "story_a_id": "US-009",
+      "story_b_id": "US-012",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-009",
+      "story_b_id": "US-012",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth.",
+    "story_b": "As a traveler, I want to select a destination, travel dates, and a list of saved spots and have the app automatically generate a logically ordered, day-by-day itinerary, so that I can transform my scattered ideas into a structured plan without manual scheduling.",
+    "step_1_match": {
+      "story_a_id": "US-009",
+      "story_b_id": "US-014",
+      "entity_matches": [
+        {
+          "activity_a": {
+            "action": "selecting",
+            "entity": "location"
+          },
+          "activity_b": {
+            "action": "select",
+            "entity": "destination"
+          },
+          "match_type": "semantic",
+          "explanation": "Selecting a location and selecting a destination refer to the same underlying entity."
+        }
+      ]
+    },
+    "step_2_classify": {
+      "story_a_id": "US-009",
+      "story_b_id": "US-014",
+      "classified_matches": [
+        {
+          "activity_a": {
+            "action": "selecting",
+            "entity": "location",
+            "operation_type": "READ"
+          },
+          "activity_b": {
+            "action": "select",
+            "entity": "destination",
+            "operation_type": "READ"
+          },
+          "match_type": "semantic"
+        }
+      ]
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth.",
+    "story_b": "As a traveler, I want to view the generated itinerary as a daily route on a map, so that I can see the travel distance and logical flow between stops at a glance.",
+    "step_1_match": {
+      "story_a_id": "US-009",
+      "story_b_id": "US-015",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-009",
+      "story_b_id": "US-015",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth.",
+    "story_b": "As a traveler, I want to drag and drop stops, so that I am able to manually adjust the order within a day's plan of the AI-generated schedule to my personal preferences.",
+    "step_1_match": {
+      "story_a_id": "US-009",
+      "story_b_id": "US-016",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-009",
+      "story_b_id": "US-016",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth.",
+    "story_b": "As a traveler, I want to copy of a past trip's itinerary and adjust the dates or spots, so that I can reuse a proven plan for a repeat visit without starting from scratch.",
+    "step_1_match": {
+      "story_a_id": "US-009",
+      "story_b_id": "US-017",
+      "entity_matches": [
+        {
+          "activity_a": {
+            "action": "manually add",
+            "entity": "spot"
+          },
+          "activity_b": {
+            "action": "adjust",
+            "entity": "spots"
+          },
+          "match_type": "semantic",
+          "explanation": "Although 'spot' and 'spots' differ in plural form, they refer to the same underlying entity."
+        }
+      ]
+    },
+    "step_2_classify": {
+      "story_a_id": "US-009",
+      "story_b_id": "US-017",
+      "classified_matches": [
+        {
+          "activity_a": {
+            "action": "manually add",
+            "entity": "spot",
+            "operation_type": "CREATE"
+          },
+          "activity_b": {
+            "action": "adjust",
+            "entity": "spots",
+            "operation_type": "UPDATE"
+          },
+          "match_type": "semantic"
+        }
+      ]
+    },
+    "final_llm": {
+      "dependencies": [
+        {
+          "prerequisite_id": "US-009",
+          "dependent_id": "US-017",
+          "prerequisite_activity": {
+            "action": "manually add",
+            "entity": "spot",
+            "operation_type": "CREATE"
+          },
+          "dependent_activity": {
+            "action": "adjust",
+            "entity": "spots",
+            "operation_type": "UPDATE"
+          },
+          "match_type": "semantic"
+        }
+      ]
+    },
+    "final_nlp": {
+      "dependencies": [
+        {
+          "prerequisite_id": "US-009",
+          "dependent_id": "US-017",
+          "prerequisite_activity": {
+            "action": "manually add",
+            "entity": "spot",
+            "operation_type": "CREATE"
+          },
+          "dependent_activity": {
+            "action": "adjust",
+            "entity": "spots",
+            "operation_type": "UPDATE"
+          },
+          "match_type": "semantic"
+        }
+      ]
+    },
+    "dependencyFoundLLM": true,
+    "dependencyFoundNLP": true
+  },
+  {
+    "story_a": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth.",
+    "story_b": "As a traveler, I want to generate a read-only web link for my itinerary, so that I can share my plans with friends and family without giving them editing rights.",
+    "step_1_match": {
+      "story_a_id": "US-009",
+      "story_b_id": "US-019",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-009",
+      "story_b_id": "US-019",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth.",
+    "story_b": "As a traveler, I want to download a complete itinerary including maps, spot details, and daily plan for offline use, so that I can navigate and follow my plan even when I don't have an internet connection abroad.",
+    "step_1_match": {
+      "story_a_id": "US-009",
+      "story_b_id": "US-020",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-009",
+      "story_b_id": "US-020",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to change the name of an existing list, so that I can keep my organization up to date as my plans evolve.",
+    "story_b": "As a traveler, I want to see all my saved spots displayed as pins on a live map, so that I can understand their spatial distribution and plan routes more effectively.",
+    "step_1_match": {
+      "story_a_id": "US-010",
+      "story_b_id": "US-011",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-010",
+      "story_b_id": "US-011",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to change the name of an existing list, so that I can keep my organization up to date as my plans evolve.",
+    "story_b": "As a traveler, I want to filter the map to show only spots from a specific list, so that I can focus on places relevant to a particular trip or category.",
+    "step_1_match": {
+      "story_a_id": "US-010",
+      "story_b_id": "US-012",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-010",
+      "story_b_id": "US-012",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to change the name of an existing list, so that I can keep my organization up to date as my plans evolve.",
+    "story_b": "As a traveler, I want to select a destination, travel dates, and a list of saved spots and have the app automatically generate a logically ordered, day-by-day itinerary, so that I can transform my scattered ideas into a structured plan without manual scheduling.",
+    "step_1_match": {
+      "story_a_id": "US-010",
+      "story_b_id": "US-014",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-010",
+      "story_b_id": "US-014",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to change the name of an existing list, so that I can keep my organization up to date as my plans evolve.",
+    "story_b": "As a traveler, I want to view the generated itinerary as a daily route on a map, so that I can see the travel distance and logical flow between stops at a glance.",
+    "step_1_match": {
+      "story_a_id": "US-010",
+      "story_b_id": "US-015",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-010",
+      "story_b_id": "US-015",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to change the name of an existing list, so that I can keep my organization up to date as my plans evolve.",
+    "story_b": "As a traveler, I want to drag and drop stops, so that I am able to manually adjust the order within a day's plan of the AI-generated schedule to my personal preferences.",
+    "step_1_match": {
+      "story_a_id": "US-010",
+      "story_b_id": "US-016",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-010",
+      "story_b_id": "US-016",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to change the name of an existing list, so that I can keep my organization up to date as my plans evolve.",
+    "story_b": "As a traveler, I want to copy of a past trip's itinerary and adjust the dates or spots, so that I can reuse a proven plan for a repeat visit without starting from scratch.",
+    "step_1_match": {
+      "story_a_id": "US-010",
+      "story_b_id": "US-017",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-010",
+      "story_b_id": "US-017",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to change the name of an existing list, so that I can keep my organization up to date as my plans evolve.",
+    "story_b": "As a traveler, I want to generate a read-only web link for my itinerary, so that I can share my plans with friends and family without giving them editing rights.",
+    "step_1_match": {
+      "story_a_id": "US-010",
+      "story_b_id": "US-019",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-010",
+      "story_b_id": "US-019",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to change the name of an existing list, so that I can keep my organization up to date as my plans evolve.",
+    "story_b": "As a traveler, I want to download a complete itinerary including maps, spot details, and daily plan for offline use, so that I can navigate and follow my plan even when I don't have an internet connection abroad.",
+    "step_1_match": {
+      "story_a_id": "US-010",
+      "story_b_id": "US-020",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-010",
+      "story_b_id": "US-020",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to see all my saved spots displayed as pins on a live map, so that I can understand their spatial distribution and plan routes more effectively.",
+    "story_b": "As a traveler, I want to filter the map to show only spots from a specific list, so that I can focus on places relevant to a particular trip or category.",
+    "step_1_match": {
+      "story_a_id": "US-011",
+      "story_b_id": "US-012",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-011",
+      "story_b_id": "US-012",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to see all my saved spots displayed as pins on a live map, so that I can understand their spatial distribution and plan routes more effectively.",
+    "story_b": "As a traveler, I want to select a destination, travel dates, and a list of saved spots and have the app automatically generate a logically ordered, day-by-day itinerary, so that I can transform my scattered ideas into a structured plan without manual scheduling.",
+    "step_1_match": {
+      "story_a_id": "US-011",
+      "story_b_id": "US-014",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-011",
+      "story_b_id": "US-014",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to see all my saved spots displayed as pins on a live map, so that I can understand their spatial distribution and plan routes more effectively.",
+    "story_b": "As a traveler, I want to view the generated itinerary as a daily route on a map, so that I can see the travel distance and logical flow between stops at a glance.",
+    "step_1_match": {
+      "story_a_id": "US-011",
+      "story_b_id": "US-015",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-011",
+      "story_b_id": "US-015",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to see all my saved spots displayed as pins on a live map, so that I can understand their spatial distribution and plan routes more effectively.",
+    "story_b": "As a traveler, I want to drag and drop stops, so that I am able to manually adjust the order within a day's plan of the AI-generated schedule to my personal preferences.",
+    "step_1_match": {
+      "story_a_id": "US-011",
+      "story_b_id": "US-016",
+      "entity_matches": [
+        {
+          "activity_a": {
+            "action": "see",
+            "entity": "saved spots"
+          },
+          "activity_b": {
+            "action": "drag",
+            "entity": "stops"
+          },
+          "match_type": "semantic",
+          "explanation": "Saved spots and stops are the same underlying entity, referred to with different wording."
+        },
+        {
+          "activity_a": {
+            "action": "see",
+            "entity": "saved spots"
+          },
+          "activity_b": {
+            "action": "drop",
+            "entity": "stops"
+          },
+          "match_type": "semantic",
+          "explanation": "Saved spots and stops are the same underlying entity, referred to with different wording."
+        }
+      ]
+    },
+    "step_2_classify": {
+      "story_a_id": "US-011",
+      "story_b_id": "US-016",
+      "classified_matches": [
+        {
+          "activity_a": {
+            "action": "see",
+            "entity": "saved spots",
+            "operation_type": "READ"
+          },
+          "activity_b": {
+            "action": "drag",
+            "entity": "stops",
+            "operation_type": "NON_CRUD"
+          },
+          "match_type": "semantic"
+        },
+        {
+          "activity_a": {
+            "action": "see",
+            "entity": "saved spots",
+            "operation_type": "READ"
+          },
+          "activity_b": {
+            "action": "drop",
+            "entity": "stops",
+            "operation_type": "DELETE"
+          },
+          "match_type": "semantic"
+        }
+      ]
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to see all my saved spots displayed as pins on a live map, so that I can understand their spatial distribution and plan routes more effectively.",
+    "story_b": "As a traveler, I want to copy of a past trip's itinerary and adjust the dates or spots, so that I can reuse a proven plan for a repeat visit without starting from scratch.",
+    "step_1_match": {
+      "story_a_id": "US-011",
+      "story_b_id": "US-017",
+      "entity_matches": [
+        {
+          "activity_a": {
+            "action": "see",
+            "entity": "saved spots"
+          },
+          "activity_b": {
+            "action": "adjust",
+            "entity": "spots"
+          },
+          "match_type": "semantic",
+          "explanation": "Although 'saved spots' and 'spots' differ in wording, they refer to the same underlying entity."
+        }
+      ]
+    },
+    "step_2_classify": {
+      "story_a_id": "US-011",
+      "story_b_id": "US-017",
+      "classified_matches": [
+        {
+          "activity_a": {
+            "action": "see",
+            "entity": "saved spots",
+            "operation_type": "READ"
+          },
+          "activity_b": {
+            "action": "adjust",
+            "entity": "spots",
+            "operation_type": "UPDATE"
+          },
+          "match_type": "semantic"
+        }
+      ]
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to see all my saved spots displayed as pins on a live map, so that I can understand their spatial distribution and plan routes more effectively.",
+    "story_b": "As a traveler, I want to generate a read-only web link for my itinerary, so that I can share my plans with friends and family without giving them editing rights.",
+    "step_1_match": {
+      "story_a_id": "US-011",
+      "story_b_id": "US-019",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-011",
+      "story_b_id": "US-019",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to see all my saved spots displayed as pins on a live map, so that I can understand their spatial distribution and plan routes more effectively.",
+    "story_b": "As a traveler, I want to download a complete itinerary including maps, spot details, and daily plan for offline use, so that I can navigate and follow my plan even when I don't have an internet connection abroad.",
+    "step_1_match": {
+      "story_a_id": "US-011",
+      "story_b_id": "US-020",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-011",
+      "story_b_id": "US-020",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to filter the map to show only spots from a specific list, so that I can focus on places relevant to a particular trip or category.",
+    "story_b": "As a traveler, I want to select a destination, travel dates, and a list of saved spots and have the app automatically generate a logically ordered, day-by-day itinerary, so that I can transform my scattered ideas into a structured plan without manual scheduling.",
+    "step_1_match": {
+      "story_a_id": "US-012",
+      "story_b_id": "US-014",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-012",
+      "story_b_id": "US-014",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to filter the map to show only spots from a specific list, so that I can focus on places relevant to a particular trip or category.",
+    "story_b": "As a traveler, I want to view the generated itinerary as a daily route on a map, so that I can see the travel distance and logical flow between stops at a glance.",
+    "step_1_match": {
+      "story_a_id": "US-012",
+      "story_b_id": "US-015",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-012",
+      "story_b_id": "US-015",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to filter the map to show only spots from a specific list, so that I can focus on places relevant to a particular trip or category.",
+    "story_b": "As a traveler, I want to drag and drop stops, so that I am able to manually adjust the order within a day's plan of the AI-generated schedule to my personal preferences.",
+    "step_1_match": {
+      "story_a_id": "US-012",
+      "story_b_id": "US-016",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-012",
+      "story_b_id": "US-016",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to filter the map to show only spots from a specific list, so that I can focus on places relevant to a particular trip or category.",
+    "story_b": "As a traveler, I want to copy of a past trip's itinerary and adjust the dates or spots, so that I can reuse a proven plan for a repeat visit without starting from scratch.",
+    "step_1_match": {
+      "story_a_id": "US-012",
+      "story_b_id": "US-017",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-012",
+      "story_b_id": "US-017",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to filter the map to show only spots from a specific list, so that I can focus on places relevant to a particular trip or category.",
+    "story_b": "As a traveler, I want to generate a read-only web link for my itinerary, so that I can share my plans with friends and family without giving them editing rights.",
+    "step_1_match": {
+      "story_a_id": "US-012",
+      "story_b_id": "US-019",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-012",
+      "story_b_id": "US-019",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to filter the map to show only spots from a specific list, so that I can focus on places relevant to a particular trip or category.",
+    "story_b": "As a traveler, I want to download a complete itinerary including maps, spot details, and daily plan for offline use, so that I can navigate and follow my plan even when I don't have an internet connection abroad.",
+    "step_1_match": {
+      "story_a_id": "US-012",
+      "story_b_id": "US-020",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-012",
+      "story_b_id": "US-020",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to select a destination, travel dates, and a list of saved spots and have the app automatically generate a logically ordered, day-by-day itinerary, so that I can transform my scattered ideas into a structured plan without manual scheduling.",
+    "story_b": "As a traveler, I want to view the generated itinerary as a daily route on a map, so that I can see the travel distance and logical flow between stops at a glance.",
+    "step_1_match": {
+      "story_a_id": "US-014",
+      "story_b_id": "US-015",
+      "entity_matches": [
+        {
+          "activity_a": {
+            "action": "select",
+            "entity": "destination"
+          },
+          "activity_b": {
+            "action": "view",
+            "entity": "generated itinerary"
+          },
+          "match_type": "semantic",
+          "explanation": "Destination and generated itinerary refer to the same underlying entity, but with different wording."
+        }
+      ]
+    },
+    "step_2_classify": {
+      "story_a_id": "US-014",
+      "story_b_id": "US-015",
+      "classified_matches": [
+        {
+          "activity_a": {
+            "action": "select",
+            "entity": "destination",
+            "operation_type": "READ"
+          },
+          "activity_b": {
+            "action": "view",
+            "entity": "generated itinerary",
+            "operation_type": "READ"
+          },
+          "match_type": "semantic"
+        }
+      ]
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to select a destination, travel dates, and a list of saved spots and have the app automatically generate a logically ordered, day-by-day itinerary, so that I can transform my scattered ideas into a structured plan without manual scheduling.",
+    "story_b": "As a traveler, I want to drag and drop stops, so that I am able to manually adjust the order within a day's plan of the AI-generated schedule to my personal preferences.",
+    "step_1_match": {
+      "story_a_id": "US-014",
+      "story_b_id": "US-016",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-014",
+      "story_b_id": "US-016",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to select a destination, travel dates, and a list of saved spots and have the app automatically generate a logically ordered, day-by-day itinerary, so that I can transform my scattered ideas into a structured plan without manual scheduling.",
+    "story_b": "As a traveler, I want to copy of a past trip's itinerary and adjust the dates or spots, so that I can reuse a proven plan for a repeat visit without starting from scratch.",
+    "step_1_match": {
+      "story_a_id": "US-014",
+      "story_b_id": "US-017",
+      "entity_matches": [
+        {
+          "activity_a": {
+            "action": "select",
+            "entity": "travel dates"
+          },
+          "activity_b": {
+            "action": "adjust",
+            "entity": "dates"
+          },
+          "match_type": "semantic",
+          "explanation": "Although 'travel dates' and 'dates' have different wording, they refer to the same entity."
+        }
+      ]
+    },
+    "step_2_classify": {
+      "story_a_id": "US-014",
+      "story_b_id": "US-017",
+      "classified_matches": [
+        {
+          "activity_a": {
+            "action": "select",
+            "entity": "travel dates",
+            "operation_type": "READ"
+          },
+          "activity_b": {
+            "action": "adjust",
+            "entity": "dates",
+            "operation_type": "UPDATE"
+          },
+          "match_type": "semantic"
+        }
+      ]
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to select a destination, travel dates, and a list of saved spots and have the app automatically generate a logically ordered, day-by-day itinerary, so that I can transform my scattered ideas into a structured plan without manual scheduling.",
+    "story_b": "As a traveler, I want to generate a read-only web link for my itinerary, so that I can share my plans with friends and family without giving them editing rights.",
+    "step_1_match": {
+      "story_a_id": "US-014",
+      "story_b_id": "US-019",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-014",
+      "story_b_id": "US-019",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to select a destination, travel dates, and a list of saved spots and have the app automatically generate a logically ordered, day-by-day itinerary, so that I can transform my scattered ideas into a structured plan without manual scheduling.",
+    "story_b": "As a traveler, I want to download a complete itinerary including maps, spot details, and daily plan for offline use, so that I can navigate and follow my plan even when I don't have an internet connection abroad.",
+    "step_1_match": {
+      "story_a_id": "US-014",
+      "story_b_id": "US-020",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-014",
+      "story_b_id": "US-020",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to view the generated itinerary as a daily route on a map, so that I can see the travel distance and logical flow between stops at a glance.",
+    "story_b": "As a traveler, I want to drag and drop stops, so that I am able to manually adjust the order within a day's plan of the AI-generated schedule to my personal preferences.",
+    "step_1_match": {
+      "story_a_id": "US-015",
+      "story_b_id": "US-016",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-015",
+      "story_b_id": "US-016",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to view the generated itinerary as a daily route on a map, so that I can see the travel distance and logical flow between stops at a glance.",
+    "story_b": "As a traveler, I want to copy of a past trip's itinerary and adjust the dates or spots, so that I can reuse a proven plan for a repeat visit without starting from scratch.",
+    "step_1_match": {
+      "story_a_id": "US-015",
+      "story_b_id": "US-017",
+      "entity_matches": [
+        {
+          "activity_a": {
+            "action": "view",
+            "entity": "generated itinerary"
+          },
+          "activity_b": {
+            "action": "copy",
+            "entity": "past trip's itinerary"
+          },
+          "match_type": "semantic",
+          "explanation": "Generated itinerary and past trip's itinerary refer to the same type of entity, an itinerary."
+        }
+      ]
+    },
+    "step_2_classify": {
+      "story_a_id": "US-015",
+      "story_b_id": "US-017",
+      "classified_matches": [
+        {
+          "activity_a": {
+            "action": "view",
+            "entity": "generated itinerary",
+            "operation_type": "READ"
+          },
+          "activity_b": {
+            "action": "copy",
+            "entity": "past trip's itinerary",
+            "operation_type": "UPDATE"
+          },
+          "match_type": "semantic"
+        }
+      ]
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to view the generated itinerary as a daily route on a map, so that I can see the travel distance and logical flow between stops at a glance.",
+    "story_b": "As a traveler, I want to generate a read-only web link for my itinerary, so that I can share my plans with friends and family without giving them editing rights.",
+    "step_1_match": {
+      "story_a_id": "US-015",
+      "story_b_id": "US-019",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-015",
+      "story_b_id": "US-019",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to view the generated itinerary as a daily route on a map, so that I can see the travel distance and logical flow between stops at a glance.",
+    "story_b": "As a traveler, I want to download a complete itinerary including maps, spot details, and daily plan for offline use, so that I can navigate and follow my plan even when I don't have an internet connection abroad.",
+    "step_1_match": {
+      "story_a_id": "US-015",
+      "story_b_id": "US-020",
+      "entity_matches": [
+        {
+          "activity_a": {
+            "action": "view",
+            "entity": "generated itinerary"
+          },
+          "activity_b": {
+            "action": "download",
+            "entity": "complete itinerary"
+          },
+          "match_type": "semantic",
+          "explanation": "Both activities reference the same underlying entity, a complete travel plan, with different wording."
+        }
+      ]
+    },
+    "step_2_classify": {
+      "story_a_id": "US-015",
+      "story_b_id": "US-020",
+      "classified_matches": [
+        {
+          "activity_a": {
+            "action": "view",
+            "entity": "generated itinerary",
+            "operation_type": "READ"
+          },
+          "activity_b": {
+            "action": "download",
+            "entity": "complete itinerary",
+            "operation_type": "READ"
+          },
+          "match_type": "semantic"
+        }
+      ]
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to drag and drop stops, so that I am able to manually adjust the order within a day's plan of the AI-generated schedule to my personal preferences.",
+    "story_b": "As a traveler, I want to copy of a past trip's itinerary and adjust the dates or spots, so that I can reuse a proven plan for a repeat visit without starting from scratch.",
+    "step_1_match": {
+      "story_a_id": "US-016",
+      "story_b_id": "US-017",
+      "entity_matches": [
+        {
+          "activity_a": {
+            "action": "drag",
+            "entity": "stops"
+          },
+          "activity_b": {
+            "action": "adjust",
+            "entity": "spots"
+          },
+          "match_type": "semantic",
+          "explanation": "Although 'stops' and 'spots' have different wording, they likely refer to the same underlying entity in context."
+        }
+      ]
+    },
+    "step_2_classify": {
+      "story_a_id": "US-016",
+      "story_b_id": "US-017",
+      "classified_matches": [
+        {
+          "activity_a": {
+            "action": "drag",
+            "entity": "stops",
+            "operation_type": "NON_CRUD"
+          },
+          "activity_b": {
+            "action": "adjust",
+            "entity": "spots",
+            "operation_type": "UPDATE"
+          },
+          "match_type": "semantic"
+        }
+      ]
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to drag and drop stops, so that I am able to manually adjust the order within a day's plan of the AI-generated schedule to my personal preferences.",
+    "story_b": "As a traveler, I want to generate a read-only web link for my itinerary, so that I can share my plans with friends and family without giving them editing rights.",
+    "step_1_match": {
+      "story_a_id": "US-016",
+      "story_b_id": "US-019",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-016",
+      "story_b_id": "US-019",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to drag and drop stops, so that I am able to manually adjust the order within a day's plan of the AI-generated schedule to my personal preferences.",
+    "story_b": "As a traveler, I want to download a complete itinerary including maps, spot details, and daily plan for offline use, so that I can navigate and follow my plan even when I don't have an internet connection abroad.",
+    "step_1_match": {
+      "story_a_id": "US-016",
+      "story_b_id": "US-020",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-016",
+      "story_b_id": "US-020",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to copy of a past trip's itinerary and adjust the dates or spots, so that I can reuse a proven plan for a repeat visit without starting from scratch.",
+    "story_b": "As a traveler, I want to generate a read-only web link for my itinerary, so that I can share my plans with friends and family without giving them editing rights.",
+    "step_1_match": {
+      "story_a_id": "US-017",
+      "story_b_id": "US-019",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-017",
+      "story_b_id": "US-019",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to copy of a past trip's itinerary and adjust the dates or spots, so that I can reuse a proven plan for a repeat visit without starting from scratch.",
+    "story_b": "As a traveler, I want to download a complete itinerary including maps, spot details, and daily plan for offline use, so that I can navigate and follow my plan even when I don't have an internet connection abroad.",
+    "step_1_match": {
+      "story_a_id": "US-017",
+      "story_b_id": "US-020",
+      "entity_matches": [
+        {
+          "activity_a": {
+            "action": "copy",
+            "entity": "past trip's itinerary"
+          },
+          "activity_b": {
+            "action": "download",
+            "entity": "complete itinerary"
+          },
+          "match_type": "semantic",
+          "explanation": "Both activities reference the same underlying entity, an itinerary, with different wording."
+        }
+      ]
+    },
+    "step_2_classify": {
+      "story_a_id": "US-017",
+      "story_b_id": "US-020",
+      "classified_matches": [
+        {
+          "activity_a": {
+            "action": "copy",
+            "entity": "past trip's itinerary",
+            "operation_type": "UPDATE"
+          },
+          "activity_b": {
+            "action": "download",
+            "entity": "complete itinerary",
+            "operation_type": "READ"
+          },
+          "match_type": "semantic"
+        }
+      ]
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  },
+  {
+    "story_a": "As a traveler, I want to generate a read-only web link for my itinerary, so that I can share my plans with friends and family without giving them editing rights.",
+    "story_b": "As a traveler, I want to download a complete itinerary including maps, spot details, and daily plan for offline use, so that I can navigate and follow my plan even when I don't have an internet connection abroad.",
+    "step_1_match": {
+      "story_a_id": "US-019",
+      "story_b_id": "US-020",
+      "entity_matches": []
+    },
+    "step_2_classify": {
+      "story_a_id": "US-019",
+      "story_b_id": "US-020",
+      "classified_matches": []
+    },
+    "final_llm": {
+      "dependencies": []
+    },
+    "final_nlp": {
+      "dependencies": []
+    },
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
+  }
+]
