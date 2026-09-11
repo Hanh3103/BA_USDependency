@@ -2,8 +2,8 @@ import json
 import time
 from typing import Dict, Optional, Literal
 import argparse
-from errors.app_error import AppError
-from errors.llm_errors import LLMConnectionError
+from src.errors import AppError
+from src.errors.llm_errors import LLMConnectionError
 from schemas.annotation.annotation_schema import AnnotationSchema, Step1Schema, Step2Schema, Step3Schema
 from config import settings
 from utils.llm_client_helpers import _call_stage, _load_prompt

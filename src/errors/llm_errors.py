@@ -1,4 +1,4 @@
-from errors.app_error import AppError
+from src.errors.app_error import AppError
 
 
 class LLMConnectionError(AppError):

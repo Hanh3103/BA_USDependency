@@ -2,9 +2,9 @@ from functools import lru_cache
 from typing import Optional, Union, Literal
 
 from httpx import RequestError
-from ollama import Client, ResponseError, ChatResponse
+from ollama import Client, ResponseError
 
-from errors.llm_errors import LLMConnectionError
+from src.errors.llm_errors import LLMConnectionError
 from config import settings
 
 #BASE_URL = "http://ollama:11434/v1"  # this line for docker

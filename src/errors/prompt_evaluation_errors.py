@@ -1,4 +1,4 @@
-from errors.app_error import AppError
+from src.errors.app_error import AppError
 """Custom errors used by the prompt evaluation tool.
 
 These errors keep the evaluation flow readable by separating file loading,

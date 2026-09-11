@@ -1,6 +1,6 @@
-from errors.app_error import AppError
-from errors.llm_errors import LLMConnectionError
-from errors.prompt_evaluation_errors import (
+from src.errors.app_error import AppError
+from src.errors.llm_errors import LLMConnectionError
+from src.errors.prompt_evaluation_errors import (
 	PromptEvaluationError,
 	PromptJSONParseError,
 	PromptLoadError,

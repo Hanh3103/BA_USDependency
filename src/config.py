@@ -1,9 +1,6 @@
 from pydantic_settings import BaseSettings
 from pathlib import Path
 from dotenv import dotenv_values
-from spacy.lang.ro.tokenizer_exceptions import variant
-
-from errors import AppError
 
 BASE_DIR = Path(__file__).resolve().parent
 env_path = BASE_DIR / ".env"

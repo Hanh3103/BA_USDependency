@@ -40,8 +40,8 @@ def load_gt_text_map(path: str, sheet_name: str = "USs") -> Dict[str, str]:
 
     return story_map
 
-from app.utils.file_parser import load_annotated_stories  # the actual function used by your pipeline
-from app.schemas.dependency.dependency_schema import AnnotatedStory  # the actual AnnotatedStory class used by your pipeline
+from src.utils.file_parser import load_annotated_stories  # the actual function used by your pipeline
+from src.schemas.dependency.dependency_schema import AnnotatedStory  # the actual AnnotatedStory class used by your pipeline
 
 def _get_story_text(story: "AnnotatedStory") -> str:
     """AnnotatedStory's text field is 'Text' per the JSON schema; fall back to

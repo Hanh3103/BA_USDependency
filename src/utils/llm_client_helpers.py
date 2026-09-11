@@ -4,8 +4,8 @@ from typing import Dict, List, TypeVar, Type
 
 from pydantic import ValidationError, BaseModel
 
-from connectionsHandle.ollama_connection import create_chat_completion
-from errors import AppError
+from src.connectionsHandle.ollama_connection import create_chat_completion
+from src.errors import AppError
 
 T = TypeVar("T", bound=BaseModel)
 

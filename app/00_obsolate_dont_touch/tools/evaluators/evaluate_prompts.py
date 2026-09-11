@@ -9,7 +9,7 @@ from pathlib import Path
 # Ensure `app` package is importable when running from the repository root
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from errors import (
+from src.errors import (
     PromptEvaluationError,
     PromptJSONParseError,
     PromptLoadError,
