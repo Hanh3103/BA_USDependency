@@ -1,0 +1,4 @@
+Model,Match type,TP,FP,FN,Precision,Recall,F1,Support
+llama3.1_8b_text_gt,exact,0,0,6,0.0,0.0,0.0,6
+llama3.1_8b_text_gt,semantic,0,0,17,0.0,0.0,0.0,17
+llama3.1_8b_text_gt,none,519,23,0,0.9576,1.0,0.9783,519

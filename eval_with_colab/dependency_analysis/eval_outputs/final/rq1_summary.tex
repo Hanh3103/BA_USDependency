@@ -1,0 +1,14 @@
+\begin{table}
+\caption{RQ1: Text-based vs. CRUD-annotated dependency detection across models}
+\label{tab:rq1_summary}
+\begin{tabular}{llrrrrrrrrr}
+\toprule
+Model & Condition & Precision (directed) & Recall (directed) & F1 (directed) & F1 (undirected) & Direction errors & Time (s) & TP & FP & FN \\
+\midrule
+llama3.1:8b & Text Dependency Analysis & 0.0735 & 1.0000 & 0.1370 & 0.1515 & 1 & 478.0900 & 5 & 63 & 0 \\
+llama3.1:8b & Annotated Dependency Analysis & 0.6250 & 1.0000 & 0.7692 & 0.7692 & 0 & 396.2000 & 5 & 3 & 0 \\
+qwen3:8b & Text Dependency Analysis & 0.1333 & 0.4000 & 0.2000 & 0.2000 & 0 & 299.6100 & 2 & 13 & 3 \\
+qwen3:8b & Annotated Dependency Analysis & 0.6250 & 1.0000 & 0.7692 & 0.7692 & 0 & 392.3000 & 5 & 3 & 0 \\
+\bottomrule
+\end{tabular}
+\end{table}

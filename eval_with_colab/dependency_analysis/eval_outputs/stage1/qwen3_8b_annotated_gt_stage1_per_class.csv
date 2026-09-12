@@ -1,0 +1,4 @@
+Model,Match type,TP,FP,FN,Precision,Recall,F1,Support
+qwen3_8b_annotated_gt,exact,3,0,3,1.0,0.5,0.6667,6
+qwen3_8b_annotated_gt,semantic,9,7,8,0.5625,0.5294,0.5455,17
+qwen3_8b_annotated_gt,none,513,10,6,0.9809,0.9884,0.9846,519
