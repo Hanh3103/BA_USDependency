@@ -179,14 +179,14 @@ row_id,story_a_id,action_a,entity_a,story_b_id,action_b,entity_b,gt_match_type,p
 178,US-003,walk through,"short, guided tutorial",US-019,generate,read-only web link,none,none,True,
 179,US-003,walk through,"short, guided tutorial",US-020,download,complete itinerary,none,none,True,
 180,US-004,import,location,US-005,create,named lists,none,none,True,
-181,US-004,import,location,US-005,add,saved spots,none,none,True,
+181,US-004,import,location,US-005,add,saved spots,none,semantic,False,'saved spots' is a synonym for 'location' in the context of saved places.
 182,US-004,import,location,US-006,attach,private notes,none,none,True,
 183,US-004,import,location,US-007,open,original TikTok video,none,none,True,
 184,US-004,import,location,US-007,open,original Instagram video,none,none,True,
 185,US-004,import,location,US-008,remove,saved spot,none,none,True,
 186,US-004,import,location,US-009,manually add,spot,none,none,True,
 187,US-004,import,location,US-009,entering,name,none,none,True,
-188,US-004,import,location,US-009,selecting,location,exact,none,False,
+188,US-004,import,location,US-009,selecting,location,exact,exact,True,Both activities reference the identical entity string 'location'.
 189,US-004,import,location,US-010,change,name,none,none,True,
 190,US-004,import,location,US-011,see,saved spots,none,semantic,False,'saved spots' refers to the same entity as 'location' in the context of stored places.
 191,US-004,import,location,US-012,filter,map,none,none,True,
@@ -216,13 +216,13 @@ row_id,story_a_id,action_a,entity_a,story_b_id,action_b,entity_b,gt_match_type,p
 215,US-005,create,named lists,US-009,manually add,spot,none,none,True,
 216,US-005,create,named lists,US-009,entering,name,none,none,True,
 217,US-005,create,named lists,US-009,selecting,location,none,none,True,
-218,US-005,add,saved spots,US-009,manually add,spot,semantic,none,False,
+218,US-005,add,saved spots,US-009,manually add,spot,semantic,semantic,True,'saved spots' and 'spot' refer to the same entity in different contexts.
 219,US-005,add,saved spots,US-009,entering,name,none,none,True,
 220,US-005,add,saved spots,US-009,selecting,location,none,none,True,
 221,US-005,create,named lists,US-010,change,name,none,none,True,
 222,US-005,add,saved spots,US-010,change,name,none,none,True,
 223,US-005,create,named lists,US-011,see,saved spots,none,none,True,
-224,US-005,add,saved spots,US-011,see,saved spots,exact,none,False,
+224,US-005,add,saved spots,US-011,see,saved spots,exact,exact,True,Both activities reference the identical entity string 'saved spots'.
 225,US-005,create,named lists,US-012,filter,map,none,none,True,
 226,US-005,add,saved spots,US-012,filter,map,none,none,True,
 227,US-005,create,named lists,US-013,specify,start date,none,none,True,
@@ -248,7 +248,7 @@ row_id,story_a_id,action_a,entity_a,story_b_id,action_b,entity_b,gt_match_type,p
 247,US-005,create,named lists,US-017,adjust,spots,none,none,True,
 248,US-005,add,saved spots,US-017,copy,past trip's itinerary,none,none,True,
 249,US-005,add,saved spots,US-017,adjust,dates,none,none,True,
-250,US-005,add,saved spots,US-017,adjust,spots,semantic,none,False,
+250,US-005,add,saved spots,US-017,adjust,spots,semantic,semantic,True,'Saved spots' and 'spots' refer to the same entity in different states.
 251,US-005,create,named lists,US-018,permanently delete,trip,none,none,True,
 252,US-005,add,saved spots,US-018,permanently delete,trip,none,none,True,
 253,US-005,create,named lists,US-019,generate,read-only web link,none,none,True,
@@ -347,9 +347,9 @@ row_id,story_a_id,action_a,entity_a,story_b_id,action_b,entity_b,gt_match_type,p
 346,US-009,manually add,spot,US-010,change,name,none,none,True,
 347,US-009,entering,name,US-010,change,name,exact,none,False,
 348,US-009,selecting,location,US-010,change,name,none,none,True,
-349,US-009,manually add,spot,US-011,see,saved spots,semantic,none,False,
+349,US-009,manually add,spot,US-011,see,saved spots,semantic,semantic,True,'spot' and 'saved spots' refer to the same entity in different states.
 350,US-009,entering,name,US-011,see,saved spots,none,none,True,
-351,US-009,selecting,location,US-011,see,saved spots,none,none,True,
+351,US-009,selecting,location,US-011,see,saved spots,none,semantic,False,"'saved spots' refers to previously selected locations, which are the same as 'location' in context."
 352,US-009,manually add,spot,US-012,filter,map,none,none,True,
 353,US-009,entering,name,US-012,filter,map,none,none,True,
 354,US-009,selecting,location,US-012,filter,map,none,none,True,
@@ -368,7 +368,7 @@ row_id,story_a_id,action_a,entity_a,story_b_id,action_b,entity_b,gt_match_type,p
 367,US-009,entering,name,US-014,select,destination,none,none,True,
 368,US-009,entering,name,US-014,select,travel dates,none,none,True,
 369,US-009,entering,name,US-014,select,list,none,none,True,
-370,US-009,selecting,location,US-014,select,destination,none,none,True,
+370,US-009,selecting,location,US-014,select,destination,none,semantic,False,Location and destination are synonymous in the context of selecting a place to go.
 371,US-009,selecting,location,US-014,select,travel dates,none,none,True,
 372,US-009,selecting,location,US-014,select,list,none,none,True,
 373,US-009,manually add,spot,US-015,view,generated itinerary,none,none,True,
@@ -382,7 +382,7 @@ row_id,story_a_id,action_a,entity_a,story_b_id,action_b,entity_b,gt_match_type,p
 381,US-009,selecting,location,US-016,drop,stops,none,none,True,
 382,US-009,manually add,spot,US-017,copy,past trip's itinerary,none,none,True,
 383,US-009,manually add,spot,US-017,adjust,dates,none,none,True,
-384,US-009,manually add,spot,US-017,adjust,spots,exact,none,False,
+384,US-009,manually add,spot,US-017,adjust,spots,exact,semantic,False,'spots' and 'spot' refer to the same entity with different pluralization.
 385,US-009,entering,name,US-017,copy,past trip's itinerary,none,none,True,
 386,US-009,entering,name,US-017,adjust,dates,none,none,True,
 387,US-009,entering,name,US-017,adjust,spots,none,none,True,

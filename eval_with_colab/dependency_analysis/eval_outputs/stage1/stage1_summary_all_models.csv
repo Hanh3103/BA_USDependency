@@ -1,3 +1,4 @@
 Model,GT label column,B_GT rows,GT positive rows,Predicted positive rows,TP,FP,FN,Precision,Recall,F1
 llama3.1_8b_annotated_gt,final_match_type (exact/semantic/none),542,23,24,13,11,10,0.5417,0.5652,0.5532
 qwen3_8b_annotated_gt,final_match_type (exact/semantic/none),542,23,19,13,6,10,0.6842,0.5652,0.619
+qwen3_8b_annotated_llm,final_match_type (exact/semantic/none),542,23,16,11,5,12,0.6875,0.4783,0.5641
