@@ -104,7 +104,7 @@
   },
   {
     "story_a": "As a new user, I want to sign up using my email or an existing Google/Apple account, so that my saved spots and trips are securely stored and synced across my devices.",
-    "story_b": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth.",
+    "story_b": "As a traveler, I want to create named lists (e.g., Tokyo food or Paris museums) and add saved spots to them, so that I can group my travel inspiration by destination or theme.",
     "step_1_match": {
       "story_a_id": "US-001",
       "story_b_id": "US-005",
@@ -148,7 +148,7 @@
   },
   {
     "story_a": "As a new user, I want to sign up using my email or an existing Google/Apple account, so that my saved spots and trips are securely stored and synced across my devices.",
-    "story_b": "As a traveler, I want to create named lists (e.g., Tokyo food or Paris museums) and add saved spots to them, so that I can group my travel inspiration by destination or theme.",
+    "story_b": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth.",
     "step_1_match": {
       "story_a_id": "US-001",
       "story_b_id": "US-009",
@@ -390,7 +390,7 @@
   },
   {
     "story_a": "As a returning user, I want to log in my account on a new device and log out when I'm finished, so that I can access my travel data safely and maintain privacy on shared devices.",
-    "story_b": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth.",
+    "story_b": "As a traveler, I want to create named lists (e.g., Tokyo food or Paris museums) and add saved spots to them, so that I can group my travel inspiration by destination or theme.",
     "step_1_match": {
       "story_a_id": "US-002",
       "story_b_id": "US-005",
@@ -434,7 +434,7 @@
   },
   {
     "story_a": "As a returning user, I want to log in my account on a new device and log out when I'm finished, so that I can access my travel data safely and maintain privacy on shared devices.",
-    "story_b": "As a traveler, I want to create named lists (e.g., Tokyo food or Paris museums) and add saved spots to them, so that I can group my travel inspiration by destination or theme.",
+    "story_b": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth.",
     "step_1_match": {
       "story_a_id": "US-002",
       "story_b_id": "US-009",
@@ -654,7 +654,7 @@
   },
   {
     "story_a": "As a traveler, I want to import a location from a saved TikTok or Instagram video with a single tap, so that I can quickly capture travel inspiration without manually typing details.",
-    "story_b": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth.",
+    "story_b": "As a traveler, I want to create named lists (e.g., Tokyo food or Paris museums) and add saved spots to them, so that I can group my travel inspiration by destination or theme.",
     "step_1_match": {
       "story_a_id": "US-004",
       "story_b_id": "US-005",
@@ -665,11 +665,11 @@
             "entity": "location"
           },
           "activity_b": {
-            "action": "selecting",
-            "entity": "location"
+            "action": "add",
+            "entity": "saved spots"
           },
-          "match_type": "exact",
-          "explanation": "Both activities reference the identical entity string 'location'."
+          "match_type": "semantic",
+          "explanation": "'saved spots' is a synonym for 'location' in the context of saved places."
         }
       ]
     },
@@ -684,54 +684,22 @@
             "operation_type": "CREATE"
           },
           "activity_b": {
-            "action": "selecting",
-            "entity": "location",
-            "operation_type": "READ"
+            "action": "add",
+            "entity": "saved spots",
+            "operation_type": "CREATE"
           },
-          "match_type": "exact"
+          "match_type": "semantic"
         }
       ]
     },
     "final_llm": {
-      "dependencies": [
-        {
-          "prerequisite_id": "US-004",
-          "dependent_id": "US-005",
-          "prerequisite_activity": {
-            "action": "import",
-            "entity": "location",
-            "operation_type": "CREATE"
-          },
-          "dependent_activity": {
-            "action": "selecting",
-            "entity": "location",
-            "operation_type": "READ"
-          },
-          "match_type": "exact"
-        }
-      ]
+      "dependencies": []
     },
     "final_nlp": {
-      "dependencies": [
-        {
-          "prerequisite_id": "US-004",
-          "dependent_id": "US-005",
-          "prerequisite_activity": {
-            "action": "import",
-            "entity": "location",
-            "operation_type": "CREATE"
-          },
-          "dependent_activity": {
-            "action": "selecting",
-            "entity": "location",
-            "operation_type": "READ"
-          },
-          "match_type": "exact"
-        }
-      ]
+      "dependencies": []
     },
-    "dependencyFoundLLM": true,
-    "dependencyFoundNLP": true
+    "dependencyFoundLLM": false,
+    "dependencyFoundNLP": false
   },
   {
     "story_a": "As a traveler, I want to import a location from a saved TikTok or Instagram video with a single tap, so that I can quickly capture travel inspiration without manually typing details.",
@@ -871,7 +839,7 @@
   },
   {
     "story_a": "As a traveler, I want to import a location from a saved TikTok or Instagram video with a single tap, so that I can quickly capture travel inspiration without manually typing details.",
-    "story_b": "As a traveler, I want to create named lists (e.g., Tokyo food or Paris museums) and add saved spots to them, so that I can group my travel inspiration by destination or theme.",
+    "story_b": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth.",
     "step_1_match": {
       "story_a_id": "US-004",
       "story_b_id": "US-009",
@@ -882,23 +850,11 @@
             "entity": "location"
           },
           "activity_b": {
-            "action": "add",
-            "entity": "saved spots"
+            "action": "selecting",
+            "entity": "location"
           },
-          "match_type": "semantic",
-          "explanation": "'saved spots' is a synonym for 'location' in the context of saved locations."
-        },
-        {
-          "activity_a": {
-            "action": "import",
-            "entity": "saved TikTok or Instagram video"
-          },
-          "activity_b": {
-            "action": "add",
-            "entity": "saved spots"
-          },
-          "match_type": "semantic",
-          "explanation": "Both activities refer to saved media content from social platforms."
+          "match_type": "exact",
+          "explanation": "Both activities reference the identical entity string 'location'."
         }
       ]
     },
@@ -913,35 +869,54 @@
             "operation_type": "CREATE"
           },
           "activity_b": {
-            "action": "add",
-            "entity": "saved spots",
-            "operation_type": "CREATE"
+            "action": "selecting",
+            "entity": "location",
+            "operation_type": "READ"
           },
-          "match_type": "semantic"
-        },
-        {
-          "activity_a": {
-            "action": "import",
-            "entity": "saved TikTok or Instagram video",
-            "operation_type": "CREATE"
-          },
-          "activity_b": {
-            "action": "add",
-            "entity": "saved spots",
-            "operation_type": "CREATE"
-          },
-          "match_type": "semantic"
+          "match_type": "exact"
         }
       ]
     },
     "final_llm": {
-      "dependencies": []
+      "dependencies": [
+        {
+          "prerequisite_id": "US-004",
+          "dependent_id": "US-009",
+          "prerequisite_activity": {
+            "action": "import",
+            "entity": "location",
+            "operation_type": "CREATE"
+          },
+          "dependent_activity": {
+            "action": "selecting",
+            "entity": "location",
+            "operation_type": "READ"
+          },
+          "match_type": "exact"
+        }
+      ]
     },
     "final_nlp": {
-      "dependencies": []
+      "dependencies": [
+        {
+          "prerequisite_id": "US-004",
+          "dependent_id": "US-009",
+          "prerequisite_activity": {
+            "action": "import",
+            "entity": "location",
+            "operation_type": "CREATE"
+          },
+          "dependent_activity": {
+            "action": "selecting",
+            "entity": "location",
+            "operation_type": "READ"
+          },
+          "match_type": "exact"
+        }
+      ]
     },
-    "dependencyFoundLLM": false,
-    "dependencyFoundNLP": false
+    "dependencyFoundLLM": true,
+    "dependencyFoundNLP": true
   },
   {
     "story_a": "As a traveler, I want to import a location from a saved TikTok or Instagram video with a single tap, so that I can quickly capture travel inspiration without manually typing details.",
@@ -994,7 +969,7 @@
             "entity": "saved spots"
           },
           "match_type": "semantic",
-          "explanation": "Both activities refer to saved media content, even though the wording differs."
+          "explanation": "Both activities refer to saved videos or content from social media platforms."
         }
       ]
     },
@@ -1038,6 +1013,21 @@
           "prerequisite_activity": {
             "action": "import",
             "entity": "location",
+            "operation_type": "CREATE"
+          },
+          "dependent_activity": {
+            "action": "see",
+            "entity": "saved spots",
+            "operation_type": "READ"
+          },
+          "match_type": "semantic"
+        },
+        {
+          "prerequisite_id": "US-004",
+          "dependent_id": "US-011",
+          "prerequisite_activity": {
+            "action": "import",
+            "entity": "saved TikTok or Instagram video",
             "operation_type": "CREATE"
           },
           "dependent_activity": {
@@ -1147,7 +1137,7 @@
             "entity": "list of saved spots"
           },
           "match_type": "semantic",
-          "explanation": "'List of saved spots' refers to a collection of locations, which aligns with the 'location' entity in the import activity."
+          "explanation": "'List of saved spots' refers to a collection of locations, making it semantically related to 'location'."
         }
       ]
     },
@@ -1300,7 +1290,7 @@
     "dependencyFoundNLP": false
   },
   {
-    "story_a": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth.",
+    "story_a": "As a traveler, I want to create named lists (e.g., Tokyo food or Paris museums) and add saved spots to them, so that I can group my travel inspiration by destination or theme.",
     "story_b": "As a traveler, I want to attach private notes (e.g., reservation numbers or tips) to any saved spot, so that I can keep critical information together with the place it belongs to.",
     "step_1_match": {
       "story_a_id": "US-005",
@@ -1308,27 +1298,15 @@
       "entity_matches": [
         {
           "activity_a": {
-            "action": "manually add",
-            "entity": "spot"
+            "action": "add",
+            "entity": "saved spots"
           },
           "activity_b": {
             "action": "attach",
             "entity": "saved spot"
           },
           "match_type": "semantic",
-          "explanation": "'saved spot' is a specific instance of a 'spot' entity."
-        },
-        {
-          "activity_a": {
-            "action": "selecting",
-            "entity": "location"
-          },
-          "activity_b": {
-            "action": "attach",
-            "entity": "saved spot"
-          },
-          "match_type": "semantic",
-          "explanation": "'saved spot' is a synonym for a previously selected 'location'."
+          "explanation": "'saved spots' and 'saved spot' refer to the same entity with slight wording variation."
         }
       ]
     },
@@ -1338,22 +1316,9 @@
       "classified_matches": [
         {
           "activity_a": {
-            "action": "manually add",
-            "entity": "spot",
+            "action": "add",
+            "entity": "saved spots",
             "operation_type": "CREATE"
-          },
-          "activity_b": {
-            "action": "attach",
-            "entity": "saved spot",
-            "operation_type": "UPDATE"
-          },
-          "match_type": "semantic"
-        },
-        {
-          "activity_a": {
-            "action": "selecting",
-            "entity": "location",
-            "operation_type": "READ"
           },
           "activity_b": {
             "action": "attach",
@@ -1370,8 +1335,8 @@
           "prerequisite_id": "US-005",
           "dependent_id": "US-006",
           "prerequisite_activity": {
-            "action": "manually add",
-            "entity": "spot",
+            "action": "add",
+            "entity": "saved spots",
             "operation_type": "CREATE"
           },
           "dependent_activity": {
@@ -1389,8 +1354,8 @@
           "prerequisite_id": "US-005",
           "dependent_id": "US-006",
           "prerequisite_activity": {
-            "action": "manually add",
-            "entity": "spot",
+            "action": "add",
+            "entity": "saved spots",
             "operation_type": "CREATE"
           },
           "dependent_activity": {
@@ -1406,47 +1371,23 @@
     "dependencyFoundNLP": true
   },
   {
-    "story_a": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth.",
-    "story_b": "As a traveler, I want to create named lists (e.g., Tokyo food or Paris museums) and add saved spots to them, so that I can group my travel inspiration by destination or theme.",
+    "story_a": "As a traveler, I want to create named lists (e.g., Tokyo food or Paris museums) and add saved spots to them, so that I can group my travel inspiration by destination or theme.",
+    "story_b": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth.",
     "step_1_match": {
       "story_a_id": "US-005",
       "story_b_id": "US-009",
       "entity_matches": [
         {
           "activity_a": {
+            "action": "add",
+            "entity": "saved spots"
+          },
+          "activity_b": {
             "action": "manually add",
             "entity": "spot"
           },
-          "activity_b": {
-            "action": "add",
-            "entity": "saved spots"
-          },
           "match_type": "semantic",
-          "explanation": "'spot' and 'saved spots' refer to the same entity in different states."
-        },
-        {
-          "activity_a": {
-            "action": "entering",
-            "entity": "name"
-          },
-          "activity_b": {
-            "action": "create",
-            "entity": "named lists"
-          },
-          "match_type": "semantic",
-          "explanation": "Both activities refer to the same entity, 'name', in different contexts."
-        },
-        {
-          "activity_a": {
-            "action": "selecting",
-            "entity": "location"
-          },
-          "activity_b": {
-            "action": "add",
-            "entity": "saved spots"
-          },
-          "match_type": "semantic",
-          "explanation": "'saved spots' is a synonym for a previously selected location."
+          "explanation": "'saved spots' and 'spot' refer to the same entity in different contexts."
         }
       ]
     },
@@ -1456,121 +1397,14 @@
       "classified_matches": [
         {
           "activity_a": {
+            "action": "add",
+            "entity": "saved spots",
+            "operation_type": "CREATE"
+          },
+          "activity_b": {
             "action": "manually add",
             "entity": "spot",
             "operation_type": "CREATE"
-          },
-          "activity_b": {
-            "action": "add",
-            "entity": "saved spots",
-            "operation_type": "CREATE"
-          },
-          "match_type": "semantic"
-        },
-        {
-          "activity_a": {
-            "action": "entering",
-            "entity": "name",
-            "operation_type": "NON_CRUD"
-          },
-          "activity_b": {
-            "action": "create",
-            "entity": "named lists",
-            "operation_type": "CREATE"
-          },
-          "match_type": "semantic"
-        },
-        {
-          "activity_a": {
-            "action": "selecting",
-            "entity": "location",
-            "operation_type": "READ"
-          },
-          "activity_b": {
-            "action": "add",
-            "entity": "saved spots",
-            "operation_type": "CREATE"
-          },
-          "match_type": "semantic"
-        }
-      ]
-    },
-    "final_llm": {
-      "dependencies": [
-        {
-          "prerequisite_id": "US-009",
-          "dependent_id": "US-005",
-          "prerequisite_activity": {
-            "action": "add",
-            "entity": "saved spots",
-            "operation_type": "CREATE"
-          },
-          "dependent_activity": {
-            "action": "selecting",
-            "entity": "location",
-            "operation_type": "READ"
-          },
-          "match_type": "semantic"
-        }
-      ]
-    },
-    "final_nlp": {
-      "dependencies": [
-        {
-          "prerequisite_id": "US-009",
-          "dependent_id": "US-005",
-          "prerequisite_activity": {
-            "action": "add",
-            "entity": "saved spots",
-            "operation_type": "CREATE"
-          },
-          "dependent_activity": {
-            "action": "selecting",
-            "entity": "location",
-            "operation_type": "READ"
-          },
-          "match_type": "semantic"
-        }
-      ]
-    },
-    "dependencyFoundLLM": true,
-    "dependencyFoundNLP": true
-  },
-  {
-    "story_a": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth.",
-    "story_b": "As a traveler, I want to change the name of an existing list, so that I can keep my organization up to date as my plans evolve.",
-    "step_1_match": {
-      "story_a_id": "US-005",
-      "story_b_id": "US-010",
-      "entity_matches": [
-        {
-          "activity_a": {
-            "action": "entering",
-            "entity": "name"
-          },
-          "activity_b": {
-            "action": "change",
-            "entity": "name of an existing list"
-          },
-          "match_type": "semantic",
-          "explanation": "'name of an existing list' refers to the same entity as 'name' in the context of an already-created list."
-        }
-      ]
-    },
-    "step_2_classify": {
-      "story_a_id": "US-005",
-      "story_b_id": "US-010",
-      "classified_matches": [
-        {
-          "activity_a": {
-            "action": "entering",
-            "entity": "name",
-            "operation_type": "NON_CRUD"
-          },
-          "activity_b": {
-            "action": "change",
-            "entity": "name of an existing list",
-            "operation_type": "UPDATE"
           },
           "match_type": "semantic"
         }
@@ -1586,7 +1420,88 @@
     "dependencyFoundNLP": false
   },
   {
-    "story_a": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth.",
+    "story_a": "As a traveler, I want to create named lists (e.g., Tokyo food or Paris museums) and add saved spots to them, so that I can group my travel inspiration by destination or theme.",
+    "story_b": "As a traveler, I want to change the name of an existing list, so that I can keep my organization up to date as my plans evolve.",
+    "step_1_match": {
+      "story_a_id": "US-005",
+      "story_b_id": "US-010",
+      "entity_matches": [
+        {
+          "activity_a": {
+            "action": "create",
+            "entity": "named lists"
+          },
+          "activity_b": {
+            "action": "change",
+            "entity": "name of an existing list"
+          },
+          "match_type": "semantic",
+          "explanation": "'named lists' and 'name of an existing list' refer to the same entity in different states."
+        }
+      ]
+    },
+    "step_2_classify": {
+      "story_a_id": "US-005",
+      "story_b_id": "US-010",
+      "classified_matches": [
+        {
+          "activity_a": {
+            "action": "create",
+            "entity": "named lists",
+            "operation_type": "CREATE"
+          },
+          "activity_b": {
+            "action": "change",
+            "entity": "name of an existing list",
+            "operation_type": "UPDATE"
+          },
+          "match_type": "semantic"
+        }
+      ]
+    },
+    "final_llm": {
+      "dependencies": [
+        {
+          "prerequisite_id": "US-005",
+          "dependent_id": "US-010",
+          "prerequisite_activity": {
+            "action": "create",
+            "entity": "named lists",
+            "operation_type": "CREATE"
+          },
+          "dependent_activity": {
+            "action": "change",
+            "entity": "name of an existing list",
+            "operation_type": "UPDATE"
+          },
+          "match_type": "semantic"
+        }
+      ]
+    },
+    "final_nlp": {
+      "dependencies": [
+        {
+          "prerequisite_id": "US-005",
+          "dependent_id": "US-010",
+          "prerequisite_activity": {
+            "action": "create",
+            "entity": "named lists",
+            "operation_type": "CREATE"
+          },
+          "dependent_activity": {
+            "action": "change",
+            "entity": "name of an existing list",
+            "operation_type": "UPDATE"
+          },
+          "match_type": "semantic"
+        }
+      ]
+    },
+    "dependencyFoundLLM": true,
+    "dependencyFoundNLP": true
+  },
+  {
+    "story_a": "As a traveler, I want to create named lists (e.g., Tokyo food or Paris museums) and add saved spots to them, so that I can group my travel inspiration by destination or theme.",
     "story_b": "As a traveler, I want to see all my saved spots displayed as pins on a live map, so that I can understand their spatial distribution and plan routes more effectively.",
     "step_1_match": {
       "story_a_id": "US-005",
@@ -1594,27 +1509,15 @@
       "entity_matches": [
         {
           "activity_a": {
-            "action": "manually add",
-            "entity": "spot"
+            "action": "add",
+            "entity": "saved spots"
           },
           "activity_b": {
             "action": "see",
             "entity": "saved spots"
           },
-          "match_type": "semantic",
-          "explanation": "'spot' and 'saved spots' refer to the same entity in different states."
-        },
-        {
-          "activity_a": {
-            "action": "selecting",
-            "entity": "location"
-          },
-          "activity_b": {
-            "action": "see",
-            "entity": "saved spots"
-          },
-          "match_type": "semantic",
-          "explanation": "'saved spots' refers to previously selected locations, which are the same as 'location' in context."
+          "match_type": "exact",
+          "explanation": "Both activities reference the identical entity string 'saved spots'."
         }
       ]
     },
@@ -1624,8 +1527,8 @@
       "classified_matches": [
         {
           "activity_a": {
-            "action": "manually add",
-            "entity": "spot",
+            "action": "add",
+            "entity": "saved spots",
             "operation_type": "CREATE"
           },
           "activity_b": {
@@ -1633,20 +1536,7 @@
             "entity": "saved spots",
             "operation_type": "READ"
           },
-          "match_type": "semantic"
-        },
-        {
-          "activity_a": {
-            "action": "selecting",
-            "entity": "location",
-            "operation_type": "READ"
-          },
-          "activity_b": {
-            "action": "see",
-            "entity": "saved spots",
-            "operation_type": "READ"
-          },
-          "match_type": "semantic"
+          "match_type": "exact"
         }
       ]
     },
@@ -1656,8 +1546,8 @@
           "prerequisite_id": "US-005",
           "dependent_id": "US-011",
           "prerequisite_activity": {
-            "action": "manually add",
-            "entity": "spot",
+            "action": "add",
+            "entity": "saved spots",
             "operation_type": "CREATE"
           },
           "dependent_activity": {
@@ -1665,7 +1555,7 @@
             "entity": "saved spots",
             "operation_type": "READ"
           },
-          "match_type": "semantic"
+          "match_type": "exact"
         }
       ]
     },
@@ -1675,8 +1565,8 @@
           "prerequisite_id": "US-005",
           "dependent_id": "US-011",
           "prerequisite_activity": {
-            "action": "manually add",
-            "entity": "spot",
+            "action": "add",
+            "entity": "saved spots",
             "operation_type": "CREATE"
           },
           "dependent_activity": {
@@ -1684,7 +1574,7 @@
             "entity": "saved spots",
             "operation_type": "READ"
           },
-          "match_type": "semantic"
+          "match_type": "exact"
         }
       ]
     },
@@ -1692,7 +1582,7 @@
     "dependencyFoundNLP": true
   },
   {
-    "story_a": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth.",
+    "story_a": "As a traveler, I want to create named lists (e.g., Tokyo food or Paris museums) and add saved spots to them, so that I can group my travel inspiration by destination or theme.",
     "story_b": "As a traveler, I want to filter the map to show only spots from a specific list, so that I can focus on places relevant to a particular trip or category.",
     "step_1_match": {
       "story_a_id": "US-005",
@@ -1700,15 +1590,27 @@
       "entity_matches": [
         {
           "activity_a": {
-            "action": "manually add",
-            "entity": "spot"
+            "action": "create",
+            "entity": "named lists"
+          },
+          "activity_b": {
+            "action": "filter",
+            "entity": "specific list"
+          },
+          "match_type": "semantic",
+          "explanation": "'Named lists' and 'specific list' refer to the same type of entity, a list."
+        },
+        {
+          "activity_a": {
+            "action": "add",
+            "entity": "saved spots"
           },
           "activity_b": {
             "action": "filter",
             "entity": "spots"
           },
           "match_type": "semantic",
-          "explanation": "'spot' and 'spots' refer to the same entity with different pluralization."
+          "explanation": "'saved spots' and 'spots' refer to the same entity in different states."
         }
       ]
     },
@@ -1718,8 +1620,21 @@
       "classified_matches": [
         {
           "activity_a": {
-            "action": "manually add",
-            "entity": "spot",
+            "action": "create",
+            "entity": "named lists",
+            "operation_type": "CREATE"
+          },
+          "activity_b": {
+            "action": "filter",
+            "entity": "specific list",
+            "operation_type": "READ"
+          },
+          "match_type": "semantic"
+        },
+        {
+          "activity_a": {
+            "action": "add",
+            "entity": "saved spots",
             "operation_type": "CREATE"
           },
           "activity_b": {
@@ -1737,8 +1652,23 @@
           "prerequisite_id": "US-005",
           "dependent_id": "US-012",
           "prerequisite_activity": {
-            "action": "manually add",
-            "entity": "spot",
+            "action": "create",
+            "entity": "named lists",
+            "operation_type": "CREATE"
+          },
+          "dependent_activity": {
+            "action": "filter",
+            "entity": "specific list",
+            "operation_type": "READ"
+          },
+          "match_type": "semantic"
+        },
+        {
+          "prerequisite_id": "US-005",
+          "dependent_id": "US-012",
+          "prerequisite_activity": {
+            "action": "add",
+            "entity": "saved spots",
             "operation_type": "CREATE"
           },
           "dependent_activity": {
@@ -1756,8 +1686,23 @@
           "prerequisite_id": "US-005",
           "dependent_id": "US-012",
           "prerequisite_activity": {
-            "action": "manually add",
-            "entity": "spot",
+            "action": "create",
+            "entity": "named lists",
+            "operation_type": "CREATE"
+          },
+          "dependent_activity": {
+            "action": "filter",
+            "entity": "specific list",
+            "operation_type": "READ"
+          },
+          "match_type": "semantic"
+        },
+        {
+          "prerequisite_id": "US-005",
+          "dependent_id": "US-012",
+          "prerequisite_activity": {
+            "action": "add",
+            "entity": "saved spots",
             "operation_type": "CREATE"
           },
           "dependent_activity": {
@@ -1773,7 +1718,7 @@
     "dependencyFoundNLP": true
   },
   {
-    "story_a": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth.",
+    "story_a": "As a traveler, I want to create named lists (e.g., Tokyo food or Paris museums) and add saved spots to them, so that I can group my travel inspiration by destination or theme.",
     "story_b": "As a traveler, I want to specify the start date, end date, or total number of days for a trip, so that the AI itinerary matches the exact length of my stay.",
     "step_1_match": {
       "story_a_id": "US-005",
@@ -1795,7 +1740,7 @@
     "dependencyFoundNLP": false
   },
   {
-    "story_a": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth.",
+    "story_a": "As a traveler, I want to create named lists (e.g., Tokyo food or Paris museums) and add saved spots to them, so that I can group my travel inspiration by destination or theme.",
     "story_b": "As a traveler, I want to select a destination, travel dates, and a list of saved spots and have the app automatically generate a logically ordered, day-by-day itinerary, so that I can transform my scattered ideas into a structured plan without manual scheduling.",
     "step_1_match": {
       "story_a_id": "US-005",
@@ -1803,39 +1748,15 @@
       "entity_matches": [
         {
           "activity_a": {
-            "action": "manually add",
-            "entity": "spot"
+            "action": "add",
+            "entity": "saved spots"
           },
           "activity_b": {
             "action": "select",
             "entity": "list of saved spots"
           },
           "match_type": "semantic",
-          "explanation": "'spot' and 'list of saved spots' refer to the same entity in different contexts."
-        },
-        {
-          "activity_a": {
-            "action": "selecting",
-            "entity": "location"
-          },
-          "activity_b": {
-            "action": "select",
-            "entity": "destination"
-          },
-          "match_type": "semantic",
-          "explanation": "Location and destination are synonymous in the context of selecting a place to go."
-        },
-        {
-          "activity_a": {
-            "action": "selecting",
-            "entity": "location"
-          },
-          "activity_b": {
-            "action": "select",
-            "entity": "list of saved spots"
-          },
-          "match_type": "semantic",
-          "explanation": "'list of saved spots' refers to a collection of locations, making it semantically related to 'location'."
+          "explanation": "'saved spots' and 'list of saved spots' refer to the same underlying entity."
         }
       ]
     },
@@ -1845,35 +1766,9 @@
       "classified_matches": [
         {
           "activity_a": {
-            "action": "manually add",
-            "entity": "spot",
+            "action": "add",
+            "entity": "saved spots",
             "operation_type": "CREATE"
-          },
-          "activity_b": {
-            "action": "select",
-            "entity": "list of saved spots",
-            "operation_type": "READ"
-          },
-          "match_type": "semantic"
-        },
-        {
-          "activity_a": {
-            "action": "selecting",
-            "entity": "location",
-            "operation_type": "READ"
-          },
-          "activity_b": {
-            "action": "select",
-            "entity": "destination",
-            "operation_type": "READ"
-          },
-          "match_type": "semantic"
-        },
-        {
-          "activity_a": {
-            "action": "selecting",
-            "entity": "location",
-            "operation_type": "READ"
           },
           "activity_b": {
             "action": "select",
@@ -1890,8 +1785,8 @@
           "prerequisite_id": "US-005",
           "dependent_id": "US-014",
           "prerequisite_activity": {
-            "action": "manually add",
-            "entity": "spot",
+            "action": "add",
+            "entity": "saved spots",
             "operation_type": "CREATE"
           },
           "dependent_activity": {
@@ -1909,8 +1804,8 @@
           "prerequisite_id": "US-005",
           "dependent_id": "US-014",
           "prerequisite_activity": {
-            "action": "manually add",
-            "entity": "spot",
+            "action": "add",
+            "entity": "saved spots",
             "operation_type": "CREATE"
           },
           "dependent_activity": {
@@ -1926,7 +1821,7 @@
     "dependencyFoundNLP": true
   },
   {
-    "story_a": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth.",
+    "story_a": "As a traveler, I want to create named lists (e.g., Tokyo food or Paris museums) and add saved spots to them, so that I can group my travel inspiration by destination or theme.",
     "story_b": "As a traveler, I want to view the generated itinerary as a daily route on a map, so that I can see the travel distance and logical flow between stops at a glance.",
     "step_1_match": {
       "story_a_id": "US-005",
@@ -1948,44 +1843,17 @@
     "dependencyFoundNLP": false
   },
   {
-    "story_a": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth.",
+    "story_a": "As a traveler, I want to create named lists (e.g., Tokyo food or Paris museums) and add saved spots to them, so that I can group my travel inspiration by destination or theme.",
     "story_b": "As a traveler, I want to drag and drop stops, so that I am able to manually adjust the order within a day's plan of the AI-generated schedule to my personal preferences.",
     "step_1_match": {
       "story_a_id": "US-005",
       "story_b_id": "US-016",
-      "entity_matches": [
-        {
-          "activity_a": {
-            "action": "manually add",
-            "entity": "spot"
-          },
-          "activity_b": {
-            "action": "drag and drop",
-            "entity": "stops"
-          },
-          "match_type": "semantic",
-          "explanation": "'spot' and 'stops' refer to the same type of entity in different wording."
-        }
-      ]
+      "entity_matches": []
     },
     "step_2_classify": {
       "story_a_id": "US-005",
       "story_b_id": "US-016",
-      "classified_matches": [
-        {
-          "activity_a": {
-            "action": "manually add",
-            "entity": "spot",
-            "operation_type": "CREATE"
-          },
-          "activity_b": {
-            "action": "drag and drop",
-            "entity": "stops",
-            "operation_type": "NON_CRUD"
-          },
-          "match_type": "semantic"
-        }
-      ]
+      "classified_matches": []
     },
     "final_llm": {
       "dependencies": []
@@ -1997,7 +1865,7 @@
     "dependencyFoundNLP": false
   },
   {
-    "story_a": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth.",
+    "story_a": "As a traveler, I want to create named lists (e.g., Tokyo food or Paris museums) and add saved spots to them, so that I can group my travel inspiration by destination or theme.",
     "story_b": "As a traveler, I want to copy of a past trip's itinerary and adjust the dates or spots, so that I can reuse a proven plan for a repeat visit without starting from scratch.",
     "step_1_match": {
       "story_a_id": "US-005",
@@ -2005,15 +1873,15 @@
       "entity_matches": [
         {
           "activity_a": {
-            "action": "manually add",
-            "entity": "spot"
+            "action": "add",
+            "entity": "saved spots"
           },
           "activity_b": {
             "action": "adjust",
             "entity": "spots"
           },
           "match_type": "semantic",
-          "explanation": "'spots' and 'spot' refer to the same entity with different pluralization."
+          "explanation": "'Saved spots' and 'spots' refer to the same entity in different states."
         }
       ]
     },
@@ -2023,8 +1891,8 @@
       "classified_matches": [
         {
           "activity_a": {
-            "action": "manually add",
-            "entity": "spot",
+            "action": "add",
+            "entity": "saved spots",
             "operation_type": "CREATE"
           },
           "activity_b": {
@@ -2042,8 +1910,8 @@
           "prerequisite_id": "US-005",
           "dependent_id": "US-017",
           "prerequisite_activity": {
-            "action": "manually add",
-            "entity": "spot",
+            "action": "add",
+            "entity": "saved spots",
             "operation_type": "CREATE"
           },
           "dependent_activity": {
@@ -2061,8 +1929,8 @@
           "prerequisite_id": "US-005",
           "dependent_id": "US-017",
           "prerequisite_activity": {
-            "action": "manually add",
-            "entity": "spot",
+            "action": "add",
+            "entity": "saved spots",
             "operation_type": "CREATE"
           },
           "dependent_activity": {
@@ -2078,7 +1946,7 @@
     "dependencyFoundNLP": true
   },
   {
-    "story_a": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth.",
+    "story_a": "As a traveler, I want to create named lists (e.g., Tokyo food or Paris museums) and add saved spots to them, so that I can group my travel inspiration by destination or theme.",
     "story_b": "As a traveler, I want to permanently delete a trip I no longer need, so that my trip list remains uncluttered and only shows active or relevant plans.",
     "step_1_match": {
       "story_a_id": "US-005",
@@ -2101,7 +1969,7 @@
   },
   {
     "story_a": "As a traveler, I want to attach private notes (e.g., reservation numbers or tips) to any saved spot, so that I can keep critical information together with the place it belongs to.",
-    "story_b": "As a traveler, I want to create named lists (e.g., Tokyo food or Paris museums) and add saved spots to them, so that I can group my travel inspiration by destination or theme.",
+    "story_b": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth.",
     "step_1_match": {
       "story_a_id": "US-006",
       "story_b_id": "US-009",
@@ -2112,11 +1980,11 @@
             "entity": "saved spot"
           },
           "activity_b": {
-            "action": "add",
-            "entity": "saved spots"
+            "action": "manually add",
+            "entity": "spot"
           },
           "match_type": "semantic",
-          "explanation": "'saved spot' and 'saved spots' refer to the same entity with different pluralization."
+          "explanation": "'Saved spot' and 'spot' refer to the same entity in different states."
         }
       ]
     },
@@ -2131,8 +1999,8 @@
             "operation_type": "UPDATE"
           },
           "activity_b": {
-            "action": "add",
-            "entity": "saved spots",
+            "action": "manually add",
+            "entity": "spot",
             "operation_type": "CREATE"
           },
           "match_type": "semantic"
@@ -2145,8 +2013,8 @@
           "prerequisite_id": "US-009",
           "dependent_id": "US-006",
           "prerequisite_activity": {
-            "action": "add",
-            "entity": "saved spots",
+            "action": "manually add",
+            "entity": "spot",
             "operation_type": "CREATE"
           },
           "dependent_activity": {
@@ -2164,8 +2032,8 @@
           "prerequisite_id": "US-009",
           "dependent_id": "US-006",
           "prerequisite_activity": {
-            "action": "add",
-            "entity": "saved spots",
+            "action": "manually add",
+            "entity": "spot",
             "operation_type": "CREATE"
           },
           "dependent_activity": {
@@ -2460,7 +2328,7 @@
     "dependencyFoundNLP": false
   },
   {
-    "story_a": "As a traveler, I want to create named lists (e.g., Tokyo food or Paris museums) and add saved spots to them, so that I can group my travel inspiration by destination or theme.",
+    "story_a": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth.",
     "story_b": "As a traveler, I want to change the name of an existing list, so that I can keep my organization up to date as my plans evolve.",
     "step_1_match": {
       "story_a_id": "US-009",
@@ -2468,15 +2336,15 @@
       "entity_matches": [
         {
           "activity_a": {
-            "action": "create",
-            "entity": "named lists"
+            "action": "entering",
+            "entity": "name"
           },
           "activity_b": {
             "action": "change",
             "entity": "name of an existing list"
           },
           "match_type": "semantic",
-          "explanation": "'named lists' and 'name of an existing list' refer to the same entity in different states."
+          "explanation": "'name of an existing list' refers to the same entity as 'name' in the context of an already-created list."
         }
       ]
     },
@@ -2486,8 +2354,8 @@
       "classified_matches": [
         {
           "activity_a": {
-            "action": "create",
-            "entity": "named lists",
+            "action": "entering",
+            "entity": "name",
             "operation_type": "CREATE"
           },
           "activity_b": {
@@ -2505,8 +2373,8 @@
           "prerequisite_id": "US-009",
           "dependent_id": "US-010",
           "prerequisite_activity": {
-            "action": "create",
-            "entity": "named lists",
+            "action": "entering",
+            "entity": "name",
             "operation_type": "CREATE"
           },
           "dependent_activity": {
@@ -2524,8 +2392,8 @@
           "prerequisite_id": "US-009",
           "dependent_id": "US-010",
           "prerequisite_activity": {
-            "action": "create",
-            "entity": "named lists",
+            "action": "entering",
+            "entity": "name",
             "operation_type": "CREATE"
           },
           "dependent_activity": {
@@ -2541,7 +2409,7 @@
     "dependencyFoundNLP": true
   },
   {
-    "story_a": "As a traveler, I want to create named lists (e.g., Tokyo food or Paris museums) and add saved spots to them, so that I can group my travel inspiration by destination or theme.",
+    "story_a": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth.",
     "story_b": "As a traveler, I want to see all my saved spots displayed as pins on a live map, so that I can understand their spatial distribution and plan routes more effectively.",
     "step_1_match": {
       "story_a_id": "US-009",
@@ -2549,15 +2417,27 @@
       "entity_matches": [
         {
           "activity_a": {
-            "action": "add",
-            "entity": "saved spots"
+            "action": "manually add",
+            "entity": "spot"
           },
           "activity_b": {
             "action": "see",
             "entity": "saved spots"
           },
-          "match_type": "exact",
-          "explanation": "Both activities reference the identical entity string 'saved spots'."
+          "match_type": "semantic",
+          "explanation": "'spot' and 'saved spots' refer to the same entity in different states."
+        },
+        {
+          "activity_a": {
+            "action": "selecting",
+            "entity": "location"
+          },
+          "activity_b": {
+            "action": "see",
+            "entity": "saved spots"
+          },
+          "match_type": "semantic",
+          "explanation": "'saved spots' refers to previously selected locations, which are the same as 'location' in context."
         }
       ]
     },
@@ -2567,8 +2447,8 @@
       "classified_matches": [
         {
           "activity_a": {
-            "action": "add",
-            "entity": "saved spots",
+            "action": "manually add",
+            "entity": "spot",
             "operation_type": "CREATE"
           },
           "activity_b": {
@@ -2576,7 +2456,20 @@
             "entity": "saved spots",
             "operation_type": "READ"
           },
-          "match_type": "exact"
+          "match_type": "semantic"
+        },
+        {
+          "activity_a": {
+            "action": "selecting",
+            "entity": "location",
+            "operation_type": "READ"
+          },
+          "activity_b": {
+            "action": "see",
+            "entity": "saved spots",
+            "operation_type": "READ"
+          },
+          "match_type": "semantic"
         }
       ]
     },
@@ -2586,8 +2479,8 @@
           "prerequisite_id": "US-009",
           "dependent_id": "US-011",
           "prerequisite_activity": {
-            "action": "add",
-            "entity": "saved spots",
+            "action": "manually add",
+            "entity": "spot",
             "operation_type": "CREATE"
           },
           "dependent_activity": {
@@ -2595,7 +2488,7 @@
             "entity": "saved spots",
             "operation_type": "READ"
           },
-          "match_type": "exact"
+          "match_type": "semantic"
         }
       ]
     },
@@ -2605,8 +2498,8 @@
           "prerequisite_id": "US-009",
           "dependent_id": "US-011",
           "prerequisite_activity": {
-            "action": "add",
-            "entity": "saved spots",
+            "action": "manually add",
+            "entity": "spot",
             "operation_type": "CREATE"
           },
           "dependent_activity": {
@@ -2614,7 +2507,7 @@
             "entity": "saved spots",
             "operation_type": "READ"
           },
-          "match_type": "exact"
+          "match_type": "semantic"
         }
       ]
     },
@@ -2622,7 +2515,7 @@
     "dependencyFoundNLP": true
   },
   {
-    "story_a": "As a traveler, I want to create named lists (e.g., Tokyo food or Paris museums) and add saved spots to them, so that I can group my travel inspiration by destination or theme.",
+    "story_a": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth.",
     "story_b": "As a traveler, I want to filter the map to show only spots from a specific list, so that I can focus on places relevant to a particular trip or category.",
     "step_1_match": {
       "story_a_id": "US-009",
@@ -2630,27 +2523,15 @@
       "entity_matches": [
         {
           "activity_a": {
-            "action": "create",
-            "entity": "named lists"
-          },
-          "activity_b": {
-            "action": "filter",
-            "entity": "specific list"
-          },
-          "match_type": "semantic",
-          "explanation": "'Named lists' and 'specific list' refer to the same type of entity, a list."
-        },
-        {
-          "activity_a": {
-            "action": "add",
-            "entity": "saved spots"
+            "action": "manually add",
+            "entity": "spot"
           },
           "activity_b": {
             "action": "filter",
             "entity": "spots"
           },
           "match_type": "semantic",
-          "explanation": "'saved spots' and 'spots' refer to the same entity in different states."
+          "explanation": "'spot' and 'spots' refer to the same entity with different pluralization."
         }
       ]
     },
@@ -2660,21 +2541,8 @@
       "classified_matches": [
         {
           "activity_a": {
-            "action": "create",
-            "entity": "named lists",
-            "operation_type": "CREATE"
-          },
-          "activity_b": {
-            "action": "filter",
-            "entity": "specific list",
-            "operation_type": "READ"
-          },
-          "match_type": "semantic"
-        },
-        {
-          "activity_a": {
-            "action": "add",
-            "entity": "saved spots",
+            "action": "manually add",
+            "entity": "spot",
             "operation_type": "CREATE"
           },
           "activity_b": {
@@ -2692,23 +2560,8 @@
           "prerequisite_id": "US-009",
           "dependent_id": "US-012",
           "prerequisite_activity": {
-            "action": "create",
-            "entity": "named lists",
-            "operation_type": "CREATE"
-          },
-          "dependent_activity": {
-            "action": "filter",
-            "entity": "specific list",
-            "operation_type": "READ"
-          },
-          "match_type": "semantic"
-        },
-        {
-          "prerequisite_id": "US-009",
-          "dependent_id": "US-012",
-          "prerequisite_activity": {
-            "action": "add",
-            "entity": "saved spots",
+            "action": "manually add",
+            "entity": "spot",
             "operation_type": "CREATE"
           },
           "dependent_activity": {
@@ -2726,23 +2579,8 @@
           "prerequisite_id": "US-009",
           "dependent_id": "US-012",
           "prerequisite_activity": {
-            "action": "create",
-            "entity": "named lists",
-            "operation_type": "CREATE"
-          },
-          "dependent_activity": {
-            "action": "filter",
-            "entity": "specific list",
-            "operation_type": "READ"
-          },
-          "match_type": "semantic"
-        },
-        {
-          "prerequisite_id": "US-009",
-          "dependent_id": "US-012",
-          "prerequisite_activity": {
-            "action": "add",
-            "entity": "saved spots",
+            "action": "manually add",
+            "entity": "spot",
             "operation_type": "CREATE"
           },
           "dependent_activity": {
@@ -2758,7 +2596,7 @@
     "dependencyFoundNLP": true
   },
   {
-    "story_a": "As a traveler, I want to create named lists (e.g., Tokyo food or Paris museums) and add saved spots to them, so that I can group my travel inspiration by destination or theme.",
+    "story_a": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth.",
     "story_b": "As a traveler, I want to specify the start date, end date, or total number of days for a trip, so that the AI itinerary matches the exact length of my stay.",
     "step_1_match": {
       "story_a_id": "US-009",
@@ -2780,7 +2618,7 @@
     "dependencyFoundNLP": false
   },
   {
-    "story_a": "As a traveler, I want to create named lists (e.g., Tokyo food or Paris museums) and add saved spots to them, so that I can group my travel inspiration by destination or theme.",
+    "story_a": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth.",
     "story_b": "As a traveler, I want to select a destination, travel dates, and a list of saved spots and have the app automatically generate a logically ordered, day-by-day itinerary, so that I can transform my scattered ideas into a structured plan without manual scheduling.",
     "step_1_match": {
       "story_a_id": "US-009",
@@ -2788,15 +2626,39 @@
       "entity_matches": [
         {
           "activity_a": {
-            "action": "add",
-            "entity": "saved spots"
+            "action": "manually add",
+            "entity": "spot"
           },
           "activity_b": {
             "action": "select",
             "entity": "list of saved spots"
           },
           "match_type": "semantic",
-          "explanation": "'saved spots' and 'list of saved spots' refer to the same underlying entity."
+          "explanation": "'spot' and 'list of saved spots' refer to the same entity in different contexts."
+        },
+        {
+          "activity_a": {
+            "action": "selecting",
+            "entity": "location"
+          },
+          "activity_b": {
+            "action": "select",
+            "entity": "destination"
+          },
+          "match_type": "semantic",
+          "explanation": "Location and destination are synonymous in the context of selecting a place to go."
+        },
+        {
+          "activity_a": {
+            "action": "selecting",
+            "entity": "location"
+          },
+          "activity_b": {
+            "action": "select",
+            "entity": "list of saved spots"
+          },
+          "match_type": "semantic",
+          "explanation": "'list of saved spots' refers to a collection of locations, making it semantically related to 'location'."
         }
       ]
     },
@@ -2806,9 +2668,35 @@
       "classified_matches": [
         {
           "activity_a": {
-            "action": "add",
-            "entity": "saved spots",
+            "action": "manually add",
+            "entity": "spot",
             "operation_type": "CREATE"
+          },
+          "activity_b": {
+            "action": "select",
+            "entity": "list of saved spots",
+            "operation_type": "READ"
+          },
+          "match_type": "semantic"
+        },
+        {
+          "activity_a": {
+            "action": "selecting",
+            "entity": "location",
+            "operation_type": "READ"
+          },
+          "activity_b": {
+            "action": "select",
+            "entity": "destination",
+            "operation_type": "READ"
+          },
+          "match_type": "semantic"
+        },
+        {
+          "activity_a": {
+            "action": "selecting",
+            "entity": "location",
+            "operation_type": "READ"
           },
           "activity_b": {
             "action": "select",
@@ -2825,8 +2713,8 @@
           "prerequisite_id": "US-009",
           "dependent_id": "US-014",
           "prerequisite_activity": {
-            "action": "add",
-            "entity": "saved spots",
+            "action": "manually add",
+            "entity": "spot",
             "operation_type": "CREATE"
           },
           "dependent_activity": {
@@ -2844,8 +2732,8 @@
           "prerequisite_id": "US-009",
           "dependent_id": "US-014",
           "prerequisite_activity": {
-            "action": "add",
-            "entity": "saved spots",
+            "action": "manually add",
+            "entity": "spot",
             "operation_type": "CREATE"
           },
           "dependent_activity": {
@@ -2861,7 +2749,7 @@
     "dependencyFoundNLP": true
   },
   {
-    "story_a": "As a traveler, I want to create named lists (e.g., Tokyo food or Paris museums) and add saved spots to them, so that I can group my travel inspiration by destination or theme.",
+    "story_a": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth.",
     "story_b": "As a traveler, I want to view the generated itinerary as a daily route on a map, so that I can see the travel distance and logical flow between stops at a glance.",
     "step_1_match": {
       "story_a_id": "US-009",
@@ -2883,17 +2771,44 @@
     "dependencyFoundNLP": false
   },
   {
-    "story_a": "As a traveler, I want to create named lists (e.g., Tokyo food or Paris museums) and add saved spots to them, so that I can group my travel inspiration by destination or theme.",
+    "story_a": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth.",
     "story_b": "As a traveler, I want to drag and drop stops, so that I am able to manually adjust the order within a day's plan of the AI-generated schedule to my personal preferences.",
     "step_1_match": {
       "story_a_id": "US-009",
       "story_b_id": "US-016",
-      "entity_matches": []
+      "entity_matches": [
+        {
+          "activity_a": {
+            "action": "manually add",
+            "entity": "spot"
+          },
+          "activity_b": {
+            "action": "drag and drop",
+            "entity": "stops"
+          },
+          "match_type": "semantic",
+          "explanation": "'spot' and 'stops' refer to the same type of entity in different wording."
+        }
+      ]
     },
     "step_2_classify": {
       "story_a_id": "US-009",
       "story_b_id": "US-016",
-      "classified_matches": []
+      "classified_matches": [
+        {
+          "activity_a": {
+            "action": "manually add",
+            "entity": "spot",
+            "operation_type": "CREATE"
+          },
+          "activity_b": {
+            "action": "drag and drop",
+            "entity": "stops",
+            "operation_type": "NON_CRUD"
+          },
+          "match_type": "semantic"
+        }
+      ]
     },
     "final_llm": {
       "dependencies": []
@@ -2905,7 +2820,7 @@
     "dependencyFoundNLP": false
   },
   {
-    "story_a": "As a traveler, I want to create named lists (e.g., Tokyo food or Paris museums) and add saved spots to them, so that I can group my travel inspiration by destination or theme.",
+    "story_a": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth.",
     "story_b": "As a traveler, I want to copy of a past trip's itinerary and adjust the dates or spots, so that I can reuse a proven plan for a repeat visit without starting from scratch.",
     "step_1_match": {
       "story_a_id": "US-009",
@@ -2913,15 +2828,15 @@
       "entity_matches": [
         {
           "activity_a": {
-            "action": "add",
-            "entity": "saved spots"
+            "action": "manually add",
+            "entity": "spot"
           },
           "activity_b": {
             "action": "adjust",
             "entity": "spots"
           },
           "match_type": "semantic",
-          "explanation": "'Saved spots' and 'spots' refer to the same entity in different states."
+          "explanation": "'spots' and 'spot' refer to the same entity with different pluralization."
         }
       ]
     },
@@ -2931,8 +2846,8 @@
       "classified_matches": [
         {
           "activity_a": {
-            "action": "add",
-            "entity": "saved spots",
+            "action": "manually add",
+            "entity": "spot",
             "operation_type": "CREATE"
           },
           "activity_b": {
@@ -2950,8 +2865,8 @@
           "prerequisite_id": "US-009",
           "dependent_id": "US-017",
           "prerequisite_activity": {
-            "action": "add",
-            "entity": "saved spots",
+            "action": "manually add",
+            "entity": "spot",
             "operation_type": "CREATE"
           },
           "dependent_activity": {
@@ -2969,8 +2884,8 @@
           "prerequisite_id": "US-009",
           "dependent_id": "US-017",
           "prerequisite_activity": {
-            "action": "add",
-            "entity": "saved spots",
+            "action": "manually add",
+            "entity": "spot",
             "operation_type": "CREATE"
           },
           "dependent_activity": {
@@ -2986,7 +2901,7 @@
     "dependencyFoundNLP": true
   },
   {
-    "story_a": "As a traveler, I want to create named lists (e.g., Tokyo food or Paris museums) and add saved spots to them, so that I can group my travel inspiration by destination or theme.",
+    "story_a": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth.",
     "story_b": "As a traveler, I want to permanently delete a trip I no longer need, so that my trip list remains uncluttered and only shows active or relevant plans.",
     "step_1_match": {
       "story_a_id": "US-009",
