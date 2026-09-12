@@ -242,86 +242,65 @@
     "contains": []
   },
   {
-    "Text": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth.",
+    "Text": "As a traveler, I want to create named lists (e.g., Tokyo food or Paris museums) and add saved spots to them, so that I can group my travel inspiration by destination or theme.",
     "mode": "sequential",
     "Persona": [
       "traveler"
     ],
     "Action": {
       "GoalAction": [
-        "manually add",
-        "entering",
-        "selecting"
+        "create",
+        "add"
       ],
       "BenefitAction": [
-        "save"
+        "group"
       ]
     },
     "Entity": {
       "GoalEntity": [
-        "spot",
-        "name",
-        "location",
-        "map"
+        "named lists",
+        "saved spots"
       ],
       "BenefitEntity": [
-        "places",
-        "social media",
-        "blogs",
-        "word-of-mouth"
+        "travel inspiration",
+        "destination",
+        "theme"
       ]
     },
-    "benefit": "I can save places I discover outside of social media, such as from blogs or word-of-mouth",
+    "benefit": "I can group my travel inspiration by destination or theme",
     "triggers": [
       [
         "traveler",
-        "manually add"
+        "create"
       ],
       [
         "traveler",
-        "entering"
-      ],
-      [
-        "traveler",
-        "selecting"
+        "add"
       ]
     ],
     "targets": [
       [
-        "manually add",
-        "spot"
+        "create",
+        "named lists"
       ],
       [
-        "entering",
-        "name"
+        "add",
+        "saved spots"
       ],
       [
-        "selecting",
-        "location"
+        "group",
+        "travel inspiration"
       ],
       [
-        "save",
-        "places"
+        "group",
+        "destination"
       ],
       [
-        "save",
-        "social media"
-      ],
-      [
-        "save",
-        "blogs"
-      ],
-      [
-        "save",
-        "word-of-mouth"
+        "group",
+        "theme"
       ]
     ],
-    "contains": [
-      [
-        "map",
-        "location"
-      ]
-    ]
+    "contains": []
   },
   {
     "Text": "As a traveler, I want to attach private notes (e.g., reservation numbers or tips) to any saved spot, so that I can keep critical information together with the place it belongs to.",
@@ -475,65 +454,86 @@
     "contains": []
   },
   {
-    "Text": "As a traveler, I want to create named lists (e.g., Tokyo food or Paris museums) and add saved spots to them, so that I can group my travel inspiration by destination or theme.",
+    "Text": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth.",
     "mode": "sequential",
     "Persona": [
       "traveler"
     ],
     "Action": {
       "GoalAction": [
-        "create",
-        "add"
+        "manually add",
+        "entering",
+        "selecting"
       ],
       "BenefitAction": [
-        "group"
+        "save"
       ]
     },
     "Entity": {
       "GoalEntity": [
-        "named lists",
-        "saved spots"
+        "spot",
+        "name",
+        "location",
+        "map"
       ],
       "BenefitEntity": [
-        "travel inspiration",
-        "destination",
-        "theme"
+        "places",
+        "social media",
+        "blogs",
+        "word-of-mouth"
       ]
     },
-    "benefit": "I can group my travel inspiration by destination or theme",
+    "benefit": "I can save places I discover outside of social media, such as from blogs or word-of-mouth",
     "triggers": [
       [
         "traveler",
-        "create"
+        "manually add"
       ],
       [
         "traveler",
-        "add"
+        "entering"
+      ],
+      [
+        "traveler",
+        "selecting"
       ]
     ],
     "targets": [
       [
-        "create",
-        "named lists"
+        "manually add",
+        "spot"
       ],
       [
-        "add",
-        "saved spots"
+        "entering",
+        "name"
       ],
       [
-        "group",
-        "travel inspiration"
+        "selecting",
+        "location"
       ],
       [
-        "group",
-        "destination"
+        "save",
+        "places"
       ],
       [
-        "group",
-        "theme"
+        "save",
+        "social media"
+      ],
+      [
+        "save",
+        "blogs"
+      ],
+      [
+        "save",
+        "word-of-mouth"
       ]
     ],
-    "contains": []
+    "contains": [
+      [
+        "map",
+        "location"
+      ]
+    ]
   },
   {
     "Text": "As a traveler, I want to change the name of an existing list, so that I can keep my organization up to date as my plans evolve.",

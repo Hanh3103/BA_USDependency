@@ -8,140 +8,140 @@
   "per_story": [
     {
       "story_id": "US-001",
-      "runtime_sec": 56.468,
+      "runtime_sec": 58.469,
       "attempts": 1,
       "model": "qwen3:8b",
       "mode": "sequential"
     },
     {
       "story_id": "US-002",
-      "runtime_sec": 10.052,
+      "runtime_sec": 8.438,
       "attempts": 1,
       "model": "qwen3:8b",
       "mode": "sequential"
     },
     {
       "story_id": "US-003",
-      "runtime_sec": 13.219,
+      "runtime_sec": 11.391,
       "attempts": 1,
       "model": "qwen3:8b",
       "mode": "sequential"
     },
     {
       "story_id": "US-004",
-      "runtime_sec": 8.057,
+      "runtime_sec": 7.26,
       "attempts": 1,
       "model": "qwen3:8b",
       "mode": "sequential"
     },
     {
       "story_id": "US-005",
-      "runtime_sec": 12.56,
+      "runtime_sec": 8.19,
       "attempts": 1,
       "model": "qwen3:8b",
       "mode": "sequential"
     },
     {
       "story_id": "US-006",
-      "runtime_sec": 9.369,
+      "runtime_sec": 7.973,
       "attempts": 1,
       "model": "qwen3:8b",
       "mode": "sequential"
     },
     {
       "story_id": "US-007",
-      "runtime_sec": 8.316,
+      "runtime_sec": 6.979,
       "attempts": 1,
       "model": "qwen3:8b",
       "mode": "sequential"
     },
     {
       "story_id": "US-008",
-      "runtime_sec": 7.803,
+      "runtime_sec": 6.582,
       "attempts": 1,
       "model": "qwen3:8b",
       "mode": "sequential"
     },
     {
       "story_id": "US-009",
-      "runtime_sec": 9.155,
+      "runtime_sec": 10.224,
       "attempts": 1,
       "model": "qwen3:8b",
       "mode": "sequential"
     },
     {
       "story_id": "US-010",
-      "runtime_sec": 7.763,
+      "runtime_sec": 6.46,
       "attempts": 1,
       "model": "qwen3:8b",
       "mode": "sequential"
     },
     {
       "story_id": "US-011",
-      "runtime_sec": 8.751,
+      "runtime_sec": 7.142,
       "attempts": 1,
       "model": "qwen3:8b",
       "mode": "sequential"
     },
     {
       "story_id": "US-012",
-      "runtime_sec": 9.064,
+      "runtime_sec": 7.535,
       "attempts": 1,
       "model": "qwen3:8b",
       "mode": "sequential"
     },
     {
       "story_id": "US-013",
-      "runtime_sec": 10.338,
+      "runtime_sec": 8.667,
       "attempts": 1,
       "model": "qwen3:8b",
       "mode": "sequential"
     },
     {
       "story_id": "US-014",
-      "runtime_sec": 11.302,
+      "runtime_sec": 9.484,
       "attempts": 1,
       "model": "qwen3:8b",
       "mode": "sequential"
     },
     {
       "story_id": "US-015",
-      "runtime_sec": 10.514,
+      "runtime_sec": 8.834,
       "attempts": 1,
       "model": "qwen3:8b",
       "mode": "sequential"
     },
     {
       "story_id": "US-016",
-      "runtime_sec": 9.413,
+      "runtime_sec": 7.814,
       "attempts": 1,
       "model": "qwen3:8b",
       "mode": "sequential"
     },
     {
       "story_id": "US-017",
-      "runtime_sec": 9.26,
+      "runtime_sec": 7.701,
       "attempts": 1,
       "model": "qwen3:8b",
       "mode": "sequential"
     },
     {
       "story_id": "US-018",
-      "runtime_sec": 9.361,
+      "runtime_sec": 7.829,
       "attempts": 1,
       "model": "qwen3:8b",
       "mode": "sequential"
     },
     {
       "story_id": "US-019",
-      "runtime_sec": 7.456,
+      "runtime_sec": 6.22,
       "attempts": 1,
       "model": "qwen3:8b",
       "mode": "sequential"
     },
     {
       "story_id": "US-020",
-      "runtime_sec": 9.572,
+      "runtime_sec": 7.945,
       "attempts": 1,
       "model": "qwen3:8b",
       "mode": "sequential"
