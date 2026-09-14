@@ -1,4 +1,4 @@
 Model,Match type,TP,FP,FN,Precision,Recall,F1,Support
 llama3.1_8b_annotated_gt,exact,2,0,4,1.0,0.3333,0.5,6
 llama3.1_8b_annotated_gt,semantic,9,13,8,0.4091,0.5294,0.4615,17
-llama3.1_8b_annotated_gt,none,508,10,11,0.9807,0.9788,0.9797,519
+llama3.1_8b_annotated_gt,other,508,10,11,0.9807,0.9788,0.9797,519
