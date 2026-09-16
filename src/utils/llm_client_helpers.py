@@ -42,7 +42,7 @@ def _extract_json(text: str) -> Dict:
 
 def _call_stage(messages: List[Dict], schema_model: Type[T], model: str) -> T:
     """
-    Single constrained call against a running convesation, validated against schema_model. Used by both Mode - single shot mode and sequential CoTT
+    Single constrained call against a running convesation, validated against schema_model.
     """
     response = create_chat_completion(
         messages= messages,
