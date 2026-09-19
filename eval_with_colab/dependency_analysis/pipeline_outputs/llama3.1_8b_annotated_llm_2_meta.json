@@ -1,0 +1,114 @@
+{
+  "runtime_seconds": 511.8034777820001,
+  "n_pairs": 36,
+  "seconds_per_pair": 14.216763271722224,
+  "failed_pairs": [],
+  "attempts_by_pair": {
+    "US-005|US-007": 1,
+    "US-005|US-011": 1,
+    "US-005|US-012": 1,
+    "US-005|US-013": 1,
+    "US-005|US-014": 1,
+    "US-005|US-015": 1,
+    "US-005|US-017": 1,
+    "US-005|US-019": 1,
+    "US-007|US-011": 1,
+    "US-007|US-012": 1,
+    "US-007|US-013": 1,
+    "US-007|US-014": 1,
+    "US-007|US-015": 1,
+    "US-007|US-017": 1,
+    "US-007|US-019": 1,
+    "US-011|US-012": 1,
+    "US-011|US-013": 1,
+    "US-011|US-014": 1,
+    "US-011|US-015": 1,
+    "US-011|US-017": 1,
+    "US-011|US-019": 1,
+    "US-012|US-013": 1,
+    "US-012|US-014": 1,
+    "US-012|US-015": 1,
+    "US-012|US-017": 1,
+    "US-012|US-019": 1,
+    "US-013|US-014": 1,
+    "US-013|US-015": 1,
+    "US-013|US-017": 1,
+    "US-013|US-019": 1,
+    "US-014|US-015": 1,
+    "US-014|US-017": 1,
+    "US-014|US-019": 1,
+    "US-015|US-017": 1,
+    "US-015|US-019": 1,
+    "US-017|US-019": 1
+  },
+  "n_kept_stories": 9,
+  "kept_ids": [
+    "US-013",
+    "US-012",
+    "US-005",
+    "US-015",
+    "US-011",
+    "US-007",
+    "US-017",
+    "US-014",
+    "US-019"
+  ],
+  "ill_formed_count": 11,
+  "ill_formed_stories": [
+    {
+      "id": "US-001",
+      "text": "As a new user, I want to sign up using my email or an existing Google/Apple account, so that my saved spots and trips are securely stored and synced across my devices.",
+      "reason": "BenefitAction/BenefitEntity present but no targets pair connects them"
+    },
+    {
+      "id": "US-002",
+      "text": "As a returning user, I want to log in my account on a new device and log out when I'm finished, so that I can access my travel data safely and maintain privacy on shared devices.",
+      "reason": "BenefitAction/BenefitEntity present but no targets pair connects them"
+    },
+    {
+      "id": "US-003",
+      "text": "As a user, I want to walk through a short, guided tutorial that demonstrates how to import a spot, create a list, and generate an itinerary, so that I can understand the app's core workflow without reading external documentation.",
+      "reason": "BenefitAction/BenefitEntity present but no targets pair connects them"
+    },
+    {
+      "id": "US-004",
+      "text": "As a traveler, I want to import a location from a saved TikTok or Instagram video with a single tap, so that I can quickly capture travel inspiration without manually typing details.",
+      "reason": "BenefitAction/BenefitEntity present but no targets pair connects them"
+    },
+    {
+      "id": "US-006",
+      "text": "As a traveler, I want to attach private notes (e.g., reservation numbers or tips) to any saved spot, so that I can keep critical information together with the place it belongs to.",
+      "reason": "BenefitAction/BenefitEntity present but no targets pair connects them"
+    },
+    {
+      "id": "US-008",
+      "text": "As a traveler, I want to remove a saved spot from my lists, so that my lists and map stay clean and only contain places I still intend to visit.",
+      "reason": "BenefitAction/BenefitEntity present but no targets pair connects them"
+    },
+    {
+      "id": "US-009",
+      "text": "As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth.",
+      "reason": "BenefitAction/BenefitEntity present but no targets pair connects them"
+    },
+    {
+      "id": "US-010",
+      "text": "As a traveler, I want to change the name of an existing list, so that I can keep my organization up to date as my plans evolve.",
+      "reason": "BenefitAction/BenefitEntity present but no targets pair connects them"
+    },
+    {
+      "id": "US-016",
+      "text": "As a traveler, I want to drag and drop stops, so that I am able to manually adjust the order within a day's plan of the AI-generated schedule to my personal preferences.",
+      "reason": "BenefitAction/BenefitEntity present but no targets pair connects them"
+    },
+    {
+      "id": "US-018",
+      "text": "As a traveler, I want to permanently delete a trip I no longer need, so that my trip list remains uncluttered and only shows active or relevant plans.",
+      "reason": "BenefitAction/BenefitEntity present but no targets pair connects them"
+    },
+    {
+      "id": "US-020",
+      "text": "As a traveler, I want to download a complete itinerary including maps, spot details, and daily plan for offline use, so that I can navigate and follow my plan even when I don't have an internet connection abroad.",
+      "reason": "BenefitAction/BenefitEntity present but no targets pair connects them"
+    }
+  ]
+}
