@@ -6,6 +6,21 @@ import json
 TEXT_PROMPT_PATH = settings.prompt_path("dependency_analysis", variant="text")
 
 def detect_dependency_text(story_a, story_b, model:str, max_retries: int = 2):
+    """
+    Detect dependencies between two user stories using a text-based prompt.
+
+    Args:
+        story_a: The first user story object.
+        story_b: The second user story object.
+        model: The name of the model to use.
+        max_retries: The maximum number of retries for the LLM call in case of failure
+
+    Returns:
+        A tuple containing:
+            - TextDependencyResult: The result of the dependency detection.
+            - bool: A flag indicating whether the result was obtained after retries.
+            - int: The number of attempts made to get the result.
+    """
     prompt = _load_prompt(TEXT_PROMPT_PATH)
     payload = {
         "story_a": {"id": story_a.id, "text": story_a.Text, "benefit": story_a.benefit},

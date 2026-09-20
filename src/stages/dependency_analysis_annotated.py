@@ -11,15 +11,45 @@ CLASSIFY_PROMPT_PATH = settings.prompt_path("dependency_analysis", variant="anno
 DECISION_PROMPT_PATH = settings.prompt_path("dependency_analysis", variant="annotated", step=3)
 
 def make_activity_key(activity: ActionEntityPair) -> ActivityCacheKey:
+    """
+    Create a cache key for an activity based on its action and entity.
+
+    Args:
+        activity: An ActionEntityPair object representing the activity.
+
+    Returns:
+        A tuple containing the action and entity of the activity, both in lowercase and stripped of whitespace.
+    """
     return (
         activity.action.strip().casefold(),
         activity.entity.strip().casefold(),
     )
 
 def cartesian_activity_pairs(story_a: StoryActivity, story_b: StoryActivity) -> list[tuple[ActionEntityPair, ActionEntityPair]]:
+    """
+    Generate all possible pairs of activities from two stories.
+
+    Args:
+        story_a: A StoryActivity object representing the first story.
+        story_b: A StoryActivity object representing the second story.
+
+    Returns:
+        A list of tuples, where each tuple contains one activity from story_a and one activity from story_b, representing all possible combinations of activities between the two stories.
+    """
     return list(product(story_a.activity, story_b.activity))
 
 def find_entity_matches(story_a: StoryActivity, story_b: StoryActivity, model:str) -> EntityMatchResult:
+    """
+    Identify matching entities between two stories by comparing their activities.
+
+    Args:
+        story_a: A StoryActivity object representing the first story.
+        story_b: A StoryActivity object representing the second story.
+        model: The name of the model to use.
+
+    Returns:
+        An EntityMatchResult object containing the matching entities between the two stories.
+    """
     entity_prompt = _load_prompt(ENTITY_PROMPT_PATH)
     candidate_pairs = cartesian_activity_pairs(story_a, story_b)
 
@@ -120,6 +150,17 @@ def find_entity_matches(story_a: StoryActivity, story_b: StoryActivity, model:st
 
 
 def classify_activities(step1_output: EntityMatchResult, model:str, operation_cache: dict[ActivityCacheKey, OperationType]) -> ClassifiedMatchResult:
+    """
+    Classify the activities in the matched pairs from step 1 into CRUD operation types.
+
+    Args:
+        step1_output: An EntityMatchResult object containing the matched pairs of activities.
+        model: The name of the model to use.
+        operation_cache: A dictionary to cache previously classified activities to avoid redundant LLM calls.
+
+    Returns:
+        A ClassifiedMatchResult object containing the classified activities with their corresponding CRUD operation types.
+    """
     classify_prompt = _load_prompt(CLASSIFY_PROMPT_PATH)
     classified_matches: list[ClassifiedMatch] = []
 
@@ -243,6 +284,13 @@ def classify_activities(step1_output: EntityMatchResult, model:str, operation_ca
     )
 
 def decide_dependency(step2_output: ClassifiedMatchResult, model: str) -> FoundedDependencyUsingAnnotated:
+    """
+    Determine if there is a dependency between two stories based on their classified activities.
+
+    Args:
+        step2_output: A ClassifiedMatchResult object containing the classified activities from step 2.
+        model: The name of the model to use.
+    """
     decision_prompt = _load_prompt(DECISION_PROMPT_PATH)
     dependencies: list[DependencyEntryAnnotated] = []
 
@@ -353,6 +401,16 @@ VALID_DEPENDENCY_PAIRS = {
 
 
 def evaluate_dependency_rule(op_a: str, op_b: str) -> tuple[bool, str | None]:
+    """
+    Evaluate if a pair of operations qualifies as a dependency based on predefined rules.
+
+    Args:
+        op_a: The operation type of the first activity (e.g., "CREATE", "READ", "UPDATE", "DELETE").
+        op_b: The operation type of the second activity.
+
+    Returns:
+        A tuple containing a boolean indicating if the pair qualifies as a dependency and a string indicating which activity is the prerequisite ("a" or "b"). If the pair does not qualify, the second element of the tuple will be None.
+    """
     if frozenset({op_a, op_b}) not in VALID_DEPENDENCY_PAIRS:
         return False, None
 
@@ -391,6 +449,22 @@ def decide_dependency_nlp(step2_output: ClassifiedMatchResult) -> FoundedDepende
 
 
 def detect_dependency(story_a: StoryActivity, story_b: StoryActivity, model:str, operation_cache:dict[ActivityCacheKey, OperationType], max_retries: int = 2):
+    """
+    Detect dependencies between two stories by performing entity matching, activity classification, and dependency decision-making.
+
+    Args:
+        story_a: A StoryActivity object representing the first story.
+        story_b: A StoryActivity object representing the second story.
+        model: The name of the model to use.
+        operation_cache: A dictionary to cache previously classified activities to avoid redundant LLM calls.
+        max_retries: The maximum number of retries in case of failure.
+
+    Returns:
+        A tuple containing:
+            - An AnnotatedDependencyResult object containing the results of the dependency detection process.
+            - A boolean indicating whether the process failed after all retries.
+            - An integer indicating the number of attempts made.
+    """
     last_error = None
     for attempt in range(max_retries):
         try:

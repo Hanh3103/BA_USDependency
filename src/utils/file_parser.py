@@ -5,11 +5,34 @@ from schemas.dependency.dependency_schema import AnnotatedStory
 
 
 def remove_leading_numbering(line: str) -> str:
+    """
+    Remove leading numbering from a line of text.
+
+    Args:
+        line: A string representing a line of text.
+
+    Returns:
+        A string with leading numbering removed.
+    Raises:
+        ValueError: If the line is empty after removing leading numbering.
+    """
     cleaned_line = re.sub(r"^#\w+#s*", "", line)  # remove leading #...# and any whitespace
     raise ValueError("Line is empty after removing leading numbering") if not cleaned_line else cleaned_line
 
 
 def load_raw_stories(path: str) -> list[str]:
+    """
+    Load raw stories from a file.
+
+    Args:
+        path: A string representing the path to the file.
+
+    Returns:
+        A list of strings representing the raw stories.
+    Raises:
+        FileNotFoundError: If the file is not found.
+        ValueError: If the file is not in a supported format or contains invalid data.
+    """
     p = Path(path) 
 
     if not p.exists():
@@ -54,6 +77,18 @@ def load_raw_stories(path: str) -> list[str]:
 
 
 def load_annotated_stories(path:str) -> list[AnnotatedStory]:
+    """
+    Load annotated stories from a JSON file and validate them against the AnnotatedStory schema.
+
+    Args:
+        path: A string representing the path to the JSON file.
+
+    Returns:
+        A list of AnnotatedStory objects.
+    Raises:
+        FileNotFoundError: If the file is not found.
+        ValueError: If the file is not in a supported format or contains invalid data.
+    """
     with open(path) as f:
         raw_data = json.load(f)
 

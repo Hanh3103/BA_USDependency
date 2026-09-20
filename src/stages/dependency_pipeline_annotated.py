@@ -10,6 +10,24 @@ from stages.dependency_analysis_annotated import detect_dependency
 
 
 def run_dependency_pipeline(data_set_path: str, model:str, pairs: Optional[list[tuple[str, str]]] = None, max_retries: int = 2):
+    """
+    Run the dependency analysis pipeline on a dataset of annotated stories.
+
+    Args:
+        data_set_path: The path to the dataset of annotated stories.
+        model: The name of the model to use for dependency detection.
+        pairs: Optional list of story ID pairs to analyze. If None, all combinations will be analyzed.
+        max_retries: The maximum number of retries for the LLM call in case of failure.
+
+    Returns:
+        A tuple containing:
+            - List of AnnotatedDependencyResult: The results of the dependency detection for each pair.
+            - Set of kept story IDs: The IDs of well-formed stories that were kept for analysis.
+            - List of dropped AnnotatedStory: The stories that were dropped due to being ill-formed.
+            - List of failed pairs: The pairs of story IDs for which dependency detection failed
+            - Dictionary of attempts by pair: The number of attempts made for each pair.
+    """
+
     stories = load_annotated_stories(data_set_path)
 
     # Step 0: Filter well-formed stories

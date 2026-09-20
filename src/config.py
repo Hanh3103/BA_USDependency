@@ -36,6 +36,17 @@ class Settings(BaseSettings):
         return self.ollama_models.split(",")
 
     def prompt_path(self, task: str, variant:str | None=None, step: int | None = None) -> Path:
+        """
+        Get the path to a prompt file.
+
+        Args:
+            task: The name of the task.
+            variant: The variant of the prompt.
+            step: The step of the prompt.
+
+        Returns:
+            The path to the prompt file.
+        """
         try:
             versions = self.prompt_versions[task]
         except KeyError:

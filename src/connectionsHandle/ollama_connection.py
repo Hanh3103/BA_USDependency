@@ -12,6 +12,12 @@ from config import settings
 
 @lru_cache(maxsize=1)
 def get_ollama_client() -> Client:
+    """
+    Get an instance of the Ollama client.
+
+    Returns:
+        An instance of the Ollama client.
+    """
     return Client(
         host=settings.ollama_base_url,
         headers={"Authorization": f"Bearer {settings.ollama_api_key}"} if settings.ollama_api_key else None,
@@ -25,6 +31,17 @@ def create_chat_completion(
         model: str,
         format: Optional[Union[Literal['', 'json'], dict]] = None,
 ):
+    """
+    Create a chat completion using the Ollama client.
+
+    Args:
+        messages: A list of messages to send to the model.
+        model: The name of the model to use.
+        format: The format of the response.
+
+    Returns:
+        The response from the Ollama client.
+    """
     try:
         response =  get_ollama_client().chat(
             model=model,

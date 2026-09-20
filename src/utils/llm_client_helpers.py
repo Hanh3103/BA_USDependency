@@ -11,9 +11,15 @@ T = TypeVar("T", bound=BaseModel)
 
 
 def _extract_json(text: str) -> Dict:
-    """Extract the first balanced {...} object instead of greedily matching
-    from the first '{' to the LAST '}' in the response (which can swallow
-    trailing commentary or multiple JSON-like fragments)."""
+    """Extract the first balanced {...} object instead of greedily matching from the first '{' to the LAST '}' in the response (which can swallow trailing commentary or multiple JSON-like fragments).
+
+
+    Args:
+        text: The text to extract JSON from.
+
+    Returns:
+        A dictionary containing the extracted JSON data.
+    """
     text = text.strip()
     try:
         return json.loads(text)
@@ -42,7 +48,15 @@ def _extract_json(text: str) -> Dict:
 
 def _call_stage(messages: List[Dict], schema_model: Type[T], model: str) -> T:
     """
-    Single constrained call against a running convesation, validated against schema_model.
+    Single constrained call against a running conversation, validated against schema_model.
+
+    Args:
+        messages: A list of messages to send to the model.
+        schema_model: The Pydantic model to validate the response against.
+        model: The name of the model to use.
+
+    Returns:
+        An instance of the schema_model containing the validated response data.
     """
     response = create_chat_completion(
         messages= messages,
@@ -67,6 +81,16 @@ def _call_stage(messages: List[Dict], schema_model: Type[T], model: str) -> T:
 
 
 def _load_prompt(path: Path) -> str:
+    """
+    Load a prompt from a file.
+
+    Args:
+        path: The path to the prompt file.
+
+    Returns:
+        The content of the prompt file as a string.
+
+    """
     try:
         return path.read_text()
     except FileNotFoundError as exc:

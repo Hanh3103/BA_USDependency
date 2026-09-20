@@ -18,6 +18,16 @@ MODE = Literal["single", "sequential"]
 
 
 def _run_single(user_story: str, model:str) -> AnnotationSchema:
+    """
+    Run a single-step annotation process.
+
+    Args:
+        user_story: The user story to annotate.
+        model: The name of the model to use.
+
+    Returns:
+        The annotated user story.
+    """
     prompt = _load_prompt(SINGLE_PROMPT_PATH)
     return _call_stage(
         messages=[
@@ -30,6 +40,16 @@ def _run_single(user_story: str, model:str) -> AnnotationSchema:
 
 
 def _run_3steps(user_story: str, model:str) -> AnnotationSchema:
+    """
+    Run a three-step annotation process.
+
+    Args:
+        user_story: The user story to annotate.
+        model: The name of the model to use.
+
+    Returns:
+        The annotated user story.
+    """
     # STEP 1: Extract raw components
     step1_prompt = _load_prompt(STAGE1_PROMPT_PATH)
     step1_res = _call_stage(
@@ -91,6 +111,18 @@ def _run_3steps(user_story: str, model:str) -> AnnotationSchema:
 # main run
 
 def run(user_story: str, *, mode: MODE = "sequential", temperature_override: Optional[float] = None, model: str) -> Dict:
+    """
+    Run the annotation process on a user story.
+
+    Args:
+        user_story: The user story to annotate.
+        mode: The mode of annotation, either "single" or "sequential".
+        temperature_override: Optional temperature setting for the model.
+        model: The name of the model to use.
+
+    Returns:
+        A dictionary containing the annotated user story and the mode used.
+    """
     if mode == "single":
         validated = _run_single(user_story, model=model)
     elif mode == "sequential":
@@ -103,6 +135,20 @@ def run(user_story: str, *, mode: MODE = "sequential", temperature_override: Opt
 
 
 def annotate(user_story: str,story_id:str, model: str, max_retries: int = 2, mode: MODE = "sequential") -> Optional[Dict]:
+    """
+    Annotate a user story with retries in case of failures.
+
+    Args:
+        user_story: The user story to annotate.
+        story_id: An identifier for the user story.
+        model: The name of the model to use.
+        max_retries: The maximum number of retries in case of failure.
+        mode: The mode of annotation, either "single" or "sequential".
+
+    Returns:
+        A dictionary containing the annotated user story, runtime, and number of attempts, or None if all attempts fail.
+
+    """
     last_error = None
     for attempt in range(max_retries):
         start = time.monotonic()

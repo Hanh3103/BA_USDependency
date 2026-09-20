@@ -1,6 +1,20 @@
 from schemas.dependency.dependency_schema import AnnotatedStory, ActionEntityPair, IsStoryWellformed
 
 def _extract_activity_reason(story: AnnotatedStory) -> IsStoryWellformed:
+    """
+    Extracts the activity and reason from an AnnotatedStory and checks if it is well-formed.
+    1. Access nested Pydantic schema attributes.
+    2. Iterate through targets tuples: ["action", "entity"].
+    3. Check well-formedness rules.
+
+    Args:
+        story: An AnnotatedStory object containing the story data.
+
+    Returns:
+        An IsStoryWellformed object containing the story ID, text, well-formedness status, reason, persona, activity, and reason pairs.
+    """
+
+
     # 1. Access nested Pydantic schema attributes
     goal_actions = set(story.Action.GoalAction)
     goal_entities = set(story.Entity.GoalEntity)
