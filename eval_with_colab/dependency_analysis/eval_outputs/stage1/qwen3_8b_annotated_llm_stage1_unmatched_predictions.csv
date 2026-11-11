@@ -1,0 +1,35 @@
+pair_index,match_index,reason,story_a_id,action_a,entity_a,story_b_id,action_b,entity_b,predicted_match_type,explanation
+0,0,No matching B_GT row,US-001,sign up,Google/Apple account,US-002,log in,account,semantic,'Google/Apple account' and 'account' refer to the same entity in this context.
+28,0,No matching B_GT row,US-004,import,location,US-006,attach,saved spot,semantic,'saved spot' is a synonym for 'location' in this context.
+28,1,No matching B_GT row,US-004,import,saved TikTok or Instagram video,US-006,attach,saved spot,semantic,Both activities refer to saved media content from social platforms.
+31,1,No matching B_GT row,US-004,import,saved TikTok or Instagram video,US-011,see,saved spots,semantic,Both activities refer to saved videos or content from social media platforms.
+34,0,No matching B_GT row,US-004,import,location,US-014,select,list of saved spots,semantic,"'List of saved spots' refers to a collection of locations, making it semantically related to 'location'."
+39,0,No matching B_GT row,US-005,add,saved spots,US-006,attach,saved spot,semantic,'saved spots' and 'saved spot' refer to the same entity with slight wording variation.
+41,0,No matching B_GT row,US-005,create,named lists,US-010,change,name of an existing list,semantic,'named lists' and 'name of an existing list' refer to the same entity in different states.
+43,0,No matching B_GT row,US-005,create,named lists,US-012,filter,specific list,semantic,"'Named lists' and 'specific list' refer to the same type of entity, a list."
+43,1,No matching B_GT row,US-005,add,saved spots,US-012,filter,spots,semantic,'saved spots' and 'spots' refer to the same entity in different states.
+45,0,No matching B_GT row,US-005,add,saved spots,US-014,select,list of saved spots,semantic,'saved spots' and 'list of saved spots' refer to the same underlying entity.
+50,0,No matching B_GT row,US-006,attach,saved spot,US-009,manually add,spot,semantic,'Saved spot' and 'spot' refer to the same entity in different states.
+52,0,No matching B_GT row,US-006,attach,saved spot,US-011,see,saved spots,semantic,'saved spot' and 'saved spots' refer to the same entity with a plural form difference.
+55,0,No matching B_GT row,US-006,attach,saved spot,US-014,select,list of saved spots,semantic,'saved spot' and 'list of saved spots' refer to the same entity in different contexts.
+58,0,No matching B_GT row,US-006,attach,saved spot,US-017,adjust,spots,semantic,'saved spot' and 'spots' refer to the same entity in different contexts.
+60,0,No matching B_GT row,US-009,entering,name,US-010,change,name of an existing list,semantic,'name of an existing list' refers to the same entity as 'name' in the context of an already-created list.
+62,0,No matching B_GT row,US-009,manually add,spot,US-012,filter,spots,semantic,'spot' and 'spots' refer to the same entity with different pluralization.
+64,0,No matching B_GT row,US-009,manually add,spot,US-014,select,list of saved spots,semantic,'spot' and 'list of saved spots' refer to the same entity in different contexts.
+64,2,No matching B_GT row,US-009,selecting,location,US-014,select,list of saved spots,semantic,"'list of saved spots' refers to a collection of locations, making it semantically related to 'location'."
+66,0,No matching B_GT row,US-009,manually add,spot,US-016,drag and drop,stops,semantic,'spot' and 'stops' refer to the same type of entity in different wording.
+70,0,No matching B_GT row,US-010,change,name of an existing list,US-012,filter,specific list,semantic,"Both activities refer to a list, even though the wording differs."
+77,0,No matching B_GT row,US-011,see,saved spots,US-012,filter,spots,semantic,'saved spots' and 'spots' refer to the same entity in different states.
+77,1,No matching B_GT row,US-011,see,live map,US-012,filter,map,semantic,'Live map' and 'map' refer to the same entity with different contextual modifiers.
+79,0,No matching B_GT row,US-011,see,saved spots,US-014,select,list of saved spots,semantic,'saved spots' and 'list of saved spots' refer to the same underlying entity.
+80,0,No matching B_GT row,US-011,see,live map,US-015,view,map,semantic,'Live map' and 'map' refer to the same entity in different states or contexts.
+85,0,No matching B_GT row,US-012,filter,spots,US-014,select,list of saved spots,semantic,'List of saved spots' refers to the same entity as 'spots' in a saved context.
+86,0,No matching B_GT row,US-012,filter,map,US-015,view,map,exact,Both activities reference the identical entity string 'map'.
+88,0,No matching B_GT row,US-012,filter,spots,US-017,adjust,spots,exact,Both activities reference the identical entity string 'spots'.
+90,1,No matching B_GT row,US-013,specify,trip,US-014,have the app automatically generate,day-by-day itinerary,semantic,A 'trip' and a 'day-by-day itinerary' are related as parts of the same travel-related entity.
+91,0,No matching B_GT row,US-013,specify,trip,US-015,view,generated itinerary,semantic,A generated itinerary is a specific instance of a trip.
+93,2,No matching B_GT row,US-013,specify,trip,US-017,copy,past trip's itinerary,semantic,'past trip's itinerary' refers to the same entity as 'trip' in a specific context.
+94,0,No matching B_GT row,US-013,specify,trip,US-018,permanently delete,trip,exact,Both activities reference the identical entity string 'trip'.
+95,0,No matching B_GT row,US-014,have the app automatically generate,day-by-day itinerary,US-015,view,generated itinerary,semantic,"'Day-by-day itinerary' and 'generated itinerary' refer to the same type of entity, a travel plan."
+96,0,No matching B_GT row,US-014,select,list of saved spots,US-016,drag and drop,stops,semantic,'List of saved spots' and 'stops' refer to the same concept of locations in a route.
+97,1,No matching B_GT row,US-014,select,list of saved spots,US-017,adjust,spots,semantic,'List of saved spots' and 'spots' refer to the same entity in different contexts.

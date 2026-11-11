@@ -1,0 +1,151 @@
+{
+  "model": "llama3.1:8b",
+  "mode": "sequential",
+  "raw_file": "/content/BA_USDependency/eval_with_colab/annotation/raw/test_1.txt",
+  "n_stories_input": 20,
+  "n_stories_annotated": 20,
+  "n_stories_failed": 0,
+  "per_story": [
+    {
+      "story_id": "US-001",
+      "runtime_sec": 100.521,
+      "attempts": 1,
+      "model": "llama3.1:8b",
+      "mode": "sequential"
+    },
+    {
+      "story_id": "US-002",
+      "runtime_sec": 6.673,
+      "attempts": 1,
+      "model": "llama3.1:8b",
+      "mode": "sequential"
+    },
+    {
+      "story_id": "US-003",
+      "runtime_sec": 7.566,
+      "attempts": 1,
+      "model": "llama3.1:8b",
+      "mode": "sequential"
+    },
+    {
+      "story_id": "US-004",
+      "runtime_sec": 6.874,
+      "attempts": 1,
+      "model": "llama3.1:8b",
+      "mode": "sequential"
+    },
+    {
+      "story_id": "US-005",
+      "runtime_sec": 6.613,
+      "attempts": 1,
+      "model": "llama3.1:8b",
+      "mode": "sequential"
+    },
+    {
+      "story_id": "US-006",
+      "runtime_sec": 6.084,
+      "attempts": 1,
+      "model": "llama3.1:8b",
+      "mode": "sequential"
+    },
+    {
+      "story_id": "US-007",
+      "runtime_sec": 6.886,
+      "attempts": 1,
+      "model": "llama3.1:8b",
+      "mode": "sequential"
+    },
+    {
+      "story_id": "US-008",
+      "runtime_sec": 5.762,
+      "attempts": 1,
+      "model": "llama3.1:8b",
+      "mode": "sequential"
+    },
+    {
+      "story_id": "US-009",
+      "runtime_sec": 7.669,
+      "attempts": 1,
+      "model": "llama3.1:8b",
+      "mode": "sequential"
+    },
+    {
+      "story_id": "US-010",
+      "runtime_sec": 4.992,
+      "attempts": 1,
+      "model": "llama3.1:8b",
+      "mode": "sequential"
+    },
+    {
+      "story_id": "US-011",
+      "runtime_sec": 7.432,
+      "attempts": 1,
+      "model": "llama3.1:8b",
+      "mode": "sequential"
+    },
+    {
+      "story_id": "US-012",
+      "runtime_sec": 7.38,
+      "attempts": 1,
+      "model": "llama3.1:8b",
+      "mode": "sequential"
+    },
+    {
+      "story_id": "US-013",
+      "runtime_sec": 7.878,
+      "attempts": 1,
+      "model": "llama3.1:8b",
+      "mode": "sequential"
+    },
+    {
+      "story_id": "US-014",
+      "runtime_sec": 8.877,
+      "attempts": 1,
+      "model": "llama3.1:8b",
+      "mode": "sequential"
+    },
+    {
+      "story_id": "US-015",
+      "runtime_sec": 8.037,
+      "attempts": 1,
+      "model": "llama3.1:8b",
+      "mode": "sequential"
+    },
+    {
+      "story_id": "US-016",
+      "runtime_sec": 7.696,
+      "attempts": 1,
+      "model": "llama3.1:8b",
+      "mode": "sequential"
+    },
+    {
+      "story_id": "US-017",
+      "runtime_sec": 8.403,
+      "attempts": 1,
+      "model": "llama3.1:8b",
+      "mode": "sequential"
+    },
+    {
+      "story_id": "US-018",
+      "runtime_sec": 5.722,
+      "attempts": 1,
+      "model": "llama3.1:8b",
+      "mode": "sequential"
+    },
+    {
+      "story_id": "US-019",
+      "runtime_sec": 7.249,
+      "attempts": 1,
+      "model": "llama3.1:8b",
+      "mode": "sequential"
+    },
+    {
+      "story_id": "US-020",
+      "runtime_sec": 8.947,
+      "attempts": 1,
+      "model": "llama3.1:8b",
+      "mode": "sequential"
+    }
+  ],
+  "failed_stories": []
+}

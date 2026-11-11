@@ -1,0 +1,456 @@
+- vars:
+    USER_STORY: As a new user, I want to sign up using my email or an existing Google/Apple account, so that my saved spots and trips are securely stored and synced across my devices.
+  description: new user sign up
+  assert:
+  - type: javascript
+    description: Persona correct
+    value: |
+      const p = JSON.parse(output);
+      return Array.isArray(p.Persona)
+        ? p.Persona.includes("new user")
+        : p.Persona === "new user";
+  - type: javascript
+    description: GoalAction is exactly sign up
+    value: 'const p = JSON.parse(output);
+
+      return p.GoalAction.some(a => a === "sign up");
+
+      '
+  - type: javascript
+    description: GoalEntity includes array of [email, Google account, Apple account, Google/Apple account]
+    value: "const p = JSON.parse(output);\nconst expected = [\n  \"email\",\n  \"Google account\",\n  \"Apple account\",\n  \"Google/Apple account\",\n];\nreturn Array.isArray(p.GoalEntity)\n    && p.GoalEntity.some(entity => expected.includes(entity));\n"
+- vars:
+    USER_STORY: As a returning user, I want to log in my account on a new device and log out when I'm finished, so that I can access my travel data safely and maintain privacy on shared devices.
+  description: returning user login logout
+  assert:
+  - type: javascript
+    description: Persona correct
+    value: |
+      const p = JSON.parse(output);
+      return Array.isArray(p.Persona)
+        ? p.Persona.includes("returning user")
+        : p.Persona === "returning user";
+  - type: javascript
+    description: GoalAction includes array [log in, log out]
+    value: "const p = JSON.parse(output);\n
+    const expected = [\"log in\", \"log out\"];\n
+    return Array.isArray(p.GoalAction)\n    && p.GoalAction.length === expected.length\n    && expected.every(action => p.GoalAction.some(a => a === action));\n"
+  - type: javascript
+    description: GoalEntity includes account only
+    value: 'const p = JSON.parse(output);
+
+      return p.GoalEntity.some(e => e === "account");
+
+      '
+- vars:
+    USER_STORY: As a user, I want to walk through a short, guided tutorial that demonstrates how to import a spot, create a list, and generate an itinerary, so that I can understand the app's core workflow without reading external documentation.
+  description: user tutorial
+  assert:
+  - type: javascript
+    description: Persona correct
+    value: |
+      const p = JSON.parse(output);
+      return Array.isArray(p.Persona)
+        ? p.Persona.includes("user")
+        : p.Persona === "user";
+  - type: javascript
+    description: GoalAction includes array [walk through]
+    value: "const p = JSON.parse(output);\nconst expected = [\"walk through\"];\nreturn Array.isArray(p.GoalAction)\n    && p.GoalAction.length === expected.length\n    && expected.every(action => p.GoalAction.some(a => a === action));\n"
+  - type: javascript
+    description: GoalEntity includes array [tutorial, guided tutorial, short guided tutorial]
+    value: "const p = JSON.parse(output);\nconst expected = [\"tutorial\", \"guided tutorial\", \"short guided tutorial\"];\nreturn Array.isArray(p.GoalEntity)\n    && p.GoalEntity.some(entity => expected.includes(entity));\n"
+- vars:
+    USER_STORY: As a traveler, I want to import a location from a saved TikTok or Instagram video with a single tap, so that I can quickly capture travel inspiration without manually typing details.
+  description: traveler import from social media
+  assert:
+  - type: javascript
+    description: Persona correct
+    value: |
+      const p = JSON.parse(output);
+      return Array.isArray(p.Persona)
+        ? p.Persona.includes("traveler")
+        : p.Persona === "traveler";
+  - type: javascript
+    description: GoalAction includes import
+    value: 'const p = JSON.parse(output);
+
+      return p.GoalAction.some(a => a.includes("import"));
+
+      '
+  - type: javascript
+    description: GoalEntity includes array [location]
+    value: 'const p = JSON.parse(output);
+
+      return Array.isArray(p.GoalEntity) && p.GoalEntity.includes("location");
+
+      '
+- vars:
+    USER_STORY: As a traveler, I want to manually add a spot by entering its name and selecting its location on a map, so that I can save places I discover outside of social media, such as from blogs or word-of-mouth.
+  description: traveler manually add spot
+  assert:
+  - type: javascript
+    description: Persona correct
+    value: |
+      const p = JSON.parse(output);
+      return Array.isArray(p.Persona)
+        ? p.Persona.includes("traveler")
+        : p.Persona === "traveler";
+  - type: javascript
+    description: GoalAction includes [add]
+    value: 'const p = JSON.parse(output);
+
+      return Array.isArray(p.GoalAction) && p.GoalAction.includes("add");
+
+      '
+  - type: javascript
+    description: GoalEntity includes array of [spot]
+    value: 'const p = JSON.parse(output);
+
+      return Array.isArray(p.GoalEntity) && p.GoalEntity.includes("spot");
+
+      '
+- vars:
+    USER_STORY: As a traveler, I want to attach private notes (e.g., reservation numbers or tips) to any saved spot, so that I can keep critical information together with the place it belongs to.
+  description: traveler attach notes to spot
+  assert:
+  - type: javascript
+    description: Persona correct
+    value: |
+      const p = JSON.parse(output);
+      return Array.isArray(p.Persona)
+        ? p.Persona.includes("traveler")
+        : p.Persona === "traveler";
+  - type: javascript
+    description: GoalAction includes array of [attach]
+    value: 'const p = JSON.parse(output);
+
+      return Array.isArray(p.GoalAction) && p.GoalAction.includes("attach");
+
+      '
+  - type: javascript
+    description: GoalEntity includes array of [private notes]
+    value: 'const p = JSON.parse(output);
+
+      return Array.isArray(p.GoalEntity) && p.GoalEntity.includes("private notes");
+
+      '
+- vars:
+    USER_STORY: As a traveler, I want to open the original TikTok or Instagram video that was used to save a spot, so that I can re-watch the creator's tips and context before visiting.
+  description: traveler open original video
+  assert:
+  - type: javascript
+    description: Persona correct
+    value: |
+      const p = JSON.parse(output);
+      return Array.isArray(p.Persona)
+        ? p.Persona.includes("traveler")
+        : p.Persona === "traveler";
+  - type: javascript
+    description: GoalAction includes [open]
+    value: 'const p = JSON.parse(output);
+
+      return Array.isArray(p.GoalAction) && p.GoalAction.includes("open");
+
+      '
+  - type: javascript
+    description: GoalEntity includes [TikTok video, Instagram video, video]
+    value: 'const p = JSON.parse(output);
+
+      const expected = ["TikTok video", "Instagram video", "video", "TikTok or Instagram video"];
+
+      return Array.isArray(p.GoalEntity) && p.GoalEntity.some(e => expected.includes(e));
+
+      '
+- vars:
+    USER_STORY: As a traveler, I want to remove a saved spot from my lists, so that my lists and map stay clean and only contain places I still intend to visit.
+  description: traveler remove saved spot
+  assert:
+  - type: javascript
+    description: Persona correct
+    value: |
+      const p = JSON.parse(output);
+      return Array.isArray(p.Persona)
+        ? p.Persona.includes("traveler")
+        : p.Persona === "traveler";
+  - type: javascript
+    description: GoalAction includes [remove]
+    value: 'const p = JSON.parse(output);
+
+      return p.GoalAction.includes("remove");
+
+      '
+  - type: javascript
+    description: GoalEntity includes [saved spot]
+    value: 'const p = JSON.parse(output);
+
+      return p.GoalEntity.includes("saved spot");
+
+      '
+- vars:
+    USER_STORY: As a traveler, I want to create named lists (e.g., "Tokyo food" or "Paris museums") and add saved spots to them, so that I can group my travel inspiration by destination or theme.
+  description: traveler create named lists
+  assert:
+  - type: javascript
+    description: Persona correct
+    value: |
+      const p = JSON.parse(output);
+      return Array.isArray(p.Persona)
+        ? p.Persona.includes("traveler")
+        : p.Persona === "traveler";
+  - type: javascript
+    description: GoalAction includes [create, add]
+    value: "const p = JSON.parse(output);\nreturn p.GoalAction.includes(\"create\")\n    && p.GoalAction.includes(\"add\");\n"
+  - type: javascript
+    description: GoalEntity includes [named lists, saved spots]
+    value: "const p = JSON.parse(output);\nreturn p.GoalEntity.includes(\"named lists\")\n    && p.GoalEntity.includes(\"saved spots\");\n"
+- vars:
+    USER_STORY: As a traveler, I want to change the name of an existing list, so that I can keep my organization up to date as my plans evolve.
+  description: traveler change list name
+  assert:
+  - type: javascript
+    description: Persona correct
+    value: |
+      const p = JSON.parse(output);
+      return Array.isArray(p.Persona)
+        ? p.Persona.includes("traveler")
+        : p.Persona === "traveler";
+  - type: javascript
+    description: GoalAction includes [change]
+    value: 'const p = JSON.parse(output);
+
+      return p.GoalAction.includes("change");
+
+      '
+  - type: javascript
+    description: GoalEntity includes [name]
+    value: 'const p = JSON.parse(output);
+
+      return p.GoalEntity.includes("name");
+
+      '
+- vars:
+    USER_STORY: As a traveler, I want to see all my saved spots displayed as pins on a live map, so that I can understand their spatial distribution and plan routes more effectively.
+  description: traveler view saved spots on map
+  assert:
+  - type: javascript
+    description: Persona correct
+    value: |
+      const p = JSON.parse(output);
+      return Array.isArray(p.Persona)
+        ? p.Persona.includes("traveler")
+        : p.Persona === "traveler";
+  - type: javascript
+    description: GoalAction includes [see]
+    value: 'const p = JSON.parse(output);
+
+      return p.GoalAction.includes("see");
+
+      '
+  - type: javascript
+    description: GoalEntity includes [saved spots]
+    value: 'const p = JSON.parse(output);
+
+      return p.GoalEntity.includes("saved spots");
+
+      '
+- vars:
+    USER_STORY: As a traveler, I want to filter the map to show only spots from a specific list, so that I can focus on places relevant to a particular trip or category.
+  description: traveler filter map
+  assert:
+  - type: javascript
+    description: Persona correct
+    value: |
+      const p = JSON.parse(output);
+      return Array.isArray(p.Persona)
+        ? p.Persona.includes("traveler")
+        : p.Persona === "traveler";
+  - type: javascript
+    description: GoalAction includes [filter]
+    value: 'const p = JSON.parse(output);
+
+      return p.GoalAction.includes("filter");
+
+      '
+  - type: javascript
+    description: GoalEntity includes [map]
+    value: 'const p = JSON.parse(output);
+
+      return p.GoalEntity.includes("map");
+
+      '
+- vars:
+    USER_STORY: As a traveler, I want to specify the start date, end date, or total number of days for a trip, so that the AI itinerary matches the exact length of my stay.
+  description: traveler specify trip duration
+  assert:
+  - type: javascript
+    description: Persona correct
+    value: |
+      const p = JSON.parse(output);
+      return Array.isArray(p.Persona)
+        ? p.Persona.includes("traveler")
+        : p.Persona === "traveler";
+  - type: javascript
+    description: GoalAction includes [specify]
+    value: 'const p = JSON.parse(output);
+
+      return p.GoalAction.includes("specify");
+
+      '
+  - type: javascript
+    description: GoalEntity includes trip duration fields
+    value: "const p = JSON.parse(output);\nreturn p.GoalEntity.includes(\"start date\")\n    && p.GoalEntity.includes(\"end date\")\n    && p.GoalEntity.includes(\"total number of days\");\n"
+- vars:
+    USER_STORY: As a traveler, I want to select a destination, travel dates, and a list of saved spots and have the app automatically generate a logically ordered, day-by-day itinerary, so that I can transform my scattered ideas into a structured plan without manual scheduling.
+  description: traveler generate itinerary
+  assert:
+  - type: javascript
+    description: Persona correct
+    value: |
+      const p = JSON.parse(output);
+      return Array.isArray(p.Persona)
+        ? p.Persona.includes("traveler")
+        : p.Persona === "traveler";
+  - type: javascript
+    description: GoalAction includes [select, generate]
+    value: "const p = JSON.parse(output);\nreturn p.GoalAction.includes(\"select\")\n    && p.GoalAction.includes(\"generate\");\n"
+  - type: javascript
+    description: GoalEntity includes required entities
+    value: "const p = JSON.parse(output);\nreturn p.GoalEntity.includes(\"destination\")\n    && p.GoalEntity.includes(\"travel dates\")\n    && p.GoalEntity.includes(\"list of saved spots\")\n    && p.GoalEntity.includes(\"day-by-day itinerary\");\n"
+- vars:
+    USER_STORY: As a traveler, I want to view the generated itinerary as a daily route on a map, so that I can see the travel distance and logical flow between stops at a glance.
+  description: traveler view itinerary route
+  assert:
+  - type: javascript
+    description: Persona correct
+    value: |
+      const p = JSON.parse(output);
+      return Array.isArray(p.Persona)
+        ? p.Persona.includes("traveler")
+        : p.Persona === "traveler";
+  - type: javascript
+    description: GoalAction includes [view]
+    value: 'const p = JSON.parse(output);
+
+      return p.GoalAction.includes("view");
+
+      '
+  - type: javascript
+    description: GoalEntity includes [generated itinerary]
+    value: 'const p = JSON.parse(output);
+
+      return p.GoalEntity.includes("generated itinerary");
+
+      '
+- vars:
+    USER_STORY: As a traveler, I want to drag and drop stops, so that I am able to manually adjust the order within a day's plan of the AI-generated schedule to my personal preferences.
+  description: traveler reorder itinerary stops
+  assert:
+  - type: javascript
+    description: Persona correct
+    value: |
+      const p = JSON.parse(output);
+      return Array.isArray(p.Persona)
+        ? p.Persona.includes("traveler")
+        : p.Persona === "traveler";
+  - type: javascript
+    description: GoalAction includes [drag, drop]
+    value: "const p = JSON.parse(output);\nreturn p.GoalAction.includes(\"drag\")\n    && p.GoalAction.includes(\"drop\");\n"
+  - type: javascript
+    description: GoalEntity includes [stops]
+    value: 'const p = JSON.parse(output);
+
+      return p.GoalEntity.includes("stops");
+
+      '
+- vars:
+    USER_STORY: As a traveler, I want to copy of a past trip's itinerary and adjust the dates or spots, so that I can reuse a proven plan for a repeat visit without starting from scratch.
+  description: traveler copy itinerary
+  assert:
+  - type: javascript
+    description: Persona correct
+    value: |
+      const p = JSON.parse(output);
+      return Array.isArray(p.Persona)
+        ? p.Persona.includes("traveler")
+        : p.Persona === "traveler";
+  - type: javascript
+    description: GoalAction includes [copy, adjust]
+    value: "const p = JSON.parse(output);\nreturn p.GoalAction.includes(\"copy\")\n    && p.GoalAction.includes(\"adjust\");\n"
+  - type: javascript
+    description: GoalEntity includes itinerary dates and spots
+    value: "const p = JSON.parse(output);\nreturn p.GoalEntity.includes(\"itinerary\")\n    && p.GoalEntity.includes(\"dates\")\n    && p.GoalEntity.includes(\"spots\");\n"
+- vars:
+    USER_STORY: As a traveler, I want to permanently delete a trip I no longer need, so that my trip list remains uncluttered and only shows active or relevant plans.
+  description: traveler delete trip
+  assert:
+  - type: javascript
+    description: Persona correct
+    value: |
+      const p = JSON.parse(output);
+      return Array.isArray(p.Persona)
+        ? p.Persona.includes("traveler")
+        : p.Persona === "traveler";
+  - type: javascript
+    description: GoalAction includes [delete]
+    value: 'const p = JSON.parse(output);
+
+      return p.GoalAction.includes("delete");
+
+      '
+  - type: javascript
+    description: GoalEntity includes [trip]
+    value: 'const p = JSON.parse(output);
+
+      return p.GoalEntity.includes("trip");
+
+      '
+- vars:
+    USER_STORY: As a traveler, I want to generate a read-only web link for my itinerary, so that I can share my plans with friends and family without giving them editing rights.
+  description: traveler generate share link
+  assert:
+  - type: javascript
+    description: Persona correct
+    value: |
+      const p = JSON.parse(output);
+      return Array.isArray(p.Persona)
+        ? p.Persona.includes("traveler")
+        : p.Persona === "traveler";
+  - type: javascript
+    description: GoalAction includes [generate]
+    value: 'const p = JSON.parse(output);
+
+      return p.GoalAction.includes("generate");
+
+      '
+  - type: javascript
+    description: GoalEntity includes [read-only web link]
+    value: 'const p = JSON.parse(output);
+
+      return p.GoalEntity.includes("read-only web link");
+
+      '
+- vars:
+    USER_STORY: As a traveler, I want to download a complete itinerary including maps, spot details, and daily plan for offline use, so that I can navigate and follow my plan even when I don't have an internet connection abroad.
+  description: traveler download itinerary
+  assert:
+  - type: javascript
+    description: Persona correct
+    value: |
+      const p = JSON.parse(output);
+      return Array.isArray(p.Persona)
+        ? p.Persona.includes("traveler")
+        : p.Persona === "traveler";
+  - type: javascript
+    description: GoalAction includes [download]
+    value: 'const p = JSON.parse(output);
+
+      return p.GoalAction.includes("download");
+
+      '
+  - type: javascript
+    description: GoalEntity includes [itinerary]
+    value: 'const p = JSON.parse(output);
+
+      return p.GoalEntity.includes("itinerary");
+
+      '

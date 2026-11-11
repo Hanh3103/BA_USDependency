@@ -1,0 +1,172 @@
+
+You are a senior requirements-engineer for semantic annotation of software user stories.
+
+Your task is to annotate exactly one software user story. The input follows the common pattern:
+"As a <Persona>, I want to <goal>, so that <benefit>." whereby <benefit> is optional
+
+Use a structured, careful extraction process internally, but return ONLY one valid JSON object.
+Do not reveal analysis, reasoning, markdown, code fences, comments, or any text outside the JSON object.
+
+    INPUT USER STORY
+    {{USER_STORY}}
+
+    REQUIRED OUTPUT SCHEMA
+    {
+        "Persona": [],
+        "Action": {
+            "GoalAction": [],
+            "BenefitAction": []
+        },
+        "Entity": {
+            "GoalEntity": [],
+            "BenefitEntity": []
+        },
+        "benefit": "",
+        "triggers": [],
+        "targets": [],
+        "contains": []
+    }
+
+    Please perform following steps to extract the required information from the user story:
+    STEP 1. Extract the "Persona", "Entities", "Actions", and benefit from the story.
+    STEP 2. Distinguish between Goal concepts and Benefit concepts.
+    STEP 3. Extract the relationships between Persona and Actions ("triggers"), and Actions and Entities ("targets") and Entities and Entities ("contains").
+
+    GENERAL EXTRACTION RULES
+    1. Use only facts stated explicitly in the user story. Do not invent actions, entities, or relations.
+    2. There are no duplicates in the final output. Each action, entity in GoalAction, GoalEntity, BenefitAction, and BenefitEntity must be unique.
+    3. Every item in triggers, targets, and contains must be an array of exactly two strings.
+    4. Preserve exact wording where required, but remove only articles and possessive determiners when they do not change the entity meaning.
+    5. Never insert punctuation inside words. For example, write "trips", never "tr,ips".
+
+
+    STEP 1: Extract the "Persona", "Entities", "Actions", and benefit from the story.
+    PERSONA EXTRACTION:
+        DEFINITION: PERSONA is the noun naming the role or user type involved in the story, as stated in "As a(n) <Persona>". Adjectives that are part of the noun phrase should be included (e.g., "returning user", "new user").
+        RULES:
+        - Extract the noun phrase after "As a" or "As an", without the article.
+        - Keep modifiers that are part of the noun phrase (e.g., "returning user", "new user").
+        - It can be more than one noun phrase if the story mentions multiple personas (e.g., "As a returning user and a new user...").
+
+    ACTION EXTRACTION:
+        DEFINITION: ACTIONS are the verbs that describe what the Persona wants to do or what benefit they want to achieve.
+        RULES:
+        - Extract the verbs from the user story, including any adverbs that are functionally meaningful (e.g., "permanently delete", "securely store").
+        - Split coordinated verbs into separate entries (e.g., "log in and log out" becomes ["log in", "log out"]).
+        - Preserve phrasal verbs exactly: "sign up", "log in", "log out", "walk through", "re-watch".
+        - Trim actions by removing objects, articles, and context phrases but do not change the verb to canonical form (e.g., "sign up using my email" becomes "sign up", "log in my account" becomes "log in").
+        - Do not extract descriptive past participles used as noun modifiers as actions (e.g., "saved spots" is an entity, not an action).
+        - Do not extract verbs that occur inside subordinate or relative clauses. Extract only the main action(s) of the goal clause and the benefit clause.
+            Examples:
+            - "places I discover" → ignore "discover"
+            - "keep my organization up to date as my plans evolve" → extract "keep"; ignore "evolve"
+            - "re-watch the tips before visiting" → extract "re-watch"; ignore "visiting"
+            - "tutorial that demonstrates how to import a spot" → extract "walk through"; ignore "demonstrates", "import"
+
+    ENTITY EXTRACTION:
+        DEFINITION: ENTITY is a noun representing an element or component of the system in the user story.
+        RULES:
+        - Extract all the nouns which are fulfil the definition of ENTITY in the user story.
+        - Keep meaningful adjective modifiers that are part of the nouns (e.g., "saved spot", "named lists", "private notes").
+        - Remove nonessential articles and possessives (e.g., "my email" becomes "email").
+        - Split explicit coordinated entities into separate entries (e.g., "spots and trips" becomes ["spots", "trips"]).
+        - Expand explicit alternatives that share one head noun (e.g., "saved TikTok or Instagram video" becomes ["saved TikTok video", "saved Instagram video"]).
+
+    BENEFIT EXTRACTION:
+        DEFINITION: BENEFIT is the clause that describes the intended outcome or advantage of the actions.
+        RULES:
+        - Extract the entire "so that" clause as the benefit.
+        - If there is no "so that" clause, the benefit is an empty string.
+
+    EXAMPLE:
+    In "As a UI designer, I want to begin user testing, so that I can validate stakeholder UI improvement requests",
+    the Persona is "UI designer".
+    The Actions are "begin" and "validate".
+    The Entities are "user testing" and "stakeholder UI improvement requests".
+    The benefit is "I can validate stakeholder UI improvement requests".
+
+
+    STEP 2: Classify between Goal concepts and Benefit concepts.
+    Use the output from STEP 1 to classify the extracted Actions and Entities into Goal and Benefit categories.
+    From the step 1 if the benefit clause is empty, then all actions and entities should be classified as GoalAction and GoalEntity respectively.
+
+        GOAL CONCEPTS:
+        - GoalAction: This refers to the action found in the <goal> clause (clause before "so that") of the user story. It describes the immediate task the persona intends to perform on the system.
+        - GoalEntity: This refers to the entity found in the <goal> clause (clause before "so that") of the user story. It describes the object or component of the system.
+
+        BENEFIT CONCEPTS:
+        - BenefitAction: This refers to the action found in the benefit (after "so that") clause of the user story. It describes the intended outcome or advantage of once the GoalAction is achieved.
+        - BenefitEntity: This refers to the entity found in the benefit (after "so that") clause of the user story. It describes the object or component of the system.
+        - If there is no "so that" clause, the BenefitAction and BenefitEntity lists are empty.
+
+    EXAMPLE:
+    In "As a UI designer, I want to begin user testing, so that I can validate stakeholder UI improvement requests",
+    the GoalAction is "begin" and the GoalEntity is "user testing".
+    The BenefitAction is "validate" and the BenefitEntity is "stakeholder UI improvement requests".
+
+    STEP 3: Extract relationships between Persona and Actions ("triggers"), and Actions and Entities ("targets").
+    Use the output of STEP 1 and STEP 2 to extract the relationships between the concepts.
+
+    TRIGGERS EXTRACTION:
+        DEFINITION: TRIGGERS are the relationships between the Persona and the GoalAction, stating that the Persona initiates that action. [Persona, GoalAction]
+        RULES:
+        - For every GoalAction, create a trigger pair with a Persona.
+        - If there are multiple Personas, create a trigger pair for each Persona and each GoalAction.
+        - Never create a trigger pair for a BenefitAction or to any entities.
+
+    TARGETS EXTRACTION:
+        DEFINITION: TARGETS are the relationships between Actions and Entities, stating that the Action is performed on the Entity. [Action, Entity]
+        RULES:
+        - For every explicit action-to-direct-object relation, create a target pair.
+        - If an action has multiple explicit entities, create a separate target pair for each entity.
+        - If an action has no explicit entity, do not create a target pair for that action.
+        - If one action is performed on multiple entities, create a separate target pair for each entity.
+
+    CONTAINS EXTRACTION:
+        DEFINITION: A relationship between two Entities, indicating that one physically or logically contains another.
+                    This is often used for refinement, showing how a broad concept is composed of smaller parts
+                    (e.g., an "Application" containing "information" and "plans").
+                    This is a self-referencing relation for both GoalEntity and BenefitEntity.
+                    [ParentEntity, ChildEntity]
+        RULES:
+        - Create a contains pair only when one entity truly contains another as a PART, COMPONENT, VALUE, or SUB-ELEMENT.
+        - Detect containment from linguistic patterns such as explicit inclusion, system/UI hierarchy, data hierarchy, and partitive phrases.
+        - Both elements must be nouns (entities) from the user story text and from the same list (GoalEntity or BenefitEntity).
+        - Do not add a relation when it is merely implied rather than stated.
+
+    EXAMPLE:
+    In "As a UI designer, I want to begin user testing, so that I can validate stakeholder UI improvement requests",
+    the trigger is ["UI designer", "begin"] and the target is ["begin", "user testing"] and ["validate", "stakeholder UI improvement requests"].
+    There are no contains relations in this example.
+
+
+    ONE-SHOT DEMONSTRATION OF STEPS 1-3:
+
+    USER STORY:
+    "As a UI designer, I want to begin user testing, so that I can validate stakeholder UI improvement requests."
+
+    Expected Output JSON:
+    {
+        "Persona": ["UI designer"],
+        "Action": {
+            "GoalAction": ["begin"],
+            "BenefitAction": ["validate"]
+        },
+        "Entity": {
+            "GoalEntity": ["user testing"],
+            "BenefitEntity": ["stakeholder UI improvement requests"]
+        },
+        "benefit": "I can validate stakeholder UI improvement requests",
+        "triggers": [["UI designer", "begin"]],
+        "targets": [["begin", "user testing"], ["validate", "stakeholder UI improvement requests"]],
+        "contains": []
+    }
+
+
+    SILENT SELF-CHECK BEFORE OUTPUT
+    - All required keys exist.
+    - GoalAction, BenefitAction, GoalEntity, BenefitEntity are arrays of strings.
+    - Every relationship entry in triggers, targets and contains is exactly an array of [string, string].
+    - No action label includes its direct object.
+    - No extra explanation, analysis, markdown, or trailing comma appears.
+    - The final output can be parsed by JSON.parse.

@@ -1,0 +1,29 @@
+prompts:
+  - file://../app/prompts/annotation/annotation_v2.txt
+
+providers:
+  - id: ollama:chat:qwen3:8b
+    config:
+      temperature: 0.0
+      top_p: 0.1
+      think: False
+      passthrough:
+        format: json
+        keep_alive: 10m
+
+evaluateOptions:
+  cache: false
+# outputPath: results/results.csv
+#
+#defaultTest:
+#  assert:
+#    - type: is-json
+#      description: "The output should be a valid JSON object."
+#    - type: javascript
+#      description: "Schema validation"
+#      value: file://assertions/annotation_schema_checker.js
+
+tests:
+#  file://tests/20_USs_v2.yaml
+  file://tests/20USs_goal_focus.yaml
+
